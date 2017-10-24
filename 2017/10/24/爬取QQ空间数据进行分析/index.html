@@ -33,14 +33,14 @@
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="主要思路： 通过selenium+phantomjs模拟登录qq空间取到cookies和g_qzonetoken，并算出gtk 通过Requests库利用前面得到的url参数，构造http请求 分析请求得到的响应，是一个json，利用正则表达式提取字段 设计数据表，并将提取到的字段插入到数据库中  通过qq邮箱中的导出联系人功能，把好友的qq号导出到一个csv文件，遍历所有的qq号爬取所有的说说">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://sunlanchang.github.io/2017/10/24/images/qq1.jpg">
-<meta property="og:image" content="http://sunlanchang.github.io/2017/10/24/images/qq2.jpg">
-<meta property="og:image" content="http://sunlanchang.github.io/2017/10/24/images/qq3.jpg">
-<meta property="og:updated_time" content="2017-10-24T01:58:50.528Z">
+<meta property="og:image" content="http://sunlanchang.github.io/images/qq1.jpg">
+<meta property="og:image" content="http://sunlanchang.github.io/images/qq2.jpg">
+<meta property="og:image" content="http://sunlanchang.github.io/images/qq3.jpg">
+<meta property="og:updated_time" content="2017-10-24T02:00:27.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬取QQ空间数据进行分析">
 <meta name="twitter:description" content="主要思路： 通过selenium+phantomjs模拟登录qq空间取到cookies和g_qzonetoken，并算出gtk 通过Requests库利用前面得到的url参数，构造http请求 分析请求得到的响应，是一个json，利用正则表达式提取字段 设计数据表，并将提取到的字段插入到数据库中  通过qq邮箱中的导出联系人功能，把好友的qq号导出到一个csv文件，遍历所有的qq号爬取所有的说说">
-<meta name="twitter:image" content="http://sunlanchang.github.io/2017/10/24/images/qq1.jpg">
+<meta name="twitter:image" content="http://sunlanchang.github.io/images/qq1.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -213,13 +213,13 @@
 <h1 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h1><p>下面是爬取的数据，有100878条！<br>拿到数据后，我先用sql进行聚合分析，然后通过ipython作图，将数据可视化。<br>统计一年之中每天的说说数目，可以发现每年除夕这一天是大家发说说最多的一天（统计了2011到2017年）<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../images/qq1.jpg" alt="" title="">
+                    <img src="/images/qq1.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure><br>&emsp;&emsp;&emsp;&emsp;2011&emsp;&ensp;&emsp;2012&ensp;&emsp;&emsp;2013&emsp;&emsp;&ensp;&ensp;2014&ensp;&ensp;&ensp;&emsp;2015&emsp;&emsp;&emsp;2016<br>&emsp;&emsp;可以看出2015年9月达到了一个高峰，主要是因为我的朋友大都是是2015年九月大学入学的，之后开始下降，这可能是好多人开始玩微信，逐渐放弃了QQ，通过下面这个年变化图可以更直观的看出<br><img src="../images/qq2.jpg" alt=""><br>&emsp;&emsp;&emsp;2009&emsp;&emsp;2010&emsp;2011&emsp;2012&emsp;&ensp;2013&emsp;&ensp;2014&ensp;&ensp;2015&ensp;&ensp;2016&ensp;&ensp;2017<br>&emsp;通过这个每小时段说说发表的数目柱形图，可以发现大家在晚上22点到23点左右是最多的，另外中午十二点到一点也有一个小高峰<figure class="image-bubble">
+            </figure><br>&emsp;&emsp;&emsp;&emsp;2011&emsp;&ensp;&emsp;2012&ensp;&emsp;&emsp;2013&emsp;&emsp;&ensp;&ensp;2014&ensp;&ensp;&ensp;&emsp;2015&emsp;&emsp;&emsp;2016<br>&emsp;&emsp;可以看出2015年9月达到了一个高峰，主要是因为我的朋友大都是是2015年九月大学入学的，之后开始下降，这可能是好多人开始玩微信，逐渐放弃了QQ，通过下面这个年变化图可以更直观的看出<br><img src="/images/qq2.jpg" alt=""><br>&emsp;&emsp;&emsp;2009&emsp;&emsp;2010&emsp;2011&emsp;2012&emsp;&ensp;2013&emsp;&ensp;2014&ensp;&ensp;2015&ensp;&ensp;2016&ensp;&ensp;2017<br>&emsp;通过这个每小时段说说发表的数目柱形图，可以发现大家在晚上22点到23点左右是最多的，另外中午十二点到一点也有一个小高峰<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../images/qq3.jpg" alt="" title="">
+                    <img src="/images/qq3.jpg" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>  </p>
@@ -230,7 +230,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-10-24T01:58:50.528Z" itemprop="dateUpdated">2017-10-24 09:58:50</time>
+    Last updated: <time datetime="2017-10-24T02:00:27.473Z" itemprop="dateUpdated">2017-10-24 10:00:27</time>
 </span><br>
 
 
