@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://sunlanchang.github.io/images/qq3.png">
 <meta property="og:image" content="http://sunlanchang.github.io/images/qq4.png">
 <meta property="og:image" content="http://sunlanchang.github.io/images/qq5.jpg">
-<meta property="og:updated_time" content="2017-10-24T08:10:34.867Z">
+<meta property="og:updated_time" content="2017-10-24T08:12:12.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬取QQ空间数据进行分析">
 <meta name="twitter:description" content="主要思路： 通过selenium+phantomjs模拟登录qq空间取到cookies和g_qzonetoken，并算出gtk 通过Requests库利用前面得到的url参数，构造http请求 分析请求得到的响应，是一个json，利用正则表达式提取字段 设计数据表，并将提取到的字段插入到数据库中  通过qq邮箱中的导出联系人功能，把好友的qq号导出到一个csv文件，遍历所有的qq号爬取所有的说说">
@@ -220,7 +220,14 @@
                 </div>
                 <div class="image-caption"></div>
             </figure>  
-通过下面这个年变化图可以更直观的看出<br><img src="/images/qq2.jpg" alt=""><br>通过这个每小时段说说发表的数目柱形图，可以发现大家在晚上22点到23点左右是最多的，另外中午十二点到一点也有一个小高峰<figure class="image-bubble">
+通过下面这个年变化图可以更直观的看出QQ使用的频率越来越少，可能因为大学里班级，社团，活动有很多的微信群，越来越少的北石化学生使用QQ。<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/qq2.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>   
+通过这个每小时段说说发表的数目柱形图，可以发现大家在晚上22点到23点左右是最多的，另外中午十二点到一点也有一个小高峰<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/images/qq3.png" alt="" title="">
@@ -241,7 +248,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-10-24T08:10:34.867Z" itemprop="dateUpdated">2017-10-24 16:10:34</time>
+    Last updated: <time datetime="2017-10-24T08:12:12.240Z" itemprop="dateUpdated">2017-10-24 16:12:12</time>
 </span><br>
 
 
