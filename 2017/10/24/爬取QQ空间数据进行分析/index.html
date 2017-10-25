@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://sunlanchang.github.io/images/qq3.png">
 <meta property="og:image" content="http://sunlanchang.github.io/images/qq4.png">
 <meta property="og:image" content="http://sunlanchang.github.io/images/qq5.jpg">
-<meta property="og:updated_time" content="2017-10-24T08:34:55.293Z">
+<meta property="og:updated_time" content="2017-10-25T07:48:33.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬取QQ空间数据进行分析">
 <meta name="twitter:description" content="主要思路： 通过selenium+phantomjs模拟登录qq空间取到cookies和g_qzonetoken，并算出gtk 通过Requests库利用前面得到的url参数，构造http请求 分析请求得到的响应，是一个json，利用正则表达式提取字段 设计数据表，并将提取到的字段插入到数据库中  通过qq邮箱中的导出联系人功能，把好友的qq号导出到一个csv文件，遍历所有的qq号爬取所有的说说">
@@ -136,7 +136,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -234,7 +234,7 @@
                 </div>
                 <div class="image-caption"></div>
             </figure>
-<h2 id="学生都在说些什么？"><a href="#学生都在说些什么？" class="headerlink" title="学生都在说些什么？"></a>学生都在说些什么？</h2>通过将<code>mood</code>表中的<code>content</code>字段导出为txt文本文件，利用<code>python</code>的<code>jieba</code>和<code>wordcloud</code>这两个第三方库，可以生成基于说说内容的词云，看看大家都关心的什么主题,可以看出学生的主题五花八门，有考试，青春，女朋友，世界，理想,旅游。。。。<figure class="image-bubble">
+<h2 id="学生都在说些什么？"><a href="#学生都在说些什么？" class="headerlink" title="学生都在说些什么？"></a>学生都在说些什么？</h2>通过将<code>mood</code>表中的<code>content</code>字段导出为txt文本文件，利用<code>python</code>的<code>jieba</code>和<code>wordcloud</code>这两个第三方库，可以生成基于说说内容的词云.看看大家在国庆期间都再说些什么，很明显关于，习近平主席，国庆节，人民英雄纪念碑等关键词明显增多，同样也有计算机，英语，考试等关于学习的字段。<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/images/qq5.jpg" alt="" title="">
@@ -249,7 +249,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-10-24T08:34:55.293Z" itemprop="dateUpdated">2017-10-24 16:34:55</time>
+    最后更新时间：<time datetime="2017-10-25T07:48:33.631Z" itemprop="dateUpdated">2017-10-25 15:48:33</time>
 </span><br>
 
 
@@ -392,7 +392,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
