@@ -33,7 +33,7 @@
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="利用wordcloud和jieba做一个词云环境使用到的轮子：matplotlib，jieba，scipy，wordcloud，numpy，PIL。python2对jieba的中文分词支持不是很好，所以使用python3。1234567python 3.6.1jieba 0.39matplotlib 1.0.4scipy 1.0.0wordcloud 1.3.1numpy 1.13.3PIL 1.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-26T00:21:01.486Z">
+<meta property="og:updated_time" content="2017-10-26T00:23:47.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="词云的生成">
 <meta name="twitter:description" content="利用wordcloud和jieba做一个词云环境使用到的轮子：matplotlib，jieba，scipy，wordcloud，numpy，PIL。python2对jieba的中文分词支持不是很好，所以使用python3。1234567python 3.6.1jieba 0.39matplotlib 1.0.4scipy 1.0.0wordcloud 1.3.1numpy 1.13.3PIL 1.">
@@ -194,6 +194,7 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="利用wordcloud和jieba做一个词云"><a href="#利用wordcloud和jieba做一个词云" class="headerlink" title="利用wordcloud和jieba做一个词云"></a>利用<code>wordcloud</code>和<code>jieba</code>做一个词云</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>使用到的轮子：<code>matplotlib</code>，<code>jieba</code>，<code>scipy</code>，<code>wordcloud</code>，<code>numpy</code>，<code>PIL</code>。<br><code>python2</code>对<code>jieba</code>的中文分词支持不是很好，所以使用<code>python3</code>。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">python <span class="number">3.6</span><span class="number">.1</span></div><div class="line">jieba <span class="number">0.39</span></div><div class="line">matplotlib <span class="number">1.0</span><span class="number">.4</span></div><div class="line">scipy <span class="number">1.0</span><span class="number">.0</span></div><div class="line">wordcloud <span class="number">1.3</span><span class="number">.1</span></div><div class="line">numpy <span class="number">1.13</span><span class="number">.3</span></div><div class="line">PIL <span class="number">1.1</span><span class="number">.6</span></div></pre></td></tr></table></figure></p>
 <h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><h3 id="导入轮子"><a href="#导入轮子" class="headerlink" title="导入轮子"></a>导入轮子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#encoding=utf-8</span></div><div class="line"><span class="keyword">import</span> jieba</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">from</span> scipy.misc <span class="keyword">import</span> imread</div><div class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud, STOPWORDS, ImageColorGenerator</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div></pre></td></tr></table></figure>
+<p>所用到的库都能用<code>pip3</code>安装。</p>
 <h3 id="生成分词"><a href="#生成分词" class="headerlink" title="生成分词"></a>生成分词</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">text_from_file=open(<span class="string">'data.txt'</span>,<span class="string">'r'</span>).read()</div><div class="line">Word_spilt_jieba = jieba.cut(text_from_file,cut_all = <span class="keyword">False</span>)</div><div class="line">word_space = <span class="string">' '</span>.join(Word_spilt_jieba)</div></pre></td></tr></table></figure>
 <p>数据是从网上复制了几份十九大，国庆，小说的内容，从文本中读入数据到<code>text</code>，用<code>jieba</code>进行分词，不使用全模式，全模式匹配会出现重复关键词的现象，使用后效果并不好。</p>
 <h3 id="自定义词云背景"><a href="#自定义词云背景" class="headerlink" title="自定义词云背景"></a>自定义词云背景</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">img=imread(<span class="string">'bipt.jpg'</span>)</div><div class="line">img = np.array(Image.open(<span class="string">'bipt.jpg'</span>))</div></pre></td></tr></table></figure>
@@ -209,7 +210,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-10-26T00:21:01.486Z" itemprop="dateUpdated">2017-10-26 08:21:01</time>
+    Last updated: <time datetime="2017-10-26T00:23:47.878Z" itemprop="dateUpdated">2017-10-26 08:23:47</time>
 </span><br>
 
 
