@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-10-26T03:00:35.311Z</updated>
+  <updated>2017-10-26T03:02:20.915Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://sunlanchang.github.io/2017/10/26/CRC%E5%86%97%E4%BD%99%E7%A0%81/"/>
     <id>http://sunlanchang.github.io/2017/10/26/CRC冗余码/</id>
     <published>2017-10-26T02:38:07.000Z</published>
-    <updated>2017-10-26T03:00:35.311Z</updated>
+    <updated>2017-10-26T03:02:20.915Z</updated>
     
     <content type="html"><![CDATA[<h1 id="CRC校验"><a href="#CRC校验" class="headerlink" title="CRC校验"></a>CRC校验</h1><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>CRC检验原理实际上就是在一个p位二进制数据序列之后附加一个r位二进制检验码(序列)，从而构成一个总长为n＝p＋r位的二进制序列；附加在数据序列之后的这个检验码与数据序列的内容之间存在着某种特定的关系。如果因干扰等原因使数据序列中的某一位或某些位发生错误，这种特定关系就会被破坏。因此，通过检查这一关系，就可以实现对数据正确性的检验。</p><h2 id="几个基本概念"><a href="#几个基本概念" class="headerlink" title="几个基本概念"></a>几个基本概念</h2><ol><li>帧检验序列FCS（Frame Check Sequence）：为了进行差错检验而添加的冗余码。</li><li>多项式模2运行：实际上是按位异或(Exclusive OR)运算，即相同为0，相异为1，也就是不考虑进位、借位的二进制加减运算。如：$10011011 + 11001010 = 01010001$。</li><li>生成多项式（generator polynomial）：当进行CRC检验时，发送方与接收方需要事先约定一个除数，即生成多项式，一般记作$G(x)$。生成多项式的最高位与最低位必须是1。常用的CRC码的生成多项式有：<br>$CRC8=X^8+X^5+X4+1$<br>$CRC-CCITT=X^16+X^12+X^5+1$<br>$CRC16=X^16+X^15+X^5+1$<br>$CRC12=X^12+X^11+X^3+X^2+1$<br>$CRC32=X^32+X^26+X^23+X^22+X^16+X^12+X^11+X^10+X^8+X^7+X^5+X^4+X^2+X^1+1$<br>每一个生成多项式都可以与一个代码相对应，如CRC8对应代码：100110001。<h2 id="CRC检验码的计算"><a href="#CRC检验码的计算" class="headerlink" title="CRC检验码的计算"></a>CRC检验码的计算</h2>设信息字段为K位，校验字段为R位，则码字长度为$N(N=K+R)$。<br>设双方事先约定了一个R次多项式$g(x)$，则CRC码：<br>$V(x)=A(x)g(x)=xRm(x)+r(x)$<br>其中:$m(x)$为K次信息多项式， $r(x)$为$R-1$次校验多项式。<br>这里$r(x)$对应的代码即为冗余码，加在原信息字段后即形成CRC码。<br>r(x)的计算方法为：在K位信息字段的后面添加R个0，再除以$g(x)$对应的代码序列，得到的余数即为$r(x)$对应的代码(应为R－1位；若不足，而在高位补0)。</li></ol><ul><li>计算示例<figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/CRC.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure>  这里$g(x)=11001$，生成的CRC冗余码为$1010$，最终得到的码字是$1011001010$即<strong>码字 = 被除 + 数冗余码</strong>。<h2 id="错误检测"><a href="#错误检测" class="headerlink" title="错误检测"></a>错误检测</h2>当接收方收到数据后，用收到的数据对P（事先约定的）进行模2除法，若余数为0，则认为数据传输无差错；若余数不为0，则认为数据传输出现了错误，由于不知道错误发生在什么地方，因而不能进行自动纠正，一般的做法是丢弃接收的数据。  </li><li><strong>Note</strong></li></ul><ol><li>CRC是一种常用的检错码，并不能用于自动纠错。</li><li>只要经过严格的挑选，并使用位数足够多的除数 P，那么出现检测不到的差错的概率就很小很小。</li><li>仅用循环冗余检验 CRC 差错检测技术只能做到无差错接受（只是非常近似的认为是无差错的），并不能保证可靠传输。</li></ol>]]></content>
     
@@ -34,7 +34,7 @@
     
     </summary>
     
-      <category term="小程序" scheme="http://sunlanchang.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="计算机网络" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
     
       <category term="小程序" scheme="http://sunlanchang.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
