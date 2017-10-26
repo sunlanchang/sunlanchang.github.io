@@ -18,7 +18,7 @@
     
     
     
-    <title>词云的生成 | Jason&#39;s Blog</title>
+    <title>利用jieba和wordcloud生成词云 | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -28,15 +28,15 @@
     <meta name="description" content="利用wordcloud和jieba做一个词云环境使用到的轮子：matplotlib，jieba，scipy，wordcloud，numpy，PIL。python2对jieba的中文分词支持不是很好，所以使用python3。1234567python 3.6.1jieba 0.39matplotlib 1.0.4scipy 1.0.0wordcloud 1.3.1numpy 1.13.3PIL 1.">
 <meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="词云的生成">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/10/26/词云的生成/index.html">
+<meta property="og:title" content="利用jieba和wordcloud生成词云">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/10/26/利用jieba和wordcloud生成词云/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="利用wordcloud和jieba做一个词云环境使用到的轮子：matplotlib，jieba，scipy，wordcloud，numpy，PIL。python2对jieba的中文分词支持不是很好，所以使用python3。1234567python 3.6.1jieba 0.39matplotlib 1.0.4scipy 1.0.0wordcloud 1.3.1numpy 1.13.3PIL 1.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://sunlanchang.github.io/image/ciyun.jpg">
-<meta property="og:updated_time" content="2017-10-26T00:24:38.314Z">
+<meta property="og:updated_time" content="2017-10-26T00:25:51.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="词云的生成">
+<meta name="twitter:title" content="利用jieba和wordcloud生成词云">
 <meta name="twitter:description" content="利用wordcloud和jieba做一个词云环境使用到的轮子：matplotlib，jieba，scipy，wordcloud，numpy，PIL。python2对jieba的中文分词支持不是很好，所以使用python3。1234567python 3.6.1jieba 0.39matplotlib 1.0.4scipy 1.0.0wordcloud 1.3.1numpy 1.13.3PIL 1.">
 <meta name="twitter:image" content="http://sunlanchang.github.io/image/ciyun.jpg">
     
@@ -126,7 +126,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">词云的生成</div>
+        <div class="flex-col header-title ellipsis">利用jieba和wordcloud生成词云</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -148,7 +148,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">词云的生成</h1>
+        <h1 class="title">利用jieba和wordcloud生成词云</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-10-26T00:20:44.000Z" itemprop="datePublished" class="page-time">
@@ -175,11 +175,11 @@
         </nav>
     </aside>
     
-<article id="post-词云的生成"
+<article id="post-利用jieba和wordcloud生成词云"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">词云的生成</h1>
+        <h1 class="post-card-title">利用jieba和wordcloud生成词云</h1>
         <div class="post-meta">
             <time class="post-time" title="2017-10-26 08:20:44" datetime="2017-10-26T00:20:44.000Z"  itemprop="datePublished">2017-10-26</time>
 
@@ -218,7 +218,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-10-26T00:24:38.314Z" itemprop="dateUpdated">2017-10-26 08:24:38</time>
+    Last updated: <time datetime="2017-10-26T00:25:51.177Z" itemprop="dateUpdated">2017-10-26 08:25:51</time>
 </span><br>
 
 
@@ -249,7 +249,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/10/26/词云的生成/&title=《词云的生成》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/10/26/利用jieba和wordcloud生成词云/&title=《利用jieba和wordcloud生成词云》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -259,22 +259,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/10/26/词云的生成/&title=《词云的生成》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/10/26/利用jieba和wordcloud生成词云/&title=《利用jieba和wordcloud生成词云》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/10/26/词云的生成/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/10/26/利用jieba和wordcloud生成词云/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《词云的生成》 — Jason's Blog&url=http://sunlanchang.github.io/2017/10/26/词云的生成/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《利用jieba和wordcloud生成词云》 — Jason's Blog&url=http://sunlanchang.github.io/2017/10/26/利用jieba和wordcloud生成词云/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/10/26/词云的生成/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/10/26/利用jieba和wordcloud生成词云/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -385,7 +385,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/10/26/词云的生成/&title=《词云的生成》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/10/26/利用jieba和wordcloud生成词云/&title=《利用jieba和wordcloud生成词云》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -395,22 +395,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/10/26/词云的生成/&title=《词云的生成》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/10/26/利用jieba和wordcloud生成词云/&title=《利用jieba和wordcloud生成词云》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/10/26/词云的生成/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/10/26/利用jieba和wordcloud生成词云/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《词云的生成》 — Jason's Blog&url=http://sunlanchang.github.io/2017/10/26/词云的生成/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《利用jieba和wordcloud生成词云》 — Jason's Blog&url=http://sunlanchang.github.io/2017/10/26/利用jieba和wordcloud生成词云/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/10/26/词云的生成/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/10/26/利用jieba和wordcloud生成词云/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -421,7 +421,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aS46DQAwFwNz/0sw2UgQ82zASTbGKEhi6euFpfz6f+Nq+rt9vvr/f+/X4nr1vLr4wMDAey9gOr+NX/n6eb8TxPbtUDAyMFzD2Xpz/6SRoTjbrZM0YGBgY8bKSZ5MNwsDAwJgz7ktKMTAwMCZJbC9E5uW2f8rFMTAwHsiYBMG7P9/S38DAwHgUYytevRJ/tW1QXhUGBsbSjEkDsldKu68hioGBsSqjWkRL2pO9UNtLgKO9xMDAeDjjjmJ9HoKrx8p5ywEDA+OJjN6Lk0A8CbXl0hsGBsbSjN4re8WyXopb2GIMDIxFGVeNrs77jKN/ABgYGK9h5ONZeSOzuqxeUQ8DA2NtRnVBvXper9x2HNx3O7EYGBhLM5IDX/XOfGvytHn3WQwMjBcwkkGHfOmTrenV/DEwMFZl9JqF1UmNJE2tIncHWDEwMBZlTNqTx7z5QTM6PmJgYCzNuOoIWE1Qmws9Ls9hYGAszZgsLg/Wk3GK/CiJgYGxKiNJLKvJ5+SAmDx1cjTEwMB4DWMyPJEPUuRpbWFmBAMDY1FGr3CWB8RJolueGcHAwFiIsRWvJOmtJrfJANll+TcGBsYDGfNo3Qu4vdJbNcXFwMBYiZEE2V4DIFlu3qTEwMDAqJbsk1cmQbY3nIGBgYGRNAB6B8RJGnxCxcDAwCguNBmw6B0WLzsaYmBgPJCRF+vzhebDGUlrEwMD482MPHXMU8peKW0yoIaBgbEo4w/ASkupCICTrgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3aQXLjMAwEwPz/09lrqrYUzwCk40PrlJJtia2DwAzw9RUf3/8dT5/+PPP7dZIzyTUPHHh4eHjrpW9uuYFtHsHT1fDw8PDu8Z4WlL+Uk9vnv5qtBw8PD++TeU+f5qTkm7MtOx4eHt6n8ZJN8OwRJNt6PDw8vM/htZfebLKTgPgPshY8PDy8mJd3kT7n7yv9PTw8PLx1V719ZbfFI3+5f48OPDw8vBu8trmVxA2ziCEPfOt14uHh4V3gbQB5ZLC512xICw8PD+82b9bo+n2Js0Za1NaaRRV4eHh4h3h5EDBr8J/9fl5a8PDw8G7wkktstrx5kZgVhroBhoeHh7fmJZj8lpuBqs3ji0JePDw8vEO8IgCNATlmtoaiyOHh4eFd4M0aS7ONeDvUNRvDehFJ4OHh4a15+XZ2tqmdFYn21V8PCuDh4eEd5Q2TjPihzApDvsV/URjw8PDw1rzZv/pte6xtg20e4qo9hoeHhxePW+2jh/2IwH4k6zHAxcPDw7vMS4YG2rg2uUIOLsoGHh4e3gXeqeGqNg5oy0AeCuPh4eG9k9dGsfkQVXKF/HHUZQYPDw/vKC9vR+Uv9/ZX+d3bAoaHh4d3m3eq3ZVvdtuYuH4EeHh4eBd4+1bWLLbIA99NIw0PDw/vHi8PI9pgIi8ks4A4aozh4eHhvZFXjDcdHSaYRcYvKh4eHh7eBd6sDZZEA+2j/FofLyYj8PDw8Ba8TRnYxA3t+eTTFyk1Hh4e3iFe+6qdxbgbWF5y8PDw8N7JazfKm9GB/Pt5fFx09vDw8PCO8m607VvYqRjicXQADw8P7095+XLzV/mm2fZ4Hg8PD+8DeHmg0IYX7UhBdC88PDy8a7y8ZTVrd7UNs9lWfpW14OHh4XU992JKa7aBzkmHl46Hh4d3kvcP4aLaT8xu4q4AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
