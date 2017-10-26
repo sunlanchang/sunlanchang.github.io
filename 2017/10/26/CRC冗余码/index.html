@@ -33,7 +33,7 @@
 <meta property="og:description" content="CRC校验基本原理CRC检验原理实际上就是在一个p位二进制数据序列之后附加一个r位二进制检验码(序列)，从而构成一个总长为n＝p＋r位的二进制序列；附加在数据序列之后的这个检验码与数据序列的内容之间存在着某种特定的关系。如果因干扰等原因使数据序列中的某一位或某些位发生错误，这种特定关系就会被破坏。因此，通过检查这一关系，就可以实现对数据正确性的检验。 几个基本概念 帧检验序列FCS（Frame C">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://sunlanchang.github.io/images/CRC.jpg">
-<meta property="og:updated_time" content="2017-10-26T02:40:39.847Z">
+<meta property="og:updated_time" content="2017-10-26T02:42:40.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CRC冗余码">
 <meta name="twitter:description" content="CRC校验基本原理CRC检验原理实际上就是在一个p位二进制数据序列之后附加一个r位二进制检验码(序列)，从而构成一个总长为n＝p＋r位的二进制序列；附加在数据序列之后的这个检验码与数据序列的内容之间存在着某种特定的关系。如果因干扰等原因使数据序列中的某一位或某些位发生错误，这种特定关系就会被破坏。因此，通过检查这一关系，就可以实现对数据正确性的检验。 几个基本概念 帧检验序列FCS（Frame C">
@@ -208,6 +208,7 @@
                 <div class="image-caption"></div>
             </figure>  
 这里$g(x)=11001$，生成的CRC冗余码为$1010$，最终得到的码字是$1011001010$即被除数+冗余码。<h2 id="错误检测"><a href="#错误检测" class="headerlink" title="错误检测"></a>错误检测</h2>当接收方收到数据后，用收到的数据对P（事先约定的）进行模2除法，若余数为0，则认为数据传输无差错；若余数不为0，则认为数据传输出现了错误，由于不知道错误发生在什么地方，因而不能进行自动纠正，一般的做法是丢弃接收的数据。</li>
+<li><strong>Note</strong></li>
 </ul>
 <ol>
 <li>CRC是一种常用的检错码，并不能用于自动纠错。</li>
@@ -221,7 +222,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-10-26T02:40:39.847Z" itemprop="dateUpdated">2017-10-26 10:40:39</time>
+    Last updated: <time datetime="2017-10-26T02:42:40.923Z" itemprop="dateUpdated">2017-10-26 10:42:40</time>
 </span><br>
 
 
