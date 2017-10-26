@@ -29,11 +29,11 @@
 <meta name="keywords" content="Machne Learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python写一个简单的神经网络">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/10/21/测试文档/index.html">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/10/21/Python写一个简答神经网络/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="简单的神经网络算法，包括基本的后向传播BP算法，前向传播算法，更新权重使用的梯度下降算法，基本的框架算是有了，学习使用。注意输入每一行数据时候在神经网络中会加入bias偏量，神经网络的层数和每层个数为自定义，搞了很久才知道输入矩阵多了一个维度，权重和后向传播更新的delta都是每列神经元之间的关系，关于s形函数暂时用了两种，分别是logistic() 和 tanh() 效果差不多，简单的模型作为笔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-22T11:31:44.440Z">
+<meta property="og:updated_time" content="2017-10-26T03:00:25.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python写一个简单的神经网络">
 <meta name="twitter:description" content="简单的神经网络算法，包括基本的后向传播BP算法，前向传播算法，更新权重使用的梯度下降算法，基本的框架算是有了，学习使用。注意输入每一行数据时候在神经网络中会加入bias偏量，神经网络的层数和每层个数为自定义，搞了很久才知道输入矩阵多了一个维度，权重和后向传播更新的delta都是每列神经元之间的关系，关于s形函数暂时用了两种，分别是logistic() 和 tanh() 效果差不多，简单的模型作为笔">
@@ -154,6 +154,8 @@
 </time>
 
 
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/小程序/">小程序</a></li></ul>
+
             
         </h5>
     </div>
@@ -166,7 +168,7 @@
 
 <div class="container body-wrap">
     
-<article id="post-测试文档"
+<article id="post-Python写一个简答神经网络"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -175,6 +177,8 @@
             <time class="post-time" title="2017-10-21 00:43:50" datetime="2017-10-20T16:43:50.000Z"  itemprop="datePublished">2017-10-21</time>
 
             
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/小程序/">小程序</a></li></ul>
+
 
 
             
@@ -193,7 +197,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-10-22T11:31:44.440Z" itemprop="dateUpdated">2017-10-22 19:31:44</time>
+    Last updated: <time datetime="2017-10-26T03:00:25.235Z" itemprop="dateUpdated">2017-10-26 11:00:25</time>
 </span><br>
 
 
@@ -224,7 +228,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/10/21/测试文档/&title=《Python写一个简单的神经网络》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/10/21/Python写一个简答神经网络/&title=《Python写一个简单的神经网络》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -234,22 +238,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/10/21/测试文档/&title=《Python写一个简单的神经网络》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/10/21/Python写一个简答神经网络/&title=《Python写一个简单的神经网络》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/10/21/测试文档/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/10/21/Python写一个简答神经网络/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python写一个简单的神经网络》 — Jason's Blog&url=http://sunlanchang.github.io/2017/10/21/测试文档/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python写一个简单的神经网络》 — Jason's Blog&url=http://sunlanchang.github.io/2017/10/21/Python写一个简答神经网络/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/10/21/测试文档/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/10/21/Python写一个简答神经网络/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -360,7 +364,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/10/21/测试文档/&title=《Python写一个简单的神经网络》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/10/21/Python写一个简答神经网络/&title=《Python写一个简单的神经网络》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -370,22 +374,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/10/21/测试文档/&title=《Python写一个简单的神经网络》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/10/21/Python写一个简答神经网络/&title=《Python写一个简单的神经网络》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/10/21/测试文档/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/10/21/Python写一个简答神经网络/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python写一个简单的神经网络》 — Jason's Blog&url=http://sunlanchang.github.io/2017/10/21/测试文档/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python写一个简单的神经网络》 — Jason's Blog&url=http://sunlanchang.github.io/2017/10/21/Python写一个简答神经网络/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/10/21/测试文档/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/10/21/Python写一个简答神经网络/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -396,7 +400,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3aUY6DMAwFwN7/0uwBusCzEyqRTL6qLRsyVDK2k88nHsfXOLvm+/rvb6+vOZt/wsDAwHgt47gcI8tKFp18vl4bBgbGPowkgOaBuLeU5GGd/h0DAwOjmNgly72eGQMDA2NWwM2TwuSOGBgYGNeMpIjNl9grjH9Ui2NgYLyQkXfdf//5kf0NDAyMVzGO4qjOk6eGeZD95y4YGBhLM/IAV22f5c24qEBNymYMDIzNGMmy8lK2l3TmhS4GBsYOjPFg1wyRAy2/m8eEgYGxEKM6dfLt06F2whPCwMB4FaPaDkvAvW3IPBk9xWNgYCzKGGni5wvKQ3n5F8hzVQwMjNcyZpWa1QxtVmvvphbHwMBYgpGEzry5lgTQWa266MwIBgbGooxqOpinhr2jZoVjFhgYGEszZjXFerumeSj/9LJLDAyMlzPysNsLuHmZWkU23x4YGBivZTwXBKvHNUZadRgYGGsz8g3IY2D0tiSTNWBgYOzDyI8+VEcvfazOgIGBsQOj0Nhqlbj55kH+EKP3BgYGxkKM6lGJ3n81j1MkB84wMDA2YPSabtXWf3VjoLAqDAyMRRmzWmY3x7Zidm+bEwMDY23GSMssb+IXWmZTS1wMDIyVGL0G2dBpjst5mmvAwMDYgDEe+PJrRt4A0ZkRDAwMjKDETZZYbcDdUDEwMDBamwR5iz9PFh9JDTEwMF7C6B2hGO/t5Q8LAwNjZ0YvOOY3y1tp1UQTAwNjA8YfS5Ii4KzxzVkAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACn0lEQVR42u3awW7rMAwEwPz/T/dde0p2SckpHsanwokdjQqIBMnXK75+fl3JneTT3/fzN7xuXHh4eHiLpSeLa9+836D2m3h4eHjP8JLFtZ/mC32/iXmQwMPDw/ubvOTnW/YsocfDw8P7P3ibt7UhBA8PD++7vLaE+v4H8tJDUux4qNaCh4eHF/NmBdnv/n2lv4eHh4e37qrPmv1J8NgEhmK1eHh4eBd4+YG7aeHXCzpa8MXDw8N7ktce1m3jqh1NmD2Lh4eHd5aXj1K1P58PEGy++SFg4OHh4V3mFc34oCk1GynYDCJ8SKbx8PDwDvGSQkPb+M/bVJvAsGqD4eHh4a15RUk0bmvNAkb+VF5ExsPDw7vH2xcmkvt5ipwn91EbDw8PD+8CbwbbDBbcezMeHh7eM7xkBKpNuPO0uE2161YcHh4e3lFee2RvWmX75la9Qjw8PLyjvFmamyfi7Wa1ASmqr+Dh4eFd4M0WtC805M2zWYKOh4eHd5uXl01nxYu26XVgg/Dw8PAu8NrjPl/upsHWbnGUauPh4eEd4rWM4STCKORswsxwuXh4eHjxud2mzskkwmaIKmcXyTQeHh7eIV6RcZd7tm//75/Fw8PDu8FrCwSzT9vw0IacKNHHw8PDO8o7Ww9uj/hTwwQfoh8eHh7eBd5syKlN02dl4lkKjoeHh/cMrw0VsyBxtvX1IUjg4eHhHeX9lNesoZUXLJLNKoITHh4e3gVefm2S3QSQN9KGADw8PLyjvHbReSEgx7x/56Z8jIeHh3eP13aOzjbSTkW2qNaCh4eH9yXepsDaDgTM0nQ8PDy8v8NrhwbyYms7sBVtMR4eHt41XnJwt+XanNE224p/FR4eHt4FXp4Wb8qs+djBbA2rjh8eHh5eyvsHBf67YDG9sGQAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
