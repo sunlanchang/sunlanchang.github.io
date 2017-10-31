@@ -25,18 +25,18 @@
     
     
     <meta name="keywords" content="小程序">
-    <meta name="description" content="校园网自动登录脚本环境 python 2.7或python 3.5均可用，脚本外部依赖requests库，请在运行脚本前pip3或者pip安装requests。   python 2.7运行时务必加上下面一行代码，指定编码为utf8，python3可以忽略。获取源码具体实现   指定编码方式为utf8。 12# coding: utf-8import requests  通过Chrome浏览器得知">
+    <meta name="description" content="校园网自动登录脚本环境 python 2.7或python 3.5均可用，脚本外部依赖requests库，请在运行脚本前pip3或者pip安装requests。   python 2.7运行时务必加上下面一行代码，指定编码为utf8，python3可以忽略。  具体实现   指定编码方式为utf8。 12# coding: utf-8import requests  通过Chrome浏览器得知校园">
 <meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="校园网自动登录脚本">
 <meta property="og:url" content="http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="校园网自动登录脚本环境 python 2.7或python 3.5均可用，脚本外部依赖requests库，请在运行脚本前pip3或者pip安装requests。   python 2.7运行时务必加上下面一行代码，指定编码为utf8，python3可以忽略。获取源码具体实现   指定编码方式为utf8。 12# coding: utf-8import requests  通过Chrome浏览器得知">
+<meta property="og:description" content="校园网自动登录脚本环境 python 2.7或python 3.5均可用，脚本外部依赖requests库，请在运行脚本前pip3或者pip安装requests。   python 2.7运行时务必加上下面一行代码，指定编码为utf8，python3可以忽略。  具体实现   指定编码方式为utf8。 12# coding: utf-8import requests  通过Chrome浏览器得知校园">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-31T06:55:43.252Z">
+<meta property="og:updated_time" content="2017-10-31T06:57:30.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="校园网自动登录脚本">
-<meta name="twitter:description" content="校园网自动登录脚本环境 python 2.7或python 3.5均可用，脚本外部依赖requests库，请在运行脚本前pip3或者pip安装requests。   python 2.7运行时务必加上下面一行代码，指定编码为utf8，python3可以忽略。获取源码具体实现   指定编码方式为utf8。 12# coding: utf-8import requests  通过Chrome浏览器得知">
+<meta name="twitter:description" content="校园网自动登录脚本环境 python 2.7或python 3.5均可用，脚本外部依赖requests库，请在运行脚本前pip3或者pip安装requests。   python 2.7运行时务必加上下面一行代码，指定编码为utf8，python3可以忽略。  具体实现   指定编码方式为utf8。 12# coding: utf-8import requests  通过Chrome浏览器得知校园">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -171,7 +171,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#校园网自动登录脚本"><span class="post-toc-number">1.</span> <span class="post-toc-text">校园网自动登录脚本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看连接的是否是校园网，以及是否连上网"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">查看连接的是否是校园网，以及是否连上网</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#直到校园网连接上为止"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">直到校园网连接上为止</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ubuntu开机自动启动登录"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Ubuntu开机自动启动登录</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#校园网自动登录脚本"><span class="post-toc-number">1.</span> <span class="post-toc-text">校园网自动登录脚本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看连接的是否是校园网，以及是否连上网"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">查看连接的是否是校园网，以及是否连上网</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#直到校园网连接上为止"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">直到校园网连接上为止</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ubuntu开机自动启动登录"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Ubuntu开机自动启动登录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取源码"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">获取源码</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -198,7 +198,7 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="校园网自动登录脚本"><a href="#校园网自动登录脚本" class="headerlink" title="校园网自动登录脚本"></a>校园网自动登录脚本</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
 <li><code>python 2.7或python 3.5</code>均可用，脚本外部依赖<code>requests</code>库，请在运行脚本前<code>pip3</code>或者<code>pip</code>安装<code>requests</code>。  </li>
-<li><code>python 2.7</code>运行时务必加上下面一行代码，指定编码为<code>utf8</code>，<code>python3</code>可以忽略。<br><a href="https://github.com/sunlanchang/blog/blob/master/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95.py" target="_blank" rel="external">获取源码</a><h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2></li>
+<li><code>python 2.7</code>运行时务必加上下面一行代码，指定编码为<code>utf8</code>，<code>python3</code>可以忽略。  <h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2></li>
 </ul>
 <ol>
 <li><p>指定编码方式为utf8。</p>
@@ -214,6 +214,7 @@
 <h2 id="查看连接的是否是校园网，以及是否连上网"><a href="#查看连接的是否是校园网，以及是否连上网" class="headerlink" title="查看连接的是否是校园网，以及是否连上网"></a>查看连接的是否是校园网，以及是否连上网</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_connect_edu</span><span class="params">()</span>:</span></div><div class="line">    status_code = requests.get(url).status_code</div><div class="line">    <span class="keyword">if</span> status_code == <span class="number">200</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_connect_web</span><span class="params">()</span>:</span></div><div class="line">    r = requests.get(<span class="string">"http://www.baidu.com"</span>).text</div><div class="line">    <span class="keyword">if</span> r.find(<span class="string">'210.31.32.126'</span>) != <span class="number">-1</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure>
 <h2 id="直到校园网连接上为止"><a href="#直到校园网连接上为止" class="headerlink" title="直到校园网连接上为止"></a>直到校园网连接上为止</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">if</span> is_connect_edu():  <span class="comment"># 是否连接上校园网</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> is_connect_web():  <span class="comment"># 是否连接上外网</span></div><div class="line">            login()</div><div class="line">            <span class="keyword">if</span> requests.get(<span class="string">'http://www.baidu.com'</span>).status_code==<span class="number">200</span>:</div><div class="line">                print(<span class="string">'Already connected Internet'</span>)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                print(<span class="string">'Not connected Internet'</span>)</div><div class="line">        <span class="keyword">break</span></div></pre></td></tr></table></figure>
 <h2 id="Ubuntu开机自动启动登录"><a href="#Ubuntu开机自动启动登录" class="headerlink" title="Ubuntu开机自动启动登录"></a><code>Ubuntu</code>开机自动启动登录</h2><p><code>root</code>权限修改<code>/etc/rc.local</code>文件在<code>exit 0</code>上一行加上<code>python3 xiaoyuanwang.py</code>即可实现开机启动此脚本</p>
+<h2 id="获取源码"><a href="#获取源码" class="headerlink" title="获取源码"></a>获取源码</h2><p><a href="https://github.com/sunlanchang/blog/blob/master/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95.py" target="_blank" rel="external">点击获取源码</a></p>
 
         </div>
 
@@ -221,7 +222,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-10-31T06:55:43.252Z" itemprop="dateUpdated">2017-10-31 14:55:43</time>
+    Last updated: <time datetime="2017-10-31T06:57:30.555Z" itemprop="dateUpdated">2017-10-31 14:57:30</time>
 </span><br>
 
 
