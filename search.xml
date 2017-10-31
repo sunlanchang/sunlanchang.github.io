@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[极限的保号性、无穷小运算法则、七种未定型]]></title>
     <url>%2F2017%2F10%2F31%2F%E6%9E%81%E9%99%90%E7%9A%84%E4%BF%9D%E5%8F%B7%E6%80%A7%E3%80%81%E6%97%A0%E7%A9%B7%E5%B0%8F%E8%BF%90%E7%AE%97%E6%B3%95%E5%88%99%E3%80%81%E4%B8%83%E7%A7%8D%E6%9C%AA%E5%AE%9A%E5%9E%8B%2F</url>
-    <content type="text"><![CDATA[极限的保号性、运算法则、七种未定型极限的保号性 $\lim\limits_{x\to a}f(x)=A(A\neq0)$则$f(x)$与$A$同号。 $f(x)&gt;0$，$\lim\limits_{x\to a}f(x)=A$则$A\geq0$。无穷小运算 相同的运算法则$o(x^m)\pm o(x^n)=o(x^n)$其中$(m&gt;n)$$x^mo(x^n)=o(x^{m+n})$$\frac{o(x^m)}{o(x^n)}=0$其中$(m&gt;n)$$ko(x^n)=o(x^n)$ 注意无穷大加减运算与无穷小相反。$o(x^m)\pm o(x^n)=o(x^m)$其中$(m&gt;n)$ 七种未定型的极限1. 第一类：$\frac{0}{0}$，$\frac{\infty}{\infty}$，$0\cdot\infty$ 洛必达法则 等价无穷小代换 泰勒展开式 消去去穷大（做大题用） 抓大头（做选择、填空或者检验大题答案用）2. 第二类：$\infty^0$，$0^0$，$1^*$(1的任意次幂) $1^*$常用${f(x)}^{g(x)}=e^{(f(x)-1)g(x)}$ $\infty^0$，$0^0$常用${u(x)}^{v(x)}=e^{v(x)\ln u(x)}$3. 第三类：$\infty-\infty$ 有分母时通分化成前两种情况。 没有分母倒代换构造分母。]]></content>
+    <content type="text"><![CDATA[极限的保号性、运算法则、七种未定型极限的保号性 $\lim\limits_{x\to a}f(x)=A(A\neq0)$则$f(x)$与$A$同号。 $f(x)&gt;0$，$\lim\limits_{x\to a}f(x)=A$则$A\geq0$。无穷小运算 相同的运算法则 $o(x^m)\pm o(x^n)=o(x^n)$其中$(m&gt;n)$ $x^mo(x^n)=o(x^{m+n})$ $\frac{o(x^m)}{o(x^n)}=0$其中$(m&gt;n)$ $ko(x^n)=o(x^n)$ 注意无穷大加减运算与无穷小相反。 $o(x^m)\pm o(x^n)=o(x^m)$其中$(m&gt;n)$ 七种未定型的极限1. 第一类：$\frac{0}{0}$，$\frac{\infty}{\infty}$，$0\cdot\infty$ 洛必达法则 等价无穷小代换 泰勒展开式 消去去穷大（做大题用） 抓大头（做选择、填空或者检验大题答案用）2. 第二类：$\infty^0$，$0^0$，$1^*$(1的任意次幂) $1^*$常用${f(x)}^{g(x)}=e^{(f(x)-1)g(x)}$ $\infty^0$，$0^0$常用${u(x)}^{v(x)}=e^{v(x)\ln u(x)}$3. 第三类：$\infty-\infty$ 有分母时通分化成前两种情况。 没有分母倒代换构造分母。]]></content>
       <categories>
         <category>微积分</category>
       </categories>
