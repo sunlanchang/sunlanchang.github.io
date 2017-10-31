@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?086a5af0b6f644650f444fc827e297f8"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>校园网自动登录脚本 | Jason&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="小程序">
+    <meta name="description" content="校园网自动登录脚本环境 python 2.7或python 3.5均可用，脚本外部依赖requests库，请在运行脚本前pip3或者pip安装requests。   python 2.7运行时务必加上下面一行代码，指定编码为utf8，python3可以忽略。获取源码具体实现   指定编码方式为utf8。 12# coding: utf-8import requests  通过Chrome浏览器得知">
+<meta name="keywords" content="小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="校园网自动登录脚本">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="校园网自动登录脚本环境 python 2.7或python 3.5均可用，脚本外部依赖requests库，请在运行脚本前pip3或者pip安装requests。   python 2.7运行时务必加上下面一行代码，指定编码为utf8，python3可以忽略。获取源码具体实现   指定编码方式为utf8。 12# coding: utf-8import requests  通过Chrome浏览器得知">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-31T06:55:43.252Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="校园网自动登录脚本">
+<meta name="twitter:description" content="校园网自动登录脚本环境 python 2.7或python 3.5均可用，脚本外部依赖requests库，请在运行脚本前pip3或者pip安装requests。   python 2.7运行时务必加上下面一行代码，指定编码为utf8，python3可以忽略。获取源码具体实现   指定编码方式为utf8。 12# coding: utf-8import requests  通过Chrome浏览器得知">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/tou.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jason Sun</h5>
+          <a href="mailto:sunlanchang@outlook.com" title="sunlanchang@outlook.com" class="mail">sunlanchang@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/sunlanchang" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.csdn.net/sunlanchang"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">校园网自动登录脚本</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">校园网自动登录脚本</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-10-31T06:39:42.000Z" itemprop="datePublished" class="page-time">
+  2017-10-31
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/小程序/">小程序</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#校园网自动登录脚本"><span class="post-toc-number">1.</span> <span class="post-toc-text">校园网自动登录脚本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看连接的是否是校园网，以及是否连上网"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">查看连接的是否是校园网，以及是否连上网</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#直到校园网连接上为止"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">直到校园网连接上为止</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ubuntu开机自动启动登录"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Ubuntu开机自动启动登录</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-校园网自动登录脚本"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">校园网自动登录脚本</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-10-31 14:39:42" datetime="2017-10-31T06:39:42.000Z"  itemprop="datePublished">2017-10-31</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/小程序/">小程序</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="校园网自动登录脚本"><a href="#校园网自动登录脚本" class="headerlink" title="校园网自动登录脚本"></a>校园网自动登录脚本</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li><code>python 2.7或python 3.5</code>均可用，脚本外部依赖<code>requests</code>库，请在运行脚本前<code>pip3</code>或者<code>pip</code>安装<code>requests</code>。  </li>
+<li><code>python 2.7</code>运行时务必加上下面一行代码，指定编码为<code>utf8</code>，<code>python3</code>可以忽略。<br><a href="https://github.com/sunlanchang/blog/blob/master/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95.py" target="_blank" rel="external">获取源码</a><h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2></li>
+</ul>
+<ol>
+<li><p>指定编码方式为utf8。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding: utf-8</span></div><div class="line"><span class="keyword">import</span> requests</div></pre></td></tr></table></figure>
+</li>
+<li><p>通过<code>Chrome</code>浏览器得知校园网登录地址，注意直接在浏览器输入的地址不一定是发送数据的地址，我学校是下面这个。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">url = <span class="string">'http://210.31.32.126/cgi-bin/do_login'</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>浏览器头信息用来伪装浏览器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></div><div class="line">    postdata = &#123;<span class="string">'username'</span>: <span class="string">'你的校园网账号'</span>,</div><div class="line">                <span class="string">'password'</span>: <span class="string">'&#123;TEXT&#125;你的密码'</span>,</div><div class="line">                <span class="string">'drop'</span>: <span class="string">'0'</span>,</div><div class="line">                <span class="string">'type'</span>: <span class="string">'1'</span>,</div><div class="line">                <span class="string">'n'</span>: <span class="string">'100'</span>&#125;</div><div class="line">    headers = &#123;<span class="string">'Accept'</span>: <span class="string">'*/*'</span>,</div><div class="line">               <span class="string">'Accept-Encoding'</span>: <span class="string">'gzip, deflate'</span>,</div><div class="line">               <span class="string">'Accept-Language'</span>: <span class="string">'zh-CN,zh;q=0.8'</span>,</div><div class="line">               <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</div><div class="line">               <span class="string">'Content-Length'</span>: <span class="string">'65'</span>,</div><div class="line">               <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span>,</div><div class="line">               <span class="string">'Cookie'</span>: <span class="string">'PHPSESSID=a70fr8pfvhhtt329qvb21p7ka6'</span>,</div><div class="line">               <span class="string">'Host'</span>: <span class="string">'210.31.32.126'</span>,</div><div class="line">               <span class="string">'Origin'</span>: <span class="string">'http://210.31.32.126'</span>,</div><div class="line">               <span class="string">'Referer'</span>: <span class="string">'http://210.31.32.126/'</span>,</div><div class="line">               <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'</span>&#125;</div><div class="line">    requests.post(url, data=postdata)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="查看连接的是否是校园网，以及是否连上网"><a href="#查看连接的是否是校园网，以及是否连上网" class="headerlink" title="查看连接的是否是校园网，以及是否连上网"></a>查看连接的是否是校园网，以及是否连上网</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_connect_edu</span><span class="params">()</span>:</span></div><div class="line">    status_code = requests.get(url).status_code</div><div class="line">    <span class="keyword">if</span> status_code == <span class="number">200</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_connect_web</span><span class="params">()</span>:</span></div><div class="line">    r = requests.get(<span class="string">"http://www.baidu.com"</span>).text</div><div class="line">    <span class="keyword">if</span> r.find(<span class="string">'210.31.32.126'</span>) != <span class="number">-1</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure>
+<h2 id="直到校园网连接上为止"><a href="#直到校园网连接上为止" class="headerlink" title="直到校园网连接上为止"></a>直到校园网连接上为止</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">if</span> is_connect_edu():  <span class="comment"># 是否连接上校园网</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> is_connect_web():  <span class="comment"># 是否连接上外网</span></div><div class="line">            login()</div><div class="line">            <span class="keyword">if</span> requests.get(<span class="string">'http://www.baidu.com'</span>).status_code==<span class="number">200</span>:</div><div class="line">                print(<span class="string">'Already connected Internet'</span>)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                print(<span class="string">'Not connected Internet'</span>)</div><div class="line">        <span class="keyword">break</span></div></pre></td></tr></table></figure>
+<h2 id="Ubuntu开机自动启动登录"><a href="#Ubuntu开机自动启动登录" class="headerlink" title="Ubuntu开机自动启动登录"></a><code>Ubuntu</code>开机自动启动登录</h2><p><code>root</code>权限修改<code>/etc/rc.local</code>文件在<code>exit 0</code>上一行加上<code>python3 xiaoyuanwang.py</code>即可实现开机启动此脚本</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-10-31T06:55:43.252Z" itemprop="dateUpdated">2017-10-31 14:55:43</time>
+</span><br>
+
+
+        
+        这里可以给我留言。
+        
+    </div>
+    <footer>
+        <a href="http://sunlanchang.github.io">
+            <img src="/img/tou.jpg" alt="Jason Sun">
+            Jason Sun
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小程序/">小程序</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/&title=《校园网自动登录脚本》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/&title=《校园网自动登录脚本》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《校园网自动登录脚本》 — Jason's Blog&url=http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/10/31/极限的保号性、无穷小运算法则、七种未定型/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">极限的保号性、无穷小运算法则、七种未定型</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'sunlanchang',
+            repo: 'myGitment',
+            oauth: {
+                client_id: '6013556da1745c4a2fa8',
+                client_secret: '4394e96a00fdb11529f27a88acff6ff091aaaeaa',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jason Sun &copy; 2017</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17053348号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/&title=《校园网自动登录脚本》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/&title=《校园网自动登录脚本》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《校园网自动登录脚本》 — Jason's Blog&url=http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3aQW4bMRAEQP3/0zKQU2BHTvcMqRhB7Umw10vWCiDpnnk84uv568p//vW3X+98/nZt5nDgwsPDwxtN/dX1airP4EqoOTIfHQ8PD+89vPZxs4nm9+Sf/2LBw8PD+6e87yeasPONBw8PD+//4yXL/QYwmw8eHh7eO3nJwp1PvWXkYcfFrAUPDw8v5rXFp5/w+WJ9Dw8PD29RVc8LWpsSV9s6UMwWDw8P79pCmB+jk+NvG1Xk4+b4x2YYPDw8vG9HSZb+Tcw6i26T6CGKhvHw8PAu8Npptcv6ppkgCXOje/Dw8PCO8m7EEKci432bFx4eHt5t3gwwO+zOnpbcWfeC4eHh4ZW8TdialLLabWaGjzYnPDw8vEO8enktI4a2bDb8Ztq8BA8PD2/Nyz/PDsebxX11lMfDw8O7mxI82oU4P0DnkcSbImM8PDy8Na9d4tvQ4dQWkjeB/aEzAg8PD+8CbzNku23sj+DFq8TDw8M7ysuLUu1gm/fdBrsvn4CHh4d3gZfHELOWgvZpLa+OcfHw8PDWvGT4vDkgiVmHC/poW8LDw8O7x5sVqPJXsI9087aAKJ/Gw8PDW/DaNoJZc8CsiNUGx0XTFR4eHt41XnL83QzZBrt5E8Pqe8PDw8MLePkfPEdXG+/mEUn0uvHw8PCO8vLDbluUmjVv5fFH9Bw8PDy8y7xZuWsYno6o+fEaDw8P7x4vb4TaxAfJ5tG+0OFbxMPDw1vzNrFCvkC3h+YW//IJeHh4eBd4N7aNG20Hbdx8cVfEw8PDiwc+25uw2STqcAQPDw/vGi8p1behah5J7F9WEeDi4eHhvZG3jyTaRqt8hnh4eHg/mZcXwNrNI89L8png4eHh3eO1gDYpTV7ElYM1Hh4e3rX/2WcFsFmpfhbXJl/A4foeHh4e3uc5fABzZOQpBV0A4QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'false';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Jason's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
