@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu使用蓝灯无限流量]]></title>
+    <url>%2F2017%2F11%2F03%2FUbuntu%E4%BD%BF%E7%94%A8%E8%93%9D%E7%81%AF%E6%97%A0%E9%99%90%E6%B5%81%E9%87%8F%2F</url>
+    <content type="text"><![CDATA[Ubuntu使用蓝灯无限流量lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。这里修改 MAC 地址的具体步骤如下： 通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。 关闭网卡设备 sudo /sbin/ifconfig net_card down 修改 MAC 地址 sudo /sbin/ifconfig net_card hw ether 00:AA:BB:CC:DD:EE (要修改的MAC地址) 重新启用网卡 sudo /sbin/ifconfig net_card up 这是临时性修改MAC地址的方法，系统重启之后就会失效。不过这也比较符合我们的需求，一个MAC地址的免费高速流量用完之后就换另一个地址。]]></content>
+      <categories>
+        <category>Other</category>
+      </categories>
+      <tags>
+        <tag>Other</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[校园网自动登录脚本]]></title>
     <url>%2F2017%2F10%2F31%2F%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC%2F</url>
     <content type="text"><![CDATA[校园网自动登录脚本环境 python 2.7或python 3.5均可用，脚本外部依赖requests库，请在运行脚本前pip3或者pip安装requests。 python 2.7运行时务必加上下面一行代码，指定编码为utf8，python3可以忽略。 具体实现 指定编码方式为utf8。 12# coding: utf-8import requests 通过Chrome浏览器得知校园网登录地址，注意直接在浏览器输入的地址不一定是发送数据的地址，我学校是下面这个。 1url = 'http://210.31.32.126/cgi-bin/do_login' 浏览器头信息用来伪装浏览器 123456789101112131415161718def login(): postdata = &#123;'username': '你的校园网账号', 'password': '&#123;TEXT&#125;你的密码', 'drop': '0', 'type': '1', 'n': '100'&#125; headers = &#123;'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Connection': 'keep-alive', 'Content-Length': '65', 'Content-Type': 'application/x-www-form-urlencoded', 'Cookie': 'PHPSESSID=a70fr8pfvhhtt329qvb21p7ka6', 'Host': '210.31.32.126', 'Origin': 'http://210.31.32.126', 'Referer': 'http://210.31.32.126/', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'&#125; requests.post(url, data=postdata) 查看连接的是否是校园网，以及是否连上网1234567891011121314def is_connect_edu(): status_code = requests.get(url).status_code if status_code == 200: return True else: return Falsedef is_connect_web(): r = requests.get("http://www.baidu.com").text if r.find('210.31.32.126') != -1: return False else: return True 直到校园网连接上为止123456789while True: if is_connect_edu(): # 是否连接上校园网 if not is_connect_web(): # 是否连接上外网 login() if requests.get('http://www.baidu.com').status_code==200: print('Already connected Internet') else: print('Not connected Internet') break Ubuntu开机自动启动登录root权限修改/etc/rc.local文件在exit 0上一行加上python3 xiaoyuanwang.py即可实现开机启动此脚本 获取源码点击获取源码]]></content>
