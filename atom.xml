@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-11-03T05:39:32.978Z</updated>
+  <updated>2017-11-03T05:41:10.107Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -21,15 +21,17 @@
     <link href="http://sunlanchang.github.io/2017/11/03/Ubuntu%E4%BD%BF%E7%94%A8%E8%93%9D%E7%81%AF%E6%97%A0%E9%99%90%E6%B5%81%E9%87%8F/"/>
     <id>http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/</id>
     <published>2017-11-03T05:37:10.000Z</published>
-    <updated>2017-11-03T05:39:32.978Z</updated>
+    <updated>2017-11-03T05:41:10.107Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Ubuntu使用蓝灯无限流量"><a href="#Ubuntu使用蓝灯无限流量" class="headerlink" title="Ubuntu使用蓝灯无限流量"></a>Ubuntu使用蓝灯无限流量</h1><p>lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。<br>这里修改 MAC 地址的具体步骤如下：</p><ol><li>通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。</li><li>关闭网卡设备 sudo /sbin/ifconfig net_card down</li><li>修改 MAC 地址 sudo /sbin/ifconfig net_card hw ether 00:AA:BB:CC:DD:EE (要修改的MAC地址)</li><li>重新启用网卡 sudo /sbin/ifconfig net_card up</li></ol><p>这是临时性修改MAC地址的方法，系统重启之后就会失效。不过这也比较符合我们的需求，一个MAC地址的免费高速流量用完之后就换另一个地址。</p>]]></content>
+    <content type="html"><![CDATA[<p>lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。<br>这里修改 MAC 地址的具体步骤如下：</p><ol><li>通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。</li><li>关闭网卡设备 sudo /sbin/ifconfig net_card down</li><li>修改 MAC 地址 sudo /sbin/ifconfig net_card hw ether 00:AA:BB:CC:DD:EE (要修改的MAC地址)</li><li>重新启用网卡 sudo /sbin/ifconfig net_card up</li></ol><p>这是临时性修改MAC地址的方法，系统重启之后就会失效。不过这也比较符合我们的需求，一个MAC地址的免费高速流量用完之后就换另一个地址。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;Ubuntu使用蓝灯无限流量&quot;&gt;&lt;a href=&quot;#Ubuntu使用蓝灯无限流量&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu使用蓝灯无限流量&quot;&gt;&lt;/a&gt;Ubuntu使用蓝灯无限流量&lt;/h1&gt;&lt;p&gt;lantern因为蓝灯3是通过用户的 MAC
+        &lt;p&gt;lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。&lt;br&gt;这里修改 MAC 地址的具体步骤如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。&lt;/l
       
     
     </summary>
