@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-11-06T01:02:05.318Z</updated>
+  <updated>2017-11-06T01:03:35.000Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://sunlanchang.github.io/2017/11/03/Ubuntu%E4%BD%BF%E7%94%A8%E8%93%9D%E7%81%AF%E6%97%A0%E9%99%90%E6%B5%81%E9%87%8F/"/>
     <id>http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/</id>
     <published>2017-11-03T05:37:10.000Z</published>
-    <updated>2017-11-06T01:02:05.318Z</updated>
+    <updated>2017-11-06T01:03:35.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>lantern</code>因为蓝灯3是通过用户的 <code>MAC</code> 地址来判断用户是否使用完免费高速流量。<br>这里修改 <code>MAC</code> 地址的具体步骤如下：</p><ol><li>通过 <code>ifconfig</code> 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。</li><li>关闭网卡设备 <code>sudo /sbin/ifconfig net_card down</code></li><li>修改 <code>MAC</code> 地址 <code>sudo /sbin/ifconfig net_card hw ether 00:AA:BB:CC:DD:EE</code> (要修改的<code>MAC</code>地址)</li><li>重新启用网卡 <code>sudo /sbin/ifconfig net_card up</code></li></ol><p>这是临时性修改<code>MAC</code>地址的方法，系统重启之后就会失效。不过这也比较符合我们的需求，一个<code>MAC</code>地址的免费高速流量用完之后就换另一个地址。</p>]]></content>
     
