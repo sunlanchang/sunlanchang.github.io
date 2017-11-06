@@ -33,7 +33,7 @@
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。这里修改 MAC 地址的具体步骤如下：  通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。 关闭网卡设备 sudo /sbin/ifconfig net_card down 修改 MAC 地址 sudo /sbin/ifconfig net_card h">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-03T05:41:10.107Z">
+<meta property="og:updated_time" content="2017-11-06T01:02:05.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu使用蓝灯无限流量">
 <meta name="twitter:description" content="lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。这里修改 MAC 地址的具体步骤如下：  通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。 关闭网卡设备 sudo /sbin/ifconfig net_card down 修改 MAC 地址 sudo /sbin/ifconfig net_card h">
@@ -130,7 +130,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -189,14 +189,14 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。<br>这里修改 MAC 地址的具体步骤如下：</p>
+            <p><code>lantern</code>因为蓝灯3是通过用户的 <code>MAC</code> 地址来判断用户是否使用完免费高速流量。<br>这里修改 <code>MAC</code> 地址的具体步骤如下：</p>
 <ol>
-<li>通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。</li>
-<li>关闭网卡设备 sudo /sbin/ifconfig net_card down</li>
-<li>修改 MAC 地址 sudo /sbin/ifconfig net_card hw ether 00:AA:BB:CC:DD:EE (要修改的MAC地址)</li>
-<li>重新启用网卡 sudo /sbin/ifconfig net_card up</li>
+<li>通过 <code>ifconfig</code> 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。</li>
+<li>关闭网卡设备 <code>sudo /sbin/ifconfig net_card down</code></li>
+<li>修改 <code>MAC</code> 地址 <code>sudo /sbin/ifconfig net_card hw ether 00:AA:BB:CC:DD:EE</code> (要修改的<code>MAC</code>地址)</li>
+<li>重新启用网卡 <code>sudo /sbin/ifconfig net_card up</code></li>
 </ol>
-<p>这是临时性修改MAC地址的方法，系统重启之后就会失效。不过这也比较符合我们的需求，一个MAC地址的免费高速流量用完之后就换另一个地址。</p>
+<p>这是临时性修改<code>MAC</code>地址的方法，系统重启之后就会失效。不过这也比较符合我们的需求，一个<code>MAC</code>地址的免费高速流量用完之后就换另一个地址。</p>
 
         </div>
 
@@ -204,7 +204,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-03T05:41:10.107Z" itemprop="dateUpdated">2017-11-03 13:41:10</time>
+    最後更新時間：<time datetime="2017-11-06T01:02:05.318Z" itemprop="dateUpdated">2017-11-06 09:02:05</time>
 </span><br>
 
 
@@ -347,7 +347,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
         </p>
     </div>
     <div class="bottom">
