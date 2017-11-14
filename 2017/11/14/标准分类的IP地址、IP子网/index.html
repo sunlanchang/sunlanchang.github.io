@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?086a5af0b6f644650f444fc827e297f8"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>标准分类的IP地址、IP子网 | Jason&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="计算机网络">
+    <meta name="description" content="标准分类的IP地址先来一张图便于查阅，如下图：在互联网络中，需要为每个主机和路由器等设备分配一个在全世界范围内唯一的IP地址，IP地址的编址方法共经历了以下五个阶段：  分类的IP地址。   划分子网。   构成超网。 网络地址转换。 IPv6。如下图所示：  IP子网的划分   A类地址的默认子网掩码：255.0.0.0   B类地址的默认子网掩码：255.255.0.0   C类地址的默认子网">
+<meta name="keywords" content="计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="标准分类的IP地址、IP子网">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/11/14/标准分类的IP地址、IP子网/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="标准分类的IP地址先来一张图便于查阅，如下图：在互联网络中，需要为每个主机和路由器等设备分配一个在全世界范围内唯一的IP地址，IP地址的编址方法共经历了以下五个阶段：  分类的IP地址。   划分子网。   构成超网。 网络地址转换。 IPv6。如下图所示：  IP子网的划分   A类地址的默认子网掩码：255.0.0.0   B类地址的默认子网掩码：255.255.0.0   C类地址的默认子网">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://sunlanchang.github.io/images/biaozhunfenleiIPdizhi.png">
+<meta property="og:image" content="http://sunlanchang.github.io/images/IPyanbianguocheng.png">
+<meta property="og:image" content="http://sunlanchang.github.io/images/ziwangyanma.png">
+<meta property="og:updated_time" content="2017-11-14T14:46:17.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="标准分类的IP地址、IP子网">
+<meta name="twitter:description" content="标准分类的IP地址先来一张图便于查阅，如下图：在互联网络中，需要为每个主机和路由器等设备分配一个在全世界范围内唯一的IP地址，IP地址的编址方法共经历了以下五个阶段：  分类的IP地址。   划分子网。   构成超网。 网络地址转换。 IPv6。如下图所示：  IP子网的划分   A类地址的默认子网掩码：255.0.0.0   B类地址的默认子网掩码：255.255.0.0   C类地址的默认子网">
+<meta name="twitter:image" content="http://sunlanchang.github.io/images/biaozhunfenleiIPdizhi.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/tou.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jason Sun</h5>
+          <a href="mailto:sunlanchang@outlook.com" title="sunlanchang@outlook.com" class="mail">sunlanchang@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/sunlanchang" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.csdn.net/sunlanchang"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">标准分类的IP地址、IP子网</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">标准分类的IP地址、IP子网</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-11-14T14:11:22.000Z" itemprop="datePublished" class="page-time">
+  2017-11-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#标准分类的IP地址"><span class="post-toc-number">1.</span> <span class="post-toc-text">标准分类的IP地址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#IP子网的划分"><span class="post-toc-number">2.</span> <span class="post-toc-text">IP子网的划分</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-标准分类的IP地址、IP子网"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">标准分类的IP地址、IP子网</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-11-14 22:11:22" datetime="2017-11-14T14:11:22.000Z"  itemprop="datePublished">2017-11-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="标准分类的IP地址"><a href="#标准分类的IP地址" class="headerlink" title="标准分类的IP地址"></a>标准分类的IP地址</h1><p>先来一张图便于查阅，如下图：<br><img src="/images/biaozhunfenleiIPdizhi.png" alt="标准分类的IP地址"><br>在互联网络中，需要为每个主机和路由器等设备分配一个在全世界范围内唯一的IP地址，IP地址的编址方法共经历了以下五个阶段：</p>
+<ol>
+<li>分类的IP地址。  </li>
+<li>划分子网。  </li>
+<li>构成超网。</li>
+<li>网络地址转换。</li>
+<li>IPv6。<br>如下图所示：<br><img src="/images/IPyanbianguocheng.png" alt="">  <h1 id="IP子网的划分"><a href="#IP子网的划分" class="headerlink" title="IP子网的划分"></a>IP子网的划分</h1></li>
+</ol>
+<ul>
+<li>A类地址的默认子网掩码：255.0.0.0  </li>
+<li>B类地址的默认子网掩码：255.255.0.0  </li>
+<li>C类地址的默认子网掩码：255.255.255.0<br><img src="/images/ziwangyanma.png" alt=""></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-11-14T14:46:17.948Z" itemprop="dateUpdated">2017-11-14 22:46:17</time>
+</span><br>
+
+
+        
+        这里可以给我留言。
+        
+    </div>
+    <footer>
+        <a href="http://sunlanchang.github.io">
+            <img src="/img/tou.jpg" alt="Jason Sun">
+            Jason Sun
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/14/标准分类的IP地址、IP子网/&title=《标准分类的IP地址、IP子网》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/14/标准分类的IP地址、IP子网/&title=《标准分类的IP地址、IP子网》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/14/标准分类的IP地址、IP子网/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《标准分类的IP地址、IP子网》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/14/标准分类的IP地址、IP子网/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/14/标准分类的IP地址、IP子网/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">八种寻址方式之——立即数寻址、寄存器寻址</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'sunlanchang',
+            repo: 'myGitment',
+            oauth: {
+                client_id: '6013556da1745c4a2fa8',
+                client_secret: '4394e96a00fdb11529f27a88acff6ff091aaaeaa',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jason Sun &copy; 2017</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17053348号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/14/标准分类的IP地址、IP子网/&title=《标准分类的IP地址、IP子网》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/14/标准分类的IP地址、IP子网/&title=《标准分类的IP地址、IP子网》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/14/标准分类的IP地址、IP子网/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《标准分类的IP地址、IP子网》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/14/标准分类的IP地址、IP子网/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/14/标准分类的IP地址、IP子网/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqklEQVR42u3aQY5aMRAEUO5/abKNlMBUdduESO+vRgMYPyPZrWo/HvHz/O159Wry/vcjvP/Uq88eePDw8PAWU3/1Na/+k0z9z1ef5dOOgIeHh/cZXjKhfNLJdp8v3Gw+eHh4eN/DyyedV7ltQY+Hh4f3f/GSojmfXLKI/+zcw8PDw3vLy4OA9j/JOG2MeyVrwcPDw4t5eRfpe/6+0t/Dw8PDW3fVk8062dyT7X7T7no5Dh4eHt4FXhs05Mi2JTYrtaN54uHh4V3gtRFDO+ip46ddRDw8PLzbvLyo3VwOyMdvF+7R/gJ4eHh413htlJCHEZuNPj9I8PDw8G7w2oZTGyLkTbXkG9srX3h4eHif5yXR7axA3zfSijtleHh4eBd4s+2+fWd+2GyCib/09/Dw8PAO8fKgYdb0msW7+TLVRwIeHh7eIV57gWDTxJpdpRpebsDDw8O7wMvjgLOHx6xh1oYUeHh4eDd4bSS6iQmG2/qoGVb8bnh4eHgLXhIK7A+PWVPtwImHh4eHd4jXhrNtIDsLNdrLW8X88fDw8Na8thHVTutUcyufCR4eHt5neMmkZ6FG2yTbBBZRjIuHh4e35s2mOyuXN02v9roDHh4e3j3eLFrdXKvax8RFdIuHh4d3gXdqW28D1uEURyPj4eHh3eDNGvxtn+1suZyU43h4eHi3ebOCO29TzS4l7JcDDw8P7x4v32pnEcOw0l8U1nh4eHg3eM/yOXuBYB8WF0cCHh4e3iHebNudhQtJCT5blPZAwsPDw9vz9i3/ds3yz+ahxg+dPTw8PLwLvGTofOp54Hvs7Ho1Jh4eHt4X8DaB76y8Hra+8PDw8L6M1yI3keus6MfDw8O7zUs+3G7ZeVSxb339cDDg4eHhHeVtIobNOLOrCYcvDeDh4eF1vF9FKO4Ds6W1CgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'false';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Jason's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
