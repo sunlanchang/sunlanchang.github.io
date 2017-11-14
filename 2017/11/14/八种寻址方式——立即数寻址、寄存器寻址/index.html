@@ -18,25 +18,27 @@
     
     
     
-    <title>Ubuntu使用蓝灯无限流量 | Jason&#39;s Blog</title>
+    <title>八种寻址方式——立即数寻址、寄存器寻址 | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Other">
-    <meta name="description" content="lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。这里修改 MAC 地址的具体步骤如下：  通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。 关闭网卡设备 sudo /sbin/ifconfig net_card down 修改 MAC 地址 sudo /sbin/ifconfig net_card h">
-<meta name="keywords" content="Other">
+    <meta name="keywords" content="计算机组成原理">
+    <meta name="description" content="立即数寻址所需的操作数由指令直接给出，就称为立即数（或直接数）寻址方式。这种方式的特点是：取指令时，操作码和操作数同时被取出，减少了访存次数，提高了指令的执行速度。但是由于这一操作数是指令的一部分，不能修改，所以这种方式只能适用操作数固定的情况，并且操作数的位数有限。通常用于给某一寄存器单元赋初值或者提供一个常数，例如C语言里int a = 1，运用到了立即数寻址。立即数可以是8位、16位或32位">
+<meta name="keywords" content="计算机组成原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu使用蓝灯无限流量">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/index.html">
+<meta property="og:title" content="八种寻址方式——立即数寻址、寄存器寻址">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。这里修改 MAC 地址的具体步骤如下：  通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。 关闭网卡设备 sudo /sbin/ifconfig net_card down 修改 MAC 地址 sudo /sbin/ifconfig net_card h">
+<meta property="og:description" content="立即数寻址所需的操作数由指令直接给出，就称为立即数（或直接数）寻址方式。这种方式的特点是：取指令时，操作码和操作数同时被取出，减少了访存次数，提高了指令的执行速度。但是由于这一操作数是指令的一部分，不能修改，所以这种方式只能适用操作数固定的情况，并且操作数的位数有限。通常用于给某一寄存器单元赋初值或者提供一个常数，例如C语言里int a = 1，运用到了立即数寻址。立即数可以是8位、16位或32位">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-06T01:03:35.000Z">
+<meta property="og:image" content="http://sunlanchang.github.io/images/lijixunzhi.jpg">
+<meta property="og:updated_time" content="2017-11-14T09:14:13.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu使用蓝灯无限流量">
-<meta name="twitter:description" content="lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。这里修改 MAC 地址的具体步骤如下：  通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。 关闭网卡设备 sudo /sbin/ifconfig net_card down 修改 MAC 地址 sudo /sbin/ifconfig net_card h">
+<meta name="twitter:title" content="八种寻址方式——立即数寻址、寄存器寻址">
+<meta name="twitter:description" content="立即数寻址所需的操作数由指令直接给出，就称为立即数（或直接数）寻址方式。这种方式的特点是：取指令时，操作码和操作数同时被取出，减少了访存次数，提高了指令的执行速度。但是由于这一操作数是指令的一部分，不能修改，所以这种方式只能适用操作数固定的情况，并且操作数的位数有限。通常用于给某一寄存器单元赋初值或者提供一个常数，例如C语言里int a = 1，运用到了立即数寻址。立即数可以是8位、16位或32位">
+<meta name="twitter:image" content="http://sunlanchang.github.io/images/lijixunzhi.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -124,7 +126,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ubuntu使用蓝灯无限流量</div>
+        <div class="flex-col header-title ellipsis">八种寻址方式——立即数寻址、寄存器寻址</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -146,15 +148,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ubuntu使用蓝灯无限流量</h1>
+        <h1 class="title">八种寻址方式——立即数寻址、寄存器寻址</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-11-03T05:37:10.000Z" itemprop="datePublished" class="page-time">
-  2017-11-03
+                <time datetime="2017-11-14T08:55:18.000Z" itemprop="datePublished" class="page-time">
+  2017-11-14
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Other/">Other</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
 
             
         </h5>
@@ -168,16 +170,23 @@
 
 <div class="container body-wrap">
     
-<article id="post-Ubuntu使用蓝灯无限流量"
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#立即数寻址"><span class="post-toc-number">1.</span> <span class="post-toc-text">立即数寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#寄存器寻址"><span class="post-toc-number">2.</span> <span class="post-toc-text">寄存器寻址</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-八种寻址方式——立即数寻址、寄存器寻址"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ubuntu使用蓝灯无限流量</h1>
+        <h1 class="post-card-title">八种寻址方式——立即数寻址、寄存器寻址</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-11-03 13:37:10" datetime="2017-11-03T05:37:10.000Z"  itemprop="datePublished">2017-11-03</time>
+            <time class="post-time" title="2017-11-14 16:55:18" datetime="2017-11-14T08:55:18.000Z"  itemprop="datePublished">2017-11-14</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Other/">Other</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
 
 
 
@@ -189,22 +198,16 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><code>lantern</code>因为蓝灯3是通过用户的 <code>MAC</code> 地址来判断用户是否使用完免费高速流量。<br>这里修改 <code>MAC</code> 地址的具体步骤如下：</p>
-<ol>
-<li>通过 <code>ifconfig</code> 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。</li>
-<li>关闭网卡设备 <code>sudo /sbin/ifconfig net_card down</code></li>
-<li>修改 <code>MAC</code> 地址 <code>sudo /sbin/ifconfig net_card hw ether 00:AA:BB:CC:DD:EE</code> (要修改的<code>MAC</code>地址)</li>
-<li>重新启用网卡 <code>sudo /sbin/ifconfig net_card up</code></li>
-</ol>
-<p>这是临时性修改<code>MAC</code>地址的方法，系统重启之后就会失效。不过这也比较符合我们的需求，一个<code>MAC</code>地址的免费高速流量用完之后就换另一个地址。</p>
-
+            <h1 id="立即数寻址"><a href="#立即数寻址" class="headerlink" title="立即数寻址"></a>立即数寻址</h1><p>所需的操作数由指令直接给出，就称为立即数（或直接数）寻址方式。这种方式的特点是：取指令时，操作码和操作数同时被取出，减少了访存次数，提高了指令的执行速度。但是由于这一操作数是指令的一部分，不能修改，所以这种方式只能适用操作数固定的情况，并且操作数的位数有限。通常用于给某一寄存器单元赋初值或者提供一个常数，例如C语言里<code>int a = 1</code>，运用到了立即数寻址。<br>立即数可以是8位、16位或32位，该数值紧跟在操作码之后。如果立即数为16位或32位，那么，它将按“高高低低”的原则进行存储。例如：<br><figure class="highlight arm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">MOV </span>AH, <span class="number">80</span>H　　　<span class="keyword">ADD </span>AX, <span class="number">1234</span>H　　　<span class="keyword">MOV </span>ECX, <span class="number">123456</span>H</div></pre></td></tr></table></figure></p>
+<p>以上指令中的第二操作数都是立即数，在汇编语言中规定：立即数不能作为指令中的第一操作数。该规定与高级语言中“赋值语句的左边不能是常量”的规定相一致。<br>立即数寻址方式通常用于对通用寄存器或内存单元赋初值。图是指令”MOV AX, 4576H”存储形式和执行示意图。将<code>4576H</code>数据送入<code>AX</code>通用寄存器，类似于赋值语句。<br><img src="/images/lijixunzhi.jpg" alt=""></p>
+<h1 id="寄存器寻址"><a href="#寄存器寻址" class="headerlink" title="寄存器寻址"></a>寄存器寻址</h1>
         </div>
 
         <blockquote class="post-copyright">
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-06T01:03:35.000Z" itemprop="dateUpdated">2017-11-06 09:03:35</time>
+    Last updated: <time datetime="2017-11-14T09:14:13.856Z" itemprop="dateUpdated">2017-11-14 17:14:13</time>
 </span><br>
 
 
@@ -225,7 +228,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Other/">Other</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a></li></ul>
 
 
             
@@ -235,7 +238,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&title=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/&title=《八种寻址方式——立即数寻址、寄存器寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -245,22 +248,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&title=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/&title=《八种寻址方式——立即数寻址、寄存器寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《八种寻址方式——立即数寻址、寄存器寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -280,21 +283,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">八种寻址方式——立即数寻址、寄存器寻址</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/10/31/校园网自动登录脚本/" id="post-next" class="post-nav-link">
+      <a href="/2017/11/03/Ubuntu使用蓝灯无限流量/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">校园网自动登录脚本</h4>
+        <h4 class="title">Ubuntu使用蓝灯无限流量</h4>
       </a>
     </div>
   
@@ -378,7 +374,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&title=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/&title=《八种寻址方式——立即数寻址、寄存器寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -388,22 +384,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&title=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/&title=《八种寻址方式——立即数寻址、寄存器寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《八种寻址方式——立即数寻址、寄存器寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -414,7 +410,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3aQW7DMAwEwPz/0+25QG0vSTENiskpaGNb44NILPV6xZ+v28/Vb67uc/WX5P6vjQ8eHh7eG5de/WV+t+odLl8rHh4e3hrvfhO/35TvH5CUintGvh48PDy8T+bl4LzLzV8cHh4e3v/jVVvnXkuNh4eH97e8aoSa/De/T6/tPpy14OHh4cW8fIr0Od9X5nt4eHh446l6vuFWB133v6yOuy5Xi4eHh7fAm8QK1auSlnreLuPh4eFt86pDrF7PPik81QNhP9aJh4eHt8DrRa758Kw6xOrd/+HV4+Hh4S3wepdVx/zV4wLzNeDh4eFt8PJwtjckyw8cJI11eZ14eHh4a7yzw6ekOZ6XkGj9eHh4eAu8XjHIH583683ZXbWM4eHh4R3i5VvzPO2Yxw15ucLDw8Pb4N0fgco36ySAqI7Eqi34L6vCw8PDW+Cd2r6TsKD3OiYhBR4eHt4Gbz6wT8pJHukmEUPyOsoVCQ8PD6/Iyy87FT30jnyVKx4eHh7eAq96WXUTrwYZveLxUCTw8PDwFnh5bFod5ycl51Sm8lCE8PDw8I7yqht6HhPki8jL0ujQFR4eHt6Yl8Sv1VF9L8KYT+3w8PDw3smrDsN6gW+5x79dVcTGw8PDW+Al2311QfkwrHckK78zHh4e3jYv+d57WK9FnkQe5XwaDw8Pr8XLC0N1EXkYkUcehZeCh4eHt8xLqMnSq4wJqRBG4OHh4Y15X8VPNVaoBrh5WBwNw/Dw8PAWeJMQtndIa/7KJgfF8PDw8E7xJuP5PMiYh7O9ph8PDw9vj5cPxvK2OC8JZ8vPq/fm8PDw8NZ4k1FWL5JInoKHh4f3+bzJZl0dd1WDZjw8PLz38Koxax46VMf/kyb7sjDg4eHhHeVVN/ezBeNUmTkw38PDw8N75n0DFT+ccUeBOdMAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKklEQVR42u3ay24iQRAEQP//T7PXlUCQWTWWmHbMacXa0NEc0vX4+Ymfx39P8sr7159/Jv/E95918YONjY19E3ZyrByTH+v59fwT21O9OAM2Njb2cez3x0rCJk+K5OLaGMst2NjY2Nh5ebA6VnBl+deDjY2NjT2LqOQ6Zs2pL8ptbGxs7K9ht8HTFhLvW0htU2kTotjY2NjnsfOp6Pf/+1fm29jY2NhfzH6UT3sRbYxtwqlQYGNjYx/EzgNgtprTkjZLn+3yKDY2NvZ57HzUmreH8qFCO9ytkc/vgI2NjX0QexYbOfKqQUJSoiTvho2NjX0e+zdGp5vB8L6YiQoebGxs7IPY7eg0CYx8YJBcdN7kSlpU2NjY2Cex88Z620LatJ9mkVl8z9jY2Nh/jJ0UBptGfx5+belS3w02Njb2DdkzzGaEkBck7SpP0oTCxsbGPo9d3E2ZAvlSTjJCyJHRSbCxsbGPZs/aNG2bvg3CdnTx4SexsbGxD2JvfmE23G3HD/l7ztY6sbGxsf8COx/Btg2pTeNps+KDjY2NfRI7D4+8wNisWrYj5HbYUGcmNjY29q3Y7R/x7TrOz+jZDJuHVRc2Njb2zdntEmRbhOQh1F5lfkJsbGzsk9jtYk0eJ20hkUdmu0hUZyM2Njb2rdizlk2+xNOu6ez3aqLBMDY2NvZB7E37Pi9g2oO2JU1bxmBjY2OfxM4PmhcY+RD32vArLh0bGxv7IHYeBvlINW8MXdtsumDYjI2NjX1b9lVLNm10XdWiyscDLyowbGxs7IPYswWdzTu0oXXVCBkbGxv7bPamhGivI3n/WUNqVW9hY2Nj35ad/2/eWpqNY2dlT30F2NjY2MexN+s1s/WdWWRuGl4fShFsbGzsG7If5TMrANrS5cO3NBoDD/tV2NjY2F/P3uRefk2z62hLjvaKsbGxsU9iX3X0vCxpwykvioqiBRsbG/s4dk5qBwNJWm4Km3acgI2NjY2dFAzteHh2lbPiBBsbGxu7HfHOoiuPzLwd9qKphI2NjX0Qe7Nw08ZPWzbkkZmUT9jY2Njnsa+Kmdl4YP/p7QgBGxsb+yD2P2abKyYOckFyAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[八种寻址方式——立即数寻址、寄存器寻址]]></title>
+    <url>%2F2017%2F11%2F14%2F%E5%85%AB%E7%A7%8D%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E7%AB%8B%E5%8D%B3%E6%95%B0%E5%AF%BB%E5%9D%80%E3%80%81%E5%AF%84%E5%AD%98%E5%99%A8%E5%AF%BB%E5%9D%80%2F</url>
+    <content type="text"><![CDATA[立即数寻址所需的操作数由指令直接给出，就称为立即数（或直接数）寻址方式。这种方式的特点是：取指令时，操作码和操作数同时被取出，减少了访存次数，提高了指令的执行速度。但是由于这一操作数是指令的一部分，不能修改，所以这种方式只能适用操作数固定的情况，并且操作数的位数有限。通常用于给某一寄存器单元赋初值或者提供一个常数，例如C语言里int a = 1，运用到了立即数寻址。立即数可以是8位、16位或32位，该数值紧跟在操作码之后。如果立即数为16位或32位，那么，它将按“高高低低”的原则进行存储。例如：1MOV AH, 80H ADD AX, 1234H MOV ECX, 123456H 以上指令中的第二操作数都是立即数，在汇编语言中规定：立即数不能作为指令中的第一操作数。该规定与高级语言中“赋值语句的左边不能是常量”的规定相一致。立即数寻址方式通常用于对通用寄存器或内存单元赋初值。图是指令”MOV AX, 4576H”存储形式和执行示意图。将4576H数据送入AX通用寄存器，类似于赋值语句。 寄存器寻址]]></content>
+      <categories>
+        <category>计算机组成原理</category>
+      </categories>
+      <tags>
+        <tag>计算机组成原理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ubuntu使用蓝灯无限流量]]></title>
     <url>%2F2017%2F11%2F03%2FUbuntu%E4%BD%BF%E7%94%A8%E8%93%9D%E7%81%AF%E6%97%A0%E9%99%90%E6%B5%81%E9%87%8F%2F</url>
     <content type="text"><![CDATA[lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。这里修改 MAC 地址的具体步骤如下： 通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。 关闭网卡设备 sudo /sbin/ifconfig net_card down 修改 MAC 地址 sudo /sbin/ifconfig net_card hw ether 00:AA:BB:CC:DD:EE (要修改的MAC地址) 重新启用网卡 sudo /sbin/ifconfig net_card up 这是临时性修改MAC地址的方法，系统重启之后就会失效。不过这也比较符合我们的需求，一个MAC地址的免费高速流量用完之后就换另一个地址。]]></content>

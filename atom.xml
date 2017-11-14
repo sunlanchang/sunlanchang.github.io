@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-11-06T01:03:35.000Z</updated>
+  <updated>2017-11-14T09:14:13.856Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>八种寻址方式——立即数寻址、寄存器寻址</title>
+    <link href="http://sunlanchang.github.io/2017/11/14/%E5%85%AB%E7%A7%8D%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E7%AB%8B%E5%8D%B3%E6%95%B0%E5%AF%BB%E5%9D%80%E3%80%81%E5%AF%84%E5%AD%98%E5%99%A8%E5%AF%BB%E5%9D%80/"/>
+    <id>http://sunlanchang.github.io/2017/11/14/八种寻址方式——立即数寻址、寄存器寻址/</id>
+    <published>2017-11-14T08:55:18.000Z</published>
+    <updated>2017-11-14T09:14:13.856Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="立即数寻址"><a href="#立即数寻址" class="headerlink" title="立即数寻址"></a>立即数寻址</h1><p>所需的操作数由指令直接给出，就称为立即数（或直接数）寻址方式。这种方式的特点是：取指令时，操作码和操作数同时被取出，减少了访存次数，提高了指令的执行速度。但是由于这一操作数是指令的一部分，不能修改，所以这种方式只能适用操作数固定的情况，并且操作数的位数有限。通常用于给某一寄存器单元赋初值或者提供一个常数，例如C语言里<code>int a = 1</code>，运用到了立即数寻址。<br>立即数可以是8位、16位或32位，该数值紧跟在操作码之后。如果立即数为16位或32位，那么，它将按“高高低低”的原则进行存储。例如：<br><figure class="highlight arm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">MOV </span>AH, <span class="number">80</span>H　　　<span class="keyword">ADD </span>AX, <span class="number">1234</span>H　　　<span class="keyword">MOV </span>ECX, <span class="number">123456</span>H</div></pre></td></tr></table></figure></p><p>以上指令中的第二操作数都是立即数，在汇编语言中规定：立即数不能作为指令中的第一操作数。该规定与高级语言中“赋值语句的左边不能是常量”的规定相一致。<br>立即数寻址方式通常用于对通用寄存器或内存单元赋初值。图是指令”MOV AX, 4576H”存储形式和执行示意图。将<code>4576H</code>数据送入<code>AX</code>通用寄存器，类似于赋值语句。<br><img src="/images/lijixunzhi.jpg" alt=""></p><h1 id="寄存器寻址"><a href="#寄存器寻址" class="headerlink" title="寄存器寻址"></a>寄存器寻址</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;立即数寻址&quot;&gt;&lt;a href=&quot;#立即数寻址&quot; class=&quot;headerlink&quot; title=&quot;立即数寻址&quot;&gt;&lt;/a&gt;立即数寻址&lt;/h1&gt;&lt;p&gt;所需的操作数由指令直接给出，就称为立即数（或直接数）寻址方式。这种方式的特点是：取指令时，操作码和操作数同时被取出，
+      
+    
+    </summary>
+    
+      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu使用蓝灯无限流量</title>
