@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-11-17T15:11:28.387Z</updated>
+  <updated>2017-11-17T15:15:15.667Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://sunlanchang.github.io/2017/11/17/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B9%8B%E2%80%94%E2%80%94%E7%9B%B4%E6%8E%A5%E5%AF%BB%E5%9D%80%E3%80%81%E9%97%B4%E6%8E%A5%E5%AF%BB%E5%9D%80/"/>
     <id>http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/</id>
     <published>2017-11-17T14:31:12.000Z</published>
-    <updated>2017-11-17T15:11:28.387Z</updated>
+    <updated>2017-11-17T15:15:15.667Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h1><p>指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图<br><img src="/images/zhijiexunzhi.gif" alt=""><br>注意：立即寻址方式和直接寻址方式的书写格式的不同，直接寻址的地址要写在括号“[”，“]”内。在程序中，直接地址通常用内存变量名来表示，如：MOV BX, VARW，其中，VARW是内存字变量。<br>试比较下列指令中源操作数的寻址方式(VARW是内存字变量)：<br><figure class="highlight arm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">MOV　</span>AX, <span class="number">1234</span>H<span class="comment">;    MOV　AX, [1234H] ;前者是立即寻址，后者是直接寻址</span></div><div class="line"><span class="keyword">MOV　</span>AX, VARW<span class="comment">;     MOV　AX, [VARW] ;两者是等效的，均为直接寻址</span></div></pre></td></tr></table></figure></p><h1 id="间接寻址"><a href="#间接寻址" class="headerlink" title="间接寻址"></a>间接寻址</h1><p>在寻址是，有时根据指令的地址码所取出的内容既不是操作数，也不是下一条要执行的指令，而是操作数的地址或指令的地址，这种方式成为间接寻址。根据地址码指的是寄存器地址还是存储器地址，间接寻址又可以分为寄存器间接寻址和存储器间接寻址两种方式。间接寻址有一次间接寻址和间接寻址两种情况，大多数计算机只允许一次间接寻址。对于存储器一次间接寻址情况，许访问两次存储器才能取得数据，第一次从存储器读出操作数地址，第二次读出操作数。如下图所示<br><img src="/images/jianjiexunzhi.png" alt=""><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/jicunqijianjiexunzhi.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure>  </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h1><p>指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图<br><img src="/images/zhijiexunzhi.gif" alt=""><br>注意：立即寻址方式和直接寻址方式的书写格式的不同，直接寻址的地址要写在括号“[”，“]”内。在程序中，直接地址通常用内存变量名来表示，如：MOV BX, VARW，其中，VARW是内存字变量。<br>试比较下列指令中源操作数的寻址方式(VARW是内存字变量)：<br><figure class="highlight arm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">MOV　</span>AX, <span class="number">1234</span>H<span class="comment">;    MOV　AX, [1234H] ;前者是立即寻址，后者是直接寻址</span></div><div class="line"><span class="keyword">MOV　</span>AX, VARW<span class="comment">;     MOV　AX, [VARW] ;两者是等效的，均为直接寻址</span></div></pre></td></tr></table></figure></p><h1 id="间接寻址"><a href="#间接寻址" class="headerlink" title="间接寻址"></a>间接寻址</h1><p>在寻址是，有时根据指令的地址码所取出的内容既不是操作数，也不是下一条要执行的指令，而是操作数的地址或指令的地址，这种方式成为间接寻址。根据地址码指的是寄存器地址还是存储器地址，间接寻址又可以分为寄存器间接寻址和存储器间接寻址两种方式。间接寻址有一次间接寻址和间接寻址两种情况，大多数计算机只允许一次间接寻址。对于存储器一次间接寻址情况，许访问两次存储器才能取得数据，第一次从存储器读出操作数地址，第二次读出操作数。如下图所示<br><img src="/images/jianjiexunzhi.png" alt="存储器间接寻址"><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/jicunqijianjiexunzhi.jpg" alt="寄存器间接寻址" title="">                </div>                <div class="image-caption">寄存器间接寻址</div>            </figure>  </p>]]></content>
     
     <summary type="html">
     
