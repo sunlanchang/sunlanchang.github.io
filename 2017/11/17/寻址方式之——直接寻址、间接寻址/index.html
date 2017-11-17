@@ -18,25 +18,29 @@
     
     
     
-    <title>Ubuntu使用蓝灯无限流量 | Jason&#39;s Blog</title>
+    <title>寻址方式之——直接寻址、间接寻址 | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Other">
-    <meta name="description" content="lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。这里修改 MAC 地址的具体步骤如下：  通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。 关闭网卡设备 sudo /sbin/ifconfig net_card down 修改 MAC 地址 sudo /sbin/ifconfig net_card h">
-<meta name="keywords" content="Other">
+    <meta name="keywords" content="计算机组成原理">
+    <meta name="description" content="直接寻址指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图注意：立即寻址方式和直接寻址方式的书写格式的不同，直接寻址的地址要写在括号“[”，“]”内。在程序中，直接地址通常用内存变量名来表示，如：MOV BX, VARW，其中，VARW是内存字变量。试比较下列指令中源操作数的寻址方式(VARW是内存字变量)：12MOV　AX, 1234H;">
+<meta name="keywords" content="计算机组成原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu使用蓝灯无限流量">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/index.html">
+<meta property="og:title" content="寻址方式之——直接寻址、间接寻址">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。这里修改 MAC 地址的具体步骤如下：  通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。 关闭网卡设备 sudo /sbin/ifconfig net_card down 修改 MAC 地址 sudo /sbin/ifconfig net_card h">
+<meta property="og:description" content="直接寻址指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图注意：立即寻址方式和直接寻址方式的书写格式的不同，直接寻址的地址要写在括号“[”，“]”内。在程序中，直接地址通常用内存变量名来表示，如：MOV BX, VARW，其中，VARW是内存字变量。试比较下列指令中源操作数的寻址方式(VARW是内存字变量)：12MOV　AX, 1234H;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-06T01:03:35.000Z">
+<meta property="og:image" content="http://sunlanchang.github.io/images/zhijiexunzhi.gif">
+<meta property="og:image" content="http://sunlanchang.github.io/images/jianjiexunzhi.png">
+<meta property="og:image" content="http://sunlanchang.github.io/images/jicunqijianjiexunzhi.jpg">
+<meta property="og:updated_time" content="2017-11-17T15:11:28.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu使用蓝灯无限流量">
-<meta name="twitter:description" content="lantern因为蓝灯3是通过用户的 MAC 地址来判断用户是否使用完免费高速流量。这里修改 MAC 地址的具体步骤如下：  通过 ifconfig 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。 关闭网卡设备 sudo /sbin/ifconfig net_card down 修改 MAC 地址 sudo /sbin/ifconfig net_card h">
+<meta name="twitter:title" content="寻址方式之——直接寻址、间接寻址">
+<meta name="twitter:description" content="直接寻址指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图注意：立即寻址方式和直接寻址方式的书写格式的不同，直接寻址的地址要写在括号“[”，“]”内。在程序中，直接地址通常用内存变量名来表示，如：MOV BX, VARW，其中，VARW是内存字变量。试比较下列指令中源操作数的寻址方式(VARW是内存字变量)：12MOV　AX, 1234H;">
+<meta name="twitter:image" content="http://sunlanchang.github.io/images/zhijiexunzhi.gif">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -124,7 +128,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Ubuntu使用蓝灯无限流量</div>
+        <div class="flex-col header-title ellipsis">寻址方式之——直接寻址、间接寻址</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -146,15 +150,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Ubuntu使用蓝灯无限流量</h1>
+        <h1 class="title">寻址方式之——直接寻址、间接寻址</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-11-03T05:37:10.000Z" itemprop="datePublished" class="page-time">
-  2017-11-03
+                <time datetime="2017-11-17T14:31:12.000Z" itemprop="datePublished" class="page-time">
+  2017-11-17
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Other/">Other</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
 
             
         </h5>
@@ -168,16 +172,23 @@
 
 <div class="container body-wrap">
     
-<article id="post-Ubuntu使用蓝灯无限流量"
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#直接寻址"><span class="post-toc-number">1.</span> <span class="post-toc-text">直接寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#间接寻址"><span class="post-toc-number">2.</span> <span class="post-toc-text">间接寻址</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-寻址方式之——直接寻址、间接寻址"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Ubuntu使用蓝灯无限流量</h1>
+        <h1 class="post-card-title">寻址方式之——直接寻址、间接寻址</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-11-03 13:37:10" datetime="2017-11-03T05:37:10.000Z"  itemprop="datePublished">2017-11-03</time>
+            <time class="post-time" title="2017-11-17 22:31:12" datetime="2017-11-17T14:31:12.000Z"  itemprop="datePublished">2017-11-17</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Other/">Other</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
 
 
 
@@ -189,14 +200,14 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><code>lantern</code>因为蓝灯3是通过用户的 <code>MAC</code> 地址来判断用户是否使用完免费高速流量。<br>这里修改 <code>MAC</code> 地址的具体步骤如下：</p>
-<ol>
-<li>通过 <code>ifconfig</code> 查看网卡设备，这里是enp2s0，有些地方是 eth0，以下统称 net_card 。</li>
-<li>关闭网卡设备 <code>sudo /sbin/ifconfig net_card down</code></li>
-<li>修改 <code>MAC</code> 地址 <code>sudo /sbin/ifconfig net_card hw ether 00:AA:BB:CC:DD:EE</code> (要修改的<code>MAC</code>地址)</li>
-<li>重新启用网卡 <code>sudo /sbin/ifconfig net_card up</code></li>
-</ol>
-<p>这是临时性修改<code>MAC</code>地址的方法，系统重启之后就会失效。不过这也比较符合我们的需求，一个<code>MAC</code>地址的免费高速流量用完之后就换另一个地址。</p>
+            <h1 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h1><p>指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图<br><img src="/images/zhijiexunzhi.gif" alt=""><br>注意：立即寻址方式和直接寻址方式的书写格式的不同，直接寻址的地址要写在括号“[”，“]”内。在程序中，直接地址通常用内存变量名来表示，如：MOV BX, VARW，其中，VARW是内存字变量。<br>试比较下列指令中源操作数的寻址方式(VARW是内存字变量)：<br><figure class="highlight arm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">MOV　</span>AX, <span class="number">1234</span>H<span class="comment">;    MOV　AX, [1234H] ;前者是立即寻址，后者是直接寻址</span></div><div class="line"><span class="keyword">MOV　</span>AX, VARW<span class="comment">;     MOV　AX, [VARW] ;两者是等效的，均为直接寻址</span></div></pre></td></tr></table></figure></p>
+<h1 id="间接寻址"><a href="#间接寻址" class="headerlink" title="间接寻址"></a>间接寻址</h1><p>在寻址是，有时根据指令的地址码所取出的内容既不是操作数，也不是下一条要执行的指令，而是操作数的地址或指令的地址，这种方式成为间接寻址。根据地址码指的是寄存器地址还是存储器地址，间接寻址又可以分为寄存器间接寻址和存储器间接寻址两种方式。间接寻址有一次间接寻址和间接寻址两种情况，大多数计算机只允许一次间接寻址。对于存储器一次间接寻址情况，许访问两次存储器才能取得数据，第一次从存储器读出操作数地址，第二次读出操作数。如下图所示<br><img src="/images/jianjiexunzhi.png" alt=""><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/jicunqijianjiexunzhi.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>  </p>
 
         </div>
 
@@ -204,7 +215,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-06T01:03:35.000Z" itemprop="dateUpdated">2017-11-06 09:03:35</time>
+    Last updated: <time datetime="2017-11-17T15:11:28.387Z" itemprop="dateUpdated">2017-11-17 23:11:28</time>
 </span><br>
 
 
@@ -225,7 +236,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Other/">Other</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a></li></ul>
 
 
             
@@ -235,7 +246,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&title=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&title=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -245,22 +256,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&title=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&title=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -280,21 +291,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/11/14/寻址方式——立即数寻址、寄存器寻址/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">寻址方式之——立即数寻址、寄存器寻址</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/10/31/校园网自动登录脚本/" id="post-next" class="post-nav-link">
+      <a href="/2017/11/14/IP地址、IP子网、CIDR/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">校园网自动登录脚本</h4>
+        <h4 class="title">IP地址、IP子网、CIDR</h4>
       </a>
     </div>
   
@@ -378,7 +382,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&title=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&title=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -388,22 +392,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&title=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&title=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ubuntu使用蓝灯无限流量》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/03/Ubuntu使用蓝灯无限流量/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -414,7 +418,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3aQW7DMAwEwPz/0+25QG0vSTENiskpaGNb44NILPV6xZ+v28/Vb67uc/WX5P6vjQ8eHh7eG5de/WV+t+odLl8rHh4e3hrvfhO/35TvH5CUintGvh48PDy8T+bl4LzLzV8cHh4e3v/jVVvnXkuNh4eH97e8aoSa/De/T6/tPpy14OHh4cW8fIr0Od9X5nt4eHh446l6vuFWB133v6yOuy5Xi4eHh7fAm8QK1auSlnreLuPh4eFt86pDrF7PPik81QNhP9aJh4eHt8DrRa758Kw6xOrd/+HV4+Hh4S3wepdVx/zV4wLzNeDh4eFt8PJwtjckyw8cJI11eZ14eHh4a7yzw6ekOZ6XkGj9eHh4eAu8XjHIH583683ZXbWM4eHh4R3i5VvzPO2Yxw15ucLDw8Pb4N0fgco36ySAqI7Eqi34L6vCw8PDW+Cd2r6TsKD3OiYhBR4eHt4Gbz6wT8pJHukmEUPyOsoVCQ8PD6/Iyy87FT30jnyVKx4eHh7eAq96WXUTrwYZveLxUCTw8PDwFnh5bFod5ycl51Sm8lCE8PDw8I7yqht6HhPki8jL0ujQFR4eHt6Yl8Sv1VF9L8KYT+3w8PDw3smrDsN6gW+5x79dVcTGw8PDW+Al2311QfkwrHckK78zHh4e3jYv+d57WK9FnkQe5XwaDw8Pr8XLC0N1EXkYkUcehZeCh4eHt8xLqMnSq4wJqRBG4OHh4Y15X8VPNVaoBrh5WBwNw/Dw8PAWeJMQtndIa/7KJgfF8PDw8E7xJuP5PMiYh7O9ph8PDw9vj5cPxvK2OC8JZ8vPq/fm8PDw8NZ4k1FWL5JInoKHh4f3+bzJZl0dd1WDZjw8PLz38Koxax46VMf/kyb7sjDg4eHhHeVVN/ezBeNUmTkw38PDw8N75n0DFT+ccUeBOdMAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMElEQVR42u3aQZIiMQwEwPn/p9kHbABVUhNBm+zTxgzrdpqDxir9/cXP478n/+3rzyRrvl7n2RsveLCxsbFvwn68fJ5t4tmGnv3k9XHM1ny2QnQ02NjY2MexZxsqXlOWq7ak5RZsbGxs7ORakmy3LVGv94ONjY2Nfe0loS1FybHOyh42Njb277CTplIbFeRXiNdvyY/jI700bGxs7K9n56no9//7I/k2NjY29hezH+WTt37adfbFqXg7NjY29kHsvABsQty2AdRebGbrYGNjY5/BbhvreYsnb+UkJa29crx5OzY2NvZx7HzIZjZ2k1w2ZpFD8iW9yUOwsbGxb86eRaqbV+YtpDb6zQskNjY29kns/JWzFk97TLMWVTsMhI2NjX0q+9qZlrwEJivPrkBPP4+NjY19EHuVD5dXkWGxKfeTRwjY2NjYJ7E3LZs8mr2qUOWXkKTcYmNjY9+dnVxFZu3+fTOobTnVES82Njb2cexZEz9v9CRHNguD691iY2NjH8RuS9osEm6b+zm7DZWHlRwbGxv769mbc5q1kPLweN9mwsbGxj6bnZel9pP5yM7mmPKYeViNsbGxsY9g77eyL5CbGONppo2NjY19EHtWJD4dJLQHkV+KsLGxsc9jJ4M1bbu/beJvGkx12IyNjY19EHvzp/9wOCa/MKwHceqRHWxsbOybs183aJLRmRa/GcGZfSVvGkzY2NjYN2S3ZWMzQHPtNaN9Y1HZsLGxsW/LTrZYtOCvCmWD9etIAxsbG/sg9v4ekwz9fGLl9udFPICNjY19Q3be1skD2ra5n4/47ENobGxs7LPZeflJ/uhvG0xXHWtx/cDGxsY+jj2jJiVkNohz7aBnfRXBxsbGvhU7KQN5NJv/37bpvxkMwsbGxj6P/SiffPgmwbRlrI2B34zsYGNjYx/BnhWAtgm1j4r3qw2PABsbG/sm7LxoXXU07Wpt2BDtGRsbG/s49qZ9n18S8nh4NtZTfA3Y2NjYP8/eFKo2Nm7LVdTkwsbGxsYuB31WW1yMB2FjY2P/DjsvG+34TnuRmMXDSVMJGxsb+1R2u5U8N87LXvv2ffCMjY2NfQT7H7+aU+/bmLdUAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
