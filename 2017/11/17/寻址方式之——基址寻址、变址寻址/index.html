@@ -18,29 +18,28 @@
     
     
     
-    <title>寻址方式之——直接寻址、间接寻址 | Jason&#39;s Blog</title>
+    <title>寻址方式之——基址寻址、变址寻址 | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="计算机组成原理">
-    <meta name="description" content="直接寻址指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图注意：立即寻址方式和直接寻址方式的书写格式的不同，直接寻址的地址要写在括号“[”，“]”内。在程序中，直接地址通常用内存变量名来表示，如：MOV BX, VARW，其中，VARW是内存字变量。试比较下列指令中源操作数的寻址方式(VARW是内存字变量)：12MOV　AX, 1234H;">
+    <meta name="description" content="基址寻址 在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令的地址码A相加得到，这种情况下地址码A常被成为位移量（disp）。 当存储器容量比较大，有指令的地址码部分直接给出的地址不能直接访问到存储器的单元时，通常将存储器分成若干段，段的首地址存放在基址寄存器中，段内的位移量由指令给出。存储器的实际地址就等于基址寄存器和段内位移量相加。">
 <meta name="keywords" content="计算机组成原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="寻址方式之——直接寻址、间接寻址">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/index.html">
+<meta property="og:title" content="寻址方式之——基址寻址、变址寻址">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="直接寻址指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图注意：立即寻址方式和直接寻址方式的书写格式的不同，直接寻址的地址要写在括号“[”，“]”内。在程序中，直接地址通常用内存变量名来表示，如：MOV BX, VARW，其中，VARW是内存字变量。试比较下列指令中源操作数的寻址方式(VARW是内存字变量)：12MOV　AX, 1234H;">
+<meta property="og:description" content="基址寻址 在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令的地址码A相加得到，这种情况下地址码A常被成为位移量（disp）。 当存储器容量比较大，有指令的地址码部分直接给出的地址不能直接访问到存储器的单元时，通常将存储器分成若干段，段的首地址存放在基址寄存器中，段内的位移量由指令给出。存储器的实际地址就等于基址寄存器和段内位移量相加。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://sunlanchang.github.io/images/zhijiexunzhi.gif">
-<meta property="og:image" content="http://sunlanchang.github.io/images/jianjiexunzhi.png">
-<meta property="og:image" content="http://sunlanchang.github.io/images/jicunqijianjiexunzhi.jpg">
-<meta property="og:updated_time" content="2017-11-17T15:15:15.667Z">
+<meta property="og:image" content="http://sunlanchang.github.io/images/jizhixunzhi.jpg">
+<meta property="og:image" content="http://sunlanchang.github.io/images/bianzhixunzhi.jpg">
+<meta property="og:updated_time" content="2017-11-18T15:25:58.069Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="寻址方式之——直接寻址、间接寻址">
-<meta name="twitter:description" content="直接寻址指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图注意：立即寻址方式和直接寻址方式的书写格式的不同，直接寻址的地址要写在括号“[”，“]”内。在程序中，直接地址通常用内存变量名来表示，如：MOV BX, VARW，其中，VARW是内存字变量。试比较下列指令中源操作数的寻址方式(VARW是内存字变量)：12MOV　AX, 1234H;">
-<meta name="twitter:image" content="http://sunlanchang.github.io/images/zhijiexunzhi.gif">
+<meta name="twitter:title" content="寻址方式之——基址寻址、变址寻址">
+<meta name="twitter:description" content="基址寻址 在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令的地址码A相加得到，这种情况下地址码A常被成为位移量（disp）。 当存储器容量比较大，有指令的地址码部分直接给出的地址不能直接访问到存储器的单元时，通常将存储器分成若干段，段的首地址存放在基址寄存器中，段内的位移量由指令给出。存储器的实际地址就等于基址寄存器和段内位移量相加。">
+<meta name="twitter:image" content="http://sunlanchang.github.io/images/jizhixunzhi.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -128,7 +127,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">寻址方式之——直接寻址、间接寻址</div>
+        <div class="flex-col header-title ellipsis">寻址方式之——基址寻址、变址寻址</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -150,10 +149,10 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">寻址方式之——直接寻址、间接寻址</h1>
+        <h1 class="title">寻址方式之——基址寻址、变址寻址</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-11-17T14:31:12.000Z" itemprop="datePublished" class="page-time">
+                <time datetime="2017-11-17T15:17:59.000Z" itemprop="datePublished" class="page-time">
   2017-11-17
 </time>
 
@@ -175,17 +174,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#直接寻址"><span class="post-toc-number">1.</span> <span class="post-toc-text">直接寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#间接寻址"><span class="post-toc-number">2.</span> <span class="post-toc-text">间接寻址</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基址寻址"><span class="post-toc-number">1.</span> <span class="post-toc-text">基址寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#变址寻址"><span class="post-toc-number">2.</span> <span class="post-toc-text">变址寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">区别</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-寻址方式之——直接寻址、间接寻址"
+<article id="post-寻址方式之——基址寻址、变址寻址"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">寻址方式之——直接寻址、间接寻址</h1>
+        <h1 class="post-card-title">寻址方式之——基址寻址、变址寻址</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-11-17 22:31:12" datetime="2017-11-17T14:31:12.000Z"  itemprop="datePublished">2017-11-17</time>
+            <time class="post-time" title="2017-11-17 23:17:59" datetime="2017-11-17T15:17:59.000Z"  itemprop="datePublished">2017-11-17</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
@@ -200,14 +199,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h1><p>指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图<br><img src="/images/zhijiexunzhi.gif" alt=""><br>注意：立即寻址方式和直接寻址方式的书写格式的不同，直接寻址的地址要写在括号“[”，“]”内。在程序中，直接地址通常用内存变量名来表示，如：MOV BX, VARW，其中，VARW是内存字变量。<br>试比较下列指令中源操作数的寻址方式(VARW是内存字变量)：<br><figure class="highlight arm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">MOV　</span>AX, <span class="number">1234</span>H<span class="comment">;    MOV　AX, [1234H] ;前者是立即寻址，后者是直接寻址</span></div><div class="line"><span class="keyword">MOV　</span>AX, VARW<span class="comment">;     MOV　AX, [VARW] ;两者是等效的，均为直接寻址</span></div></pre></td></tr></table></figure></p>
-<h1 id="间接寻址"><a href="#间接寻址" class="headerlink" title="间接寻址"></a>间接寻址</h1><p>在寻址是，有时根据指令的地址码所取出的内容既不是操作数，也不是下一条要执行的指令，而是操作数的地址或指令的地址，这种方式成为间接寻址。根据地址码指的是寄存器地址还是存储器地址，间接寻址又可以分为寄存器间接寻址和存储器间接寻址两种方式。间接寻址有一次间接寻址和间接寻址两种情况，大多数计算机只允许一次间接寻址。对于存储器一次间接寻址情况，许访问两次存储器才能取得数据，第一次从存储器读出操作数地址，第二次读出操作数。如下图所示<br><img src="/images/jianjiexunzhi.png" alt="存储器间接寻址"><br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/images/jicunqijianjiexunzhi.jpg" alt="寄存器间接寻址" title="">
-                </div>
-                <div class="image-caption">寄存器间接寻址</div>
-            </figure>  </p>
+            <h1 id="基址寻址"><a href="#基址寻址" class="headerlink" title="基址寻址"></a>基址寻址</h1><ol>
+<li>在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令的地址码A相加得到，这种情况下地址码A常被成为位移量（disp）。</li>
+<li>当存储器容量比较大，有指令的地址码部分直接给出的地址不能直接访问到存储器的单元时，通常将存储器分成若干段，段的首地址存放在基址寄存器中，段内的位移量由指令给出。存储器的实际地址就等于基址寄存器和段内位移量相加。</li>
+<li>基址寻址主要用来解决程序在存储器中的定位和扩大寻址空间等问题。通常基址寄存器只能由系统程序设定，由特权指令执行，一般用户不能够修改，保证了系统的安全性。<br><img src="/images/jizhixunzhi.jpg" alt=""><h1 id="变址寻址"><a href="#变址寻址" class="headerlink" title="变址寻址"></a>变址寻址</h1>指令地址码给出地址A和指定的变址寄存器R,将A和R的内容相加就是操作数的地址。常利用变址操作与循环执行程序的方法对数组进行运算。<br><img src="/images/bianzhixunzhi.jpg" alt=""><h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1></li>
+</ol>
+<ul>
+<li>基址寻址主要用于为程序或数据分配存储空间，故基址寄存器的内容通常由操作系统或管理程序确定，在程序运行过程中，值是不可变的，而指令字中的地址码是可变的。</li>
+<li>变址寻址中，变址寄存器的内容是用户自己设定的，在程序运行过程中是可变的，而指令字中的地址码是不可变的。编制寻址主要用于处理数组等问题，并且特别适合编制循环程序。</li>
+</ul>
 
         </div>
 
@@ -215,7 +215,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-17T15:15:15.667Z" itemprop="dateUpdated">2017-11-17 23:15:15</time>
+    Last updated: <time datetime="2017-11-18T15:25:58.069Z" itemprop="dateUpdated">2017-11-18 23:25:58</time>
 </span><br>
 
 
@@ -246,7 +246,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&title=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&title=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -256,22 +256,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&title=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&title=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -291,21 +291,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/11/17/寻址方式之——基址寻址、变址寻址/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">寻址方式之——基址寻址、变址寻址</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/11/14/IP地址、IP子网、CIDR/" id="post-next" class="post-nav-link">
+      <a href="/2017/11/17/寻址方式之——直接寻址、间接寻址/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">IP地址、IP子网、CIDR</h4>
+        <h4 class="title">寻址方式之——直接寻址、间接寻址</h4>
       </a>
     </div>
   
@@ -389,7 +382,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&title=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&title=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -399,22 +392,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&title=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&title=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《寻址方式之——直接寻址、间接寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -425,7 +418,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMElEQVR42u3aQZIiMQwEwPn/p9kHbABVUhNBm+zTxgzrdpqDxir9/cXP478n/+3rzyRrvl7n2RsveLCxsbFvwn68fJ5t4tmGnv3k9XHM1ny2QnQ02NjY2MexZxsqXlOWq7ak5RZsbGxs7ORakmy3LVGv94ONjY2Nfe0loS1FybHOyh42Njb277CTplIbFeRXiNdvyY/jI700bGxs7K9n56no9//7I/k2NjY29hezH+WTt37adfbFqXg7NjY29kHsvABsQty2AdRebGbrYGNjY5/BbhvreYsnb+UkJa29crx5OzY2NvZx7HzIZjZ2k1w2ZpFD8iW9yUOwsbGxb86eRaqbV+YtpDb6zQskNjY29kns/JWzFk97TLMWVTsMhI2NjX0q+9qZlrwEJivPrkBPP4+NjY19EHuVD5dXkWGxKfeTRwjY2NjYJ7E3LZs8mr2qUOWXkKTcYmNjY9+dnVxFZu3+fTOobTnVES82Njb2cexZEz9v9CRHNguD691iY2NjH8RuS9osEm6b+zm7DZWHlRwbGxv769mbc5q1kPLweN9mwsbGxj6bnZel9pP5yM7mmPKYeViNsbGxsY9g77eyL5CbGONppo2NjY19EHtWJD4dJLQHkV+KsLGxsc9jJ4M1bbu/beJvGkx12IyNjY19EHvzp/9wOCa/MKwHceqRHWxsbOybs183aJLRmRa/GcGZfSVvGkzY2NjYN2S3ZWMzQHPtNaN9Y1HZsLGxsW/LTrZYtOCvCmWD9etIAxsbG/sg9v4ekwz9fGLl9udFPICNjY19Q3be1skD2ra5n4/47ENobGxs7LPZeflJ/uhvG0xXHWtx/cDGxsY+jj2jJiVkNohz7aBnfRXBxsbGvhU7KQN5NJv/37bpvxkMwsbGxj6P/SiffPgmwbRlrI2B34zsYGNjYx/BnhWAtgm1j4r3qw2PABsbG/sm7LxoXXU07Wpt2BDtGRsbG/s49qZ9n18S8nh4NtZTfA3Y2NjYP8/eFKo2Nm7LVdTkwsbGxsYuB31WW1yMB2FjY2P/DjsvG+34TnuRmMXDSVMJGxsb+1R2u5U8N87LXvv2ffCMjY2NfQT7H7+aU+/bmLdUAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADE0lEQVR42u3aQW7jQAwEQP//015grwspTVJZW1TpFCDGSDWXxrDn9Yqf998n+fvombzrfLXq+i9sbGzsdezkc49eln9Q/pbzt1dXONx6bGxs7HXsamj1wqmXI//+MvnOH4zY2NjYj2SfU6txkqxT3XpsbGxs7EkwVINt8t4P5DY2Njb217PzYc28SOjF1XlM/uIsDRsbG/vr2dcWvZ/9+2P9NjY2NvaH2O/xU13/qmp5osDGxsbexK4eM5Lf5zHTK26r5USTgY2NjX0T9vwiY29kk29cNboSFzY2NvY+9iTS8o3I42pyLEmiDhsbG3sfOx/u5IVrArv2eJNsKzY2NvZWdnVAM7/Qc14zJJF2QSuCjY2NvYg9L1wL4dHagrxCiEZL2NjY2IvY1XFMfn2n3DYHsTc/GmFjY2M/jd0Lqknl0Bs/5dFb6J+xsbGxb8JOgmFyIKkeIXpDrmq4YmNjY+9mJwOmXoTkKdqLz7xmwMbGxt7EnoyKqqVCdYVyLMXbh42Njb2PnRw55sePfCOuGkI1x0zY2NjYt2JX46R61aa6lVVGr6jGxsbG3seuRkIeP1cVCb1RVDRLw8bGxl7BrhYDvSjqXbvpwbCxsbGfw84v5eSfXl2zt3HVo1G5GMDGxsa+CTsPgDx48iNH/pZJRB3WA9jY2Njr2NV4qGJGB4bW1Z/DLcDGxsZexI5q0VZZO/n9vDaO/ouNjY29mj0/PEwKgP9UD2NjY2OvYPcWnRQJ1f9OjiiH62NjY2MvYucjm2qYTeqB6vCoekETGxsbeyt7fkUmD5jJhZ6Lr/5gY2NjL2VXDwA9WB57vXFYZMHGxsZ+ADuvcquXbCY18DwssbGxsXew38WnOnjqxVteVzRHYNjY2NiL2PMDxrUlbv6h599zVehiY2Nj34WdhNak4k0+pRqQ1TIAGxsb+wnsq44N89V6v89HWtjY2NjY+Tip+rmTLatGLDY2NvYz2flgqDfTmmx0eaSFjY2NvY5d/fTeOGlSKlw12MLGxsbex54UvXnwTI4x1eri1/ttbGxs7G9h/wGKGhKFA6IfbAAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
