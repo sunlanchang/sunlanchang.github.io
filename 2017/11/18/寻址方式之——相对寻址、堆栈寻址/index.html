@@ -18,28 +18,27 @@
     
     
     
-    <title>寻址方式之——基址寻址、变址寻址 | Jason&#39;s Blog</title>
+    <title>寻址方式之——相对寻址、堆栈寻址 | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="计算机组成原理">
-    <meta name="description" content="基址寻址 在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令的地址码A相加得到，这种情况下地址码A常被成为位移量（disp）。 当存储器容量比较大，有指令的地址码部分直接给出的地址不能直接访问到存储器的单元时，通常将存储器分成若干段，段的首地址存放在基址寄存器中，段内的位移量由指令给出。存储器的实际地址就等于基址寄存器和段内位移量相加。">
+    <meta name="description" content="相对寻址 与基址变址寻址方式相类似，相对寻址以程序计数器PC的当前值（R15中的值）为基地址，指令中的地址标号作为偏移量，将两者相加后得到操作数的有效地址。 相对寻址主要用于转移指令，执行本条命令后，转移到（PC）+ Disp，（PC）为程序计数器的内容。 特点：   转移地址不是固定的，它随着PC值的变化而变化，并且总是与PC相差一个固定的值disp，因此无论程序转入存储器的任何地方，均能正确运">
 <meta name="keywords" content="计算机组成原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="寻址方式之——基址寻址、变址寻址">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/index.html">
+<meta property="og:title" content="寻址方式之——相对寻址、堆栈寻址">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/11/18/寻址方式之——相对寻址、堆栈寻址/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="基址寻址 在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令的地址码A相加得到，这种情况下地址码A常被成为位移量（disp）。 当存储器容量比较大，有指令的地址码部分直接给出的地址不能直接访问到存储器的单元时，通常将存储器分成若干段，段的首地址存放在基址寄存器中，段内的位移量由指令给出。存储器的实际地址就等于基址寄存器和段内位移量相加。">
+<meta property="og:description" content="相对寻址 与基址变址寻址方式相类似，相对寻址以程序计数器PC的当前值（R15中的值）为基地址，指令中的地址标号作为偏移量，将两者相加后得到操作数的有效地址。 相对寻址主要用于转移指令，执行本条命令后，转移到（PC）+ Disp，（PC）为程序计数器的内容。 特点：   转移地址不是固定的，它随着PC值的变化而变化，并且总是与PC相差一个固定的值disp，因此无论程序转入存储器的任何地方，均能正确运">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://sunlanchang.github.io/images/jizhixunzhi.jpg">
-<meta property="og:image" content="http://sunlanchang.github.io/images/bianzhixunzhi.jpg">
-<meta property="og:updated_time" content="2017-11-18T15:25:58.069Z">
+<meta property="og:image" content="http://sunlanchang.github.io/images/xiangduixunzhi.png">
+<meta property="og:updated_time" content="2017-11-19T09:06:21.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="寻址方式之——基址寻址、变址寻址">
-<meta name="twitter:description" content="基址寻址 在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令的地址码A相加得到，这种情况下地址码A常被成为位移量（disp）。 当存储器容量比较大，有指令的地址码部分直接给出的地址不能直接访问到存储器的单元时，通常将存储器分成若干段，段的首地址存放在基址寄存器中，段内的位移量由指令给出。存储器的实际地址就等于基址寄存器和段内位移量相加。">
-<meta name="twitter:image" content="http://sunlanchang.github.io/images/jizhixunzhi.jpg">
+<meta name="twitter:title" content="寻址方式之——相对寻址、堆栈寻址">
+<meta name="twitter:description" content="相对寻址 与基址变址寻址方式相类似，相对寻址以程序计数器PC的当前值（R15中的值）为基地址，指令中的地址标号作为偏移量，将两者相加后得到操作数的有效地址。 相对寻址主要用于转移指令，执行本条命令后，转移到（PC）+ Disp，（PC）为程序计数器的内容。 特点：   转移地址不是固定的，它随着PC值的变化而变化，并且总是与PC相差一个固定的值disp，因此无论程序转入存储器的任何地方，均能正确运">
+<meta name="twitter:image" content="http://sunlanchang.github.io/images/xiangduixunzhi.png">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -127,7 +126,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">寻址方式之——基址寻址、变址寻址</div>
+        <div class="flex-col header-title ellipsis">寻址方式之——相对寻址、堆栈寻址</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -149,11 +148,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">寻址方式之——基址寻址、变址寻址</h1>
+        <h1 class="title">寻址方式之——相对寻址、堆栈寻址</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-11-17T15:17:59.000Z" itemprop="datePublished" class="page-time">
-  2017-11-17
+                <time datetime="2017-11-18T15:28:21.000Z" itemprop="datePublished" class="page-time">
+  2017-11-18
 </time>
 
 
@@ -174,17 +173,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基址寻址"><span class="post-toc-number">1.</span> <span class="post-toc-text">基址寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#变址寻址"><span class="post-toc-number">2.</span> <span class="post-toc-text">变址寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">区别</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#相对寻址"><span class="post-toc-number">1.</span> <span class="post-toc-text">相对寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#堆栈寻址"><span class="post-toc-number">2.</span> <span class="post-toc-text">堆栈寻址</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-寻址方式之——基址寻址、变址寻址"
+<article id="post-寻址方式之——相对寻址、堆栈寻址"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">寻址方式之——基址寻址、变址寻址</h1>
+        <h1 class="post-card-title">寻址方式之——相对寻址、堆栈寻址</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-11-17 23:17:59" datetime="2017-11-17T15:17:59.000Z"  itemprop="datePublished">2017-11-17</time>
+            <time class="post-time" title="2017-11-18 23:28:21" datetime="2017-11-18T15:28:21.000Z"  itemprop="datePublished">2017-11-18</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
@@ -199,14 +198,20 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="基址寻址"><a href="#基址寻址" class="headerlink" title="基址寻址"></a>基址寻址</h1><ol>
-<li>在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令的地址码A相加得到，这种情况下地址码A常被成为位移量（disp）。</li>
-<li>当存储器容量比较大，有指令的地址码部分直接给出的地址不能直接访问到存储器的单元时，通常将存储器分成若干段，段的首地址存放在基址寄存器中，段内的位移量由指令给出。存储器的实际地址就等于基址寄存器和段内位移量相加。</li>
-<li>基址寻址主要用来解决程序在存储器中的定位和扩大寻址空间等问题。通常基址寄存器只能由系统程序设定，由特权指令执行，一般用户不能够修改，保证了系统的安全性。<br><img src="/images/jizhixunzhi.jpg" alt=""><h1 id="变址寻址"><a href="#变址寻址" class="headerlink" title="变址寻址"></a>变址寻址</h1>指令地址码给出地址A和指定的变址寄存器R,将A和R的内容相加就是操作数的地址。常利用变址操作与循环执行程序的方法对数组进行运算。<br><img src="/images/bianzhixunzhi.jpg" alt=""><h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1></li>
+            <h1 id="相对寻址"><a href="#相对寻址" class="headerlink" title="相对寻址"></a>相对寻址</h1><ul>
+<li>与基址变址寻址方式相类似，相对寻址以程序计数器PC的当前值（R15中的值）为基地址，指令中的地址标号作为偏移量，将两者相加后得到操作数的有效地址。</li>
+<li>相对寻址主要用于转移指令，执行本条命令后，转移到（PC）+ Disp，（PC）为程序计数器的内容。</li>
+<li>特点：  <ol>
+<li>转移地址不是固定的，它随着PC值的变化而变化，并且总是与PC相差一个固定的值disp，因此无论程序转入存储器的任何地方，均能正确运行，对浮动程序很适用。</li>
+<li>位移量可正、可负，通常用补码表示。<br><img src="/images/xiangduixunzhi.png" alt=""><h1 id="堆栈寻址"><a href="#堆栈寻址" class="headerlink" title="堆栈寻址"></a>堆栈寻址</h1>堆栈是一种数据结构，按先进后出（First In Last Out，FILO）的方式工作，使用堆栈指针（Stack Pointer, SP）指示当前的操作位置，堆栈指针总是指向栈顶。<br>根据堆栈的生成方式不同，可以把堆栈分为递增堆栈和递减堆栈两种类型。</li>
 </ol>
+</li>
+</ul>
 <ul>
-<li>基址寻址主要用于为程序或数据分配存储空间，故基址寄存器的内容通常由操作系统或管理程序确定，在程序运行过程中，值是不可变的，而指令字中的地址码是可变的。</li>
-<li>变址寻址中，变址寄存器的内容是用户自己设定的，在程序运行过程中是可变的，而指令字中的地址码是不可变的。编制寻址主要用于处理数组等问题，并且特别适合编制循环程序。</li>
+<li>递增堆栈：向堆栈写入数据时，堆栈由低地址向高地址生长。</li>
+<li>递减堆栈：向堆栈写入数据时，堆栈由高地址向低地址生长。<br>同时，根据堆栈指针（SP）指向的位置，又可以把堆栈分为满堆栈（Full Stack）和空堆栈（Empty Stack）两种类型。</li>
+<li>满堆栈（Full Stack）：堆栈指针指向最后压入堆栈的数据。满堆栈在向堆栈存放数据时的操作是先移动SP指针，然后存放数据。在从堆栈取数据时，先取出数据，随后移动SP指针。这样保证了SP一直指向有效的数据。</li>
+<li>空堆栈（Empty Stack）：堆栈指针SP指向下一个将要放入数据的空位置。空堆栈在向堆栈存放数据时的操作是先放数据，然后移动SP指针。在从堆栈取数据时，是先移动指针，再取数据。这种操作方式保证了堆栈指针一直指向一个空地址（没有有效数据的地址）。</li>
 </ul>
 
         </div>
@@ -215,7 +220,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-18T15:25:58.069Z" itemprop="dateUpdated">2017-11-18 23:25:58</time>
+    Last updated: <time datetime="2017-11-19T09:06:21.646Z" itemprop="dateUpdated">2017-11-19 17:06:21</time>
 </span><br>
 
 
@@ -246,7 +251,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&title=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/18/寻址方式之——相对寻址、堆栈寻址/&title=《寻址方式之——相对寻址、堆栈寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -256,22 +261,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&title=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/18/寻址方式之——相对寻址、堆栈寻址/&title=《寻址方式之——相对寻址、堆栈寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/18/寻址方式之——相对寻址、堆栈寻址/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《寻址方式之——相对寻址、堆栈寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/18/寻址方式之——相对寻址、堆栈寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/18/寻址方式之——相对寻址、堆栈寻址/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -291,21 +296,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/11/18/寻址方式之——相对寻址、堆栈寻址/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">寻址方式之——相对寻址、堆栈寻址</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/11/17/寻址方式之——直接寻址、间接寻址/" id="post-next" class="post-nav-link">
+      <a href="/2017/11/17/寻址方式之——基址寻址、变址寻址/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">寻址方式之——直接寻址、间接寻址</h4>
+        <h4 class="title">寻址方式之——基址寻址、变址寻址</h4>
       </a>
     </div>
   
@@ -389,7 +387,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&title=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/11/18/寻址方式之——相对寻址、堆栈寻址/&title=《寻址方式之——相对寻址、堆栈寻址》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -399,22 +397,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&title=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/11/18/寻址方式之——相对寻址、堆栈寻址/&title=《寻址方式之——相对寻址、堆栈寻址》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/11/18/寻址方式之——相对寻址、堆栈寻址/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《寻址方式之——基址寻址、变址寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《寻址方式之——相对寻址、堆栈寻址》 — Jason's Blog&url=http://sunlanchang.github.io/2017/11/18/寻址方式之——相对寻址、堆栈寻址/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/11/18/寻址方式之——相对寻址、堆栈寻址/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -425,7 +423,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADE0lEQVR42u3aQW7jQAwEQP//015grwspTVJZW1TpFCDGSDWXxrDn9Yqf998n+fvombzrfLXq+i9sbGzsdezkc49eln9Q/pbzt1dXONx6bGxs7HXsamj1wqmXI//+MvnOH4zY2NjYj2SfU6txkqxT3XpsbGxs7EkwVINt8t4P5DY2Njb217PzYc28SOjF1XlM/uIsDRsbG/vr2dcWvZ/9+2P9NjY2NvaH2O/xU13/qmp5osDGxsbexK4eM5Lf5zHTK26r5USTgY2NjX0T9vwiY29kk29cNboSFzY2NvY+9iTS8o3I42pyLEmiDhsbG3sfOx/u5IVrArv2eJNsKzY2NvZWdnVAM7/Qc14zJJF2QSuCjY2NvYg9L1wL4dHagrxCiEZL2NjY2IvY1XFMfn2n3DYHsTc/GmFjY2M/jd0Lqknl0Bs/5dFb6J+xsbGxb8JOgmFyIKkeIXpDrmq4YmNjY+9mJwOmXoTkKdqLz7xmwMbGxt7EnoyKqqVCdYVyLMXbh42Njb2PnRw55sePfCOuGkI1x0zY2NjYt2JX46R61aa6lVVGr6jGxsbG3seuRkIeP1cVCb1RVDRLw8bGxl7BrhYDvSjqXbvpwbCxsbGfw84v5eSfXl2zt3HVo1G5GMDGxsa+CTsPgDx48iNH/pZJRB3WA9jY2Njr2NV4qGJGB4bW1Z/DLcDGxsZexI5q0VZZO/n9vDaO/ouNjY29mj0/PEwKgP9UD2NjY2OvYPcWnRQJ1f9OjiiH62NjY2MvYucjm2qYTeqB6vCoekETGxsbeyt7fkUmD5jJhZ6Lr/5gY2NjL2VXDwA9WB57vXFYZMHGxsZ+ADuvcquXbCY18DwssbGxsXew38WnOnjqxVteVzRHYNjY2NiL2PMDxrUlbv6h599zVehiY2Nj34WdhNak4k0+pRqQ1TIAGxsb+wnsq44N89V6v89HWtjY2NjY+Tip+rmTLatGLDY2NvYz2flgqDfTmmx0eaSFjY2NvY5d/fTeOGlSKlw12MLGxsbex54UvXnwTI4x1eri1/ttbGxs7G9h/wGKGhKFA6IfbAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKElEQVR42u3awXKjQAwFQP//TzvXTSXBTxLeArk5uQyGaXGQJc3jER/PP46fZ//9Jrlncv38Wc0DGxsb+ybs5+FxfOufV1Z5x8/qfT62YGNjY29lV9NGfk0e4ur9q68HGxsbG/s4VVQLjOP75DBsbGxs7Jyd/PVPMD1YdZ3Y2NjYn8bOBwDvSDa9kP2nXho2Njb25dn5VPT6n98y38bGxsa+MPvZOvKmUjWgvbPl9WNjY2MvYvfKg3yrzSRMySah/MX8ck9sbGzsRezJ48/alJMsujoqOG02go2NjX1hdm8AMGn0V698x/XY2NjYm9jVXnp+djI2zguVyZ2xsbGxt7Inj5wkwmrlVE2uL94zNjY29s3Z84KkNzzIm1Z5iypJq9jY2Nhb2XmlMm855YuehP7FWWxsbOwV7OogNi8SzmoqFRJSHhRsbGzsdexq8VBt5SSkCbgcemxsbOx17Gqjfz76zQPdm1RHMxBsbGzsRexkOJqUE70xbTKUnadAbGxs7K3sXhHyIj0ERy9k89RYmIpgY2Nj34SdPPisBtO5G3EmRRQ2Njb2VnZzaBoj80IiD03+2sr5ExsbG/tW7F6iiqqck/rzSXLKtxlhY2Njb2JXE1sVVt0ANBkhTH6FjY2NvYM9GQPMefnT82FzVLRgY2Nj35ydtGkmZUN1cXn6zNtVf75hbGxs7BXsagKblCjVBtAcf1opgo2NjX0TdnWLTG8YkMPOHQ+PhgTY2NjYF2b32u55UPKBwaSxVR5FYGNjY69m563/POHNRwXz0ujbb7GxsbEXsfPGerKg3lbOs9JbuQmFjY2NvYLdGwkc37R6tlpU9MLx7TM2Njb2Ina1TT/fmtNLb9U2U3Q9NjY29gr2s3j0FlFNS/kQtxdubGxs7E3s3vadauqaNImqo9zmhktsbGzsm7OTpNXbcNlrJ1XfUnOHKTY2NvY69vH3k0X0yptJIKKUiY2Njf2R7HyIm4dgktJGK8TGxsb+SHbeHkoaUvmWnbxMekzyGzY2NvbN2dVb5wPafBtQryhqbjbCxsbGXsSeN2jydDIPxCQdNufb2NjY2NdlfwEeh08Cln9EiwAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
