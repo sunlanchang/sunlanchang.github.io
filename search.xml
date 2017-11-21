@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[图解寻址方式]]></title>
+    <url>%2F2017%2F11%2F21%2F%E5%9B%BE%E8%A7%A3%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>计算机组成原理</category>
+      </categories>
+      <tags>
+        <tag>计算机组成原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数据库查询]]></title>
+    <url>%2F2017%2F11%2F19%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%2F</url>
+    <content type="text"><![CDATA[数据查询功能查询功能是SQL按的核心功能，是数据库用的最多的操作，查询语句是SQL语句比较复杂的语句。以下查询用到的三张表如下所示：Student表：| Sno | Sname | Ssex | Sage | Sdept || :—-: | :—-: | :—: | :—: | :——: || 150752 | 孙兰昌 | 男 | 20 | 计算机系 || 150765 | 梁诗笛 | 女 | 19 | 计算机系 || … | … | … | … | … |Course表：| Cno | Cname | Credit | Semester || :—: | :——: | :—-: | :——: || c01 | 高等数学 | 5 | 1 || c02 | 数据结构 | 3 | 2 || … | … | … | … |SC表：| Sno | Cno | Grade || :—-: | :—: | :—: || 150752 | c01 | 90 || 150765 | c02 | 88 || … | … | … | 查询语句的基本结构查询语句的基本结构可描述为：123456select &lt;目标列名序列&gt; --需要哪些列 from &lt;数据源&gt; --来自哪些表 [where &lt;检索条件表达式&gt;] --根据什么条件 [group by &lt;分组依据列&gt;] [having &lt;组提取条件&gt;] [order by &lt;排序依旧列&gt;] 单表查询distinct去除重复行多表连接查询使用TOP限制结果集子查询]]></content>
+      <categories>
+        <category>数据库原理与应用</category>
+      </categories>
+      <tags>
+        <tag>数据库原理与应用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[寻址方式之——相对寻址、堆栈寻址]]></title>
     <url>%2F2017%2F11%2F18%2F%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B9%8B%E2%80%94%E2%80%94%E7%9B%B8%E5%AF%B9%E5%AF%BB%E5%9D%80%E3%80%81%E5%A0%86%E6%A0%88%E5%AF%BB%E5%9D%80%2F</url>
     <content type="text"><![CDATA[相对寻址 与基址变址寻址方式相类似，相对寻址以程序计数器PC的当前值（R15中的值）为基地址，指令中的地址标号作为偏移量，将两者相加后得到操作数的有效地址。 相对寻址主要用于转移指令，执行本条命令后，转移到（PC）+ Disp，（PC）为程序计数器的内容。 特点： 转移地址不是固定的，它随着PC值的变化而变化，并且总是与PC相差一个固定的值disp，因此无论程序转入存储器的任何地方，均能正确运行，对浮动程序很适用。 位移量可正、可负，通常用补码表示。堆栈寻址堆栈是一种数据结构，按先进后出（First In Last Out，FILO）的方式工作，使用堆栈指针（Stack Pointer, SP）指示当前的操作位置，堆栈指针总是指向栈顶。根据堆栈的生成方式不同，可以把堆栈分为递增堆栈和递减堆栈两种类型。 递增堆栈：向堆栈写入数据时，堆栈由低地址向高地址生长。 递减堆栈：向堆栈写入数据时，堆栈由高地址向低地址生长。同时，根据堆栈指针（SP）指向的位置，又可以把堆栈分为满堆栈（Full Stack）和空堆栈（Empty Stack）两种类型。 满堆栈（Full Stack）：堆栈指针指向最后压入堆栈的数据。满堆栈在向堆栈存放数据时的操作是先移动SP指针，然后存放数据。在从堆栈取数据时，先取出数据，随后移动SP指针。这样保证了SP一直指向有效的数据。 空堆栈（Empty Stack）：堆栈指针SP指向下一个将要放入数据的空位置。空堆栈在向堆栈存放数据时的操作是先放数据，然后移动SP指针。在从堆栈取数据时，是先移动指针，再取数据。这种操作方式保证了堆栈指针一直指向一个空地址（没有有效数据的地址）。]]></content>
