@@ -25,18 +25,27 @@
     
     
     <meta name="keywords" content="计算机组成原理">
-    <meta name="description" content="自律给我自由">
+    <meta name="description" content="直接寻址                                                                                             直接寻址                间接寻址">
 <meta name="keywords" content="计算机组成原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图解寻址方式">
 <meta property="og:url" content="http://sunlanchang.github.io/2017/11/21/图解寻址方式/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="自律给我自由">
+<meta property="og:description" content="直接寻址                                                                                             直接寻址                间接寻址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-21T14:57:14.303Z">
+<meta property="og:image" content="http://sunlanchang.github.io/images/zhijiexunzhi.gif">
+<meta property="og:image" content="http://sunlanchang.github.io/images/jianjiexunzhi.png">
+<meta property="og:image" content="http://sunlanchang.github.io/images/jicunqijianjiexunzhi.jpg">
+<meta property="og:image" content="http://sunlanchang.github.io/images/jizhixunzhi.jpg">
+<meta property="og:image" content="http://sunlanchang.github.io/images/bianzhixunzhi.jpg">
+<meta property="og:image" content="http://sunlanchang.github.io/images/lijixunzhi.jpg">
+<meta property="og:image" content="http://sunlanchang.github.io/images/jicunqixunzhi.jpg">
+<meta property="og:image" content="http://sunlanchang.github.io/images/xiangduixunzhi.png">
+<meta property="og:updated_time" content="2017-11-22T02:38:25.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图解寻址方式">
-<meta name="twitter:description" content="自律给我自由">
+<meta name="twitter:description" content="直接寻址                                                                                             直接寻址                间接寻址">
+<meta name="twitter:image" content="http://sunlanchang.github.io/images/zhijiexunzhi.gif">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -130,7 +139,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -168,6 +177,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#直接寻址"><span class="post-toc-number">1.</span> <span class="post-toc-text">直接寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#间接寻址"><span class="post-toc-number">2.</span> <span class="post-toc-text">间接寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基址寻址"><span class="post-toc-number">3.</span> <span class="post-toc-text">基址寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#变址寻址"><span class="post-toc-number">4.</span> <span class="post-toc-text">变址寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#立即数寻址"><span class="post-toc-number">5.</span> <span class="post-toc-text">立即数寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#寄存器寻址"><span class="post-toc-number">6.</span> <span class="post-toc-text">寄存器寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#相对寻址"><span class="post-toc-number">7.</span> <span class="post-toc-text">相对寻址</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-图解寻址方式"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -189,14 +205,69 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <h1 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/zhijiexunzhi.gif" alt="直接寻址" title="">
+                </div>
+                <div class="image-caption">直接寻址</div>
+            </figure>  
+<h1 id="间接寻址"><a href="#间接寻址" class="headerlink" title="间接寻址"></a>间接寻址</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/jianjiexunzhi.png" alt="存储器间接寻址" title="">
+                </div>
+                <div class="image-caption">存储器间接寻址</div>
+            </figure>  
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/jicunqijianjiexunzhi.jpg" alt="寄存器间接寻址" title="">
+                </div>
+                <div class="image-caption">寄存器间接寻址</div>
+            </figure>
+<h1 id="基址寻址"><a href="#基址寻址" class="headerlink" title="基址寻址"></a>基址寻址</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/jizhixunzhi.jpg" alt="基址寻址" title="">
+                </div>
+                <div class="image-caption">基址寻址</div>
+            </figure>
+<h1 id="变址寻址"><a href="#变址寻址" class="headerlink" title="变址寻址"></a>变址寻址</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/bianzhixunzhi.jpg" alt="变址寻址" title="">
+                </div>
+                <div class="image-caption">变址寻址</div>
+            </figure>
+<h1 id="立即数寻址"><a href="#立即数寻址" class="headerlink" title="立即数寻址"></a>立即数寻址</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/lijixunzhi.jpg" alt="立即数寻址" title="">
+                </div>
+                <div class="image-caption">立即数寻址</div>
+            </figure>
+<h1 id="寄存器寻址"><a href="#寄存器寻址" class="headerlink" title="寄存器寻址"></a>寄存器寻址</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/jicunqixunzhi.jpg" alt="寄存器寻址" title="">
+                </div>
+                <div class="image-caption">寄存器寻址</div>
+            </figure>
+<h1 id="相对寻址"><a href="#相对寻址" class="headerlink" title="相对寻址"></a>相对寻址</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/xiangduixunzhi.png" alt="相对寻址" title="">
+                </div>
+                <div class="image-caption">相对寻址</div>
+            </figure>
         </div>
 
         <blockquote class="post-copyright">
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-21T14:57:14.303Z" itemprop="dateUpdated">2017-11-21 22:57:14</time>
+    Last updated: <time datetime="2017-11-22T02:38:25.708Z" itemprop="dateUpdated">2017-11-22 10:38:25</time>
 </span><br>
 
 
@@ -339,7 +410,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

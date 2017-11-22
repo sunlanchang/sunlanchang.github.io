@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[图解寻址方式]]></title>
     <url>%2F2017%2F11%2F21%2F%E5%9B%BE%E8%A7%A3%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[直接寻址 直接寻址 间接寻址 存储器间接寻址 寄存器间接寻址 基址寻址 基址寻址 变址寻址 变址寻址 立即数寻址 立即数寻址 寄存器寻址 寄存器寻址 相对寻址 相对寻址]]></content>
       <categories>
         <category>计算机组成原理</category>
       </categories>
@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[数据库查询]]></title>
     <url>%2F2017%2F11%2F19%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%2F</url>
-    <content type="text"><![CDATA[数据查询功能查询功能是SQL按的核心功能，是数据库用的最多的操作，查询语句是SQL语句比较复杂的语句。以下查询用到的三张表如下所示：Student表：| Sno | Sname | Ssex | Sage | Sdept || :—-: | :—-: | :—: | :—: | :——: || 150752 | 孙兰昌 | 男 | 20 | 计算机系 || 150765 | 梁诗笛 | 女 | 19 | 计算机系 || … | … | … | … | … |Course表：| Cno | Cname | Credit | Semester || :—: | :——: | :—-: | :——: || c01 | 高等数学 | 5 | 1 || c02 | 数据结构 | 3 | 2 || … | … | … | … |SC表：| Sno | Cno | Grade || :—-: | :—: | :—: || 150752 | c01 | 90 || 150765 | c02 | 88 || … | … | … | 查询语句的基本结构查询语句的基本结构可描述为：123456select &lt;目标列名序列&gt; --需要哪些列 from &lt;数据源&gt; --来自哪些表 [where &lt;检索条件表达式&gt;] --根据什么条件 [group by &lt;分组依据列&gt;] [having &lt;组提取条件&gt;] [order by &lt;排序依旧列&gt;] 单表查询distinct去除重复行多表连接查询使用TOP限制结果集子查询]]></content>
+    <content type="text"><![CDATA[数据查询功能查询功能是SQL按的核心功能，是数据库用的最多的操作，查询语句是SQL语句比较复杂的语句。以下查询用到的三张表如下所示：Student表： Sno Sname Ssex Sage Sdept 150752 孙兰昌 男 20 计算机系 150765 梁诗笛 女 19 计算机系 … … … … … Course表： Cno Cname Credit Semester c01 高等数学 5 1 c02 数据结构 3 2 … … … … SC表： Sno Cno Grade 150752 c01 90 150765 c02 88 … … … 查询语句的基本结构查询语句的基本结构可描述为：123456select &lt;目标列名序列&gt; --需要哪些列 from &lt;数据源&gt; --来自哪些表 [where &lt;检索条件表达式&gt;] --根据什么条件 [group by &lt;分组依据列&gt;] [having &lt;组提取条件&gt;] [order by &lt;排序依旧列&gt;] 单表查询distinct去除重复行多表连接查询使用TOP限制结果集子查询]]></content>
       <categories>
         <category>数据库原理与应用</category>
       </categories>

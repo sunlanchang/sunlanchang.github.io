@@ -34,7 +34,7 @@
 <meta property="og:description" content="相对寻址 与基址变址寻址方式相类似，相对寻址以程序计数器PC的当前值（R15中的值）为基地址，指令中的地址标号作为偏移量，将两者相加后得到操作数的有效地址。 相对寻址主要用于转移指令，执行本条命令后，转移到（PC）+ Disp，（PC）为程序计数器的内容。 特点：   转移地址不是固定的，它随着PC值的变化而变化，并且总是与PC相差一个固定的值disp，因此无论程序转入存储器的任何地方，均能正确运">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://sunlanchang.github.io/images/xiangduixunzhi.png">
-<meta property="og:updated_time" content="2017-11-19T09:06:21.646Z">
+<meta property="og:updated_time" content="2017-11-22T02:38:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="寻址方式之——相对寻址、堆栈寻址">
 <meta name="twitter:description" content="相对寻址 与基址变址寻址方式相类似，相对寻址以程序计数器PC的当前值（R15中的值）为基地址，指令中的地址标号作为偏移量，将两者相加后得到操作数的有效地址。 相对寻址主要用于转移指令，执行本条命令后，转移到（PC）+ Disp，（PC）为程序计数器的内容。 特点：   转移地址不是固定的，它随着PC值的变化而变化，并且总是与PC相差一个固定的值disp，因此无论程序转入存储器的任何地方，均能正确运">
@@ -132,7 +132,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -203,7 +203,7 @@
 <li>相对寻址主要用于转移指令，执行本条命令后，转移到（PC）+ Disp，（PC）为程序计数器的内容。</li>
 <li>特点：  <ol>
 <li>转移地址不是固定的，它随着PC值的变化而变化，并且总是与PC相差一个固定的值disp，因此无论程序转入存储器的任何地方，均能正确运行，对浮动程序很适用。</li>
-<li>位移量可正、可负，通常用补码表示。<br><img src="/images/xiangduixunzhi.png" alt=""><h1 id="堆栈寻址"><a href="#堆栈寻址" class="headerlink" title="堆栈寻址"></a>堆栈寻址</h1>堆栈是一种数据结构，按先进后出（First In Last Out，FILO）的方式工作，使用堆栈指针（Stack Pointer, SP）指示当前的操作位置，堆栈指针总是指向栈顶。<br>根据堆栈的生成方式不同，可以把堆栈分为递增堆栈和递减堆栈两种类型。</li>
+<li>位移量可正、可负，通常用补码表示。<br><img src="/images/xiangduixunzhi.png" alt="相对寻址"><h1 id="堆栈寻址"><a href="#堆栈寻址" class="headerlink" title="堆栈寻址"></a>堆栈寻址</h1>堆栈是一种数据结构，按先进后出（First In Last Out，FILO）的方式工作，使用堆栈指针（Stack Pointer, SP）指示当前的操作位置，堆栈指针总是指向栈顶。<br>根据堆栈的生成方式不同，可以把堆栈分为递增堆栈和递减堆栈两种类型。</li>
 </ol>
 </li>
 </ul>
@@ -220,7 +220,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-19T09:06:21.646Z" itemprop="dateUpdated">2017-11-19 17:06:21</time>
+    Last updated: <time datetime="2017-11-22T02:38:17.000Z" itemprop="dateUpdated">2017-11-22 10:38:17</time>
 </span><br>
 
 
@@ -370,7 +370,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
