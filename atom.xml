@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-11-22T02:38:25.708Z</updated>
+  <updated>2017-11-26T09:30:33.015Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://sunlanchang.github.io/2017/11/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2/"/>
+    <id>http://sunlanchang.github.io/2017/11/26/数据库查询/</id>
+    <published>2017-11-26T09:30:33.015Z</published>
+    <updated>2017-11-26T09:30:33.015Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>图解寻址方式</title>
@@ -39,36 +53,6 @@
     
     
       <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库查询</title>
-    <link href="http://sunlanchang.github.io/2017/11/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2/"/>
-    <id>http://sunlanchang.github.io/2017/11/19/数据库查询/</id>
-    <published>2017-11-19T14:47:38.000Z</published>
-    <updated>2017-11-22T14:55:44.485Z</updated>
-    
-    <content type="html"><![CDATA[<p>数据查询功能查询功能是SQL按的核心功能，是数据库用的最多的操作，查询语句是SQL语句比较复杂的语句。以下查询用到的三张表如下所示：<br><strong>Student表：</strong>  </p><table><thead><tr><th>Sno</th><th>Sname</th><th>Ssex</th><th>Sage</th><th>Sdept</th></tr></thead><tbody><tr><td>150752</td><td>孙兰昌</td><td>男</td><td>20</td><td>计算机系</td></tr><tr><td>150765</td><td>梁诗笛</td><td>女</td><td>19</td><td>计算机系</td></tr><tr><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td></tr></tbody></table><p><strong>Course表：</strong>  </p><table><thead><tr><th style="text-align:center">Cno</th><th style="text-align:center">Cname</th><th style="text-align:center">Credit</th><th style="text-align:center">Semester</th></tr></thead><tbody><tr><td style="text-align:center">c01</td><td style="text-align:center">高等数学</td><td style="text-align:center">5</td><td style="text-align:center">1</td></tr><tr><td style="text-align:center">c02</td><td style="text-align:center">数据结构</td><td style="text-align:center">3</td><td style="text-align:center">2</td></tr><tr><td style="text-align:center">…</td><td style="text-align:center">…</td><td style="text-align:center">…</td><td style="text-align:center">…</td></tr></tbody></table><p><strong>SC表：</strong>  </p><table><thead><tr><th style="text-align:center">Sno</th><th style="text-align:center">Cno</th><th style="text-align:center">Grade</th></tr></thead><tbody><tr><td style="text-align:center">150752</td><td style="text-align:center">c01</td><td style="text-align:center">90</td></tr><tr><td style="text-align:center">150765</td><td style="text-align:center">c02</td><td style="text-align:center">88</td></tr><tr><td style="text-align:center">…</td><td style="text-align:center">…</td><td style="text-align:center">…</td></tr></tbody></table><h1 id="查询语句的基本结构"><a href="#查询语句的基本结构" class="headerlink" title="查询语句的基本结构"></a>查询语句的基本结构</h1><p>查询语句的基本结构可描述为：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> &lt;目标列名序列&gt;      <span class="comment">--需要哪些列</span></div><div class="line">  <span class="keyword">from</span> &lt;数据源&gt;           <span class="comment">--来自哪些表</span></div><div class="line">  [<span class="keyword">where</span> &lt;检索条件表达式&gt;] <span class="comment">--根据什么条件</span></div><div class="line">  [<span class="keyword">group</span> <span class="keyword">by</span> &lt;分组依据列&gt;]</div><div class="line">  [<span class="keyword">having</span> &lt;组提取条件&gt;]</div><div class="line">  [<span class="keyword">order</span> <span class="keyword">by</span> &lt;排序依旧列&gt;]</div></pre></td></tr></table></figure></p><h1 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h1><h2 id="distinct去重"><a href="#distinct去重" class="headerlink" title="distinct去重"></a><code>distinct</code>去重</h2><p>SQL语言中的<code>distinct</code>关键字可以去掉查询结果的重复行，<code>distinct</code>放在<code>select</code>的后边、目标列名的前边。例如：<br><code>select distinct Sno from SC</code></p><h2 id="not-in、-匹配、escape转义、order-by排序"><a href="#not-in、-匹配、escape转义、order-by排序" class="headerlink" title="[not] in、_%[]匹配、escape转义、order by排序"></a><code>[not] in</code>、<code>_%[]</code>匹配、<code>escape</code>转义、<code>order by</code>排序</h2><ul><li><strong><code>in</code>确定集合</strong><br><code>in</code>确定某个集合，<code>not in</code>不在某个集合，例如：   <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> Sname, Ssex <span class="keyword">from</span> Student</div><div class="line">  <span class="keyword">where</span> Sdept <span class="keyword">in</span> (<span class="string">'计算机系'</span>, <span class="string">'数学系'</span>)</div></pre></td></tr></table></figure></li></ul><p>此查询等价于<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> Sname, Ssex <span class="keyword">from</span> Student</div><div class="line">  <span class="keyword">where</span> Sdept=<span class="string">'计算机系'</span> <span class="keyword">or</span> Sdept=<span class="string">'数学系'</span></div></pre></td></tr></table></figure></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> Sname, Ssex <span class="keyword">from</span> Student</div><div class="line">  <span class="keyword">where</span> Sdept <span class="keyword">not</span> <span class="keyword">in</span> (<span class="string">'计算机系'</span>, <span class="string">'数学系'</span>)</div></pre></td></tr></table></figure><p>此查询等价于<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> Sname, Ssex <span class="keyword">from</span> Student</div><div class="line">  <span class="keyword">where</span> Sdept!=<span class="string">'计算机系'</span> <span class="keyword">and</span> Sdept!=<span class="string">'数学系'</span></div></pre></td></tr></table></figure></p><ul><li>字符串匹配<br>一般形式为：<code>列名 [not] like &lt;匹配串&gt;</code><ol><li><code>_</code>：匹配任意一个字符</li><li><code>%</code>：匹配0个或多个字符</li><li><code>[]</code>：匹配<code>[]</code>中的任意一个字符。如<code>[aeiou]</code>匹配a、e、i、o、u中的任何一个。对于连续的字母匹配，例如<code>[abcd]</code>可以简写<code>[a-d]</code>。  </li><li><code>[^]</code>：不匹配[]中的任何一个字符。如<code>[^abc]</code>表示不匹配a、b、c。对于连续的字母可以简写例如<code>[^a-d]</code>。</li></ol></li><li><p><strong><code>escape</code>转义字符匹配</strong><br>语法格式：<code>escape 转义字符</code><br>例如：  </p><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">where field like '%30\%%' escape '\'</div></pre></td></tr></table></figure></li><li><p><strong>对查询结果进行排序</strong><br>排序语法格式： <code>order by &lt;列名&gt; [asc | desc]</code><br><code>asc</code>：升序排序，<code>desc</code>：降序排序。如果指定多个列排序，则按照列的先后顺序排序，即最前面的优先级最高。</p></li><li><strong>使用聚合函数汇总数据</strong><ul><li><code>count([distinct] &lt;列名&gt;)</code>：统计本列非空列值个数。</li><li><code>sum()  ave()  min()  max()</code>功能类似<h1 id="多表连接查询"><a href="#多表连接查询" class="headerlink" title="多表连接查询"></a>多表连接查询</h1><h1 id="使用TOP限制结果集"><a href="#使用TOP限制结果集" class="headerlink" title="使用TOP限制结果集"></a>使用TOP限制结果集</h1><h1 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h1></li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;数据查询功能查询功能是SQL按的核心功能，是数据库用的最多的操作，查询语句是SQL语句比较复杂的语句。以下查询用到的三张表如下所示：&lt;br&gt;&lt;strong&gt;Student表：&lt;/strong&gt;  &lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Sno&lt;/th&gt;
-
-      
-    
-    </summary>
-    
-      <category term="数据库原理与应用" scheme="http://sunlanchang.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
-    
-    
-      <category term="数据库原理与应用" scheme="http://sunlanchang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
     
   </entry>
   
