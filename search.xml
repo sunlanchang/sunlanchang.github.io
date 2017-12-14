@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[计算机组成原理系统概论]]></title>
+    <url>%2F2017%2F12%2F14%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%2F</url>
+    <content type="text"><![CDATA[冯•诺依曼结构计算机的特点 计算机由运算器、控制器、存储器、输入设备、输出设备组成。 采用存储程序的方式，程序和数据放在同一个存储器中，并以二进制表示。 指令由操作码和地址码组成。 指令在存储器中按执行顺序排放，由指令计数器（即程序计数器PC）指明要执行的指令所在存储单元地址。 机器以运算器为中心，输入输出设备与存储器之间的数据传送都通过运算器。计算机硬件系统的组成计算机由运算器、控制器、存储器、输入设备、输出设备组成。 运算器是对数据进行处理的运算部件，一般进行算数运算和逻辑运算。 控制器实现程序的自动执行。 存储器用来存放程序和数据。 输入设备用来输入原始数据和处理这些数据的程序。 输出设备用来输出计算机的处理结果。计算机语言：机器语言、汇编语言、高级语言，三种语言的特点 机器语言是用二进制代码表示的计算机能直接识别和执行的一种机器指令的集合。 汇编语言是一种用助记符表示的仍然面向机器的计算机语言。 高级语言是与自然语言相近并为计算机所接受和执行的计算机语言。计算机系统的构成：硬件系统和软件系统]]></content>
+      <categories>
+        <category>计算机组成原理</category>
+      </categories>
+      <tags>
+        <tag>计算机组成原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数据定义]]></title>
+    <url>%2F2017%2F11%2F27%2F%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%2F</url>
+    <content type="text"><![CDATA[基本概念SQL功能分为一下四大部分：]]></content>
+      <categories>
+        <category>数据库原理与应用</category>
+      </categories>
+      <tags>
+        <tag>数据库原理与应用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[图解寻址方式]]></title>
     <url>%2F2017%2F11%2F21%2F%E5%9B%BE%E8%A7%A3%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[直接寻址 直接寻址 间接寻址 存储器间接寻址 寄存器间接寻址 基址寻址 基址寻址 变址寻址 变址寻址 立即数寻址 立即数寻址 寄存器寻址 寄存器寻址 相对寻址 相对寻址]]></content>
@@ -12,8 +34,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[数据库查询]]></title>
-    <url>%2F2017%2F11%2F19%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%2F</url>
+    <title><![CDATA[数据查询]]></title>
+    <url>%2F2017%2F11%2F19%2F%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%2F</url>
     <content type="text"><![CDATA[数据查询功能查询功能是SQL按的核心功能，是数据库用的最多的操作，查询语句是SQL语句比较复杂的语句。以下查询用到的三张表如下所示：Student表： Sno Sname Ssex Sage Sdept 150752 孙兰昌 男 20 计算机系 150765 梁诗笛 女 19 计算机系 … … … … … Course表： Cno Cname Credit Semester c01 高等数学 5 1 c02 数据结构 3 2 … … … … SC表： Sno Cno Grade 150752 c01 90 150765 c02 88 … … … 查询语句的基本结构查询语句的基本结构可描述为：123456select &lt;目标列名序列&gt; --需要哪些列 from &lt;数据源&gt; --来自哪些表 [where &lt;检索条件表达式&gt;] --根据什么条件 [group by &lt;分组依据列&gt;] [having &lt;组提取条件&gt;] [order by &lt;排序依旧列&gt;] 单表查询distinct去重SQL语言中的distinct关键字可以去掉查询结果的重复行，distinct放在select的后边、目标列名的前边。例如：select distinct Sno from SC [not] in、_%[]匹配、escape转义、order by排序 in确定集合in确定某个集合，not in不在某个集合，例如： select Sname, Ssex from Student where Sdept in (&#39;计算机系&#39;, &#39;数学系&#39;)此查询等价于 select Sname, Ssex from Student where Sdept=&#39;计算机系&#39; or Sdept=&#39;数学系&#39; select Sname, Ssex from Student where Sdept not in (&#39;计算机系&#39;, &#39;数学系&#39;)此查询等价于 select Sname, Ssex from Student where Sdept!=&#39;计算机系&#39; and Sdept!=&#39;数学系&#39; 字符串匹配一般形式为：列名 [not] like &lt;匹配串&gt; _：匹配任意一个字符 %：匹配0个或多个字符 []：匹配[]中的任意一个字符。如[aeiou]匹配a、e、i、o、u中的任何一个。对于连续的字母匹配，例如[abcd]可以简写[a-d]。 [^]：不匹配[]中的任何一个字符。如[^abc]表示不匹配a、b、c。对于连续的字母可以简写例如[^a-d]。 escape转义字符匹配语法格式：escape 转义字符例如： where field like &#39;%30\%%&#39; escape &#39;\&#39; 对查询结果进行排序排序语法格式： order by &lt;列名&gt; [asc | desc]asc：升序排序，desc：降序排序。如果指定多个列排序，则按照列的先后顺序排序，即最前面的优先级最高。 使用聚合函数汇总数据 count([distinct] &lt;列名&gt;)：统计本列非空列值个数。 sum() ave() min() max()功能类似 group by分组语法：group by [分组依据列] [having &lt;组约束条件&gt;]SQL先执行where后执行group by再执行having，建议在所有分组之前进行的搜索条件放在where中，分组之后的条件搜索放在having中更为高效。Note：查询年龄小于20学生人数：select Sdept, count(*) from Student where age &lt; 20 group by Sdept，而不能写成：select Sdept, count(*) from Student group by Sdept having Sage &lt; 20，因为在分组之后只保留分组依据列以及聚合函数，因为执行到having时已经没有Sage列了。 多表连接查询内连接使用内连接时，如果两个表的相关字段满足连接条件，则从两个表提取数据并组合成新的记录。语法格式：from table1 [inner] join table on &lt;连接条件&gt;例如：select * from studnet inner join SC on Studnet.Sno = SC.Sno 自连接在自连接时一定要有别名。例如：查询与操作系统学分相同的课程的课程名和学分。select C1.Cname, C2.Credit from Course C1 join Course C2 on C1.Credit = C2.Credit where C2.Cname = &#39;操作系统&#39; 外连接查找不满足条件的记录。left以左表为基础对右表进行筛选，right类似。语法：from table1 left | right [outer] join table2 on &lt;连接条件&gt;例如：查询学生的选课情况，包括选了课程的学生和没有选课程的学生，列出学号、姓名、课程号和成绩。select Studnet.Sno, Sname, Cno, Grade from Student left outer join SC on Student.Sno = SC.Sno 使用TOP限制结果集语法：top n [percent] [with ties]一般与order by同时使用。其中： n为非负整数 top n表示取查询的前n行数据 top n percent：表示取查询结果的前n%行数据 with ties：包括并列的结果例如：查询年龄最大的三个学生的信息,包括并列的情况。select top 3 with ties * from Student order by Sage desc子查询SQL语言中，一个select-from-where语句称为一个查询块。一个查询块嵌入了另外一个select、insert、update或delete则称为子查询或内层查询。 集合测试语法：where 表达式 [not] in (子查询)例如： 查询与小明同在一个系学习的学生。select * from Student where Sdept in (select Sdept from Student where Sname=&#39;小明&#39;) 查询选了c02课程的学生。select * from Student where Sno in (select Sno from SC where Cno=&#39;c02&#39;) and，此查询也可以用多表连接查询实现：select * from Student as S join SC on S.Sno==SC.Sno where Sdept=&#39;计算机系&#39; and Cno=&#39;c02&#39; 比较测试语法：where 表达式 比较运算符 (子查询)其中比较运算符有：= &lt;&gt; &lt; &gt; &lt;= &gt;=。例如： 查询考试成绩高于平均成绩的学生：select * from student from SC group by Sno having AVG(Grade) &gt; (select AVG(Grade) from SC)。 集合测试和比较测试都是先执行子查询，在执行外层查询，子查询只执行一次且不依赖于外层查询，这样的查询称为不相关子查询或嵌套子查询。 存在测试语法：where [not] exists (子查询) 存在测试先执行外层查询，后执行子查询；子层查询的次数由外层查询结果决定。 存在测试只返回真值或假值，所以在子查询中指定列名没有意义，通常用select *代替。例如：查询选修了c01课程的学生：select * from Student where exists (select * from SC where Sno = Student.Sno and Cno = &#39;c01&#39;)]]></content>
       <categories>
         <category>数据库原理与应用</category>
