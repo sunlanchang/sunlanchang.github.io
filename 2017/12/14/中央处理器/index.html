@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?086a5af0b6f644650f444fc827e297f8"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>中央处理器 | Jason&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="计算机组成原理">
+    <meta name="description" content="基本概念程序计数器PC即指令地址寄存器。用来存放当前正在执行的指令地址，或将要执行的下一条指令地址。指令寄存器IR用来存放当前正在执行的指令，以便在指令执行过程中控制完成一条指令的全部功能。指令译码器对指令寄存器IR中的操作码进行分析解释，产生相应的控制信号。MAR、MDR、标志寄存器地址寄存器，数据寄存器。标志寄存器包含CNVZ四个标志位。时钟周期、指令周期、机器周期    时钟周期：是计算机中">
+<meta name="keywords" content="计算机组成原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中央处理器">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/12/14/中央处理器/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="基本概念程序计数器PC即指令地址寄存器。用来存放当前正在执行的指令地址，或将要执行的下一条指令地址。指令寄存器IR用来存放当前正在执行的指令，以便在指令执行过程中控制完成一条指令的全部功能。指令译码器对指令寄存器IR中的操作码进行分析解释，产生相应的控制信号。MAR、MDR、标志寄存器地址寄存器，数据寄存器。标志寄存器包含CNVZ四个标志位。时钟周期、指令周期、机器周期    时钟周期：是计算机中">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-14T12:53:18.183Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="中央处理器">
+<meta name="twitter:description" content="基本概念程序计数器PC即指令地址寄存器。用来存放当前正在执行的指令地址，或将要执行的下一条指令地址。指令寄存器IR用来存放当前正在执行的指令，以便在指令执行过程中控制完成一条指令的全部功能。指令译码器对指令寄存器IR中的操作码进行分析解释，产生相应的控制信号。MAR、MDR、标志寄存器地址寄存器，数据寄存器。标志寄存器包含CNVZ四个标志位。时钟周期、指令周期、机器周期    时钟周期：是计算机中">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/tou.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jason Sun</h5>
+          <a href="mailto:sunlanchang@outlook.com" title="sunlanchang@outlook.com" class="mail">sunlanchang@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/sunlanchang" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.csdn.net/sunlanchang"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">中央处理器</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">中央处理器</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-14T12:18:28.000Z" itemprop="datePublished" class="page-time">
+  2017-12-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基本概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本概念</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#控制器产生控制信号有两种方法：微程序控制、硬布线控制（组合逻辑控制）"><span class="post-toc-number">2.</span> <span class="post-toc-text">控制器产生控制信号有两种方法：微程序控制、硬布线控制（组合逻辑控制）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#计算机取指和取操作数的过程及数据通路"><span class="post-toc-number">3.</span> <span class="post-toc-text">计算机取指和取操作数的过程及数据通路</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#用微程序设计方案设计微指令的控制字段（直接控制方式和直接编译方式）和下址字段。"><span class="post-toc-number">4.</span> <span class="post-toc-text">用微程序设计方案设计微指令的控制字段（直接控制方式和直接编译方式）和下址字段。</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#指令流水的概念、影响流水线性能的因素及解决方法"><span class="post-toc-number">5.</span> <span class="post-toc-text">指令流水的概念、影响流水线性能的因素及解决方法</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-中央处理器"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">中央处理器</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-14 20:18:28" datetime="2017-12-14T12:18:28.000Z"  itemprop="datePublished">2017-12-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><strong>程序计数器PC</strong><br>即指令地址寄存器。用来存放当前正在执行的指令地址，或将要执行的下一条指令地址。<br><strong>指令寄存器IR</strong><br>用来存放当前正在执行的指令，以便在指令执行过程中控制完成一条指令的全部功能。<br><strong>指令译码器</strong><br>对指令寄存器IR中的操作码进行分析解释，产生相应的控制信号。<br><strong>MAR、MDR、标志寄存器</strong><br>地址寄存器，数据寄存器。标志寄存器包含CNVZ四个标志位。<br><strong>时钟周期、指令周期、机器周期</strong>  </p>
+<ol>
+<li>时钟周期：是计算机中最基本的、最小的时间单位。在一个时钟周期内,CPU仅完成一个最基本的动作。  </li>
+<li>机器周期：在计算机中,为了便于管理,常把一条指令的执行过程划分为若干个阶段,每一阶段完成一项工作。例如,取指令、存储器读、存储器写等,这每一项工作称为一个基本操作。完成一个基本操作所需要的时间称为机器周期。  </li>
+<li>指令周期：执行一条指令所需要的时间,一般由若干个机器周期组成。指令不同,所需的机器周期也不同。       对于一些简单的的单字节指令,在取指令周期中,指令取出到指令寄存器后,立即译码执行,不再需要其它的机器周期。对于一些比较复杂的指令,例如转移指令、乘法指令,则需要两个或者两个以上的机器周期。    通常含一个机器周期的指令称为单周期指令,包含两个机器周期的指令称为双周期指令。  </li>
+</ol>
+<p><strong>控制存储器</strong><br>为程序一般存放在专用的存储器中，该存储器主要存放控制命令（信号）和下一条执行的微指令地址（下址）。执行一条微指令就是执行一段存放在控制存储器中的微程序。</p>
+<h1 id="控制器产生控制信号有两种方法：微程序控制、硬布线控制（组合逻辑控制）"><a href="#控制器产生控制信号有两种方法：微程序控制、硬布线控制（组合逻辑控制）" class="headerlink" title="控制器产生控制信号有两种方法：微程序控制、硬布线控制（组合逻辑控制）"></a>控制器产生控制信号有两种方法：微程序控制、硬布线控制（组合逻辑控制）</h1><h1 id="计算机取指和取操作数的过程及数据通路"><a href="#计算机取指和取操作数的过程及数据通路" class="headerlink" title="计算机取指和取操作数的过程及数据通路"></a>计算机取指和取操作数的过程及数据通路</h1><h1 id="用微程序设计方案设计微指令的控制字段（直接控制方式和直接编译方式）和下址字段。"><a href="#用微程序设计方案设计微指令的控制字段（直接控制方式和直接编译方式）和下址字段。" class="headerlink" title="用微程序设计方案设计微指令的控制字段（直接控制方式和直接编译方式）和下址字段。"></a>用微程序设计方案设计微指令的控制字段（直接控制方式和直接编译方式）和下址字段。</h1><h1 id="指令流水的概念、影响流水线性能的因素及解决方法"><a href="#指令流水的概念、影响流水线性能的因素及解决方法" class="headerlink" title="指令流水的概念、影响流水线性能的因素及解决方法"></a>指令流水的概念、影响流水线性能的因素及解决方法</h1><ol>
+<li>为提高CPU利用率，加快执行速度，将指令分为若干个阶段，可并行执行不同指令的不同阶段，从而多个指令可以同时执行。在有效地控制了流水线阻塞的情况下，流水线可大大提高指令执行速度。经典的五级流水线：取址、译码/读寄存器、执行/计算有效地址、访问内存（读或写）、结果写回寄存器。</li>
+<li>流水线阻塞的情况有三种：<br>　　1. 结构相关：指令重叠执行的过程中，硬件资源满足不了指令重叠执行的要求，发生资源冲突，这时将产生结构相关。解决的办法是增加硬件资源。<br>　　2. 数据相关：当一条指令需要前面某条指令的执行结果，而两者正在并行执行的情况下，将产生数据相关。解决方式：数据重定向，或称为旁路技术。<br>　　3. 控制相关：有跳转语句、分支指令，或其他改变IP值的指令，将产生控制相关。解决方法：分支预测技术，投机执行，延迟分支。</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-12-14T12:53:18.183Z" itemprop="dateUpdated">2017-12-14 20:53:18</time>
+</span><br>
+
+
+        
+        这里可以给我留言。
+        
+    </div>
+    <footer>
+        <a href="http://sunlanchang.github.io">
+            <img src="/img/tou.jpg" alt="Jason Sun">
+            Jason Sun
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/中央处理器/&title=《中央处理器》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/中央处理器/&title=《中央处理器》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/14/中央处理器/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《中央处理器》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/中央处理器/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/14/中央处理器/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/12/14/指令系统/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">指令系统</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'sunlanchang',
+            repo: 'myGitment',
+            oauth: {
+                client_id: '6013556da1745c4a2fa8',
+                client_secret: '4394e96a00fdb11529f27a88acff6ff091aaaeaa',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jason Sun &copy; 2017</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17053348号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/中央处理器/&title=《中央处理器》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/中央处理器/&title=《中央处理器》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/14/中央处理器/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《中央处理器》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/中央处理器/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/14/中央处理器/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3aQXLCMAwFUO5/6XRLhyb5kk1nYr+sGDCJHwshS3q94ut4uz7feX//7NPPNe8rz54y+cLAwHgs47i8km1dP7iHyfeGgYGxD6N66yQQj/xY+d4wMDAwztZcPzL/7tmnGBgYGOOMZFvVpBADAwPjmpEfU5Ng2ivV5YdnDAyM3Rh51f3/X3+lv4GBgfEoxlG8xgPorJ38ujMGBsbSjDzAVTeUNyN7ARcDA2M3Rn4ETYpuOTtpWCbNAwwMjN0Y1fZk9ZEjQxvlpBMDA2MJRjXV6zUSqqG83ADAwMDYkpG3EhNevvWE8ce3MDAwNmNUhxuqow/VlkOUmGJgYGzDqJ59m43GVvPg5hiMgYGxNKPaaBwBVwc18lQVAwNjH0Z+uyQp7B2DezU0DAyMtRnV0nxvhCLZVr4mOhljYGAsxBgvmeXr5yJvwi4GBsZyjLx8nwTHHDzCa/6fYGBgPJDRK7SVC2EDgTsa18DAwFia0WsrjiRwSeCutiIwMDB2YESjDK32QDVBHArHGBgYGzDyEa7eaMVICliuGmJgYCzNqLYS881Vhy3K4RsDA2NRxlG88rJXj3d955vzNwYGxqKM8WidpJK9hsGsu2FgYKzB6I1W9I6y+U8z4SyOgYGxHCMPfCNp5chwxk1KioGBgRGHy16TsjeEUXgMBgbGloxmF2JSsjgt4GJgYDyK0UvpekW3WSsxMDD2YeQBND9S9kppedO02dTEwMB4HuMHeLCyUFuy2PwAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'false';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Jason's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
