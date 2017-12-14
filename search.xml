@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[指令系统]]></title>
+    <url>%2F2017%2F12%2F14%2F%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%2F</url>
+    <content type="text"><![CDATA[指令操作码、地址码的设计方法常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负）1.指令字长分为单字长指令和双字长指令。]]></content>
+      <categories>
+        <category>计算机组成原理</category>
+      </categories>
+      <tags>
+        <tag>计算机组成原理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[主存储器]]></title>
     <url>%2F2017%2F12%2F14%2F%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%2F</url>
     <content type="text"><![CDATA[RAM和ROM的特性 RAM：通过指令可以随机的个别的对各个存储但愿进行访问读写的存储器，访问时间与存储单元的地址无关。停电会造成信息丢失，具有易失性。 ROM：只能读不能写的存储器，具有非易失性。（ROM不是外部存储器例如硬盘等） SRAM、DRAM 两者都是RAM类型的存储器。 DRAM容量大，价格便宜，功率小，常用做主存储器的主要元件。 SRAM速度快，一般用作容量不大的高速存储器（例如高速缓冲存储器Cache）。 存储器容量的扩展 字扩展 位扩展 字位扩展]]></content>

@@ -18,25 +18,25 @@
     
     
     
-    <title>主存储器 | Jason&#39;s Blog</title>
+    <title>指令系统 | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="计算机组成原理">
-    <meta name="description" content="RAM和ROM的特性 RAM：通过指令可以随机的个别的对各个存储但愿进行访问读写的存储器，访问时间与存储单元的地址无关。停电会造成信息丢失，具有易失性。 ROM：只能读不能写的存储器，具有非易失性。（ROM不是外部存储器例如硬盘等）  SRAM、DRAM 两者都是RAM类型的存储器。 DRAM容量大，价格便宜，功率小，常用做主存储器的主要元件。 SRAM速度快，一般用作容量不大的高速存储器（例如高">
+    <meta name="description" content="指令操作码、地址码的设计方法常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负）1.指令字长分为单字长指令和双字长指令。">
 <meta name="keywords" content="计算机组成原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="主存储器">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/12/14/主存储器/index.html">
+<meta property="og:title" content="指令系统">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/12/14/指令系统/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="RAM和ROM的特性 RAM：通过指令可以随机的个别的对各个存储但愿进行访问读写的存储器，访问时间与存储单元的地址无关。停电会造成信息丢失，具有易失性。 ROM：只能读不能写的存储器，具有非易失性。（ROM不是外部存储器例如硬盘等）  SRAM、DRAM 两者都是RAM类型的存储器。 DRAM容量大，价格便宜，功率小，常用做主存储器的主要元件。 SRAM速度快，一般用作容量不大的高速存储器（例如高">
+<meta property="og:description" content="指令操作码、地址码的设计方法常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负）1.指令字长分为单字长指令和双字长指令。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T12:02:05.150Z">
+<meta property="og:updated_time" content="2017-12-14T12:17:55.653Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="主存储器">
-<meta name="twitter:description" content="RAM和ROM的特性 RAM：通过指令可以随机的个别的对各个存储但愿进行访问读写的存储器，访问时间与存储单元的地址无关。停电会造成信息丢失，具有易失性。 ROM：只能读不能写的存储器，具有非易失性。（ROM不是外部存储器例如硬盘等）  SRAM、DRAM 两者都是RAM类型的存储器。 DRAM容量大，价格便宜，功率小，常用做主存储器的主要元件。 SRAM速度快，一般用作容量不大的高速存储器（例如高">
+<meta name="twitter:title" content="指令系统">
+<meta name="twitter:description" content="指令操作码、地址码的设计方法常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负）1.指令字长分为单字长指令和双字长指令。">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -124,7 +124,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">主存储器</div>
+        <div class="flex-col header-title ellipsis">指令系统</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -146,10 +146,10 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">主存储器</h1>
+        <h1 class="title">指令系统</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-12-14T11:46:19.000Z" itemprop="datePublished" class="page-time">
+                <time datetime="2017-12-14T12:03:39.000Z" itemprop="datePublished" class="page-time">
   2017-12-14
 </time>
 
@@ -171,17 +171,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RAM和ROM的特性"><span class="post-toc-number">1.</span> <span class="post-toc-text">RAM和ROM的特性</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#SRAM、DRAM"><span class="post-toc-number">2.</span> <span class="post-toc-text">SRAM、DRAM</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储器容量的扩展"><span class="post-toc-number">3.</span> <span class="post-toc-text">存储器容量的扩展</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#指令操作码、地址码的设计方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">指令操作码、地址码的设计方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址"><span class="post-toc-number">2.</span> <span class="post-toc-text">常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基本概念：堆栈、标志位、指令字长"><span class="post-toc-number">3.</span> <span class="post-toc-text">基本概念：堆栈、标志位、指令字长</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-主存储器"
+<article id="post-指令系统"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">主存储器</h1>
+        <h1 class="post-card-title">指令系统</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-12-14 19:46:19" datetime="2017-12-14T11:46:19.000Z"  itemprop="datePublished">2017-12-14</time>
+            <time class="post-time" title="2017-12-14 20:03:39" datetime="2017-12-14T12:03:39.000Z"  itemprop="datePublished">2017-12-14</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
@@ -196,19 +196,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="RAM和ROM的特性"><a href="#RAM和ROM的特性" class="headerlink" title="RAM和ROM的特性"></a>RAM和ROM的特性</h1><ol>
-<li>RAM：通过指令可以随机的个别的对各个存储但愿进行访问读写的存储器，访问时间与存储单元的地址无关。停电会造成信息丢失，具有易失性。</li>
-<li>ROM：只能读不能写的存储器，具有非易失性。（ROM不是外部存储器例如硬盘等）</li>
-</ol>
-<h1 id="SRAM、DRAM"><a href="#SRAM、DRAM" class="headerlink" title="SRAM、DRAM"></a>SRAM、DRAM</h1><ol>
-<li>两者都是RAM类型的存储器。</li>
-<li>DRAM容量大，价格便宜，功率小，常用做主存储器的主要元件。</li>
-<li>SRAM速度快，一般用作容量不大的高速存储器（例如高速缓冲存储器Cache）。</li>
-</ol>
-<h1 id="存储器容量的扩展"><a href="#存储器容量的扩展" class="headerlink" title="存储器容量的扩展"></a>存储器容量的扩展</h1><ol>
-<li>字扩展</li>
-<li>位扩展</li>
-<li>字位扩展</li>
+            <h1 id="指令操作码、地址码的设计方法"><a href="#指令操作码、地址码的设计方法" class="headerlink" title="指令操作码、地址码的设计方法"></a>指令操作码、地址码的设计方法</h1><h1 id="常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址"><a href="#常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址" class="headerlink" title="常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址"></a>常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址</h1><p>参考：<a href="https://sunlanchang.github.io/2017/11/21/%E5%9B%BE%E8%A7%A3%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/">图解寻址方式</a></p>
+<h1 id="基本概念：堆栈、标志位、指令字长"><a href="#基本概念：堆栈、标志位、指令字长" class="headerlink" title="基本概念：堆栈、标志位、指令字长"></a>基本概念：堆栈、标志位、指令字长</h1><ol>
+<li>标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负）<br>1.指令字长分为单字长指令和双字长指令。 </li>
 </ol>
 
         </div>
@@ -217,7 +207,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-12-14T12:02:05.150Z" itemprop="dateUpdated">2017-12-14 20:02:05</time>
+    最后更新时间：<time datetime="2017-12-14T12:17:55.653Z" itemprop="dateUpdated">2017-12-14 20:17:55</time>
 </span><br>
 
 
@@ -248,7 +238,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/主存储器/&title=《主存储器》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/指令系统/&title=《指令系统》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -258,22 +248,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/主存储器/&title=《主存储器》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/指令系统/&title=《指令系统》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/14/主存储器/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/14/指令系统/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《主存储器》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/主存储器/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《指令系统》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/指令系统/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/14/主存储器/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/14/指令系统/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -293,21 +283,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/12/14/指令系统/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">指令系统</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/12/14/计算机运算方法和运算部件/" id="post-next" class="post-nav-link">
+      <a href="/2017/12/14/主存储器/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">计算机运算方法和运算部件</h4>
+        <h4 class="title">主存储器</h4>
       </a>
     </div>
   
@@ -391,7 +374,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/主存储器/&title=《主存储器》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/指令系统/&title=《指令系统》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -401,22 +384,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/主存储器/&title=《主存储器》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/指令系统/&title=《指令系统》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/14/主存储器/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/14/指令系统/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《主存储器》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/主存储器/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《指令系统》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/指令系统/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/14/主存储器/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/14/指令系统/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -427,7 +410,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aQW7DMAwEwPz/0+mlhxZB3F3RKWB5fCpSW/HowFAkH4/4ev64ju95d//rs+/uOf6W0YWBgXFZxvPwmrxW+9/j7Xj3bhgYGPdh5Esfb8HkVZLNevs5BgYGxuFXJle7MgYGBsZZAbdN+/LVMDAwMNYOsW2hrQ3Hx5+cdhbHwMC4ICOvuv//3x/pb2BgYFyKMTmIJuskrc1JmP5eBwMDY2tGHuDa8lmLaQMuBgYGRnKMTApqbZEuXyeqGmJgYGzBaEv286eSpDAPyr8yXAwMjE0Za+3JvJS/lm4uNgAwMDA2ZUxSvXycq22R1iNlGBgYN2BMBh3WCmf5atGaGBgYWzPOShYnR9x5aMbAwNibkSRheWMgD8fzhuUfMyMYGBg3YOQpXR7X25Jc8g7RLmJgYFycsfaK7fhFnkrm6WbRbcDAwNiCkbQM18ptOalFFr8eGBgYF2e0h9LJUfNcXtGJxcDAuDijTdSewdVuRB6si5UxMDC2Y+RF/7XjZV6emwylYWBg3IExT/vycHxCA+D1WQwMjFsy2kRw7Sg7CbIYGBgY7fhF3kJoC3nRW2FgYGzKmCR2Z6V07UY81n4ZMDAwLstow9yk0J8MaiQr5JuFgYGxE2N+TJ03DJItw8DAwFgLnZPj63z4DAMDAyNnrB1o50MYRS8UAwPjloxPJ4V5WRADA+M+jCT85YWwvMSWb9ZpZ3EMDIwLMtoRh8WZjnJEY21QDAMDYzvGFyhUiYfToL/3AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3awW6EMAxFUf7/p+m2VQvcZ6cj4dysRqNAclhYsZ3jwOP8Nu7nXM3//ezVnPtVWkOGDBmvZZy342pOSuXvvJ9zuYoMGTI2YJAASpbpbIWE6cv/ZciQIQOE0dp20wOlDBkyZHBGZ0nyZhkyZMioJbG11JSH1w/l4jJkyHghg1fdP//7X/obMmTIeBXjDEenb7h2Jz9WkSFDxmhGZ5lVjclawJUhQ8Y+DJIQ8rCbXiOrFfX+mClDhozRjE7bMngpgKXtzIfPJEOGjNGMTum/Fmr54XJBvVCGDBmDGKRkxi9J8LSWMIJ0V4YMGSMY5IG1hbNV1y+CPFuGDBkvZ3RSzXTrvDLGG6IPubgMGTJGMGrBtDOfHArjYpwMGTK2YaSvq6WmnST54baIDBkyRjP64ZWEVNIQ5U3Tgy8mQ4aMEYz7AEoOeelG0xD/8GlkyJCxAYPU2Fddy0iDMirVyZAhY0sG/z9tIfAmBG+CypAhYzYjDZdpWa1WXKu9QYYMGbMZtQMivyTBU9xWOJYhQ8aWDL6t2pWL4DoFOZjKkCFjA0Z6XKuV/kkI5qFfhgwZOzDOcPTbmWmAjvNvGTJkjGOkYS4NlLUjIy/qxTAZMmS8lpGmqcXmYqnQJkOGDBn8akWajq5qGwShX4YMGTLw1Qrehmy1AdL4LUOGjI0ZKYwfLnlZUIYMGfsw0mZAeijszFmci8uQIeOFjFpw7ARf3rYkT8mQIWM04wsJD2qYyXowxgAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

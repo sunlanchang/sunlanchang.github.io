@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-12-14T12:02:05.150Z</updated>
+  <updated>2017-12-14T12:17:55.653Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>指令系统</title>
+    <link href="http://sunlanchang.github.io/2017/12/14/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://sunlanchang.github.io/2017/12/14/指令系统/</id>
+    <published>2017-12-14T12:03:39.000Z</published>
+    <updated>2017-12-14T12:17:55.653Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="指令操作码、地址码的设计方法"><a href="#指令操作码、地址码的设计方法" class="headerlink" title="指令操作码、地址码的设计方法"></a>指令操作码、地址码的设计方法</h1><h1 id="常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址"><a href="#常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址" class="headerlink" title="常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址"></a>常用的寻址方式及其特点：直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址</h1><p>参考：<a href="https://sunlanchang.github.io/2017/11/21/%E5%9B%BE%E8%A7%A3%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/">图解寻址方式</a></p><h1 id="基本概念：堆栈、标志位、指令字长"><a href="#基本概念：堆栈、标志位、指令字长" class="headerlink" title="基本概念：堆栈、标志位、指令字长"></a>基本概念：堆栈、标志位、指令字长</h1><ol><li>标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负）<br>1.指令字长分为单字长指令和双字长指令。 </li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;指令操作码、地址码的设计方法&quot;&gt;&lt;a href=&quot;#指令操作码、地址码的设计方法&quot; class=&quot;headerlink&quot; title=&quot;指令操作码、地址码的设计方法&quot;&gt;&lt;/a&gt;指令操作码、地址码的设计方法&lt;/h1&gt;&lt;h1 id=&quot;常用的寻址方式及其特点：直接寻址、
+      
+    
+    </summary>
+    
+      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>主存储器</title>
