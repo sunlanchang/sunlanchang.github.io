@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-12-14T11:45:15.330Z</updated>
+  <updated>2017-12-14T12:02:05.150Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>主存储器</title>
+    <link href="http://sunlanchang.github.io/2017/12/14/%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8/"/>
+    <id>http://sunlanchang.github.io/2017/12/14/主存储器/</id>
+    <published>2017-12-14T11:46:19.000Z</published>
+    <updated>2017-12-14T12:02:05.150Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="RAM和ROM的特性"><a href="#RAM和ROM的特性" class="headerlink" title="RAM和ROM的特性"></a>RAM和ROM的特性</h1><ol><li>RAM：通过指令可以随机的个别的对各个存储但愿进行访问读写的存储器，访问时间与存储单元的地址无关。停电会造成信息丢失，具有易失性。</li><li>ROM：只能读不能写的存储器，具有非易失性。（ROM不是外部存储器例如硬盘等）</li></ol><h1 id="SRAM、DRAM"><a href="#SRAM、DRAM" class="headerlink" title="SRAM、DRAM"></a>SRAM、DRAM</h1><ol><li>两者都是RAM类型的存储器。</li><li>DRAM容量大，价格便宜，功率小，常用做主存储器的主要元件。</li><li>SRAM速度快，一般用作容量不大的高速存储器（例如高速缓冲存储器Cache）。</li></ol><h1 id="存储器容量的扩展"><a href="#存储器容量的扩展" class="headerlink" title="存储器容量的扩展"></a>存储器容量的扩展</h1><ol><li>字扩展</li><li>位扩展</li><li>字位扩展</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;RAM和ROM的特性&quot;&gt;&lt;a href=&quot;#RAM和ROM的特性&quot; class=&quot;headerlink&quot; title=&quot;RAM和ROM的特性&quot;&gt;&lt;/a&gt;RAM和ROM的特性&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;RAM：通过指令可以随机的个别的对各个存储但愿进行访问读写的存储
+      
+    
+    </summary>
+    
+      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机运算方法和运算部件</title>
