@@ -33,7 +33,7 @@
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="三层体系结构的特点三层体系结构依次是：Cache、主存、辅存。    cache-主存:在CPU和主存之间增加一级速度快、但容量较小且每位价格较高的高速缓冲存储Cache)。借助于辅助软硬件，它与主存构成一个有机的整体，以弥补主存速度的不足。这个层次的工作主要由硬件实现。   主存-辅存:这个层次的目的是为了弥补主存容量的它是在主存外面增加一个容量更大、每位价格更速度更慢的存储器(称为辅存，一般是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T13:45:42.626Z">
+<meta property="og:updated_time" content="2017-12-14T13:46:15.800Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="存储系统">
 <meta name="twitter:description" content="三层体系结构的特点三层体系结构依次是：Cache、主存、辅存。    cache-主存:在CPU和主存之间增加一级速度快、但容量较小且每位价格较高的高速缓冲存储Cache)。借助于辅助软硬件，它与主存构成一个有机的整体，以弥补主存速度的不足。这个层次的工作主要由硬件实现。   主存-辅存:这个层次的目的是为了弥补主存容量的它是在主存外面增加一个容量更大、每位价格更速度更慢的存储器(称为辅存，一般是">
@@ -227,8 +227,8 @@
 <li>物理地址：存放指令或数据的实际内存地址</li>
 </ol>
 </li>
-<li>页表结构<br>页表的首地址放在基址寄存器。采用基址寻址方式<br>每个页表项前面有一个虚页号：从0开始递增的序号。页表项又分为几个结构：<br>（1）装入位：该页是否在内存中<br>（2）修改位：该也在内存中是否被修改<br>（3）替换控制位：用于clock算法<br>（4）其他<br>（5）实页号（8进制）<br><strong>段页式</strong><br>1。 段页式虚拟存储，先把程序按照逻辑分成段，再把每段分成固定大小的页。</li>
-<li>程序对主存的调入调出是按照页面进行的。但他有可以根据段实现共享和保护。</li>
+<li>页表结构<br>页表的首地址放在基址寄存器。采用基址寻址方式<br>每个页表项前面有一个虚页号：从0开始递增的序号。页表项又分为几个结构：<br>（1）装入位：该页是否在内存中<br>（2）修改位：该也在内存中是否被修改<br>（3）替换控制位：用于clock算法<br>（4）其他<br>（5）实页号（8进制）<br><strong>段页式</strong>  </li>
+<li>段页式虚拟存储，先把程序按照逻辑分成段，再把每段分成固定大小的页。<br>程序对主存的调入调出是按照页面进行的。但他有可以根据段实现共享和保护。</li>
 <li>缺点是段页式虚拟地址转换成物理地址需要查询2个表：段表和页表。段表找到相应页表的位置，页表找到想也页的位置。</li>
 <li>段页式细腻地址的结构可以为以下形式：<br>程序地址： <code>用户号(进程pid) | 段号 | 页号 | 页内偏移地址</code><h1 id="Cache的地址映像"><a href="#Cache的地址映像" class="headerlink" title="Cache的地址映像"></a>Cache的地址映像</h1><strong>直接映像</strong><br>j= i mod Cache的块数<br>把主存分成若干区，每区与Cache大小相同。区内分块，主存每个区中块的大小和Cache中块的大小相等，主存中每个区包含的块的个数与Cache中块的个数相等。任意一个主存块只能映像到Cache中唯一指定的块中，即相同块号的位置。主存地址分为三部分：区号、块号和块内地址，Cache地址分为：块号和块内地址。直接映像方式下，数据块只能映像到Cache中唯一指定的位置，故不存在替换算法的问题。它不同于全相连Cache，地址仅需比较一次。<br>特点：地址变换简单、速度快，可直接由主存地址提取出Cache地址。但不灵活，块冲突率较高，Cache空间得不到充分利用。<br>公式：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">主存地址位数 ＝ 区号 + 区内分块号 + 块内地址</div><div class="line">Cache地址位数 ＝ 块号+块内地址</div></pre></td></tr></table></figure>
 </li>
@@ -244,7 +244,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-14T13:45:42.626Z" itemprop="dateUpdated">2017-12-14 21:45:42</time>
+    Last updated: <time datetime="2017-12-14T13:46:15.800Z" itemprop="dateUpdated">2017-12-14 21:46:15</time>
 </span><br>
 
 
