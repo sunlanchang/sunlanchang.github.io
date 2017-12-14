@@ -18,7 +18,7 @@
     
     
     
-    <title>计算机算方法和运算部件 | Jason&#39;s Blog</title>
+    <title>计算机运算方法和运算部件 | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -28,14 +28,14 @@
     <meta name="description" content="十进制数、二进制数、十六进制数的相互转换 整数十进制转二进制有模2取余法。 小数转二进制有乘2取整法。 二进制转十六进制：二进制从低位到高位四个为一组（高位不够补0），转换为十六进制。反之为十六进制转换二进制。 十进制转十六进制：第一种先把十六进制转换为二进制，再把二进制转换为十六进制。第二种模16取余法，十六进制即为倒序的余数。  机器数的表示方法：原码、补码、反码、移码 原码：用0、1取代符号">
 <meta name="keywords" content="计算机组成原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机算方法和运算部件">
+<meta property="og:title" content="计算机运算方法和运算部件">
 <meta property="og:url" content="http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="十进制数、二进制数、十六进制数的相互转换 整数十进制转二进制有模2取余法。 小数转二进制有乘2取整法。 二进制转十六进制：二进制从低位到高位四个为一组（高位不够补0），转换为十六进制。反之为十六进制转换二进制。 十进制转十六进制：第一种先把十六进制转换为二进制，再把二进制转换为十六进制。第二种模16取余法，十六进制即为倒序的余数。  机器数的表示方法：原码、补码、反码、移码 原码：用0、1取代符号">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T11:42:02.000Z">
+<meta property="og:updated_time" content="2017-12-14T11:45:15.330Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机算方法和运算部件">
+<meta name="twitter:title" content="计算机运算方法和运算部件">
 <meta name="twitter:description" content="十进制数、二进制数、十六进制数的相互转换 整数十进制转二进制有模2取余法。 小数转二进制有乘2取整法。 二进制转十六进制：二进制从低位到高位四个为一组（高位不够补0），转换为十六进制。反之为十六进制转换二进制。 十进制转十六进制：第一种先把十六进制转换为二进制，再把二进制转换为十六进制。第二种模16取余法，十六进制即为倒序的余数。  机器数的表示方法：原码、补码、反码、移码 原码：用0、1取代符号">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
@@ -124,7 +124,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">计算机算方法和运算部件</div>
+        <div class="flex-col header-title ellipsis">计算机运算方法和运算部件</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -146,7 +146,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">计算机算方法和运算部件</h1>
+        <h1 class="title">计算机运算方法和运算部件</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-12-14T10:56:44.000Z" itemprop="datePublished" class="page-time">
@@ -179,7 +179,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">计算机算方法和运算部件</h1>
+        <h1 class="post-card-title">计算机运算方法和运算部件</h1>
         <div class="post-meta">
             <time class="post-time" title="2017-12-14 18:56:44" datetime="2017-12-14T10:56:44.000Z"  itemprop="datePublished">2017-12-14</time>
 
@@ -214,7 +214,9 @@
 <li>E为阶码，一般为整数，其中有一位符号位，设置在E的最高位，用来表示正阶或负阶。</li>
 <li>M为尾数，为了保证数据精度，尾数通常用规格化（尾数最高位不能为0）表示：当R=2且尾数值不为0时，其绝对值应大于或等于$(0.5)_{10}$。对于非规格化的浮点数通过将尾数左移或右移并修改阶码值使之满足规格化要求。</li>
 </ol>
-<h1 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h1><p>数据：<br>| 0 | 0 | 0 |<br>| :–: |:–:|:–:|<br>| 0 | 0 | 1 |<br>| 1 | 1 | 0 |<br>积校验<br>| 1 | 0 | 0 | 0 |<br>| :–: | :–: |:–:|:–:|<br>| 0 | 0 | 0 | 1 |<br>| 1 | 1 | 1 | 0 |<br>偶校验<br>| 0 | 0 | 0 | 0 |<br>| :–: | :–: |:–:|:–:|<br>| 1 | 0 | 0 | 1 |<br>| 0 | 1 | 1 | 0 |</p>
+<h1 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h1><p>数据：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span> </div><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> </div><div class="line"><span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></div></pre></td></tr></table></figure></p>
+<p>积校验<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span> </div><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> </div><div class="line"><span class="number">1</span>  <span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></div></pre></td></tr></table></figure></p>
+<p>偶校验<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span> </div><div class="line"><span class="number">1</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> </div><div class="line"><span class="number">0</span>  <span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></div></pre></td></tr></table></figure></p>
 <h1 id="定点数的加减运算；"><a href="#定点数的加减运算；" class="headerlink" title="定点数的加减运算；"></a>定点数的加减运算；</h1><h1 id="补码一位乘：布斯公式法；"><a href="#补码一位乘：布斯公式法；" class="headerlink" title="补码一位乘：布斯公式法；"></a>补码一位乘：布斯公式法；</h1><h1 id="原码一位除：加减交替法；"><a href="#原码一位除：加减交替法；" class="headerlink" title="原码一位除：加减交替法；"></a>原码一位除：加减交替法；</h1><h1 id="浮点数的加减运算（分五个步骤）"><a href="#浮点数的加减运算（分五个步骤）" class="headerlink" title="浮点数的加减运算（分五个步骤）"></a>浮点数的加减运算（分五个步骤）</h1><ol>
 <li>对阶</li>
 <li>尾数加减</li>
@@ -230,7 +232,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-14T11:42:02.000Z" itemprop="dateUpdated">2017-12-14 19:42:02</time>
+    Last updated: <time datetime="2017-12-14T11:45:15.330Z" itemprop="dateUpdated">2017-12-14 19:45:15</time>
 </span><br>
 
 
@@ -261,7 +263,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&title=《计算机算方法和运算部件》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&title=《计算机运算方法和运算部件》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -271,7 +273,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&title=《计算机算方法和运算部件》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&title=《计算机运算方法和运算部件》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -281,7 +283,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机算方法和运算部件》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机运算方法和运算部件》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -397,7 +399,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&title=《计算机算方法和运算部件》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&title=《计算机运算方法和运算部件》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -407,7 +409,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&title=《计算机算方法和运算部件》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&title=《计算机运算方法和运算部件》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -417,7 +419,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机算方法和运算部件》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机运算方法和运算部件》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
