@@ -33,7 +33,7 @@
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="安装sshsudo apt install ssh，若安装了，忽略这一步。 ssh配置主机A：10.0.5.199主机B：10.0.5.198需要配置主机A无密码登录主机A，主机B先确保所有主机的防火墙处于关闭状态。在主机A上执行如下： 　1.　$cd ~/.ssh 　2.　$ssh-keygen -t rsa  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在.ssh/id_">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-16T06:18:21.000Z">
+<meta property="og:updated_time" content="2017-12-16T06:18:49.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设置ssh私钥登录">
 <meta name="twitter:description" content="安装sshsudo apt install ssh，若安装了，忽略这一步。 ssh配置主机A：10.0.5.199主机B：10.0.5.198需要配置主机A无密码登录主机A，主机B先确保所有主机的防火墙处于关闭状态。在主机A上执行如下： 　1.　$cd ~/.ssh 　2.　$ssh-keygen -t rsa  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在.ssh/id_">
@@ -202,7 +202,7 @@
 <p>　2.　<code>$ssh-keygen -t rsa</code>  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在<code>.ssh/id_rsa</code>文件中。</p>
 <p>　3.　<code>$cp id_rsa.pub authorized_keys</code> 这步完成后，正常情况下就可以无密码登录本机了，即ssh localhost，无需输入密码。</p>
 <p>　4.　<code>$scp authorized_keys summer@10.0.5.198:/home/summer/.ssh</code>  ——把刚刚产生的authorized_keys文件拷一份到主机B上.　　</p>
-<p>　5.　<code>$chmod 600 authorized_keys</code>       进入主机B的.ssh目录，改变authorized_keys文件的许可权限。<br>Note：<br>(4和5可以合成一步，执行:  <code>$ssh-copy-id -i summer@10.0.5.198</code>)</p>
+<p>　5.　<code>$chmod 600 authorized_keys</code>       进入主机B的.ssh目录，改变authorized_keys文件的许可权限。<br><strong>Note：</strong><br>(4和5可以合成一步，执行:  <code>$ssh-copy-id -i summer@10.0.5.198</code>)</p>
 <p><strong>参考</strong>  </p>
 <blockquote>
 <p><a href="http://www.cnblogs.com/jdksummer/articles/2521550.html" target="_blank" rel="external">http://www.cnblogs.com/jdksummer/articles/2521550.html</a></p>
@@ -214,7 +214,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-16T06:18:21.000Z" itemprop="dateUpdated">2017-12-16 14:18:21</time>
+    Last updated: <time datetime="2017-12-16T06:18:49.627Z" itemprop="dateUpdated">2017-12-16 14:18:49</time>
 </span><br>
 
 
