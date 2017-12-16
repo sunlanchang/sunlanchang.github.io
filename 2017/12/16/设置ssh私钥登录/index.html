@@ -25,18 +25,18 @@
     
     
     <meta name="keywords" content="Other">
-    <meta name="description" content="ssh配置主机A：10.0.5.199主机B：10.0.5.198需要配置主机A无密码登录主机A，主机B先确保所有主机的防火墙处于关闭状态。在主机A上执行如下： 　1.　$cd ~/.ssh 　2.　$ssh-keygen -t rsa  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在.ssh/id_rsa文件中。 　3.　$cp id_rsa.pub authorized_">
+    <meta name="description" content="安装sshsudo apt install ssh，若安装了，忽略这一步。 ssh配置主机A：10.0.5.199主机B：10.0.5.198需要配置主机A无密码登录主机A，主机B先确保所有主机的防火墙处于关闭状态。在主机A上执行如下： 　1.　$cd ~/.ssh 　2.　$ssh-keygen -t rsa  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在.ssh/id_">
 <meta name="keywords" content="Other">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设置ssh私钥登录">
 <meta property="og:url" content="http://sunlanchang.github.io/2017/12/16/设置ssh私钥登录/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="ssh配置主机A：10.0.5.199主机B：10.0.5.198需要配置主机A无密码登录主机A，主机B先确保所有主机的防火墙处于关闭状态。在主机A上执行如下： 　1.　$cd ~/.ssh 　2.　$ssh-keygen -t rsa  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在.ssh/id_rsa文件中。 　3.　$cp id_rsa.pub authorized_">
+<meta property="og:description" content="安装sshsudo apt install ssh，若安装了，忽略这一步。 ssh配置主机A：10.0.5.199主机B：10.0.5.198需要配置主机A无密码登录主机A，主机B先确保所有主机的防火墙处于关闭状态。在主机A上执行如下： 　1.　$cd ~/.ssh 　2.　$ssh-keygen -t rsa  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在.ssh/id_">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-16T06:14:58.346Z">
+<meta property="og:updated_time" content="2017-12-16T06:18:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设置ssh私钥登录">
-<meta name="twitter:description" content="ssh配置主机A：10.0.5.199主机B：10.0.5.198需要配置主机A无密码登录主机A，主机B先确保所有主机的防火墙处于关闭状态。在主机A上执行如下： 　1.　$cd ~/.ssh 　2.　$ssh-keygen -t rsa  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在.ssh/id_rsa文件中。 　3.　$cp id_rsa.pub authorized_">
+<meta name="twitter:description" content="安装sshsudo apt install ssh，若安装了，忽略这一步。 ssh配置主机A：10.0.5.199主机B：10.0.5.198需要配置主机A无密码登录主机A，主机B先确保所有主机的防火墙处于关闭状态。在主机A上执行如下： 　1.　$cd ~/.ssh 　2.　$ssh-keygen -t rsa  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在.ssh/id_">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -168,6 +168,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装ssh"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装ssh</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ssh配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">ssh配置</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-设置ssh私钥登录"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -189,7 +196,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>ssh配置<br>主机A：10.0.5.199<br>主机B：10.0.5.198<br>需要配置主机A无密码登录主机A，主机B<br>先确保所有主机的防火墙处于关闭状态。<br>在主机A上执行如下：</p>
+            <h1 id="安装ssh"><a href="#安装ssh" class="headerlink" title="安装ssh"></a>安装ssh</h1><p><code>sudo apt install ssh</code>，若安装了，忽略这一步。</p>
+<h1 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h1><p>主机A：10.0.5.199<br>主机B：10.0.5.198<br>需要配置主机A无密码登录主机A，主机B<br>先确保所有主机的防火墙处于关闭状态。<br>在主机A上执行如下：</p>
 <p>　1.　<code>$cd ~/.ssh</code></p>
 <p>　2.　<code>$ssh-keygen -t rsa</code>  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在<code>.ssh/id_rsa</code>文件中。</p>
 <p>　3.　<code>$cp id_rsa.pub authorized_keys</code> 这步完成后，正常情况下就可以无密码登录本机了，即ssh localhost，无需输入密码。</p>
@@ -206,7 +214,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-16T06:14:58.346Z" itemprop="dateUpdated">2017-12-16 14:14:58</time>
+    Last updated: <time datetime="2017-12-16T06:18:21.000Z" itemprop="dateUpdated">2017-12-16 14:18:21</time>
 </span><br>
 
 

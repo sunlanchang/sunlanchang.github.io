@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-12-16T06:14:58.346Z</updated>
+  <updated>2017-12-16T06:18:21.000Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://sunlanchang.github.io/2017/12/16/%E8%AE%BE%E7%BD%AEssh%E7%A7%81%E9%92%A5%E7%99%BB%E5%BD%95/"/>
     <id>http://sunlanchang.github.io/2017/12/16/设置ssh私钥登录/</id>
     <published>2017-12-16T06:10:09.000Z</published>
-    <updated>2017-12-16T06:14:58.346Z</updated>
+    <updated>2017-12-16T06:18:21.000Z</updated>
     
-    <content type="html"><![CDATA[<p>ssh配置<br>主机A：10.0.5.199<br>主机B：10.0.5.198<br>需要配置主机A无密码登录主机A，主机B<br>先确保所有主机的防火墙处于关闭状态。<br>在主机A上执行如下：</p><p>　1.　<code>$cd ~/.ssh</code></p><p>　2.　<code>$ssh-keygen -t rsa</code>  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在<code>.ssh/id_rsa</code>文件中。</p><p>　3.　<code>$cp id_rsa.pub authorized_keys</code> 这步完成后，正常情况下就可以无密码登录本机了，即ssh localhost，无需输入密码。</p><p>　4.　<code>$scp authorized_keys summer@10.0.5.198:/home/summer/.ssh</code>  ——把刚刚产生的authorized_keys文件拷一份到主机B上.　　</p><p>　5.　<code>$chmod 600 authorized_keys</code>       进入主机B的.ssh目录，改变authorized_keys文件的许可权限。<br>Note：<br>(4和5可以合成一步，执行:  <code>$ssh-copy-id -i summer@10.0.5.198</code>)</p><p><strong>参考</strong>  </p><blockquote><p><a href="http://www.cnblogs.com/jdksummer/articles/2521550.html" target="_blank" rel="external">http://www.cnblogs.com/jdksummer/articles/2521550.html</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="安装ssh"><a href="#安装ssh" class="headerlink" title="安装ssh"></a>安装ssh</h1><p><code>sudo apt install ssh</code>，若安装了，忽略这一步。</p><h1 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h1><p>主机A：10.0.5.199<br>主机B：10.0.5.198<br>需要配置主机A无密码登录主机A，主机B<br>先确保所有主机的防火墙处于关闭状态。<br>在主机A上执行如下：</p><p>　1.　<code>$cd ~/.ssh</code></p><p>　2.　<code>$ssh-keygen -t rsa</code>  ——————–然后一直按回车键，就会按照默认的选项将生成的密钥保存在<code>.ssh/id_rsa</code>文件中。</p><p>　3.　<code>$cp id_rsa.pub authorized_keys</code> 这步完成后，正常情况下就可以无密码登录本机了，即ssh localhost，无需输入密码。</p><p>　4.　<code>$scp authorized_keys summer@10.0.5.198:/home/summer/.ssh</code>  ——把刚刚产生的authorized_keys文件拷一份到主机B上.　　</p><p>　5.　<code>$chmod 600 authorized_keys</code>       进入主机B的.ssh目录，改变authorized_keys文件的许可权限。<br>Note：<br>(4和5可以合成一步，执行:  <code>$ssh-copy-id -i summer@10.0.5.198</code>)</p><p><strong>参考</strong>  </p><blockquote><p><a href="http://www.cnblogs.com/jdksummer/articles/2521550.html" target="_blank" rel="external">http://www.cnblogs.com/jdksummer/articles/2521550.html</a></p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;ssh配置&lt;br&gt;主机A：10.0.5.199&lt;br&gt;主机B：10.0.5.198&lt;br&gt;需要配置主机A无密码登录主机A，主机B&lt;br&gt;先确保所有主机的防火墙处于关闭状态。&lt;br&gt;在主机A上执行如下：&lt;/p&gt;
-&lt;p&gt;　1.　&lt;code&gt;$cd ~/.ssh&lt;/code&gt;&lt;/
+        &lt;h1 id=&quot;安装ssh&quot;&gt;&lt;a href=&quot;#安装ssh&quot; class=&quot;headerlink&quot; title=&quot;安装ssh&quot;&gt;&lt;/a&gt;安装ssh&lt;/h1&gt;&lt;p&gt;&lt;code&gt;sudo apt install ssh&lt;/code&gt;，若安装了，忽略这一步。&lt;/p&gt;
+&lt;h1 id=&quot;
       
     
     </summary>
