@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?086a5af0b6f644650f444fc827e297f8"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>关系数据库规范化理论 | Jason&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="数据库原理与应用">
+    <meta name="description" content="基本概念函数依赖：如何构造一个合适的关系模式，应该构造几个关系模式，每个关系模式由哪些属性组成等，都是数据库的逻辑设计问题，其中各个属性之间的依赖关系就是函数依赖。例如：选课表中$(Sno, Cno) \rightarrow Grade$即成绩依赖与学生学号和课程号，或Sno和Cno决定Y。   设有关系模式R(A1,A2,…)，X和Y为R的一个子集，则：    如果$X \rightarrow">
+<meta name="keywords" content="数据库原理与应用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关系数据库规范化理论">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/12/18/关系数据库规范化理论/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="基本概念函数依赖：如何构造一个合适的关系模式，应该构造几个关系模式，每个关系模式由哪些属性组成等，都是数据库的逻辑设计问题，其中各个属性之间的依赖关系就是函数依赖。例如：选课表中$(Sno, Cno) \rightarrow Grade$即成绩依赖与学生学号和课程号，或Sno和Cno决定Y。   设有关系模式R(A1,A2,…)，X和Y为R的一个子集，则：    如果$X \rightarrow">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-18T13:35:13.561Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关系数据库规范化理论">
+<meta name="twitter:description" content="基本概念函数依赖：如何构造一个合适的关系模式，应该构造几个关系模式，每个关系模式由哪些属性组成等，都是数据库的逻辑设计问题，其中各个属性之间的依赖关系就是函数依赖。例如：选课表中$(Sno, Cno) \rightarrow Grade$即成绩依赖与学生学号和课程号，或Sno和Cno决定Y。   设有关系模式R(A1,A2,…)，X和Y为R的一个子集，则：    如果$X \rightarrow">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/tou.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jason Sun</h5>
+          <a href="mailto:sunlanchang@outlook.com" title="sunlanchang@outlook.com" class="mail">sunlanchang@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/sunlanchang" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.csdn.net/sunlanchang"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">关系数据库规范化理论</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">关系数据库规范化理论</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-18T12:17:51.000Z" itemprop="datePublished" class="page-time">
+  2017-12-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库原理与应用/">数据库原理与应用</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基本概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本概念</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#范式"><span class="post-toc-number">2.</span> <span class="post-toc-text">范式</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-关系数据库规范化理论"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">关系数据库规范化理论</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-18 20:17:51" datetime="2017-12-18T12:17:51.000Z"  itemprop="datePublished">2017-12-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库原理与应用/">数据库原理与应用</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><strong>函数依赖</strong>：如何构造一个合适的关系模式，应该构造几个关系模式，每个关系模式由哪些属性组成等，都是数据库的逻辑设计问题，其中各个属性之间的依赖关系就是函数依赖。<br>例如：选课表中$(Sno, Cno) \rightarrow Grade$即成绩依赖与学生学号和课程号，或Sno和Cno决定Y。  </p>
+<p>设有关系模式R(A1,A2,…)，X和Y为R的一个子集，则：  </p>
+<ol>
+<li>如果$X \rightarrow Y$，但Y不包含于X，则称$X \rightarrow Y$是<strong>非平凡的函数依赖</strong>。</li>
+<li>如果X不函数依赖与Y则记做$X \nrightarrow Y$。</li>
+<li>如果$X \rightarrow Y$，则成为X为<strong>决定因子</strong>。</li>
+<li>如果$X \rightarrow Y$并且$Y \rightarrow X$，则记做$X \leftrightarrow Y$。</li>
+<li>如果$X \rightarrow Y$，并且对于X的每一个子集X1都有$X1 \nrightarrow Y$，则称<strong>Y完全依赖于X</strong>，若存在$X1 \rightarrow Y$反之为<strong>Y部分依赖于X</strong>。  </li>
+<li>如果$X \rightarrow Y$（即非平凡函数依赖$Y \nrightarrow X$）并且$Y \rightarrow Z$ ，则称Z传递依赖与X。  </li>
+</ol>
+<p>设U表示关系模式E的属性全集，F表示R上的函数依赖集，则关系模式R可表示为R(U, F)  </p>
+<ol>
+<li><strong>候选码</strong>如果K为R中的属性或属性组，且K完全依赖于U，则K为R的候选码即K为决定R全部属性的最小属性组。  </li>
+<li>关系R(u, F)中可能有多个候选码，选其中一个作为<strong>主码</strong>。  </li>
+<li><strong>全码</strong>：候选码为整个属性组。  </li>
+<li><strong>主属性</strong>为包含在任一候选码中的属性，反之为<strong>非主属性</strong>。  </li>
+<li>用于建立关系表之间关联关系的属性称为<strong>外码</strong>。  </li>
+</ol>
+<h1 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h1><p><strong>第一范式</strong><br>不包含重复组属性（即不包含非原子项的属性）是第一范式的关系。<br><strong>第二范式</strong><br>如果R满足第一范式，并且R中每个非主属性都完全依赖于主码则R满足第二范式。（所有的属性都完全依赖主码，消除非主属性部的部分依赖）  </p>
+<p>例如：$SC(Sno, Cno, Sname, Grade)$中$(Sno, Cno)$是主码，而又有$Sno \rightarrow Sname$，因此$Sname$部分依赖于$(Sno, Cno)$。</p>
+<p>模式分解：  </p>
+<ol>
+<li>用组成主码的属性集合的每一个子集作为主码构成一个关系模式。</li>
+<li>将依赖于这些主码的属性放置到相应的关系模式中。</li>
+<li>最后去掉只由主码的子集构成的关系模式。</li>
+</ol>
+<p><strong>第三范式</strong><br>R(U, F)满足第二范式，并且不存在传递依赖。  </p>
+<p>模式分解：</p>
+<ol>
+<li>对于不是候选码的每个决定因子，总关系模式中删去依赖于它的所有属性。</li>
+<li>新建一个关系模式，新关系模式中包含在原关系模式中所有依赖于该决定因子的属性。</li>
+<li>将决定因子作为新关系模式的主码。</li>
+</ol>
+<p><strong>BC范式</strong><br>当且仅当关系中的每个函数依赖的决定因子都是候选码时，R满足BC范式。<br>与第三范式区别：对于函数依赖$A \rightarrow B$，3NF允许B是主属性而A不是候选码，BCNF要求A必须是候选码。  </p>
+<p><strong>关系模式的分解准则</strong><br>模式分解要满足：</p>
+<ul>
+<li>模式分解具有无损连接性；</li>
+<li>模式分解能够保持函数依赖。</li>
+</ul>
+<ol>
+<li><strong>无损连接</strong>是指分解后的关系通过自然连接可以恢复成原来的关系，即通过自然连接得到的关系与原来的关系相比，既不多出信息、又不丢失信息。</li>
+<li><strong>保持函数依赖分解</strong>是指在模式的分解过程中，函数依赖不能丢失的特性，即模式分解不能破坏原来的语义。</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-12-18T13:35:13.561Z" itemprop="dateUpdated">2017-12-18 21:35:13</time>
+</span><br>
+
+
+        
+        这里可以给我留言。
+        
+    </div>
+    <footer>
+        <a href="http://sunlanchang.github.io">
+            <img src="/img/tou.jpg" alt="Jason Sun">
+            Jason Sun
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库原理与应用/">数据库原理与应用</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/18/关系数据库规范化理论/&title=《关系数据库规范化理论》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/18/关系数据库规范化理论/&title=《关系数据库规范化理论》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/18/关系数据库规范化理论/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《关系数据库规范化理论》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/18/关系数据库规范化理论/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/18/关系数据库规范化理论/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/12/16/设置ssh私钥登录/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">设置ssh私钥登录</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'sunlanchang',
+            repo: 'myGitment',
+            oauth: {
+                client_id: '6013556da1745c4a2fa8',
+                client_secret: '4394e96a00fdb11529f27a88acff6ff091aaaeaa',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jason Sun &copy; 2017</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17053348号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/18/关系数据库规范化理论/&title=《关系数据库规范化理论》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/18/关系数据库规范化理论/&title=《关系数据库规范化理论》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/18/关系数据库规范化理论/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《关系数据库规范化理论》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/18/关系数据库规范化理论/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/18/关系数据库规范化理论/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3aO3LDMAwFwNz/0kmZFJH08KHtYlVlPLLIVWYIGMDXV3x9/7n+fnJ15/1zrj75vriSJ48uPDw8vMHW7x99tdj9d5P7J/u5fxoeHh7eOd79IX5PTY7+fJXqfh4seHh4eB/Am6TUeSBZS+jx8PDwPoCXbCtJx/M0/W1xDw8PD++WNymh9koY81LIcq0FDw8PL+blXaTP+ftIfw8PDw9v3FXfOqarja68wfawFh4eHt4BXq/wuvWthbGAYEU8PDy8XV61DJEEiUlmmw9pJffj4eHhneDlo1H5gFT1ZeVFkCjKTW7Fw8PDC/acH8fVYmt+rOeDBdVyMx4eHt5pXrXNn6fL1UGuXngoxzE8PDy8Fm+3cNDDTAofyXPw8PDwdnl5mpsnu/kr6BUpknXx8PDw3surFlsnzbDJrGkzMODh4eEVeZPj/j6Brm60l2pH/wA8PDy8w7y8MZ+PGkxaaHkgeWiD4eHh4S3x8oO+V8atpuDVllu5v4eHh4e3xMsXmJR9q539JOkvlCHw8PDwVnnVZXpJcy8sjV4QHh4e3gHepOE0QeZl3DwMPLwOPDw8vCVe/sO+OljQK9H2xhEu78fDw8M7xqum0b0kuzoukMPw8PDwXsnLf/zPW/6TAFN9ZnmyDA8PD69fWW0276tDWlV8vsOHsi8eHh7eEm936wvDUkVMOdfGw8PDW+JNGk7Vsm8vePRWx8PDwzvN66XRk6JG+aDPB63w8PDwDvB6g1aTkanqE3rJ9D+TEXh4eHhLvPnhu5VYV5tbeVkEDw8P7wRvtz2fbyI5yqthIyrj4uHh4S3xqhvdDQnN5lYe0/Dw8PDeyus1tCYliWo5GA8PD++TeeVGfqsiUi004+Hh4b2G1yuzTsoHSXOrOl5QHiDAw8PDO9BVzxtOk+N+3oQ7WLDAw8PD+71+AOR4X/TvQDpwAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'false';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Jason's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

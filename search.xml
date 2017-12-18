@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关系数据库规范化理论]]></title>
+    <url>%2F2017%2F12%2F18%2F%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%84%E8%8C%83%E5%8C%96%E7%90%86%E8%AE%BA%2F</url>
+    <content type="text"><![CDATA[基本概念函数依赖：如何构造一个合适的关系模式，应该构造几个关系模式，每个关系模式由哪些属性组成等，都是数据库的逻辑设计问题，其中各个属性之间的依赖关系就是函数依赖。例如：选课表中$(Sno, Cno) \rightarrow Grade$即成绩依赖与学生学号和课程号，或Sno和Cno决定Y。 设有关系模式R(A1,A2,…)，X和Y为R的一个子集，则： 如果$X \rightarrow Y$，但Y不包含于X，则称$X \rightarrow Y$是非平凡的函数依赖。 如果X不函数依赖与Y则记做$X \nrightarrow Y$。 如果$X \rightarrow Y$，则成为X为决定因子。 如果$X \rightarrow Y$并且$Y \rightarrow X$，则记做$X \leftrightarrow Y$。 如果$X \rightarrow Y$，并且对于X的每一个子集X1都有$X1 \nrightarrow Y$，则称Y完全依赖于X，若存在$X1 \rightarrow Y$反之为Y部分依赖于X。 如果$X \rightarrow Y$（即非平凡函数依赖$Y \nrightarrow X$）并且$Y \rightarrow Z$ ，则称Z传递依赖与X。 设U表示关系模式E的属性全集，F表示R上的函数依赖集，则关系模式R可表示为R(U, F) 候选码如果K为R中的属性或属性组，且K完全依赖于U，则K为R的候选码即K为决定R全部属性的最小属性组。 关系R(u, F)中可能有多个候选码，选其中一个作为主码。 全码：候选码为整个属性组。 主属性为包含在任一候选码中的属性，反之为非主属性。 用于建立关系表之间关联关系的属性称为外码。 范式第一范式不包含重复组属性（即不包含非原子项的属性）是第一范式的关系。第二范式如果R满足第一范式，并且R中每个非主属性都完全依赖于主码则R满足第二范式。（所有的属性都完全依赖主码，消除非主属性部的部分依赖） 例如：$SC(Sno, Cno, Sname, Grade)$中$(Sno, Cno)$是主码，而又有$Sno \rightarrow Sname$，因此$Sname$部分依赖于$(Sno, Cno)$。 模式分解： 用组成主码的属性集合的每一个子集作为主码构成一个关系模式。 将依赖于这些主码的属性放置到相应的关系模式中。 最后去掉只由主码的子集构成的关系模式。 第三范式R(U, F)满足第二范式，并且不存在传递依赖。 模式分解： 对于不是候选码的每个决定因子，总关系模式中删去依赖于它的所有属性。 新建一个关系模式，新关系模式中包含在原关系模式中所有依赖于该决定因子的属性。 将决定因子作为新关系模式的主码。 BC范式当且仅当关系中的每个函数依赖的决定因子都是候选码时，R满足BC范式。与第三范式区别：对于函数依赖$A \rightarrow B$，3NF允许B是主属性而A不是候选码，BCNF要求A必须是候选码。 关系模式的分解准则模式分解要满足： 模式分解具有无损连接性； 模式分解能够保持函数依赖。 无损连接是指分解后的关系通过自然连接可以恢复成原来的关系，即通过自然连接得到的关系与原来的关系相比，既不多出信息、又不丢失信息。 保持函数依赖分解是指在模式的分解过程中，函数依赖不能丢失的特性，即模式分解不能破坏原来的语义。]]></content>
+      <categories>
+        <category>数据库原理与应用</category>
+      </categories>
+      <tags>
+        <tag>数据库原理与应用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[设置ssh私钥登录]]></title>
     <url>%2F2017%2F12%2F16%2F%E8%AE%BE%E7%BD%AEssh%E7%A7%81%E9%92%A5%E7%99%BB%E5%BD%95%2F</url>
     <content type="text"><![CDATA[安装sshsudo apt install ssh，若安装了，忽略这一步。 ssh配置主机A：10.0.5.199主机B：10.0.5.198需要配置主机A无密码登录主机B先确保所有主机的防火墙处于关闭状态，这里是开放22端口。在主机A上执行如下： 1. $cd ~/.ssh 2. $ssh-keygen -t rsa，然后一直按回车键，就会按照默认的选项将生成的密钥保存在.ssh/id_rsa文件中。 3. $cp id_rsa.pub authorized_keys 这步完成后，正常情况下就可以无密码登录本机了，即ssh localhost，无需输入密码。 4. $scp authorized_keys summer@10.0.5.198:/home/summer/.ssh，把刚刚产生的authorized_keys文件拷一份到主机B上. 5. $chmod 600 authorized_keys，进入主机B的.ssh目录，改变authorized_keys文件的许可权限。 Note：(4和5可以合成一步，执行: $ssh-copy-id -i summer@10.0.5.198) 参考 http://www.cnblogs.com/jdksummer/articles/2521550.html]]></content>
