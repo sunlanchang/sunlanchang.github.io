@@ -18,25 +18,24 @@
     
     
     
-    <title>计算机组成原理系统概论 | Jason&#39;s Blog</title>
+    <title>数据库概述和结构、数据模型、关系数据库 | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="计算机组成原理">
-    <meta name="description" content="冯•诺依曼结构计算机的特点 计算机由运算器、控制器、存储器、输入设备、输出设备组成。 采用存储程序的方式，程序和数据放在同一个存储器中，并以二进制表示。 指令由操作码和地址码组成。 指令在存储器中按执行顺序排放，由指令计数器（即程序计数器PC）指明要执行的指令所在存储单元地址。 机器以运算器为中心，输入输出设备与存储器之间的数据传送都通过运算器。  计算机硬件系统的组成计算机由运算器、控制器、存储">
-<meta name="keywords" content="计算机组成原理">
+    <meta name="keywords" content="">
+    <meta name="description" content="数据库概览数据库系统本质是一个用计算机存储数据的系统，数据库是收集数据文件的仓库或容器，有永久存储、有组织和可共享的基本特点。数据库管理相对于文件管理的优点：    数据相互关联 较少的数据冗余 程序与数据相互独立 保证数据的安全可靠 最大限度保证数据的正确性 数据可以共享并能保证数据的一致性  数据模型数据模型及其分类  实体联系模型：涉及实体、属性、联系三方面（使用E-R图表示）。   层次数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机组成原理系统概论">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/index.html">
+<meta property="og:title" content="数据库概述和结构、数据模型、关系数据库">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="冯•诺依曼结构计算机的特点 计算机由运算器、控制器、存储器、输入设备、输出设备组成。 采用存储程序的方式，程序和数据放在同一个存储器中，并以二进制表示。 指令由操作码和地址码组成。 指令在存储器中按执行顺序排放，由指令计数器（即程序计数器PC）指明要执行的指令所在存储单元地址。 机器以运算器为中心，输入输出设备与存储器之间的数据传送都通过运算器。  计算机硬件系统的组成计算机由运算器、控制器、存储">
+<meta property="og:description" content="数据库概览数据库系统本质是一个用计算机存储数据的系统，数据库是收集数据文件的仓库或容器，有永久存储、有组织和可共享的基本特点。数据库管理相对于文件管理的优点：    数据相互关联 较少的数据冗余 程序与数据相互独立 保证数据的安全可靠 最大限度保证数据的正确性 数据可以共享并能保证数据的一致性  数据模型数据模型及其分类  实体联系模型：涉及实体、属性、联系三方面（使用E-R图表示）。   层次数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-22T14:58:10.793Z">
+<meta property="og:updated_time" content="2017-12-22T14:02:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机组成原理系统概论">
-<meta name="twitter:description" content="冯•诺依曼结构计算机的特点 计算机由运算器、控制器、存储器、输入设备、输出设备组成。 采用存储程序的方式，程序和数据放在同一个存储器中，并以二进制表示。 指令由操作码和地址码组成。 指令在存储器中按执行顺序排放，由指令计数器（即程序计数器PC）指明要执行的指令所在存储单元地址。 机器以运算器为中心，输入输出设备与存储器之间的数据传送都通过运算器。  计算机硬件系统的组成计算机由运算器、控制器、存储">
+<meta name="twitter:title" content="数据库概述和结构、数据模型、关系数据库">
+<meta name="twitter:description" content="数据库概览数据库系统本质是一个用计算机存储数据的系统，数据库是收集数据文件的仓库或容器，有永久存储、有组织和可共享的基本特点。数据库管理相对于文件管理的优点：    数据相互关联 较少的数据冗余 程序与数据相互独立 保证数据的安全可靠 最大限度保证数据的正确性 数据可以共享并能保证数据的一致性  数据模型数据模型及其分类  实体联系模型：涉及实体、属性、联系三方面（使用E-R图表示）。   层次数">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -124,7 +123,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">计算机组成原理系统概论</div>
+        <div class="flex-col header-title ellipsis">数据库概述和结构、数据模型、关系数据库</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -146,15 +145,13 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">计算机组成原理系统概论</h1>
+        <h1 class="title">数据库概述和结构、数据模型、关系数据库</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-12-14T10:30:28.000Z" itemprop="datePublished" class="page-time">
-  2017-12-14
+                <time datetime="2017-12-22T13:06:34.000Z" itemprop="datePublished" class="page-time">
+  2017-12-22
 </time>
 
-
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
 
             
         </h5>
@@ -171,21 +168,19 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#冯•诺依曼结构计算机的特点"><span class="post-toc-number">1.</span> <span class="post-toc-text">冯•诺依曼结构计算机的特点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#计算机硬件系统的组成"><span class="post-toc-number">2.</span> <span class="post-toc-text">计算机硬件系统的组成</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#计算机语言：机器语言、汇编语言、高级语言，三种语言的特点"><span class="post-toc-number">3.</span> <span class="post-toc-text">计算机语言：机器语言、汇编语言、高级语言，三种语言的特点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#计算机系统的构成：硬件系统和软件系统"><span class="post-toc-number">4.</span> <span class="post-toc-text">计算机系统的构成：硬件系统和软件系统</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库概览"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库概览</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据模型"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关系模型的组成"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">关系模型的组成</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
-<article id="post-计算机组成原理系统概论"
+<article id="post-数据库概述和结构、数据模型"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">计算机组成原理系统概论</h1>
+        <h1 class="post-card-title">数据库概述和结构、数据模型、关系数据库</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-12-14 18:30:28" datetime="2017-12-14T10:30:28.000Z"  itemprop="datePublished">2017-12-14</time>
+            <time class="post-time" title="2017-12-22 21:06:34" datetime="2017-12-22T13:06:34.000Z"  itemprop="datePublished">2017-12-22</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
-
 
 
             
@@ -196,30 +191,40 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="冯•诺依曼结构计算机的特点"><a href="#冯•诺依曼结构计算机的特点" class="headerlink" title="冯•诺依曼结构计算机的特点"></a>冯•诺依曼结构计算机的特点</h1><ol>
-<li>计算机由运算器、控制器、存储器、输入设备、输出设备组成。</li>
-<li>采用存储程序的方式，程序和数据放在同一个存储器中，并以二进制表示。</li>
-<li>指令由操作码和地址码组成。</li>
-<li>指令在存储器中按执行顺序排放，由指令计数器（即程序计数器PC）指明要执行的指令所在存储单元地址。</li>
-<li>机器以运算器为中心，输入输出设备与存储器之间的数据传送都通过运算器。</li>
-</ol>
-<h1 id="计算机硬件系统的组成"><a href="#计算机硬件系统的组成" class="headerlink" title="计算机硬件系统的组成"></a>计算机硬件系统的组成</h1><p>计算机由运算器、控制器、存储器、输入设备、输出设备组成。  </p>
+            <h1 id="数据库概览"><a href="#数据库概览" class="headerlink" title="数据库概览"></a>数据库概览</h1><p><strong>数据库系统</strong>本质是一个用计算机存储数据的系统，数据库是收集数据文件的仓库或容器，有永久存储、有组织和可共享的基本特点。<br>数据库管理相对于文件管理的优点：  </p>
 <ol>
-<li>运算器是对数据进行处理的运算部件，一般进行算数运算和逻辑运算。</li>
-<li>控制器实现程序的自动执行。</li>
-<li>存储器用来存放程序和数据。</li>
-<li>输入设备用来输入原始数据和处理这些数据的程序。</li>
-<li>输出设备用来输出计算机的处理结果。</li>
+<li>数据相互关联</li>
+<li>较少的数据冗余</li>
+<li>程序与数据相互独立</li>
+<li>保证数据的安全可靠</li>
+<li>最大限度保证数据的正确性</li>
+<li>数据可以共享并能保证数据的一致性</li>
 </ol>
-<h1 id="计算机语言：机器语言、汇编语言、高级语言，三种语言的特点"><a href="#计算机语言：机器语言、汇编语言、高级语言，三种语言的特点" class="headerlink" title="计算机语言：机器语言、汇编语言、高级语言，三种语言的特点"></a>计算机语言：机器语言、汇编语言、高级语言，三种语言的特点</h1><ol>
-<li>机器语言是用二进制代码表示的计算机能直接识别和执行的一种机器指令的集合。</li>
-<li>汇编语言是一种用助记符表示的仍然面向机器的计算机语言。</li>
-<li>高级语言是与自然语言相近并为计算机所接受和执行的计算机语言。</li>
-</ol>
-<h1 id="计算机系统的构成：硬件系统和软件系统"><a href="#计算机系统的构成：硬件系统和软件系统" class="headerlink" title="计算机系统的构成：硬件系统和软件系统"></a>计算机系统的构成：硬件系统和软件系统</h1><p><strong>Note</strong></p>
+<h1 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h1><p><strong>数据模型及其分类</strong></p>
 <ol>
-<li>常用三级时序系统：指令周期-机器周期-时钟周期</li>
+<li>实体联系模型：涉及实体、属性、联系三方面（使用E-R图表示）。  </li>
+<li>层次数据模型：用树形结构表示实体和实体之间的联系（有父节点和子节点）。</li>
+<li>网状数据模型：用图形结构表示实体和实体之间的联系（可以没有父节点）。</li>
+<li>关系数据模型：用关系表示实体和实体之间的联系。 </li>
 </ol>
+<p><strong>数据库模式结构</strong>：三级模式结构，由外向内是：外模式、模式、内模式</p>
+<h2 id="关系模型的组成"><a href="#关系模型的组成" class="headerlink" title="关系模型的组成"></a>关系模型的组成</h2><p>关系数据结构：用二维表来组织数据，这个二维表在关系数据库中就称为关系。</p>
+<p>关系操作  </p>
+<ol>
+<li>传统的关系运算：并、交、差、广义笛卡尔积</li>
+<li>专门的关系运算：选择、投影、连接、除</li>
+<li>有关的数据操作：查询、插入、删除、修改</li>
+</ol>
+<ul>
+<li>实体完整性和参照完整性：系统级的约束，是必须满足的完整性约束。</li>
+<li>用户自定义的完整性：应用级的约束，限制数据的取值范围等。</li>
+</ul>
+<ol>
+<li>实体完整性：关系数据库中所有的表都必须有主码，而且表中不允许存在（1）无主码的记录（2）主码相同的记录</li>
+<li>参照完整性：一个表中的关系的取值受到另一个表中关系的取值范围的约束（例如外码的选取）。</li>
+<li>用户定义的完整性：一般是数据的取值范围的约束。</li>
+</ol>
+<p>关系代数及其应用  </p>
 
         </div>
 
@@ -227,7 +232,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-22T14:58:10.793Z" itemprop="dateUpdated">2017-12-22 22:58:10</time>
+    Last updated: <time datetime="2017-12-22T14:02:31.000Z" itemprop="dateUpdated">2017-12-22 22:02:31</time>
 </span><br>
 
 
@@ -248,8 +253,6 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a></li></ul>
-
 
             
 <div class="page-share-wrap">
@@ -258,7 +261,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/&title=《计算机组成原理系统概论》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&title=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -268,22 +271,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/&title=《计算机组成原理系统概论》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&title=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机组成原理系统概论》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -303,21 +306,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/12/14/计算机运算方法和运算部件/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">计算机运算方法和运算部件</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/11/27/数据定义/" id="post-next" class="post-nav-link">
+      <a href="/2017/12/18/关系数据库规范化理论/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">数据定义</h4>
+        <h4 class="title">关系数据库规范化理论</h4>
       </a>
     </div>
   
@@ -401,7 +397,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/&title=《计算机组成原理系统概论》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&title=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -411,22 +407,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/&title=《计算机组成原理系统概论》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&title=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机组成原理系统概论》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -437,7 +433,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqklEQVR42u3aQY7jMAwEwP3/p2fPi5l4ukkpyALlU+DItkoHkSD15098fX27nv/9PvL5/vN7vo88fOHh4eGtp55M7nmKz19J7swW4oev4+Hh4V3jvZrQ7He7cM/gdhHx8PDwPo2Xb+t5ftum8nh4eHj/I+8Vch9a9ok7Hh4e3nt4bQm1DQxtMt1+60CtBQ8PDy/m5V2kz/l9pb+Hh4eHt+6qbwqvyVTybf1rdOHh4eHd4OUbbpvUtiNnaX1UHMHDw8M7yss3/bNhI2+YtUcK/rmDh4eHd5n3clBckmjfsxk5LEbg4eHhrXlJqtoGgHbrfyYVRwTakxF4eHh4a17e+E829Hzh9oHhlzF4eHh4R3ktLH+2LVi074yOXuHh4eFd4LXJ8SwFz2GbAgQeHh7eO3ntIadNMSLayo8GHjw8PLyzvE2pNPk3T4s3YSmqsuDh4eEd4p36ZJvstuWPzZLh4eHhneXdKzfkrbJ206/jHh4eHt4F3uaTSTo+CyF5blxEPDw8PLw1r73y5UgaUftFrM+X4eHh4b2FNyvazmA3SsB4eHh4Z3mbh9v2WFvMLVpcr5YMDw8P7wIvaXHNDk7NAkmy3O1BBzw8PLwbvHw7bosRedq9SdmHZVw8PDy8BS9/4FQqnE90swR4eHh47+RtjgUMJxGHomN1aDw8PLw1Lw8DSaE2DwDJcs+CBB4eHt57eG3DaVNabdn5TPDw8PDu8fbNrU3RNr/fLigeHh7ePd5s803KB21ynLfW6pQaDw8P7wJv055P0uI8eCQ12Dps4OHh4V3jzTpHSdiYLc2sMPHDs3h4eHgfwGubW/s0epVq4+Hh4X0AL09q84AxO7AVBRI8PDy8a7y8ZZUfC5hVjmdli18CAx4eHt5R3uaTbWt/P/4YCQ8PD2/C+wvCQaessSf6SQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3a0WpbMRAEUP//T6eQp0CxPbMrxS0cPQXXuVdHAa06q8cjHl/f4+9Pfo7kX5Pv5285NvDw8PBGU382XvOShUjA+e/mc8bDw8O7zXs90WRzT6bSLlb+hKef4+Hh4X2Ul2/rs7KRf4KHh4f3v/DyrX9z1D68fHh4eHjXeMlrZvFr8s22GFzJWvDw8PBiXtsA+xd+vtjfw8PDw1t01ZNtd1YY8i1+M/Dw8PBu8PIoISHlrbLk6Nwu3HC6eHh4eId4sy341FWDhFFc3sLDw8O7xmu3/vbiVB5w5I2xIqXGw8PDu8BLWlZ5876d7mz5otYXHh4e3jVe/vnsQtVsu89jjqLu4eHh4S14eYurDVjzMjOLLaL/BuDh4eFd450KVWdRxWYh3jwNDw8P71d4s2NxPol2QdvoAQ8PD+82b9aUaoPg9oCevyX/XTw8PLwbvNmWXUQDo0WcHfpX9yPw8PDwAl4epOYxxObCQTKKmePh4eEd5eWt/bxZtWmhzUKQp2/Hw8PDu8zLt+9kQm1AvClOT5+Gh4eHd4GXHJeTibYN/rM5SjFnPDw8vDUvj1Dbb86eM4s/3tQ9PDw8vKO8tuE0i1aHUUJ5lF/dhsDDw8Mree0jkjKQY04doIu/IR4eHt5RXt70attX+YF7FhZHd8rw8PDwjvLyS1EtJl++9ohfHKnx8PDwjvLao+0snthc7VrFHHh4eHjXeAkpLxWbhWurWZ1S4+Hh4S14X+V4jMa+VMwKFR4eHt4NXjvFNqKdRbqzsjFMX/Dw8PBGvE0okIe/s5ZYG46sLg3g4eHhlbz2olU+uXw52u8UkQQeHh7eR3n7YjA7sg/fgoeHh/dR3gbZHqPzUvRmPnh4eHjXeG3zaV9O8mZbu1h4eHh4t3mzBthrwKz9P7tYsOrs4eHh4XW8P89qIhYsWIssAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

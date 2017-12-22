@@ -33,7 +33,7 @@
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="十进制数、二进制数、十六进制数的相互转换 整数十进制转二进制有模2取余法。 小数转二进制有乘2取整法。 二进制转十六进制：二进制从低位到高位四个为一组（高位不够补0），转换为十六进制。反之为十六进制转换二进制。 十进制转十六进制：第一种先把十六进制转换为二进制，再把二进制转换为十六进制。第二种模16取余法，十六进制即为倒序的余数。  机器数的表示方法：原码、补码、反码、移码 原码：用0、1取代符号">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-20T14:36:34.495Z">
+<meta property="og:updated_time" content="2017-12-22T14:58:55.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机运算方法和运算部件">
 <meta name="twitter:description" content="十进制数、二进制数、十六进制数的相互转换 整数十进制转二进制有模2取余法。 小数转二进制有乘2取整法。 二进制转十六进制：二进制从低位到高位四个为一组（高位不够补0），转换为十六进制。反之为十六进制转换二进制。 十进制转十六进制：第一种先把十六进制转换为二进制，再把二进制转换为十六进制。第二种模16取余法，十六进制即为倒序的余数。  机器数的表示方法：原码、补码、反码、移码 原码：用0、1取代符号">
@@ -208,6 +208,11 @@
 <li>反码：符号位不变各位取反。</li>
 <li>移码：符号位取反的补码。用来表示浮点数的阶码。</li>
 </ol>
+<p><strong>Note</strong>  </p>
+<ol>
+<li>0表示形式唯一的是补码和移码</li>
+<li>补码左移补0，右移补1</li>
+</ol>
 <h1 id="补码加减法运算时"><a href="#补码加减法运算时" class="headerlink" title="补码加减法运算时"></a>补码加减法运算时</h1><p>采用双符号位运算，若双符号位为00或者11则不溢出，反之溢出。</p>
 <h1 id="浮点数表示方法"><a href="#浮点数表示方法" class="headerlink" title="浮点数表示方法"></a>浮点数表示方法</h1><p>$$N=MR^E$$<br>| 尾数符号位（Ms） | 阶码（E） | 尾数（M） |<br>| :————–: | :——-: | :——-: |</p>
 <ol>
@@ -215,8 +220,9 @@
 <li>E为阶码，一般为整数，其中有一位符号位，设置在E的最高位，用来表示正阶或负阶。</li>
 <li>M为尾数，为了保证数据精度，尾数通常用规格化（尾数最高位不能为0）表示：当R=2且尾数值不为0时，其绝对值应大于或等于$(0.5)_{10}$。对于非规格化的浮点数通过将尾数左移或右移并修改阶码值使之满足规格化要求。</li>
 </ol>
-<h1 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h1><p>数据：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span> </div><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> </div><div class="line"><span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></div></pre></td></tr></table></figure></p>
-<p>积校验<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span> </div><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> </div><div class="line"><span class="number">1</span>  <span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></div></pre></td></tr></table></figure></p>
+<h1 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h1><p>奇校验：将机器数凑成奇数个1<br>偶校验：将机器数凑成偶数个</p>
+<p>数据：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span> </div><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> </div><div class="line"><span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></div></pre></td></tr></table></figure></p>
+<p>奇校验<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span> </div><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> </div><div class="line"><span class="number">1</span>  <span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></div></pre></td></tr></table></figure></p>
 <p>偶校验<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span> </div><div class="line"><span class="number">1</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> </div><div class="line"><span class="number">0</span>  <span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></div></pre></td></tr></table></figure></p>
 <h1 id="补码一位乘：布斯公式法"><a href="#补码一位乘：布斯公式法" class="headerlink" title="补码一位乘：布斯公式法"></a>补码一位乘：布斯公式法</h1><p><strong>Note：</strong> 乘数最后一位补0。</p>
 <ol>
@@ -249,7 +255,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-20T14:36:34.495Z" itemprop="dateUpdated">2017-12-20 22:36:34</time>
+    Last updated: <time datetime="2017-12-22T14:58:55.469Z" itemprop="dateUpdated">2017-12-22 22:58:55</time>
 </span><br>
 
 
