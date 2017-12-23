@@ -18,25 +18,25 @@
     
     
     
-    <title>指令系统 | Jason&#39;s Blog</title>
+    <title>事务与并发控制、存储过程和触发器 | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="计算机组成原理">
-    <meta name="description" content="指令操作码、地址码的设计方法略 常用的寻址方式及其特点直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址。参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负） 指令字长分为单字长指令和双字长指令。">
-<meta name="keywords" content="计算机组成原理">
+    <meta name="keywords" content="数据库原理与应用">
+    <meta name="description" content="事务4个基本特征(ACID)：  原子性(atomicity)：事务是数据库的逻辑工作单位，事务中的操作要么都做，要么都不做。 一致性(consistency)：事务中的操作如果有一部分成功，一部分失败，为避免数据库产生不一致状态，系统会自动将事务中已完成的操作撤销，是数据库回到事务开始前的状态。因此事务的一致性和原子性是密切相关的。 隔离性(isolation)：一个事务的内部操作及使用的数据对">
+<meta name="keywords" content="数据库原理与应用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="指令系统">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/12/14/指令系统/index.html">
+<meta property="og:title" content="事务与并发控制、存储过程和触发器">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="指令操作码、地址码的设计方法略 常用的寻址方式及其特点直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址。参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负） 指令字长分为单字长指令和双字长指令。">
+<meta property="og:description" content="事务4个基本特征(ACID)：  原子性(atomicity)：事务是数据库的逻辑工作单位，事务中的操作要么都做，要么都不做。 一致性(consistency)：事务中的操作如果有一部分成功，一部分失败，为避免数据库产生不一致状态，系统会自动将事务中已完成的操作撤销，是数据库回到事务开始前的状态。因此事务的一致性和原子性是密切相关的。 隔离性(isolation)：一个事务的内部操作及使用的数据对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T12:55:52.266Z">
+<meta property="og:updated_time" content="2017-12-23T03:33:18.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="指令系统">
-<meta name="twitter:description" content="指令操作码、地址码的设计方法略 常用的寻址方式及其特点直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址。参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负） 指令字长分为单字长指令和双字长指令。">
+<meta name="twitter:title" content="事务与并发控制、存储过程和触发器">
+<meta name="twitter:description" content="事务4个基本特征(ACID)：  原子性(atomicity)：事务是数据库的逻辑工作单位，事务中的操作要么都做，要么都不做。 一致性(consistency)：事务中的操作如果有一部分成功，一部分失败，为避免数据库产生不一致状态，系统会自动将事务中已完成的操作撤销，是数据库回到事务开始前的状态。因此事务的一致性和原子性是密切相关的。 隔离性(isolation)：一个事务的内部操作及使用的数据对">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -124,7 +124,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">指令系统</div>
+        <div class="flex-col header-title ellipsis">事务与并发控制、存储过程和触发器</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -146,15 +146,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">指令系统</h1>
+        <h1 class="title">事务与并发控制、存储过程和触发器</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-12-14T12:03:39.000Z" itemprop="datePublished" class="page-time">
-  2017-12-14
+                <time datetime="2017-12-23T03:08:42.000Z" itemprop="datePublished" class="page-time">
+  2017-12-23
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库原理与应用/">数据库原理与应用</a></li></ul>
 
             
         </h5>
@@ -171,20 +171,20 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#指令操作码、地址码的设计方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">指令操作码、地址码的设计方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用的寻址方式及其特点"><span class="post-toc-number">2.</span> <span class="post-toc-text">常用的寻址方式及其特点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基本概念：堆栈、标志位、指令字长"><span class="post-toc-number">3.</span> <span class="post-toc-text">基本概念：堆栈、标志位、指令字长</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事务"><span class="post-toc-number">1.</span> <span class="post-toc-text">事务</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-指令系统"
+<article id="post-事务与并发控制、存储过程和触发器"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">指令系统</h1>
+        <h1 class="post-card-title">事务与并发控制、存储过程和触发器</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-12-14 20:03:39" datetime="2017-12-14T12:03:39.000Z"  itemprop="datePublished">2017-12-14</time>
+            <time class="post-time" title="2017-12-23 11:08:42" datetime="2017-12-23T03:08:42.000Z"  itemprop="datePublished">2017-12-23</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机组成原理/">计算机组成原理</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库原理与应用/">数据库原理与应用</a></li></ul>
 
 
 
@@ -196,11 +196,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="指令操作码、地址码的设计方法"><a href="#指令操作码、地址码的设计方法" class="headerlink" title="指令操作码、地址码的设计方法"></a>指令操作码、地址码的设计方法</h1><p>略</p>
-<h1 id="常用的寻址方式及其特点"><a href="#常用的寻址方式及其特点" class="headerlink" title="常用的寻址方式及其特点"></a>常用的寻址方式及其特点</h1><p>直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址。<br>参考：<a href="https://sunlanchang.github.io/2017/11/21/%E5%9B%BE%E8%A7%A3%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/">图解寻址方式</a></p>
-<h1 id="基本概念：堆栈、标志位、指令字长"><a href="#基本概念：堆栈、标志位、指令字长" class="headerlink" title="基本概念：堆栈、标志位、指令字长"></a>基本概念：堆栈、标志位、指令字长</h1><ol>
-<li>标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负）</li>
-<li>指令字长分为单字长指令和双字长指令。 </li>
+            <h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p><strong>4个基本特征(ACID)：</strong></p>
+<ol>
+<li>原子性(atomicity)：事务是数据库的逻辑工作单位，事务中的操作要么都做，要么都不做。</li>
+<li>一致性(consistency)：事务中的操作如果有一部分成功，一部分失败，为避免数据库产生不一致状态，系统会自动将事务中已完成的操作撤销，是数据库回到事务开始前的状态。因此事务的一致性和原子性是密切相关的。</li>
+<li>隔离性(isolation)：一个事务的内部操作及使用的数据对其他事务是隔离的，并发执行的各个事务不能相互干扰。</li>
+<li>持久性(durability)：事务一旦体骄傲，则其对数据库中的数据的改变就是永久的，以后的操作或故障不会对事务的操作结果擦好女生任何影响。</li>
+</ol>
+<p><strong>2种类型</strong></p>
+<ol>
+<li>隐式事务：每一条数据操作语句都是一个事务（例如一条select语句）。</li>
+<li>显式事务:有显式的开始和结束标记的事务。</li>
 </ol>
 
         </div>
@@ -209,7 +215,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2017-12-14T12:55:52.266Z" itemprop="dateUpdated">2017-12-14 20:55:52</time>
+    最後更新時間：<time datetime="2017-12-23T03:33:18.507Z" itemprop="dateUpdated">2017-12-23 11:33:18</time>
 </span><br>
 
 
@@ -230,7 +236,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库原理与应用/">数据库原理与应用</a></li></ul>
 
 
             
@@ -240,7 +246,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/指令系统/&title=《指令系统》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/&title=《事务与并发控制、存储过程和触发器》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -250,22 +256,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/指令系统/&title=《指令系统》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/&title=《事务与并发控制、存储过程和触发器》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/14/指令系统/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《指令系统》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/指令系统/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《事务与并发控制、存储过程和触发器》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/14/指令系统/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -285,21 +291,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/12/14/中央处理器/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">中央处理器</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/12/14/主存储器/" id="post-next" class="post-nav-link">
+      <a href="/2017/12/22/数据库概述和结构、数据模型/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">主存储器</h4>
+        <h4 class="title">数据库概述和结构、数据模型、关系数据库</h4>
       </a>
     </div>
   
@@ -383,7 +382,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/14/指令系统/&title=《指令系统》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/&title=《事务与并发控制、存储过程和触发器》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -393,22 +392,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/14/指令系统/&title=《指令系统》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/&title=《事务与并发控制、存储过程和触发器》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/14/指令系统/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《指令系统》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/14/指令系统/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《事务与并发控制、存储过程和触发器》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/14/指令系统/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -419,7 +418,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3awW6EMAxFUf7/p+m2VQvcZ6cj4dysRqNAclhYsZ3jwOP8Nu7nXM3//ezVnPtVWkOGDBmvZZy342pOSuXvvJ9zuYoMGTI2YJAASpbpbIWE6cv/ZciQIQOE0dp20wOlDBkyZHBGZ0nyZhkyZMioJbG11JSH1w/l4jJkyHghg1fdP//7X/obMmTIeBXjDEenb7h2Jz9WkSFDxmhGZ5lVjclawJUhQ8Y+DJIQ8rCbXiOrFfX+mClDhozRjE7bMngpgKXtzIfPJEOGjNGMTum/Fmr54XJBvVCGDBmDGKRkxi9J8LSWMIJ0V4YMGSMY5IG1hbNV1y+CPFuGDBkvZ3RSzXTrvDLGG6IPubgMGTJGMGrBtDOfHArjYpwMGTK2YaSvq6WmnST54baIDBkyRjP64ZWEVNIQ5U3Tgy8mQ4aMEYz7AEoOeelG0xD/8GlkyJCxAYPU2Fddy0iDMirVyZAhY0sG/z9tIfAmBG+CypAhYzYjDZdpWa1WXKu9QYYMGbMZtQMivyTBU9xWOJYhQ8aWDL6t2pWL4DoFOZjKkCFjA0Z6XKuV/kkI5qFfhgwZOzDOcPTbmWmAjvNvGTJkjGOkYS4NlLUjIy/qxTAZMmS8lpGmqcXmYqnQJkOGDBn8akWajq5qGwShX4YMGTLw1Qrehmy1AdL4LUOGjI0ZKYwfLnlZUIYMGfsw0mZAeijszFmci8uQIeOFjFpw7ARf3rYkT8mQIWM04wsJD2qYyXowxgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADJElEQVR42u3aQW7jQAwEwPz/097rAos43WQWiJjSKZAdaWoubZLz8RFfr7+u/M5nT0j+a/a0b76wsbGxH8J+vb2S1/z7zc/e8v5+gk/e/t6CjY2NfZW9WVBOfR82n70xD79i07GxsbF/MTsPifw7eSAla8PGxsbGzgOsLWn27ae2UMHGxsb+PeykqdQuOhkAzAYS+3DFxsbGvsTOp6I//+//Mt/GxsbG/sHsV3nNxqv7ptLsLZ++HRsbG/sQOw+AWRkwawC1hc3sOdjY2NhX2Ulg5Mdo8gXNxgMFcj/HxsbGxv6R7HYQu9mgvOnflittlGJjY2PfZrdNnM2YNl96G3VREYKNjY19gt0Od/eFRxKH7cGgPN6iFWJjY2M/ip3D2oDJwy8PtlmJgo2NjX2b3WZavh2z0Mrv5xuxG51gY2NjP4P9DVVLuax20ZsBRjT0xcbGxn4su22p58VGPiTYt4rq0QI2Njb2IfasAJg1ldrNzcubNkSxsbGxL7H3P/HzMXC70flK6uIHGxsb+xx7Nnxtj/K0n7Yd/iIssbGxsQ+x80qlPcqzGce+4mt2fAcbGxv7EntzdDIPnllrafZptCpsbGzso+w8lpLv58XDvqio72BjY2P/AnYeVO3WfG/5kYcWNjY29lV22/r5Hw39vM00a0gNUxQbGxv7Uex9nMyO5sxGCy24wGNjY2M/lp38cE8KkvzOZkybHwD6YuOwsbGxT7DrRszb/82P/syOASVDhajthY2NjX2I3bb12xibDR7aw0CzgQQ2Njb2VXbCyMfAs4W2QTWLT2xsbOx77E1hkG/Qpgm12bLhPAEbGxv7gew2qPKwaQ/i7OPzi43DxsbGPs1OxrGbUe4+/D7KCxsbG/sq+1VeswM0m6Fsu4bo6A82Njb2IfYm95JCIp+rzsqV/MlFswkbGxv7gez8MM1sKXmrKD8wtDnog42NjX2VPWvft1u5eXKbul+UMdjY2NjYZUS1LadNXEVNLmxsbGzsMpA2S8xHBcVGY2NjY59j57GxoSaLnsVV0lTCxsbGvsrOYyCfG7e89u2zozzY2NjY59h/AMQpShVBaKkGAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-12-22T14:02:31.000Z</updated>
+  <updated>2017-12-23T03:33:18.507Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>事务与并发控制、存储过程和触发器</title>
+    <link href="http://sunlanchang.github.io/2017/12/23/%E4%BA%8B%E5%8A%A1%E4%B8%8E%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6%E3%80%81%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
+    <id>http://sunlanchang.github.io/2017/12/23/事务与并发控制、存储过程和触发器/</id>
+    <published>2017-12-23T03:08:42.000Z</published>
+    <updated>2017-12-23T03:33:18.507Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p><strong>4个基本特征(ACID)：</strong></p><ol><li>原子性(atomicity)：事务是数据库的逻辑工作单位，事务中的操作要么都做，要么都不做。</li><li>一致性(consistency)：事务中的操作如果有一部分成功，一部分失败，为避免数据库产生不一致状态，系统会自动将事务中已完成的操作撤销，是数据库回到事务开始前的状态。因此事务的一致性和原子性是密切相关的。</li><li>隔离性(isolation)：一个事务的内部操作及使用的数据对其他事务是隔离的，并发执行的各个事务不能相互干扰。</li><li>持久性(durability)：事务一旦体骄傲，则其对数据库中的数据的改变就是永久的，以后的操作或故障不会对事务的操作结果擦好女生任何影响。</li></ol><p><strong>2种类型</strong></p><ol><li>隐式事务：每一条数据操作语句都是一个事务（例如一条select语句）。</li><li>显式事务:有显式的开始和结束标记的事务。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;事务&quot;&gt;&lt;a href=&quot;#事务&quot; class=&quot;headerlink&quot; title=&quot;事务&quot;&gt;&lt;/a&gt;事务&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;4个基本特征(ACID)：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;原子性(atomicity)：事务是数据库的逻辑工作
+      
+    
+    </summary>
+    
+      <category term="数据库原理与应用" scheme="http://sunlanchang.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="数据库原理与应用" scheme="http://sunlanchang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据库概述和结构、数据模型、关系数据库</title>
     <link href="http://sunlanchang.github.io/2017/12/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E8%BF%B0%E5%92%8C%E7%BB%93%E6%9E%84%E3%80%81%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/"/>
     <id>http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/</id>
     <published>2017-12-22T13:06:34.000Z</published>
-    <updated>2017-12-22T14:02:31.000Z</updated>
+    <updated>2017-12-23T03:09:24.167Z</updated>
     
     <content type="html"><![CDATA[<h1 id="数据库概览"><a href="#数据库概览" class="headerlink" title="数据库概览"></a>数据库概览</h1><p><strong>数据库系统</strong>本质是一个用计算机存储数据的系统，数据库是收集数据文件的仓库或容器，有永久存储、有组织和可共享的基本特点。<br>数据库管理相对于文件管理的优点：  </p><ol><li>数据相互关联</li><li>较少的数据冗余</li><li>程序与数据相互独立</li><li>保证数据的安全可靠</li><li>最大限度保证数据的正确性</li><li>数据可以共享并能保证数据的一致性</li></ol><h1 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h1><p><strong>数据模型及其分类</strong></p><ol><li>实体联系模型：涉及实体、属性、联系三方面（使用E-R图表示）。  </li><li>层次数据模型：用树形结构表示实体和实体之间的联系（有父节点和子节点）。</li><li>网状数据模型：用图形结构表示实体和实体之间的联系（可以没有父节点）。</li><li>关系数据模型：用关系表示实体和实体之间的联系。 </li></ol><p><strong>数据库模式结构</strong>：三级模式结构，由外向内是：外模式、模式、内模式</p><h2 id="关系模型的组成"><a href="#关系模型的组成" class="headerlink" title="关系模型的组成"></a>关系模型的组成</h2><p>关系数据结构：用二维表来组织数据，这个二维表在关系数据库中就称为关系。</p><p>关系操作  </p><ol><li>传统的关系运算：并、交、差、广义笛卡尔积</li><li>专门的关系运算：选择、投影、连接、除</li><li>有关的数据操作：查询、插入、删除、修改</li></ol><ul><li>实体完整性和参照完整性：系统级的约束，是必须满足的完整性约束。</li><li>用户自定义的完整性：应用级的约束，限制数据的取值范围等。</li></ul><ol><li>实体完整性：关系数据库中所有的表都必须有主码，而且表中不允许存在（1）无主码的记录（2）主码相同的记录</li><li>参照完整性：一个表中的关系的取值受到另一个表中关系的取值范围的约束（例如外码的选取）。</li><li>用户定义的完整性：一般是数据的取值范围的约束。</li></ol><p>关系代数及其应用  </p>]]></content>
     
@@ -34,6 +61,10 @@
     
     </summary>
     
+      <category term="数据库原理与应用" scheme="http://sunlanchang.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="数据库原理与应用" scheme="http://sunlanchang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
     
   </entry>
   
@@ -502,31 +533,6 @@
     
     
       <category term="Other" scheme="http://sunlanchang.github.io/tags/Other/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>校园网自动登录脚本</title>
-    <link href="http://sunlanchang.github.io/2017/10/31/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E8%84%9A%E6%9C%AC/"/>
-    <id>http://sunlanchang.github.io/2017/10/31/校园网自动登录脚本/</id>
-    <published>2017-10-31T06:39:42.000Z</published>
-    <updated>2017-10-31T06:57:30.555Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="校园网自动登录脚本"><a href="#校园网自动登录脚本" class="headerlink" title="校园网自动登录脚本"></a>校园网自动登录脚本</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul><li><code>python 2.7或python 3.5</code>均可用，脚本外部依赖<code>requests</code>库，请在运行脚本前<code>pip3</code>或者<code>pip</code>安装<code>requests</code>。  </li><li><code>python 2.7</code>运行时务必加上下面一行代码，指定编码为<code>utf8</code>，<code>python3</code>可以忽略。  <h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2></li></ul><ol><li><p>指定编码方式为utf8。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding: utf-8</span></div><div class="line"><span class="keyword">import</span> requests</div></pre></td></tr></table></figure></li><li><p>通过<code>Chrome</code>浏览器得知校园网登录地址，注意直接在浏览器输入的地址不一定是发送数据的地址，我学校是下面这个。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">url = <span class="string">'http://210.31.32.126/cgi-bin/do_login'</span></div></pre></td></tr></table></figure></li><li><p>浏览器头信息用来伪装浏览器</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></div><div class="line">    postdata = &#123;<span class="string">'username'</span>: <span class="string">'你的校园网账号'</span>,</div><div class="line">                <span class="string">'password'</span>: <span class="string">'&#123;TEXT&#125;你的密码'</span>,</div><div class="line">                <span class="string">'drop'</span>: <span class="string">'0'</span>,</div><div class="line">                <span class="string">'type'</span>: <span class="string">'1'</span>,</div><div class="line">                <span class="string">'n'</span>: <span class="string">'100'</span>&#125;</div><div class="line">    headers = &#123;<span class="string">'Accept'</span>: <span class="string">'*/*'</span>,</div><div class="line">               <span class="string">'Accept-Encoding'</span>: <span class="string">'gzip, deflate'</span>,</div><div class="line">               <span class="string">'Accept-Language'</span>: <span class="string">'zh-CN,zh;q=0.8'</span>,</div><div class="line">               <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</div><div class="line">               <span class="string">'Content-Length'</span>: <span class="string">'65'</span>,</div><div class="line">               <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span>,</div><div class="line">               <span class="string">'Cookie'</span>: <span class="string">'PHPSESSID=a70fr8pfvhhtt329qvb21p7ka6'</span>,</div><div class="line">               <span class="string">'Host'</span>: <span class="string">'210.31.32.126'</span>,</div><div class="line">               <span class="string">'Origin'</span>: <span class="string">'http://210.31.32.126'</span>,</div><div class="line">               <span class="string">'Referer'</span>: <span class="string">'http://210.31.32.126/'</span>,</div><div class="line">               <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'</span>&#125;</div><div class="line">    requests.post(url, data=postdata)</div></pre></td></tr></table></figure></li></ol><h2 id="查看连接的是否是校园网，以及是否连上网"><a href="#查看连接的是否是校园网，以及是否连上网" class="headerlink" title="查看连接的是否是校园网，以及是否连上网"></a>查看连接的是否是校园网，以及是否连上网</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_connect_edu</span><span class="params">()</span>:</span></div><div class="line">    status_code = requests.get(url).status_code</div><div class="line">    <span class="keyword">if</span> status_code == <span class="number">200</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_connect_web</span><span class="params">()</span>:</span></div><div class="line">    r = requests.get(<span class="string">"http://www.baidu.com"</span>).text</div><div class="line">    <span class="keyword">if</span> r.find(<span class="string">'210.31.32.126'</span>) != <span class="number">-1</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure><h2 id="直到校园网连接上为止"><a href="#直到校园网连接上为止" class="headerlink" title="直到校园网连接上为止"></a>直到校园网连接上为止</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">if</span> is_connect_edu():  <span class="comment"># 是否连接上校园网</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> is_connect_web():  <span class="comment"># 是否连接上外网</span></div><div class="line">            login()</div><div class="line">            <span class="keyword">if</span> requests.get(<span class="string">'http://www.baidu.com'</span>).status_code==<span class="number">200</span>:</div><div class="line">                print(<span class="string">'Already connected Internet'</span>)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                print(<span class="string">'Not connected Internet'</span>)</div><div class="line">        <span class="keyword">break</span></div></pre></td></tr></table></figure><h2 id="Ubuntu开机自动启动登录"><a href="#Ubuntu开机自动启动登录" class="headerlink" title="Ubuntu开机自动启动登录"></a><code>Ubuntu</code>开机自动启动登录</h2><p><code>root</code>权限修改<code>/etc/rc.local</code>文件在<code>exit 0</code>上一行加上<code>python3 xiaoyuanwang.py</code>即可实现开机启动此脚本</p><h2 id="获取源码"><a href="#获取源码" class="headerlink" title="获取源码"></a>获取源码</h2><p><a href="https://github.com/sunlanchang/blog/blob/master/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95.py" target="_blank" rel="external">点击获取源码</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;校园网自动登录脚本&quot;&gt;&lt;a href=&quot;#校园网自动登录脚本&quot; class=&quot;headerlink&quot; title=&quot;校园网自动登录脚本&quot;&gt;&lt;/a&gt;校园网自动登录脚本&lt;/h1&gt;&lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; 
-      
-    
-    </summary>
-    
-      <category term="小程序" scheme="http://sunlanchang.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="http://sunlanchang.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
