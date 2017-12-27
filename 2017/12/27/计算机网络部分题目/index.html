@@ -35,7 +35,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://sunlanchang.github.io/images/luyou.jpg">
 <meta property="og:image" content="http://sunlanchang.github.io/images/bianma.jpg">
-<meta property="og:updated_time" content="2017-12-27T06:28:00.538Z">
+<meta property="og:updated_time" content="2017-12-27T06:29:13.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络部分题目">
 <meta name="twitter:description" content="简答题 略  简要叙述虚拟局域网的划分技术。 解答：1）按交换机端口划分。2）按IP地址划分。3）按MAC地址划分。4）按用户策略划分  常见的局域网络扩展方法有哪几种？各有什么特点？ 解答：主要有三种。 采用集线器，工作于物理层，具有冲突域和广播域，每台主机的带宽减少，总带宽不变。   采用网桥或交换机，工作于数据链路层，具有广播域，隔离了冲突域，有广播风暴的风险。每台主机带宽不变，总带宽增加。">
@@ -254,11 +254,46 @@
 </tbody>
 </table>
 <ol>
-<li><p>一IP数据包的数据部分为4800字节（使用固定首部），需要分片为长度不超过1500字节的分组。请按照一下内容，给出具体的分片设计结果。<br> 解答：本题没有唯一答案，首要保证每一分片数据是8的整数倍，而且分片数量以最少为佳。如果最后一片未能达到要求，则可以由系统或用户补0直到满足要求。其中的一种分片可以是：</p>
-<p> |数据报片序号|数据长度|分组长度|<br> | – | – | – |<br> |原始数据报|4800|4820|<br> |数据报片1|1480|1500|<br> |数据报片2|1480|1500|<br> |数据报片3|1480|1500|<br> |数据报片4|360|380|</p>
-</li>
-<li><p>请在下图中直接画出数据<code>01011011001</code>的非归零码、曼彻斯特编码和差分曼彻斯特编码三种编码方式的信号波形。</p>
-</li>
+<li>一IP数据包的数据部分为4800字节（使用固定首部），需要分片为长度不超过1500字节的分组。请按照一下内容，给出具体的分片设计结果。<br> 解答：本题没有唯一答案，首要保证每一分片数据是8的整数倍，而且分片数量以最少为佳。如果最后一片未能达到要求，则可以由系统或用户补0直到满足要求。其中的一种分片可以是：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>数据报片序号</th>
+<th>数据长度</th>
+<th>分组长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原始数据报</td>
+<td>4800</td>
+<td>4820</td>
+</tr>
+<tr>
+<td>数据报片1</td>
+<td>1480</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>数据报片2</td>
+<td>1480</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>数据报片3</td>
+<td>1480</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>数据报片4</td>
+<td>360</td>
+<td>380</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>请在下图中直接画出数据<code>01011011001</code>的非归零码、曼彻斯特编码和差分曼彻斯特编码三种编码方式的信号波形。</li>
 </ol>
 <figure class="image-bubble">
                 <div class="img-lightbox">
@@ -277,7 +312,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-27T06:28:00.538Z" itemprop="dateUpdated">2017-12-27 14:28:00</time>
+    Last updated: <time datetime="2017-12-27T06:29:13.184Z" itemprop="dateUpdated">2017-12-27 14:29:13</time>
 </span><br>
 
 
