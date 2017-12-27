@@ -33,7 +33,7 @@
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="事务4个基本特征(ACID)：  原子性(atomicity)：事务是数据库的逻辑工作单位，事务中的操作要么都做，要么都不做。 一致性(consistency)：事务中的操作如果有一部分成功，一部分失败，为避免数据库产生不一致状态，系统会自动将事务中已完成的操作撤销，是数据库回到事务开始前的状态。因此事务的一致性和原子性是密切相关的。 隔离性(isolation)：一个事务的内部操作及使用的数据对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-23T03:33:18.507Z">
+<meta property="og:updated_time" content="2017-12-24T04:43:32.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事务与并发控制、存储过程和触发器">
 <meta name="twitter:description" content="事务4个基本特征(ACID)：  原子性(atomicity)：事务是数据库的逻辑工作单位，事务中的操作要么都做，要么都不做。 一致性(consistency)：事务中的操作如果有一部分成功，一部分失败，为避免数据库产生不一致状态，系统会自动将事务中已完成的操作撤销，是数据库回到事务开始前的状态。因此事务的一致性和原子性是密切相关的。 隔离性(isolation)：一个事务的内部操作及使用的数据对">
@@ -171,7 +171,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事务"><span class="post-toc-number">1.</span> <span class="post-toc-text">事务</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事务"><span class="post-toc-number">1.</span> <span class="post-toc-text">事务</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储过程"><span class="post-toc-number">2.</span> <span class="post-toc-text">存储过程</span></a></li></ol>
         </nav>
     </aside>
     
@@ -208,6 +208,13 @@
 <li>隐式事务：每一条数据操作语句都是一个事务（例如一条select语句）。</li>
 <li>显式事务:有显式的开始和结束标记的事务。</li>
 </ol>
+<p><strong>并发控制措施</strong></p>
+<ol>
+<li>共享锁（只允许读）：对于读操作来说，可以有多个事务同时获得一个数据的共享锁，但阻止其他事务对该数据进行排他锁。</li>
+<li>排他锁（只允许读、写）：一旦一个事务获得对某一数据的排他锁，就不允许其他事务对该数据进行任何封锁。</li>
+</ol>
+<h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><p><strong>创建和执行存储过程</strong></p>
+<p>例如：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> proc pname</div><div class="line">    @sname <span class="built_in">char</span>(<span class="number">20</span>)</div><div class="line"><span class="keyword">as</span></div><div class="line">    <span class="keyword">select</span> * <span class="keyword">from</span> student <span class="keyword">where</span> sname=@sname;</div></pre></td></tr></table></figure></p>
 
         </div>
 
@@ -215,7 +222,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-23T03:33:18.507Z" itemprop="dateUpdated">2017-12-23 11:33:18</time>
+    Last updated: <time datetime="2017-12-24T04:43:32.019Z" itemprop="dateUpdated">2017-12-24 12:43:32</time>
 </span><br>
 
 

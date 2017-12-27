@@ -25,18 +25,20 @@
     
     
     <meta name="keywords" content="计算机组成原理">
-    <meta name="description" content="指令操作码、地址码的设计方法略 常用的寻址方式及其特点直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址。参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负） 指令字长分为单字长指令和双字长指令。">
+    <meta name="description" content="指令操作码、地址码的设计方法略 常用的寻址方式及其特点直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址。参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负） 指令字长分为单字长指令和双字长指令。   执行一条指令的过程">
 <meta name="keywords" content="计算机组成原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="指令系统">
 <meta property="og:url" content="http://sunlanchang.github.io/2017/12/14/指令系统/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="指令操作码、地址码的设计方法略 常用的寻址方式及其特点直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址。参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负） 指令字长分为单字长指令和双字长指令。">
+<meta property="og:description" content="指令操作码、地址码的设计方法略 常用的寻址方式及其特点直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址。参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负） 指令字长分为单字长指令和双字长指令。   执行一条指令的过程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T12:55:52.266Z">
+<meta property="og:image" content="http://sunlanchang.github.io/images/shujutonglu.png">
+<meta property="og:updated_time" content="2017-12-27T04:40:46.570Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="指令系统">
-<meta name="twitter:description" content="指令操作码、地址码的设计方法略 常用的寻址方式及其特点直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址。参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负） 指令字长分为单字长指令和双字长指令。">
+<meta name="twitter:description" content="指令操作码、地址码的设计方法略 常用的寻址方式及其特点直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址。参考：图解寻址方式 基本概念：堆栈、标志位、指令字长 标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负） 指令字长分为单字长指令和双字长指令。   执行一条指令的过程">
+<meta name="twitter:image" content="http://sunlanchang.github.io/images/shujutonglu.png">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -171,7 +173,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#指令操作码、地址码的设计方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">指令操作码、地址码的设计方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用的寻址方式及其特点"><span class="post-toc-number">2.</span> <span class="post-toc-text">常用的寻址方式及其特点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基本概念：堆栈、标志位、指令字长"><span class="post-toc-number">3.</span> <span class="post-toc-text">基本概念：堆栈、标志位、指令字长</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#指令操作码、地址码的设计方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">指令操作码、地址码的设计方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用的寻址方式及其特点"><span class="post-toc-number">2.</span> <span class="post-toc-text">常用的寻址方式及其特点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基本概念：堆栈、标志位、指令字长"><span class="post-toc-number">3.</span> <span class="post-toc-text">基本概念：堆栈、标志位、指令字长</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#执行一条指令的过程"><span class="post-toc-number">4.</span> <span class="post-toc-text">执行一条指令的过程</span></a></li></ol>
         </nav>
     </aside>
     
@@ -202,6 +204,17 @@
 <li>标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负）</li>
 <li>指令字长分为单字长指令和双字长指令。 </li>
 </ol>
+<h1 id="执行一条指令的过程"><a href="#执行一条指令的过程" class="headerlink" title="执行一条指令的过程"></a>执行一条指令的过程</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/shujutonglu.png" alt="CPU与主存连接示意图" title="">
+                </div>
+                <div class="image-caption">CPU与主存连接示意图</div>
+            </figure>
+<ol>
+<li><strong>取指令</strong> ：PC -&gt; MAR -&gt; M -&gt; IR -&gt; 微操作信号发生器</li>
+<li><strong>执行指令</strong> ：IR -&gt; MAR -&gt; M -&gt; MDR ….（后续执行过程依照不同指令而不同）</li>
+</ol>
 
         </div>
 
@@ -209,7 +222,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-14T12:55:52.266Z" itemprop="dateUpdated">2017-12-14 20:55:52</time>
+    Last updated: <time datetime="2017-12-27T04:40:46.570Z" itemprop="dateUpdated">2017-12-27 12:40:46</time>
 </span><br>
 
 
