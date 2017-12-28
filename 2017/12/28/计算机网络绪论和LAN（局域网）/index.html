@@ -18,7 +18,7 @@
     
     
     
-    <title>计算机网络绪论和LAN | Jason&#39;s Blog</title>
+    <title>计算机网络绪论和LAN（局域网） | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -28,15 +28,15 @@
     <meta name="description" content="绪论了解网络发展  面向终端的计算机网络 以通信子网为中心的计算机网络 体系结构标准化的网络 面向全球互连的计算机网络  网络拓扑结构分类  总线型结构 星型结构 环形结构 树形结构  网络协议 OSI 与 TCP/IP 的比较、协议各层的含义和基本传输单位">
 <meta name="keywords" content="计算机网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络绪论和LAN">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/index.html">
+<meta property="og:title" content="计算机网络绪论和LAN（局域网）">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN（局域网）/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="绪论了解网络发展  面向终端的计算机网络 以通信子网为中心的计算机网络 体系结构标准化的网络 面向全球互连的计算机网络  网络拓扑结构分类  总线型结构 星型结构 环形结构 树形结构  网络协议 OSI 与 TCP/IP 的比较、协议各层的含义和基本传输单位">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://sunlanchang.github.io/images/osi_tcpip.png">
-<meta property="og:updated_time" content="2017-12-28T03:23:38.000Z">
+<meta property="og:updated_time" content="2017-12-28T06:45:48.238Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机网络绪论和LAN">
+<meta name="twitter:title" content="计算机网络绪论和LAN（局域网）">
 <meta name="twitter:description" content="绪论了解网络发展  面向终端的计算机网络 以通信子网为中心的计算机网络 体系结构标准化的网络 面向全球互连的计算机网络  网络拓扑结构分类  总线型结构 星型结构 环形结构 树形结构  网络协议 OSI 与 TCP/IP 的比较、协议各层的含义和基本传输单位">
 <meta name="twitter:image" content="http://sunlanchang.github.io/images/osi_tcpip.png">
     
@@ -126,7 +126,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">计算机网络绪论和LAN</div>
+        <div class="flex-col header-title ellipsis">计算机网络绪论和LAN（局域网）</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -148,7 +148,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">计算机网络绪论和LAN</h1>
+        <h1 class="title">计算机网络绪论和LAN（局域网）</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-12-28T02:37:17.000Z" itemprop="datePublished" class="page-time">
@@ -177,11 +177,11 @@
         </nav>
     </aside>
     
-<article id="post-计算机网络绪论和LAN"
+<article id="post-计算机网络绪论和LAN（局域网）"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">计算机网络绪论和LAN</h1>
+        <h1 class="post-card-title">计算机网络绪论和LAN（局域网）</h1>
         <div class="post-meta">
             <time class="post-time" title="2017-12-28 10:37:17" datetime="2017-12-28T02:37:17.000Z"  itemprop="datePublished">2017-12-28</time>
 
@@ -293,11 +293,41 @@
 <li>某个结点的故障将导致物理瘫痪</li>
 <li>单个环网的结点数有限</li>
 </ul>
-<p><strong>LAN 的扩展方法及其特点</strong></p>
+<p><strong>LAN的扩展方法及其特点</strong></p>
 <p><strong>交换机、路由器和集线器三者的应用比较</strong></p>
+<ul>
+<li>集线器和交换机区别：集线器采用的式共享带宽的工作方式，而交换机是独享带宽。</li>
+<li>路由器与集线器交换机区别：路由器作用在于连接不同的网段并且找到网络中数据传输最合适的路径。<br>路由器与集线器交换机其他主要区别：</li>
+<li>路由器工作在网络层，交换机和集线器工作在数据链路层和物理层。</li>
+<li>路由器用IP地址转发数据，交换机利用MAC地址转发数据。</li>
+<li>传统的交换机只能分割冲突域，不能分割广播域；而路由器可以分割广播域。</li>
+<li>路由器可以提供防火墙功能。</li>
+</ul>
 <p><strong>VLAN 的实现技术</strong></p>
-<p><strong>CSMA/CD、CSMA/CA 的含义、原理和特点</strong></p>
+<ul>
+<li>基于端口的VLAN</li>
+<li>基于MAC地址的VLAN</li>
+<li>基于第三层协议的VLAN</li>
+<li>基于用户使用策略的VLAN</li>
+</ul>
+<p><strong>CSMA/CD（载波监听多路访问/冲突检测）</strong><br>含义：</p>
+<ul>
+<li>多路访问：许多计算机以多点接入的方式接入到总线网络。</li>
+<li>载波监听：每个站在发送数据之前都要检测一下总线上是否有其它计算机在发送数据。</li>
+<li>冲突检测：当几个站同时发送数据，总线上的信号电压摆动值将会增大（相互叠加）。发现冲突停止发送数据，等待一段随机时间再次发送。</li>
+</ul>
+<p>原理：先听后发，边听边发，冲突停发，随机重发。</p>
+<p>特点：在发送数据时，需要不断的检测信道是否有其他主机也在发送数据。</p>
+<p><strong>CSMA/CA（载波监听多路访问/冲突避免）</strong></p>
+<p>原理：利用ACk信号来避免冲突的发生，也就是说，只有当客户端收到网络上返回的ACK信号后，才确认送出的数据已经正确到达目的。</p>
+<p>CSMA/CD与CSMA/CA区别：  </p>
+<ul>
+<li>前者用于总线式以太网，后者用于无线网路</li>
+<li>检测信道空闲方式不同：前者通过检测电缆中电压的变化，后者利用能量检测（ED）、载波检测（CS）、能量载波混合检测</li>
+<li>对于无线局域网（WLAN）中某个节点来说来说，信号会出现覆盖的情况</li>
+</ul>
 <p><strong>基于逆向学习算法,掌握透明网桥转发表的生成过程</strong></p>
+<p>透明指的是局域网上的站点并不知道所发送的帧经过那几个王巧，因为王巧对各站来说是看不见的。透明网桥是一种即插即用设备。</p>
 
         </div>
 
@@ -305,7 +335,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-28T03:23:38.000Z" itemprop="dateUpdated">2017-12-28 11:23:38</time>
+    Last updated: <time datetime="2017-12-28T06:45:48.238Z" itemprop="dateUpdated">2017-12-28 14:45:48</time>
 </span><br>
 
 
@@ -336,7 +366,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&title=《计算机网络绪论和LAN》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN（局域网）/&title=《计算机网络绪论和LAN（局域网）》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -346,22 +376,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&title=《计算机网络绪论和LAN》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN（局域网）/&title=《计算机网络绪论和LAN（局域网）》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN（局域网）/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络绪论和LAN》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络绪论和LAN（局域网）》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN（局域网）/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN（局域网）/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -472,7 +502,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&title=《计算机网络绪论和LAN》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN（局域网）/&title=《计算机网络绪论和LAN（局域网）》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -482,22 +512,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&title=《计算机网络绪论和LAN》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN（局域网）/&title=《计算机网络绪论和LAN（局域网）》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN（局域网）/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络绪论和LAN》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络绪论和LAN（局域网）》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN（局域网）/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN（局域网）/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -508,7 +538,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aO3LDMAwFQN//0slM6lDz8KHtYlV5ZFniqiBgAK9XfPz8Hc+fT2eerzxdn9xh7cDDw8NrLf10nK55Pp+/lASZPPd4Hzw8PLxrvCQYnB7z/MgkGOQvohp+8PDw8D7L6yXE1cDTS+Xx8PDwvpk3Sa8TQO914+Hh4b2fl2zcz79KygfVMJO/yoVaCx4eHl7M22qAvfPzB/p7eHh4eMH2mhcOkg29kAQX73l8Fh4eHt4FXt7c6pUqJulyddyq8I8BDw8Pb8DbLRBUBwh61xfO4+Hh4b2F9/yD/JpeCy2vJ0T3xMPDw7vAmywiT53nddfRYAEeHh7eBV6+xVeLs5M0vZruF14rHh4e3pjXG5yqbuXVwkQ1rY8aYHh4eHhjXrVAsPX46uY+im94eHh413i9sYB5uSEPEklaf6yy4OHh4a3y8hJDkkxXx62qYaCwTjw8PLwLvF7Lv5coVxPxJN2P1omHh4d3gddriU1S4bx6UC2RNJN+PDw8vBavV2bN213VsYCtoIKHh4e3y8tLor3SbRJIqmEmgeHh4eHd4/Xqn5P22L2yxVp5Fw8PD2/wb703CtBrifVKxoWQg4eHh7fKqyasefAoj0mNa8//XImHh4e3yusNS1UHtuYFhV4JGA8PD+8GL29cVbfsPHXujRcUBhTw8PDwVnnzZLc3qjUZIyi8IDw8PLzLvMkQ1e54Qa/N9s/1eHh4eBd4ha8H23Rv6b1WXPQ1Hh4e3oD3UzyqaXF+nzylLoQNPDw8vAu8ragyGQXoFSCi1hceHh7eNV4+GpUsKH9ZyX0WEm48PDy8a7xe6SFv809aaL1CMB4eHt438PKCRV4gaDa08sQaDw8P7wt4yZne+TxRLoQcPDw8vGu8rWLELrIKPqbUeHh4eKu83o8nC+oFmFExFw8PD2+H9wt9g5KXCewg7QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACp0lEQVR42u3aQW7jMBAEwPz/01lgr0mU7hnSBoLSybBlkcWDSPTMx0d8ff6/8u+fn/P1Sp7WjvWBh4eHd433+XjN7vk6oRnp+cnP88HDw8O7zXt+Ee/x+cbTfv7FgoeHh/dWXnJ/vhk8f4OHh4f393jt9pAD2vng4eHhvYuXB6zJRNvJPT/zRVkLHh4e3jYfOBYW3Ph8sb6Hh4eHt6iqt0fhJJ5of13NFg8PD+8Cb1PUPxUZJOPO2gvw8PDw7vHav81ar5LFamOO9ns8PDy8U7xT0W37cp+x27IcHh4e3lnepkEqL1ztc9dhYwEeHh7eZd5scrNYIY9o8+fU3WR4eHh4I97syJtHBrNDebLoeXsWHh4e3j1eftMmtN20INQJNB4eHt41XnvAzadbZMnlwhXtDnh4eHhHebOB8//Ojr95DFEEEHh4eHhHeW1b1SyQbSOGfPl+KYDh4eHhXea1U2lbpva5QTErPDw8vAu8WQo6Oy6fLZvlGwYeHh7eWV4eBLRxal7QagtsxSLi4eHhXeDtA9zZdG9sAz8q8PDw8I7ykltPvaDbRoQ8OP5xofHw8PAu8GahwybA3UTAeRD8zZ14eHh413j5kG3osAkg8jT6l40BDw8P7yhvVs6fFbfaBq+zWw4eHh7ehvf8qj1bppp1NORzw8PDw3sXL38Rt8vxvDHk9xRLiYeHh3eB15aR8vLVLKQYnvrx8PDwXsj7LK9NzJo/Jzm4R6Pg4eHhXeDN6kTtwXpPakepLzw8PLxF00C7GbSB7z7GHVbw8PDw8C7w2s1gFtHmo2+e8E0kgYeHh/cm3iywyMts7eIeyKTx8PDwXsLL8Xmxvz0o1/0ReHh4eBd4p8KIti0gGXcVNOPh4eFd4M2y0E09bdaIsApz8fDw8M7w/gHqdqZLqmGVxgAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
