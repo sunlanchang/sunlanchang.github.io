@@ -18,25 +18,25 @@
     
     
     
-    <title>网络层 | Jason&#39;s Blog</title>
+    <title>传输层和应用层 | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="计算机网络">
-    <meta name="description" content="网络层IP地址分类、子网划分、CIDR无分类编址IP地址分类方法 Note：IP数据报的分片:注意数据部分是8的整数倍。 RIP、OSPF路由选择协议RIP协议基本原理和特点原理：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。基本特点  仅和自制系统内的相邻路由器">
+    <meta name="description" content="传输层端口号分配方法 占16位，地址范围0~65535，划分为3类：  熟知的端口号或系统端口号（0~1023）。 注册端口（1024~49151） 动态端口（49152~65535）  TCP协议与UDP协议的特点与适用场合比较 TCP协议和UDP协议的数据格式。掌握校验和计算原理和过程;给定一段数据,会计算各字段的值TCP协议的流量控制。对给定的报文段,会计算相应的序号和确认号TCP协议的拥塞">
 <meta name="keywords" content="计算机网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络层">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/12/28/网络层/index.html">
+<meta property="og:title" content="传输层和应用层">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/12/28/传输层和应用层/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="网络层IP地址分类、子网划分、CIDR无分类编址IP地址分类方法 Note：IP数据报的分片:注意数据部分是8的整数倍。 RIP、OSPF路由选择协议RIP协议基本原理和特点原理：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。基本特点  仅和自制系统内的相邻路由器">
+<meta property="og:description" content="传输层端口号分配方法 占16位，地址范围0~65535，划分为3类：  熟知的端口号或系统端口号（0~1023）。 注册端口（1024~49151） 动态端口（49152~65535）  TCP协议与UDP协议的特点与适用场合比较 TCP协议和UDP协议的数据格式。掌握校验和计算原理和过程;给定一段数据,会计算各字段的值TCP协议的流量控制。对给定的报文段,会计算相应的序号和确认号TCP协议的拥塞">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T08:41:44.924Z">
+<meta property="og:updated_time" content="2017-12-28T08:53:13.183Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网络层">
-<meta name="twitter:description" content="网络层IP地址分类、子网划分、CIDR无分类编址IP地址分类方法 Note：IP数据报的分片:注意数据部分是8的整数倍。 RIP、OSPF路由选择协议RIP协议基本原理和特点原理：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。基本特点  仅和自制系统内的相邻路由器">
+<meta name="twitter:title" content="传输层和应用层">
+<meta name="twitter:description" content="传输层端口号分配方法 占16位，地址范围0~65535，划分为3类：  熟知的端口号或系统端口号（0~1023）。 注册端口（1024~49151） 动态端口（49152~65535）  TCP协议与UDP协议的特点与适用场合比较 TCP协议和UDP协议的数据格式。掌握校验和计算原理和过程;给定一段数据,会计算各字段的值TCP协议的流量控制。对给定的报文段,会计算相应的序号和确认号TCP协议的拥塞">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -124,7 +124,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">网络层</div>
+        <div class="flex-col header-title ellipsis">传输层和应用层</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -146,10 +146,10 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">网络层</h1>
+        <h1 class="title">传输层和应用层</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-12-28T08:13:14.000Z" itemprop="datePublished" class="page-time">
+                <time datetime="2017-12-28T08:43:06.000Z" itemprop="datePublished" class="page-time">
   2017-12-28
 </time>
 
@@ -171,17 +171,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#网络层"><span class="post-toc-number">1.</span> <span class="post-toc-text">网络层</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#传输层"><span class="post-toc-number">1.</span> <span class="post-toc-text">传输层</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#应用层"><span class="post-toc-number">2.</span> <span class="post-toc-text">应用层</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-网络层"
+<article id="post-传输层和应用层"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">网络层</h1>
+        <h1 class="post-card-title">传输层和应用层</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-12-28 16:13:14" datetime="2017-12-28T08:13:14.000Z"  itemprop="datePublished">2017-12-28</time>
+            <time class="post-time" title="2017-12-28 16:43:06" datetime="2017-12-28T08:43:06.000Z"  itemprop="datePublished">2017-12-28</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
@@ -196,31 +196,16 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p><strong>IP地址分类、子网划分、CIDR无分类编址</strong><br><a href="https://sunlanchang.github.io/2017/11/14/IP%E5%9C%B0%E5%9D%80%E3%80%81IP%E5%AD%90%E7%BD%91%E3%80%81CIDR/">IP地址分类方法</a></p>
-<p><strong>Note</strong>：IP数据报的分片:注意数据部分是8的整数倍。</p>
-<p><strong>RIP、OSPF路由选择协议</strong><br>RIP协议基本原理和特点<br><strong>原理</strong>：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。<br><strong>基本特点</strong></p>
+            <h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p><strong>端口号分配方法</strong></p>
+<p>占16位，地址范围0~65535，划分为3类：</p>
 <ul>
-<li>仅和自制系统内的相邻路由器交换信息。</li>
-<li>支持两种信息交换方式，一种是定期的路由更新，另一种是触发的路由更新。</li>
-<li>路由器交换的信息是自己现在的路由表。<br><strong>缺点</strong>  </li>
-<li>最大距离15。</li>
-<li>网络规模的扩大，交换的路由表的开销将增加。</li>
-<li>路由迅速发生变化，路由表可能来不及交换信息。</li>
-<li>选择最短路由，但是速度不一定是最快的路由。</li>
+<li>熟知的端口号或系统端口号（0~1023）。</li>
+<li>注册端口（1024~49151）</li>
+<li>动态端口（49152~65535）</li>
 </ul>
-<p>OSPF协议<br><strong>特点</strong></p>
-<ul>
-<li>使用分布式链路状态算法。</li>
-<li>支持负载均衡，将距离、时延、带宽考虑进路由算法。</li>
-<li>只有当链路状态发生变化时，才使用泛洪法向相邻的路由器发送信息更新路由表。</li>
-</ul>
-<p><strong>IPv6地址</strong><br>每个地址占128位，用冒号将每个十六位分隔开。有一下集中简写方法。</p>
-<ul>
-<li>前导零压缩法：如ABCD:0:0:0:0:A2:0</li>
-<li>零压缩法：如ABCD:::::A2:0</li>
-<li>十六进制冒号与十进制点分法结合：如0:0:0:0:0:0:128.12.1.2</li>
-<li>前缀长度表示法（与CIDR类似）：ABAA::AA:0:FFFF/60</li>
-</ul>
+<p><strong>TCP协议与UDP协议的特点与适用场合比较</strong></p>
+<p>TCP协议和UDP协议的数据格式。掌握校验和计算原理和过程;给定一段数据,会计算各字段的值<br>TCP协议的流量控制。对给定的报文段,会计算相应的序号和确认号<br>TCP协议的拥塞控制。对给定的拥塞控制状态,会正确画出示意图,并计算报文数和时延</p>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>常见的应用层协议及其端口<br>掌握 DNS、FTP、EMAIL、HTTP 等协议的工作原理、基本流程和特点<br>网络协议分析工具的应用。对给定的各网络协议层次的捕获数据,会识别其含义,并查找错误</p>
 
         </div>
 
@@ -228,7 +213,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-28T08:41:44.924Z" itemprop="dateUpdated">2017-12-28 16:41:44</time>
+    Last updated: <time datetime="2017-12-28T08:53:13.183Z" itemprop="dateUpdated">2017-12-28 16:53:13</time>
 </span><br>
 
 
@@ -259,7 +244,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/网络层/&title=《网络层》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/传输层和应用层/&title=《传输层和应用层》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -269,22 +254,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/网络层/&title=《网络层》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/传输层和应用层/&title=《传输层和应用层》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/网络层/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/传输层和应用层/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网络层》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/网络层/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《传输层和应用层》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/传输层和应用层/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/网络层/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/传输层和应用层/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -304,21 +289,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/12/28/传输层和应用层/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">传输层和应用层</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/12/28/物理层和数据链路层/" id="post-next" class="post-nav-link">
+      <a href="/2017/12/28/网络层/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">物理层和数据链路层</h4>
+        <h4 class="title">网络层</h4>
       </a>
     </div>
   
@@ -402,7 +380,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/网络层/&title=《网络层》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/传输层和应用层/&title=《传输层和应用层》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -412,22 +390,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/网络层/&title=《网络层》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/传输层和应用层/&title=《传输层和应用层》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/网络层/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/传输层和应用层/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网络层》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/网络层/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《传输层和应用层》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/传输层和应用层/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/网络层/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/传输层和应用层/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -438,7 +416,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aQY6kMAwF0Lr/pZntSDPQ3zbVEuZlVYI0ydu449ifTzyOk5HM//tJMuf6y6OBgYHxWMZxOfI5+Spn3/wXXFgXAwPjBYyzhfNPJ0HzeitJmD59joGBgVEMglUYBgYGxm8ykm0lCTAGBgZGL4ntLTxBfiUXx8DAeCAjvyz7/d9fqW9gYGA8inEUR3JcmxwNj9bAwMDYzcgDXE6alBN6+8HAwHgD464LteT5vHXsByoGBsZSRr5k9ZKuetGfB+LT/xsYGBjrGNUC5ORKrlcwiFbHwMB4MaN6RJsfJRPGf/4KAwNjNWO+0Sg/HpcNCpdxGBgY6xjVlHWS3PaKB9EBFAMDYzVjUnrslScLxchisMbAwNjNmIe5SZraC/E3lDAxMDAewqg2WOSNEb3DZX4AHfWJYGBgPJDRK1vmzRbfQJ42W2BgYCxl3BWCq4GyWhI4/QIGBsZqRi+VHQXHONHtHUAxMDB2M6olyetN39tOUS02YGBg7GNUN5ckt730tZpORyVMDAyMRYzJwtcz72qnKDSEYWBgrGbcGxwnwTQvSGBgYOxmHMVRTTvzt73LuCjPxsDAeDijF+byt5Or/6+EbAwMjMcyqlf/veSz2gqWJLEYGBhvY+TNE9UDXw85ysUxMDAwgqCZB+VJi9gnj98YGBgvY0zKlvnb/FoQAwPjPYwk/OXb6pUNJuUEDAyM3Yw8dewFx5zdax3DwMBYzfgDfWh/rZpXXtIAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQbKEIAxFUfe/af8CuvTfl+CAcBlZ1QocBmlIuC7c7of2+yt5n3x1fdFkyJCxLeN+be8DPL353v/vm+/PZFFkyJBxAuMpgq0aprZYZG4yZMiQQcIoCa98gWTIkCFjLYNs/tKjqQwZMmR0DrFpwOXJOL5AC87iMmTI2JDRCYJfP39S35AhQ8ZWjDtsna1hug0NZiVDhozRDB7geHdpOQEdUF/nI0OGjNMYq65q8a86R2UUs2XIkDGCwQdopbpKqbRayJYhQ8YkBr8Ywa98pdu7BUsmQ4aM0YyUVBt+1TuohCBDhozRDL6LXHVFjB+Y4wKnDBkyBjHIMGuDcifF9vitDBkyRjNq5Uk+xTRA8zLDYwlThgwZQxkk4JLn9IibLgdiy5AhYyijn97qXNdI+y+WBGTIkLEtI932kQBNjr5peEWXLWTIkDGakSbxeVhMU3LFHmTIkHEko5ay59cp0t7+6V+GDBmjGaRTEo7J+6umji6EyZAhYxwjTfrXqGkqLQbLkCHjAAYvDKSXwziGp/8WlDBlyJCxISMNgjw9V1sCvnGUIUPGbMYdtlpCnwfxNGEnQ4aMExhpmEvDZa1ISbaDxZAtQ4aMbRmdIJum6vobUBkyZJzMIOGSB19ylK39AzyOK0OGDBnhpbEaNR0xqIXKkCHjMEZatuQXKVLwgv8NGTJkbMXoFyDJcqQJtSB5J0OGjNGM2hWHzlQ6y9QqasqQIWM/xh/lSWC+OrrqHgAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

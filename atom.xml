@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-12-28T08:41:44.924Z</updated>
+  <updated>2017-12-28T08:53:13.183Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>传输层和应用层</title>
+    <link href="http://sunlanchang.github.io/2017/12/28/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%92%8C%E5%BA%94%E7%94%A8%E5%B1%82/"/>
+    <id>http://sunlanchang.github.io/2017/12/28/传输层和应用层/</id>
+    <published>2017-12-28T08:43:06.000Z</published>
+    <updated>2017-12-28T08:53:13.183Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p><strong>端口号分配方法</strong></p><p>占16位，地址范围0~65535，划分为3类：</p><ul><li>熟知的端口号或系统端口号（0~1023）。</li><li>注册端口（1024~49151）</li><li>动态端口（49152~65535）</li></ul><p><strong>TCP协议与UDP协议的特点与适用场合比较</strong></p><p>TCP协议和UDP协议的数据格式。掌握校验和计算原理和过程;给定一段数据,会计算各字段的值<br>TCP协议的流量控制。对给定的报文段,会计算相应的序号和确认号<br>TCP协议的拥塞控制。对给定的拥塞控制状态,会正确画出示意图,并计算报文数和时延</p><h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>常见的应用层协议及其端口<br>掌握 DNS、FTP、EMAIL、HTTP 等协议的工作原理、基本流程和特点<br>网络协议分析工具的应用。对给定的各网络协议层次的捕获数据,会识别其含义,并查找错误</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;传输层&quot;&gt;&lt;a href=&quot;#传输层&quot; class=&quot;headerlink&quot; title=&quot;传输层&quot;&gt;&lt;/a&gt;传输层&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;端口号分配方法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;占16位，地址范围0~65535，划分为3类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="计算机网络" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="计算机网络" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>网络层</title>
@@ -503,31 +531,6 @@
       
         &lt;h1 id=&quot;基址寻址&quot;&gt;&lt;a href=&quot;#基址寻址&quot; class=&quot;headerlink&quot; title=&quot;基址寻址&quot;&gt;&lt;/a&gt;基址寻址&lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令
-      
-    
-    </summary>
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>寻址方式之——直接寻址、间接寻址</title>
-    <link href="http://sunlanchang.github.io/2017/11/17/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B9%8B%E2%80%94%E2%80%94%E7%9B%B4%E6%8E%A5%E5%AF%BB%E5%9D%80%E3%80%81%E9%97%B4%E6%8E%A5%E5%AF%BB%E5%9D%80/"/>
-    <id>http://sunlanchang.github.io/2017/11/17/寻址方式之——直接寻址、间接寻址/</id>
-    <published>2017-11-17T14:31:12.000Z</published>
-    <updated>2017-11-22T02:37:55.588Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h1><p>指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图<br><img src="/images/zhijiexunzhi.gif" alt="直接寻址"><br>注意：立即寻址方式和直接寻址方式的书写格式的不同，直接寻址的地址要写在括号“[”，“]”内。在程序中，直接地址通常用内存变量名来表示，如：MOV BX, VARW，其中，VARW是内存字变量。<br>试比较下列指令中源操作数的寻址方式(VARW是内存字变量)：<br><figure class="highlight arm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">MOV　</span>AX, <span class="number">1234</span>H<span class="comment">;    MOV　AX, [1234H] ;前者是立即寻址，后者是直接寻址</span></div><div class="line"><span class="keyword">MOV　</span>AX, VARW<span class="comment">;     MOV　AX, [VARW] ;两者是等效的，均为直接寻址</span></div></pre></td></tr></table></figure></p><h1 id="间接寻址"><a href="#间接寻址" class="headerlink" title="间接寻址"></a>间接寻址</h1><p>在寻址是，有时根据指令的地址码所取出的内容既不是操作数，也不是下一条要执行的指令，而是操作数的地址或指令的地址，这种方式成为间接寻址。根据地址码指的是寄存器地址还是存储器地址，间接寻址又可以分为寄存器间接寻址和存储器间接寻址两种方式。间接寻址有一次间接寻址和间接寻址两种情况，大多数计算机只允许一次间接寻址。对于存储器一次间接寻址情况，许访问两次存储器才能取得数据，第一次从存储器读出操作数地址，第二次读出操作数。如下图所示<br><img src="/images/jianjiexunzhi.png" alt="存储器间接寻址"><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/jicunqijianjiexunzhi.jpg" alt="寄存器间接寻址" title="">                </div>                <div class="image-caption">寄存器间接寻址</div>            </figure>  </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;直接寻址&quot;&gt;&lt;a href=&quot;#直接寻址&quot; class=&quot;headerlink&quot; title=&quot;直接寻址&quot;&gt;&lt;/a&gt;直接寻址&lt;/h1&gt;&lt;p&gt;指令的地址码部分给出操作数在存储器中的地址，比如给出一个操作数的字段为3位，则寻址方式为有8种。如下图&lt;br&gt;&lt;img sr
       
     
     </summary>
