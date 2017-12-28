@@ -33,7 +33,7 @@
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="网络层IP地址分类、子网划分、CIDR无分类编址IP地址分类方法 Note：IP数据报的分片:注意数据部分是8的整数倍。 RIP、OSPF路由选择协议RIP协议基本原理和特点原理：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。基本特点  仅和自制系统内的相邻路由器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T08:35:16.000Z">
+<meta property="og:updated_time" content="2017-12-28T08:41:44.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络层">
 <meta name="twitter:description" content="网络层IP地址分类、子网划分、CIDR无分类编址IP地址分类方法 Note：IP数据报的分片:注意数据部分是8的整数倍。 RIP、OSPF路由选择协议RIP协议基本原理和特点原理：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。基本特点  仅和自制系统内的相邻路由器">
@@ -130,7 +130,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -214,7 +214,13 @@
 <li>支持负载均衡，将距离、时延、带宽考虑进路由算法。</li>
 <li>只有当链路状态发生变化时，才使用泛洪法向相邻的路由器发送信息更新路由表。</li>
 </ul>
-<p><strong>IPv6 地址的基本特点、写法</strong></p>
+<p><strong>IPv6地址</strong><br>每个地址占128位，用冒号将每个十六位分隔开。有一下集中简写方法。</p>
+<ul>
+<li>前导零压缩法：如ABCD:0:0:0:0:A2:0</li>
+<li>零压缩法：如ABCD:::::A2:0</li>
+<li>十六进制冒号与十进制点分法结合：如0:0:0:0:0:0:128.12.1.2</li>
+<li>前缀长度表示法（与CIDR类似）：ABAA::AA:0:FFFF/60</li>
+</ul>
 
         </div>
 
@@ -222,7 +228,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-12-28T08:35:16.000Z" itemprop="dateUpdated">2017-12-28 16:35:16</time>
+    Last updated: <time datetime="2017-12-28T08:41:44.924Z" itemprop="dateUpdated">2017-12-28 16:41:44</time>
 </span><br>
 
 
@@ -365,7 +371,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

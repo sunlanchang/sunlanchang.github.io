@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-12-28T08:35:16.000Z</updated>
+  <updated>2017-12-28T08:41:44.924Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://sunlanchang.github.io/2017/12/28/%E7%BD%91%E7%BB%9C%E5%B1%82/"/>
     <id>http://sunlanchang.github.io/2017/12/28/网络层/</id>
     <published>2017-12-28T08:13:14.000Z</published>
-    <updated>2017-12-28T08:35:16.000Z</updated>
+    <updated>2017-12-28T08:41:44.924Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p><strong>IP地址分类、子网划分、CIDR无分类编址</strong><br><a href="https://sunlanchang.github.io/2017/11/14/IP%E5%9C%B0%E5%9D%80%E3%80%81IP%E5%AD%90%E7%BD%91%E3%80%81CIDR/">IP地址分类方法</a></p><p><strong>Note</strong>：IP数据报的分片:注意数据部分是8的整数倍。</p><p><strong>RIP、OSPF路由选择协议</strong><br>RIP协议基本原理和特点<br><strong>原理</strong>：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。<br><strong>基本特点</strong></p><ul><li>仅和自制系统内的相邻路由器交换信息。</li><li>支持两种信息交换方式，一种是定期的路由更新，另一种是触发的路由更新。</li><li>路由器交换的信息是自己现在的路由表。<br><strong>缺点</strong>  </li><li>最大距离15。</li><li>网络规模的扩大，交换的路由表的开销将增加。</li><li>路由迅速发生变化，路由表可能来不及交换信息。</li><li>选择最短路由，但是速度不一定是最快的路由。</li></ul><p>OSPF协议<br><strong>特点</strong></p><ul><li>使用分布式链路状态算法。</li><li>支持负载均衡，将距离、时延、带宽考虑进路由算法。</li><li>只有当链路状态发生变化时，才使用泛洪法向相邻的路由器发送信息更新路由表。</li></ul><p><strong>IPv6 地址的基本特点、写法</strong></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p><strong>IP地址分类、子网划分、CIDR无分类编址</strong><br><a href="https://sunlanchang.github.io/2017/11/14/IP%E5%9C%B0%E5%9D%80%E3%80%81IP%E5%AD%90%E7%BD%91%E3%80%81CIDR/">IP地址分类方法</a></p><p><strong>Note</strong>：IP数据报的分片:注意数据部分是8的整数倍。</p><p><strong>RIP、OSPF路由选择协议</strong><br>RIP协议基本原理和特点<br><strong>原理</strong>：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。<br><strong>基本特点</strong></p><ul><li>仅和自制系统内的相邻路由器交换信息。</li><li>支持两种信息交换方式，一种是定期的路由更新，另一种是触发的路由更新。</li><li>路由器交换的信息是自己现在的路由表。<br><strong>缺点</strong>  </li><li>最大距离15。</li><li>网络规模的扩大，交换的路由表的开销将增加。</li><li>路由迅速发生变化，路由表可能来不及交换信息。</li><li>选择最短路由，但是速度不一定是最快的路由。</li></ul><p>OSPF协议<br><strong>特点</strong></p><ul><li>使用分布式链路状态算法。</li><li>支持负载均衡，将距离、时延、带宽考虑进路由算法。</li><li>只有当链路状态发生变化时，才使用泛洪法向相邻的路由器发送信息更新路由表。</li></ul><p><strong>IPv6地址</strong><br>每个地址占128位，用冒号将每个十六位分隔开。有一下集中简写方法。</p><ul><li>前导零压缩法：如ABCD:0:0:0:0:A2:0</li><li>零压缩法：如ABCD:::::A2:0</li><li>十六进制冒号与十进制点分法结合：如0:0:0:0:0:0:128.12.1.2</li><li>前缀长度表示法（与CIDR类似）：ABAA::AA:0:FFFF/60</li></ul>]]></content>
     
     <summary type="html">
     
