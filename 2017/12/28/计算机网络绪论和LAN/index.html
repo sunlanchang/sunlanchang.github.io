@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?086a5af0b6f644650f444fc827e297f8"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>计算机网络绪论和LAN | Jason&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="计算机网络">
+    <meta name="description" content="绪论了解网络发展  面向终端的计算机网络 以通信子网为中心的计算机网络 体系结构标准化的网络 面向全球互连的计算机网络  网络拓扑结构分类  总线型结构 星型结构 环形结构 树形结构  网络协议 OSI 与 TCP/IP 的比较、协议各层的含义和基本传输单位">
+<meta name="keywords" content="计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络绪论和LAN">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="绪论了解网络发展  面向终端的计算机网络 以通信子网为中心的计算机网络 体系结构标准化的网络 面向全球互连的计算机网络  网络拓扑结构分类  总线型结构 星型结构 环形结构 树形结构  网络协议 OSI 与 TCP/IP 的比较、协议各层的含义和基本传输单位">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://sunlanchang.github.io/images/osi_tcpip.png">
+<meta property="og:updated_time" content="2017-12-28T03:17:52.533Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络绪论和LAN">
+<meta name="twitter:description" content="绪论了解网络发展  面向终端的计算机网络 以通信子网为中心的计算机网络 体系结构标准化的网络 面向全球互连的计算机网络  网络拓扑结构分类  总线型结构 星型结构 环形结构 树形结构  网络协议 OSI 与 TCP/IP 的比较、协议各层的含义和基本传输单位">
+<meta name="twitter:image" content="http://sunlanchang.github.io/images/osi_tcpip.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/tou.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jason Sun</h5>
+          <a href="mailto:sunlanchang@outlook.com" title="sunlanchang@outlook.com" class="mail">sunlanchang@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/sunlanchang" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.csdn.net/sunlanchang"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">计算机网络绪论和LAN</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">计算机网络绪论和LAN</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-28T02:37:17.000Z" itemprop="datePublished" class="page-time">
+  2017-12-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#绪论"><span class="post-toc-number">1.</span> <span class="post-toc-text">绪论</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LAN"><span class="post-toc-number">2.</span> <span class="post-toc-text">LAN</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-计算机网络绪论和LAN"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">计算机网络绪论和LAN</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-28 10:37:17" datetime="2017-12-28T02:37:17.000Z"  itemprop="datePublished">2017-12-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p><strong>了解网络发展</strong></p>
+<ul>
+<li>面向终端的计算机网络</li>
+<li>以通信子网为中心的计算机网络</li>
+<li>体系结构标准化的网络</li>
+<li>面向全球互连的计算机网络</li>
+</ul>
+<p><strong>网络拓扑结构分类</strong></p>
+<ul>
+<li>总线型结构</li>
+<li>星型结构</li>
+<li>环形结构</li>
+<li>树形结构</li>
+</ul>
+<p><strong>网络协议 OSI 与 TCP/IP 的比较、协议各层的含义和基本传输单位</strong><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/osi_tcpip.png" alt="OSI和TCP/IP区别" title="">
+                </div>
+                <div class="image-caption">OSI和TCP/IP区别</div>
+            </figure></p>
+<ol>
+<li>物理层PhysicalLayer:原始比特流的传输(传输基本单位比特bit)</li>
+</ol>
+<ul>
+<li>提供传输数据的物理通路    </li>
+<li>传输数据<br>主要设备:中继器、集线器</li>
+</ul>
+<ol>
+<li>数据链路层DataLinkLayer:建立相邻节点数据链路传输     (传输基本单位帧frame)</li>
+</ol>
+<ul>
+<li>数据链路的建立、维护、拆除、指定拓扑结构并提供硬件寻址</li>
+<li>数据组帧</li>
+<li>控制帧的收发顺序</li>
+<li>差错检测与恢复.流量控制</li>
+<li>主要设备:二层交换机、网桥</li>
+</ul>
+<ol>
+<li>网络层Network layer :基于IP地址的路由选路传输数据    (传输基本单位数据包packet)</li>
+</ol>
+<ul>
+<li>路由选路</li>
+<li>拥塞控制、差错检测与恢复</li>
+<li>网络互联</li>
+<li>主要设备:路由器</li>
+</ul>
+<ol>
+<li>传输层Transport layer: 常规数据传递,面向连接或者无连接 (传输基本单位数据段segment)</li>
+</ol>
+<ul>
+<li>流量控制</li>
+</ul>
+<ol>
+<li>会话层Session layer: 建立会话关系</li>
+<li>表示层Presentation layer:统一数据传输格式</li>
+</ol>
+<ul>
+<li>数据压缩和解压</li>
+<li>数据加密和解密</li>
+</ul>
+<ol>
+<li>应用层Application layer :为用户应用程序提供服务接口</li>
+</ol>
+<h1 id="LAN"><a href="#LAN" class="headerlink" title="LAN"></a>LAN</h1><p><strong>常见 LAN 的拓扑结构类型及其特点分析</strong></p>
+<ol>
+<li>星形网的特点：</li>
+</ol>
+<ul>
+<li>网络结构简单，便于管理（集中式）</li>
+<li>处理机负载重（需处理所有的服务）</li>
+<li>入网主机故障不影响整个网络的正常工作，中心处理机的故障将导致网络的瘫痪。</li>
+</ul>
+<ol>
+<li>总线网的特点：</li>
+</ol>
+<ul>
+<li>多台机器共用一条传输信道，信道利用率较高</li>
+<li>同一时刻只能由两台计算机通信</li>
+<li>某个结点的故障不影响网络的工作</li>
+<li>网络的延伸距离有限，结点数有限</li>
+</ul>
+<ol>
+<li>环形网特点：</li>
+</ol>
+<ul>
+<li>实时性较好（信息在网中传输的最大时间固定）；</li>
+<li>每个结点只与相邻两个结点有物理链路</li>
+<li>传输控制机制比较简单</li>
+<li>某个结点的故障将导致物理瘫痪</li>
+<li>单个环网的结点数有限</li>
+</ul>
+<p><strong>LAN 的扩展方法及其特点</strong></p>
+<p><strong>交换机、路由器和集线器三者的应用比较</strong></p>
+<p><strong>VLAN 的实现技术</strong></p>
+<p><strong>CSMA/CD、CSMA/CA 的含义、原理和特点</strong></p>
+<p><strong>基于逆向学习算法,掌握透明网桥转发表的生成过程</strong></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-12-28T03:17:52.533Z" itemprop="dateUpdated">2017-12-28 11:17:52</time>
+</span><br>
+
+
+        
+        这里可以给我留言。
+        
+    </div>
+    <footer>
+        <a href="http://sunlanchang.github.io">
+            <img src="/img/tou.jpg" alt="Jason Sun">
+            Jason Sun
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&title=《计算机网络绪论和LAN》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&title=《计算机网络绪论和LAN》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络绪论和LAN》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/12/27/计算机网络部分题目/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">计算机网络部分题目</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'sunlanchang',
+            repo: 'myGitment',
+            oauth: {
+                client_id: '6013556da1745c4a2fa8',
+                client_secret: '4394e96a00fdb11529f27a88acff6ff091aaaeaa',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jason Sun &copy; 2017</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17053348号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&title=《计算机网络绪论和LAN》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&title=《计算机网络绪论和LAN》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络绪论和LAN》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aO3LDMAwFQN//0slM6lDz8KHtYlV5ZFniqiBgAK9XfPz8Hc+fT2eerzxdn9xh7cDDw8NrLf10nK55Pp+/lASZPPd4Hzw8PLxrvCQYnB7z/MgkGOQvohp+8PDw8D7L6yXE1cDTS+Xx8PDwvpk3Sa8TQO914+Hh4b2fl2zcz79KygfVMJO/yoVaCx4eHl7M22qAvfPzB/p7eHh4eMH2mhcOkg29kAQX73l8Fh4eHt4FXt7c6pUqJulyddyq8I8BDw8Pb8DbLRBUBwh61xfO4+Hh4b2F9/yD/JpeCy2vJ0T3xMPDw7vAmywiT53nddfRYAEeHh7eBV6+xVeLs5M0vZruF14rHh4e3pjXG5yqbuXVwkQ1rY8aYHh4eHhjXrVAsPX46uY+im94eHh413i9sYB5uSEPEklaf6yy4OHh4a3y8hJDkkxXx62qYaCwTjw8PLwLvF7Lv5coVxPxJN2P1omHh4d3gddriU1S4bx6UC2RNJN+PDw8vBavV2bN213VsYCtoIKHh4e3y8tLor3SbRJIqmEmgeHh4eHd4/Xqn5P22L2yxVp5Fw8PD2/wb703CtBrifVKxoWQg4eHh7fKqyasefAoj0mNa8//XImHh4e3yusNS1UHtuYFhV4JGA8PD+8GL29cVbfsPHXujRcUBhTw8PDwVnnzZLc3qjUZIyi8IDw8PLzLvMkQ1e54Qa/N9s/1eHh4eBd4ha8H23Rv6b1WXPQ1Hh4e3oD3UzyqaXF+nzylLoQNPDw8vAu8ragyGQXoFSCi1hceHh7eNV4+GpUsKH9ZyX0WEm48PDy8a7xe6SFv809aaL1CMB4eHt438PKCRV4gaDa08sQaDw8P7wt4yZne+TxRLoQcPDw8vGu8rWLELrIKPqbUeHh4eKu83o8nC+oFmFExFw8PD2+H9wt9g5KXCewg7QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'false';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Jason's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

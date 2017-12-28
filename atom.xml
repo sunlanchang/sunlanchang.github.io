@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-12-27T07:13:03.520Z</updated>
+  <updated>2017-12-28T03:17:52.533Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机网络绪论和LAN</title>
+    <link href="http://sunlanchang.github.io/2017/12/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%AA%E8%AE%BA%E5%92%8CLAN/"/>
+    <id>http://sunlanchang.github.io/2017/12/28/计算机网络绪论和LAN/</id>
+    <published>2017-12-28T02:37:17.000Z</published>
+    <updated>2017-12-28T03:17:52.533Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p><strong>了解网络发展</strong></p><ul><li>面向终端的计算机网络</li><li>以通信子网为中心的计算机网络</li><li>体系结构标准化的网络</li><li>面向全球互连的计算机网络</li></ul><p><strong>网络拓扑结构分类</strong></p><ul><li>总线型结构</li><li>星型结构</li><li>环形结构</li><li>树形结构</li></ul><p><strong>网络协议 OSI 与 TCP/IP 的比较、协议各层的含义和基本传输单位</strong><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/osi_tcpip.png" alt="OSI和TCP/IP区别" title="">                </div>                <div class="image-caption">OSI和TCP/IP区别</div>            </figure></p><ol><li>物理层PhysicalLayer:原始比特流的传输(传输基本单位比特bit)</li></ol><ul><li>提供传输数据的物理通路    </li><li>传输数据<br>主要设备:中继器、集线器</li></ul><ol><li>数据链路层DataLinkLayer:建立相邻节点数据链路传输     (传输基本单位帧frame)</li></ol><ul><li>数据链路的建立、维护、拆除、指定拓扑结构并提供硬件寻址</li><li>数据组帧</li><li>控制帧的收发顺序</li><li>差错检测与恢复.流量控制</li><li>主要设备:二层交换机、网桥</li></ul><ol><li>网络层Network layer :基于IP地址的路由选路传输数据    (传输基本单位数据包packet)</li></ol><ul><li>路由选路</li><li>拥塞控制、差错检测与恢复</li><li>网络互联</li><li>主要设备:路由器</li></ul><ol><li>传输层Transport layer: 常规数据传递,面向连接或者无连接 (传输基本单位数据段segment)</li></ol><ul><li>流量控制</li></ul><ol><li>会话层Session layer: 建立会话关系</li><li>表示层Presentation layer:统一数据传输格式</li></ol><ul><li>数据压缩和解压</li><li>数据加密和解密</li></ul><ol><li>应用层Application layer :为用户应用程序提供服务接口</li></ol><h1 id="LAN"><a href="#LAN" class="headerlink" title="LAN"></a>LAN</h1><p><strong>常见 LAN 的拓扑结构类型及其特点分析</strong></p><ol><li>星形网的特点：</li></ol><ul><li>网络结构简单，便于管理（集中式）</li><li>处理机负载重（需处理所有的服务）</li><li>入网主机故障不影响整个网络的正常工作，中心处理机的故障将导致网络的瘫痪。</li></ul><ol><li>总线网的特点：</li></ol><ul><li>多台机器共用一条传输信道，信道利用率较高</li><li>同一时刻只能由两台计算机通信</li><li>某个结点的故障不影响网络的工作</li><li>网络的延伸距离有限，结点数有限</li></ul><ol><li>环形网特点：</li></ol><ul><li>实时性较好（信息在网中传输的最大时间固定）；</li><li>每个结点只与相邻两个结点有物理链路</li><li>传输控制机制比较简单</li><li>某个结点的故障将导致物理瘫痪</li><li>单个环网的结点数有限</li></ul><p><strong>LAN 的扩展方法及其特点</strong></p><p><strong>交换机、路由器和集线器三者的应用比较</strong></p><p><strong>VLAN 的实现技术</strong></p><p><strong>CSMA/CD、CSMA/CA 的含义、原理和特点</strong></p><p><strong>基于逆向学习算法,掌握透明网桥转发表的生成过程</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;绪论&quot;&gt;&lt;a href=&quot;#绪论&quot; class=&quot;headerlink&quot; title=&quot;绪论&quot;&gt;&lt;/a&gt;绪论&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;了解网络发展&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;面向终端的计算机网络&lt;/li&gt;
+&lt;li&gt;以通信子网为中心的计算机网
+      
+    
+    </summary>
+    
+      <category term="计算机网络" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="计算机网络" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机网络部分题目</title>
@@ -507,31 +535,6 @@
     
     
       <category term="计算机网络" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>寻址方式之——立即数寻址、寄存器寻址</title>
-    <link href="http://sunlanchang.github.io/2017/11/14/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E2%80%94%E2%80%94%E7%AB%8B%E5%8D%B3%E6%95%B0%E5%AF%BB%E5%9D%80%E3%80%81%E5%AF%84%E5%AD%98%E5%99%A8%E5%AF%BB%E5%9D%80/"/>
-    <id>http://sunlanchang.github.io/2017/11/14/寻址方式——立即数寻址、寄存器寻址/</id>
-    <published>2017-11-14T08:55:18.000Z</published>
-    <updated>2017-11-22T02:35:50.731Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="立即数寻址"><a href="#立即数寻址" class="headerlink" title="立即数寻址"></a>立即数寻址</h1><p>所需的操作数由指令直接给出，就称为立即数（或直接数）寻址方式。这种方式的特点是：取指令时，操作码和操作数同时被取出，减少了访存次数，提高了指令的执行速度。但是由于这一操作数是指令的一部分，不能修改，所以这种方式只能适用操作数固定的情况，并且操作数的位数有限。通常用于给某一寄存器单元赋初值或者提供一个常数，例如C语言里<code>int a = 1</code>，运用到了立即数寻址。<br>立即数可以是8位、16位或32位，该数值紧跟在操作码之后。如果立即数为16位或32位，那么，它将按“高高低低”的原则进行存储。例如：<br><figure class="highlight arm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">MOV </span>AH, <span class="number">80</span>H</div><div class="line"><span class="keyword">ADD </span>AX, <span class="number">1234</span>H</div><div class="line"><span class="keyword">MOV </span>ECX, <span class="number">123456</span>H</div></pre></td></tr></table></figure></p><p>以上指令中的第二操作数都是立即数，在汇编语言中规定：立即数不能作为指令中的第一操作数，该规定与高级语言中“赋值语句的左边不能是常量”的规定相一致。<br>立即数寻址方式通常用于对通用寄存器或内存单元赋初值。图是指令”MOV AX, 4576H”存储形式和执行示意图。将<code>4576H</code>数据送入<code>AX</code>通用寄存器，类似于赋值语句。<br><img src="/images/lijixunzhi.jpg" alt="立即数寻址"></p><h1 id="寄存器寻址"><a href="#寄存器寻址" class="headerlink" title="寄存器寻址"></a>寄存器寻址</h1><p>计算机的中央处理器一般设置有一定数量的通用寄存器，用来存放操作数，操作数的地址或中间结果。假如指令地址码部分给出某一通用寄存器地址即给出地址码<code>A</code>，而且所需的操作数就在这一寄存器中，则称为寄存器寻址。通用寄存器数量一般在几个到几十个之间，例如x86架构CPU有4个数据寄存器(<code>EAX</code>、<code>EBX</code>、<code>ECX</code>和<code>EDX</code>)，MIPS架构CPU有32个通用寄存器（<code>$0</code>-<code>$31</code>），ARM架构CPU有16个32位的寄存器（<code>r0</code>-<code>r15</code>）。从寄存器中存取数据比从存储器中存取数据快得多，所以这种寻址方式可以缩短指令长度，节省存储空间，提高指令的执行速度。<br><img src="/images/jicunqixunzhi.jpg" alt="寄存器寻址"></p><h2 id="速度的比较"><a href="#速度的比较" class="headerlink" title="速度的比较"></a>速度的比较</h2><p>按照离CPU由近到远的顺序依次是CPU寄存器、Cache、内存、硬盘，越靠近CPU的存储器容量越小但访问速度越快，下图给出了各种存储器的容量和访问速度的典型值。<br><img src="/images/sudubijiao.png" alt="存储器存取数据比较"><br><strong>参考：</strong></p><blockquote><p><a href="http://blog.csdn.net/zlzlei/article/details/7790363" target="_blank" rel="external">http://blog.csdn.net/zlzlei/article/details/7790363</a><br><a href="http://blog.csdn.net/huangxb_csu/article/details/5976561" target="_blank" rel="external">http://blog.csdn.net/huangxb_csu/article/details/5976561</a><br><a href="http://blog.csdn.net/gujing001/article/details/8476685" target="_blank" rel="external">http://blog.csdn.net/gujing001/article/details/8476685</a><br><a href="http://www.cnblogs.com/onroad/archive/2009/07/13/1522673.html" target="_blank" rel="external">http://www.cnblogs.com/onroad/archive/2009/07/13/1522673.html</a></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;立即数寻址&quot;&gt;&lt;a href=&quot;#立即数寻址&quot; class=&quot;headerlink&quot; title=&quot;立即数寻址&quot;&gt;&lt;/a&gt;立即数寻址&lt;/h1&gt;&lt;p&gt;所需的操作数由指令直接给出，就称为立即数（或直接数）寻址方式。这种方式的特点是：取指令时，操作码和操作数同时被取出，
-      
-    
-    </summary>
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
