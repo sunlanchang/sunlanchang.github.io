@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-12-28T12:39:45.998Z</updated>
+  <updated>2017-12-28T13:49:30.551Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://sunlanchang.github.io/2017/12/28/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%92%8C%E5%BA%94%E7%94%A8%E5%B1%82/"/>
     <id>http://sunlanchang.github.io/2017/12/28/传输层和应用层/</id>
     <published>2017-12-28T08:43:06.000Z</published>
-    <updated>2017-12-28T12:39:45.998Z</updated>
+    <updated>2017-12-28T13:49:30.551Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p><strong>端口号分配方法</strong></p><p>占16位，地址范围0~65535，划分为3类：</p><ul><li>熟知的端口号或系统端口号（0~1023）。</li><li>注册端口（1024~49151）</li><li>动态端口（49152~65535）</li></ul><p><strong>UDP协议与TCP协议</strong></p><p>UDP协议特点：</p><ul><li>无连接的。发送数据前不需要建立连接，因此具有实时性。DNS、RIP等协议基于UDP协议。</li><li>面向报文的。不会对应用层产生的报文进行合并或分段处理，使得接收到的报文与发送的报文完全一致。</li><li>除了支持PPP（点对点通信）、还支持广播通信和多播通信。</li></ul><p>报文格式：| 源端口 | 目的端口 | 总长度 | 校验和 | UDP数据部分 |</p><p>TCP协议和UDP协议的数据格式。掌握校验和计算原理和过程;给定一段数据,会计算各字段的值<br>TCP协议的流量控制。对给定的报文段,会计算相应的序号和确认号<br>TCP协议的拥塞控制。对给定的拥塞控制状态,会正确画出示意图,并计算报文数和时延</p><h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>常见的应用层协议及其端口<br>掌握 DNS、FTP、EMAIL、HTTP 等协议的工作原理、基本流程和特点<br>网络协议分析工具的应用。对给定的各网络协议层次的捕获数据,会识别其含义,并查找错误</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p><strong>端口号分配方法</strong></p><p>占16位，地址范围0~65535，划分为3类：</p><ul><li>熟知的端口号或系统端口号（0~1023）。</li><li>注册端口（1024~49151）</li><li>动态端口（49152~65535）</li></ul><p><strong>UDP协议与TCP协议</strong></p><p><strong>UDP协议特点：</strong></p><ul><li>无连接的。发送数据前不需要建立连接，因此具有实时性。DNS、RIP等协议基于UDP协议。</li><li>面向报文的。不会对应用层产生的报文进行合并或分段处理，使得接收到的报文与发送的报文完全一致。</li><li>除了支持PPP（点对点通信）、还支持广播通信和多播通信。</li></ul><p>报文格式：| 源端口 | 目的端口 | 总长度 | 校验和 | UDP数据部分 |</p><p><strong>TCP协议特点：</strong></p><ul><li>面向连接。通信前建立连接，通信完成后释放连接。</li><li>提供可靠服务。UDP协议是不可靠的。</li><li>只支持点对点的通信，而UDP支持点对点，多对多，例如按组实现的多人通话就是使用UDP协议。</li><li>全双工通信。双方可以同时收发数据。</li><li>面向字节流，将应用层下来的数据看成一连串的字节流。</li></ul><p>报文格式有源端口、目的端口、序号、确认号、数据便宜标志位等</p><p><strong>TCP协议的流量控制（与链路层类似）：</strong></p><ul><li>TCP传输单位是报文，链路层传输单位是帧。</li><li>TCP采用滑动窗口机制，链路层流量控制的窗口大小固定。</li><li>TCP根据接收方的接收能力，通过接收窗口来实现端到端的流量控制，PPP链路层协议不使用确认机制和窗口机制。</li></ul><p><strong>TCP协议的拥塞控制4中算法</strong></p><ul><li>慢启动：指数增长</li><li>拥塞避免：线性方式增加。</li><li>快速重传和快速恢复：拥塞窗口重新设置为1，阈值减半。</li></ul><h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p><strong>常见的应用层协议及其端口</strong><br>|服务进程|端口号|传输层协议|<br>| – | – | – |<br>|域名服务器|53|UDP|<br>|FTP数据|20|TCP|<br>|FTP控制|21|TCP|<br>|Telnet|23|TCP|<br>|SMTP|25|TCP|<br>|HTTP|80|TCP|<br>|POP|110|TCP|</p><p>PPP与P2P区别：PPP(Point to Point Protocol),点对点协议它是一种协议。P2P（peer-to-peer),点对点，对等技术，他是一种技术。</p>]]></content>
     
     <summary type="html">
     
