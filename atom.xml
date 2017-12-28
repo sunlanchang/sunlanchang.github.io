@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-12-28T08:11:21.450Z</updated>
+  <updated>2017-12-28T08:35:16.000Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络层</title>
+    <link href="http://sunlanchang.github.io/2017/12/28/%E7%BD%91%E7%BB%9C%E5%B1%82/"/>
+    <id>http://sunlanchang.github.io/2017/12/28/网络层/</id>
+    <published>2017-12-28T08:13:14.000Z</published>
+    <updated>2017-12-28T08:35:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p><strong>IP地址分类、子网划分、CIDR无分类编址</strong><br><a href="https://sunlanchang.github.io/2017/11/14/IP%E5%9C%B0%E5%9D%80%E3%80%81IP%E5%AD%90%E7%BD%91%E3%80%81CIDR/">IP地址分类方法</a></p><p><strong>Note</strong>：IP数据报的分片:注意数据部分是8的整数倍。</p><p><strong>RIP、OSPF路由选择协议</strong><br>RIP协议基本原理和特点<br><strong>原理</strong>：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。<br><strong>基本特点</strong></p><ul><li>仅和自制系统内的相邻路由器交换信息。</li><li>支持两种信息交换方式，一种是定期的路由更新，另一种是触发的路由更新。</li><li>路由器交换的信息是自己现在的路由表。<br><strong>缺点</strong>  </li><li>最大距离15。</li><li>网络规模的扩大，交换的路由表的开销将增加。</li><li>路由迅速发生变化，路由表可能来不及交换信息。</li><li>选择最短路由，但是速度不一定是最快的路由。</li></ul><p>OSPF协议<br><strong>特点</strong></p><ul><li>使用分布式链路状态算法。</li><li>支持负载均衡，将距离、时延、带宽考虑进路由算法。</li><li>只有当链路状态发生变化时，才使用泛洪法向相邻的路由器发送信息更新路由表。</li></ul><p><strong>IPv6 地址的基本特点、写法</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;网络层&quot;&gt;&lt;a href=&quot;#网络层&quot; class=&quot;headerlink&quot; title=&quot;网络层&quot;&gt;&lt;/a&gt;网络层&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;IP地址分类、子网划分、CIDR无分类编址&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://sunlanc
+      
+    
+    </summary>
+    
+      <category term="计算机网络" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="计算机网络" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>物理层和数据链路层</title>
@@ -378,32 +403,6 @@
     
     
       <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据定义</title>
-    <link href="http://sunlanchang.github.io/2017/11/27/%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89/"/>
-    <id>http://sunlanchang.github.io/2017/11/27/数据定义/</id>
-    <published>2017-11-27T07:42:36.000Z</published>
-    <updated>2017-11-27T07:46:27.560Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>SQL功能分为一下四大部分：</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;p&gt;SQL功能分为一下四大部分：&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="数据库原理与应用" scheme="http://sunlanchang.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
-    
-    
-      <category term="数据库原理与应用" scheme="http://sunlanchang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
     
   </entry>
   

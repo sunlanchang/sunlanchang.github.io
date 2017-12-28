@@ -18,25 +18,25 @@
     
     
     
-    <title>数据库概述和结构、数据模型、关系数据库 | Jason&#39;s Blog</title>
+    <title>网络层 | Jason&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="数据库原理与应用">
-    <meta name="description" content="数据库概览数据库系统本质是一个用计算机存储数据的系统，数据库是收集数据文件的仓库或容器，有永久存储、有组织和可共享的基本特点。数据库管理相对于文件管理的优点：    数据相互关联 较少的数据冗余 程序与数据相互独立 保证数据的安全可靠 最大限度保证数据的正确性 数据可以共享并能保证数据的一致性  数据模型数据模型及其分类  实体联系模型：涉及实体、属性、联系三方面（使用E-R图表示）。   层次数">
-<meta name="keywords" content="数据库原理与应用">
+    <meta name="keywords" content="计算机网络">
+    <meta name="description" content="网络层IP地址分类、子网划分、CIDR无分类编址IP地址分类方法 Note：IP数据报的分片:注意数据部分是8的整数倍。 RIP、OSPF路由选择协议RIP协议基本原理和特点原理：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。基本特点  仅和自制系统内的相邻路由器">
+<meta name="keywords" content="计算机网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库概述和结构、数据模型、关系数据库">
-<meta property="og:url" content="http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/index.html">
+<meta property="og:title" content="网络层">
+<meta property="og:url" content="http://sunlanchang.github.io/2017/12/28/网络层/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="数据库概览数据库系统本质是一个用计算机存储数据的系统，数据库是收集数据文件的仓库或容器，有永久存储、有组织和可共享的基本特点。数据库管理相对于文件管理的优点：    数据相互关联 较少的数据冗余 程序与数据相互独立 保证数据的安全可靠 最大限度保证数据的正确性 数据可以共享并能保证数据的一致性  数据模型数据模型及其分类  实体联系模型：涉及实体、属性、联系三方面（使用E-R图表示）。   层次数">
+<meta property="og:description" content="网络层IP地址分类、子网划分、CIDR无分类编址IP地址分类方法 Note：IP数据报的分片:注意数据部分是8的整数倍。 RIP、OSPF路由选择协议RIP协议基本原理和特点原理：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。基本特点  仅和自制系统内的相邻路由器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-23T03:09:24.167Z">
+<meta property="og:updated_time" content="2017-12-28T08:35:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库概述和结构、数据模型、关系数据库">
-<meta name="twitter:description" content="数据库概览数据库系统本质是一个用计算机存储数据的系统，数据库是收集数据文件的仓库或容器，有永久存储、有组织和可共享的基本特点。数据库管理相对于文件管理的优点：    数据相互关联 较少的数据冗余 程序与数据相互独立 保证数据的安全可靠 最大限度保证数据的正确性 数据可以共享并能保证数据的一致性  数据模型数据模型及其分类  实体联系模型：涉及实体、属性、联系三方面（使用E-R图表示）。   层次数">
+<meta name="twitter:title" content="网络层">
+<meta name="twitter:description" content="网络层IP地址分类、子网划分、CIDR无分类编址IP地址分类方法 Note：IP数据报的分片:注意数据部分是8的整数倍。 RIP、OSPF路由选择协议RIP协议基本原理和特点原理：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。基本特点  仅和自制系统内的相邻路由器">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
     
@@ -124,7 +124,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">数据库概述和结构、数据模型、关系数据库</div>
+        <div class="flex-col header-title ellipsis">网络层</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -146,15 +146,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">数据库概述和结构、数据模型、关系数据库</h1>
+        <h1 class="title">网络层</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-12-22T13:06:34.000Z" itemprop="datePublished" class="page-time">
-  2017-12-22
+                <time datetime="2017-12-28T08:13:14.000Z" itemprop="datePublished" class="page-time">
+  2017-12-28
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库原理与应用/">数据库原理与应用</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
 
             
         </h5>
@@ -171,20 +171,20 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库概览"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库概览</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据模型"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关系模型的组成"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">关系模型的组成</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#网络层"><span class="post-toc-number">1.</span> <span class="post-toc-text">网络层</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-数据库概述和结构、数据模型"
+<article id="post-网络层"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">数据库概述和结构、数据模型、关系数据库</h1>
+        <h1 class="post-card-title">网络层</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-12-22 21:06:34" datetime="2017-12-22T13:06:34.000Z"  itemprop="datePublished">2017-12-22</time>
+            <time class="post-time" title="2017-12-28 16:13:14" datetime="2017-12-28T08:13:14.000Z"  itemprop="datePublished">2017-12-28</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据库原理与应用/">数据库原理与应用</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
 
 
 
@@ -196,40 +196,25 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="数据库概览"><a href="#数据库概览" class="headerlink" title="数据库概览"></a>数据库概览</h1><p><strong>数据库系统</strong>本质是一个用计算机存储数据的系统，数据库是收集数据文件的仓库或容器，有永久存储、有组织和可共享的基本特点。<br>数据库管理相对于文件管理的优点：  </p>
-<ol>
-<li>数据相互关联</li>
-<li>较少的数据冗余</li>
-<li>程序与数据相互独立</li>
-<li>保证数据的安全可靠</li>
-<li>最大限度保证数据的正确性</li>
-<li>数据可以共享并能保证数据的一致性</li>
-</ol>
-<h1 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h1><p><strong>数据模型及其分类</strong></p>
-<ol>
-<li>实体联系模型：涉及实体、属性、联系三方面（使用E-R图表示）。  </li>
-<li>层次数据模型：用树形结构表示实体和实体之间的联系（有父节点和子节点）。</li>
-<li>网状数据模型：用图形结构表示实体和实体之间的联系（可以没有父节点）。</li>
-<li>关系数据模型：用关系表示实体和实体之间的联系。 </li>
-</ol>
-<p><strong>数据库模式结构</strong>：三级模式结构，由外向内是：外模式、模式、内模式</p>
-<h2 id="关系模型的组成"><a href="#关系模型的组成" class="headerlink" title="关系模型的组成"></a>关系模型的组成</h2><p>关系数据结构：用二维表来组织数据，这个二维表在关系数据库中就称为关系。</p>
-<p>关系操作  </p>
-<ol>
-<li>传统的关系运算：并、交、差、广义笛卡尔积</li>
-<li>专门的关系运算：选择、投影、连接、除</li>
-<li>有关的数据操作：查询、插入、删除、修改</li>
-</ol>
+            <h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p><strong>IP地址分类、子网划分、CIDR无分类编址</strong><br><a href="https://sunlanchang.github.io/2017/11/14/IP%E5%9C%B0%E5%9D%80%E3%80%81IP%E5%AD%90%E7%BD%91%E3%80%81CIDR/">IP地址分类方法</a></p>
+<p><strong>Note</strong>：IP数据报的分片:注意数据部分是8的整数倍。</p>
+<p><strong>RIP、OSPF路由选择协议</strong><br>RIP协议基本原理和特点<br><strong>原理</strong>：使用的距离向量算法要求每个路由器在路由表中列出到所有已知目的网络的最佳路由，并且定期把自己的路由表副本发送给与起直接连接的其他路由器。一条路径最多包含15个路由器，适用于小型互联网。<br><strong>基本特点</strong></p>
 <ul>
-<li>实体完整性和参照完整性：系统级的约束，是必须满足的完整性约束。</li>
-<li>用户自定义的完整性：应用级的约束，限制数据的取值范围等。</li>
+<li>仅和自制系统内的相邻路由器交换信息。</li>
+<li>支持两种信息交换方式，一种是定期的路由更新，另一种是触发的路由更新。</li>
+<li>路由器交换的信息是自己现在的路由表。<br><strong>缺点</strong>  </li>
+<li>最大距离15。</li>
+<li>网络规模的扩大，交换的路由表的开销将增加。</li>
+<li>路由迅速发生变化，路由表可能来不及交换信息。</li>
+<li>选择最短路由，但是速度不一定是最快的路由。</li>
 </ul>
-<ol>
-<li>实体完整性：关系数据库中所有的表都必须有主码，而且表中不允许存在（1）无主码的记录（2）主码相同的记录</li>
-<li>参照完整性：一个表中的关系的取值受到另一个表中关系的取值范围的约束（例如外码的选取）。</li>
-<li>用户定义的完整性：一般是数据的取值范围的约束。</li>
-</ol>
-<p>关系代数及其应用  </p>
+<p>OSPF协议<br><strong>特点</strong></p>
+<ul>
+<li>使用分布式链路状态算法。</li>
+<li>支持负载均衡，将距离、时延、带宽考虑进路由算法。</li>
+<li>只有当链路状态发生变化时，才使用泛洪法向相邻的路由器发送信息更新路由表。</li>
+</ul>
+<p><strong>IPv6 地址的基本特点、写法</strong></p>
 
         </div>
 
@@ -237,7 +222,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-12-23T03:09:24.167Z" itemprop="dateUpdated">2017-12-23 11:09:24</time>
+    最后更新时间：<time datetime="2017-12-28T08:35:16.000Z" itemprop="dateUpdated">2017-12-28 16:35:16</time>
 </span><br>
 
 
@@ -258,7 +243,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库原理与应用/">数据库原理与应用</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li></ul>
 
 
             
@@ -268,7 +253,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&title=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/网络层/&title=《网络层》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -278,22 +263,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&title=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/网络层/&title=《网络层》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/网络层/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网络层》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/网络层/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/网络层/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -313,21 +298,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/12/23/事务与并发控制、存储过程和触发器/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">事务与并发控制、存储过程和触发器</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/12/18/关系数据库规范化理论/" id="post-next" class="post-nav-link">
+      <a href="/2017/12/28/物理层和数据链路层/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">关系数据库规范化理论</h4>
+        <h4 class="title">物理层和数据链路层</h4>
       </a>
     </div>
   
@@ -411,7 +389,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&title=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2017/12/28/网络层/&title=《网络层》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -421,22 +399,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&title=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2017/12/28/网络层/&title=《网络层》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2017/12/28/网络层/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据库概述和结构、数据模型、关系数据库》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/&via=http://sunlanchang.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网络层》 — Jason's Blog&url=http://sunlanchang.github.io/2017/12/28/网络层/&via=http://sunlanchang.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/22/数据库概述和结构、数据模型/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2017/12/28/网络层/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -447,7 +425,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3a0WpbMRAEUP//T6eQp0CxPbMrxS0cPQXXuVdHAa06q8cjHl/f4+9Pfo7kX5Pv5285NvDw8PBGU382XvOShUjA+e/mc8bDw8O7zXs90WRzT6bSLlb+hKef4+Hh4X2Ul2/rs7KRf4KHh4f3v/DyrX9z1D68fHh4eHjXeMlrZvFr8s22GFzJWvDw8PBiXtsA+xd+vtjfw8PDw1t01ZNtd1YY8i1+M/Dw8PBu8PIoISHlrbLk6Nwu3HC6eHh4eId4sy341FWDhFFc3sLDw8O7xmu3/vbiVB5w5I2xIqXGw8PDu8BLWlZ5876d7mz5otYXHh4e3jVe/vnsQtVsu89jjqLu4eHh4S14eYurDVjzMjOLLaL/BuDh4eFd450KVWdRxWYh3jwNDw8P71d4s2NxPol2QdvoAQ8PD+82b9aUaoPg9oCevyX/XTw8PLwbvNmWXUQDo0WcHfpX9yPw8PDwAl4epOYxxObCQTKKmePh4eEd5eWt/bxZtWmhzUKQp2/Hw8PDu8zLt+9kQm1AvClOT5+Gh4eHd4GXHJeTibYN/rM5SjFnPDw8vDUvj1Dbb86eM4s/3tQ9PDw8vKO8tuE0i1aHUUJ5lF/dhsDDw8Mree0jkjKQY04doIu/IR4eHt5RXt70attX+YF7FhZHd8rw8PDwjvLyS1EtJl++9ohfHKnx8PDwjvLao+0snthc7VrFHHh4eHjXeAkpLxWbhWurWZ1S4+Hh4S14X+V4jMa+VMwKFR4eHt4NXjvFNqKdRbqzsjFMX/Dw8PBGvE0okIe/s5ZYG46sLg3g4eHhlbz2olU+uXw52u8UkQQeHh7eR3n7YjA7sg/fgoeHh/dR3gbZHqPzUvRmPnh4eHjXeG3zaV9O8mZbu1h4eHh4t3mzBthrwKz9P7tYsOrs4eHh4XW8P89qIhYsWIssAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aQY6kMAwF0Lr/pZntSDPQ3zbVEuZlVYI0ydu449ifTzyOk5HM//tJMuf6y6OBgYHxWMZxOfI5+Spn3/wXXFgXAwPjBYyzhfNPJ0HzeitJmD59joGBgVEMglUYBgYGxm8ykm0lCTAGBgZGL4ntLTxBfiUXx8DAeCAjvyz7/d9fqW9gYGA8inEUR3JcmxwNj9bAwMDYzcgDXE6alBN6+8HAwHgD464LteT5vHXsByoGBsZSRr5k9ZKuetGfB+LT/xsYGBjrGNUC5ORKrlcwiFbHwMB4MaN6RJsfJRPGf/4KAwNjNWO+0Sg/HpcNCpdxGBgY6xjVlHWS3PaKB9EBFAMDYzVjUnrslScLxchisMbAwNjNmIe5SZraC/E3lDAxMDAewqg2WOSNEb3DZX4AHfWJYGBgPJDRK1vmzRbfQJ42W2BgYCxl3BWCq4GyWhI4/QIGBsZqRi+VHQXHONHtHUAxMDB2M6olyetN39tOUS02YGBg7GNUN5ckt730tZpORyVMDAyMRYzJwtcz72qnKDSEYWBgrGbcGxwnwTQvSGBgYOxmHMVRTTvzt73LuCjPxsDAeDijF+byt5Or/6+EbAwMjMcyqlf/veSz2gqWJLEYGBhvY+TNE9UDXw85ysUxMDAwgqCZB+VJi9gnj98YGBgvY0zKlvnb/FoQAwPjPYwk/OXb6pUNJuUEDAyM3Yw8dewFx5zdax3DwMBYzfgDfWh/rZpXXtIAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
