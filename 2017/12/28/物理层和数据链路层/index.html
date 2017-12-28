@@ -33,7 +33,7 @@
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="物理层多路复用（Multiplexing）技术分类  频分多路复用（FDM）：通过不同的载波频率来划分若干个子信道，子信道之间互不干扰。 时分多路复用（TDM）：每一路信道只能在自己的时隙内独占信道传输。 波分多路复用（WDM）：与频分多路复用类似，他传输的是光信号，并按照光的波长区分信号。 码分多路复用（CDM）：每个用户使用经过特殊挑选的不同的码型通信，该技术有很强的抗干扰能力和安全性，广泛应">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T07:33:37.544Z">
+<meta property="og:updated_time" content="2017-12-28T08:09:21.453Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="物理层和数据链路层">
 <meta name="twitter:description" content="物理层多路复用（Multiplexing）技术分类  频分多路复用（FDM）：通过不同的载波频率来划分若干个子信道，子信道之间互不干扰。 时分多路复用（TDM）：每一路信道只能在自己的时隙内独占信道传输。 波分多路复用（WDM）：与频分多路复用类似，他传输的是光信号，并按照光的波长区分信号。 码分多路复用（CDM）：每个用户使用经过特殊挑选的不同的码型通信，该技术有很强的抗干扰能力和安全性，广泛应">
@@ -223,10 +223,30 @@
 <li>字符填充法：使用标志字节FLAG来标志帧的开头与结尾。</li>
 <li>零比特填充发：用一组特定的比特（<code>0111110</code>）赖标志帧的开始和结束。</li>
 </ul>
-<p><strong>奇偶校验码的方法和特点</strong><br>（参见计算机组成原理的奇偶校验）</p>
-<p><strong>CRC校验</strong></p>
-<p><strong>滑动窗口技术的概念,停等协议、后退 N 帧 ARQ 协议和选择重传 ARQ 协议的工作原理</strong></p>
-<p><strong>PPP 和 HDLC 的特点</strong></p>
+<p><strong>奇偶校验码的方法和特点</strong><br><a href="https://sunlanchang.github.io/2017/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E9%83%A8%E4%BB%B6/#%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E7%A0%81">参见计算机组成原理的奇偶校验</a></p>
+<p><strong>CRC校验</strong><br><a href="https://sunlanchang.github.io/2017/10/26/CRC%E5%86%97%E4%BD%99%E7%A0%81/">CRC的计算</a></p>
+<p><strong>滑动窗口技术、后退N帧ARQ协议和选择重传ARQ协议的工作原理</strong></p>
+<ul>
+<li>滑动窗口机制：网络中控制流量最常用的技术方案，发送发不必等待接收方的应答就可以连续发送数据帧，但对发送方在收到确认帧之前可以发送的数据帧的数目加以限制。</li>
+<li>后退N帧ARQ协议：发送方可以连续发送多个数据帧而接收方只能按顺序接受指定序号的帧。</li>
+<li>选择重传ARQ协议：接收方发现某帧出错后，将发送方正确的帧存放在缓冲区，要求发送方只重传出错的数据帧。</li>
+</ul>
+<p><strong>HDLC和PPP的特点</strong></p>
+<ol>
+<li>HDLC基本特点</li>
+</ol>
+<ul>
+<li>三种类型的站：1）主站负责控制链路操作。2）从站受控于主站。3）复合站具有主站和从站双重功能。</li>
+<li>两种配置：1）平衡配置。2）非平衡配置</li>
+<li>三种数据传送模式：1）正常相应模式。2）异步平衡模式。3）异步响应模式。</li>
+</ul>
+<ol>
+<li>PPP（点对点协议）</li>
+</ol>
+<ul>
+<li>没有确认机制和流量控制功能</li>
+<li>只支持点对点线路和全双工链路 </li>
+</ul>
 
         </div>
 
@@ -234,7 +254,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-28T07:33:37.544Z" itemprop="dateUpdated">2017-12-28 15:33:37</time>
+    Last updated: <time datetime="2017-12-28T08:09:21.453Z" itemprop="dateUpdated">2017-12-28 16:09:21</time>
 </span><br>
 
 
