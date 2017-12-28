@@ -33,7 +33,7 @@
 <meta property="og:site_name" content="Jason&#39;s Blog">
 <meta property="og:description" content="物理层多路复用（Multiplexing）技术分类  频分多路复用（FDM）：通过不同的载波频率来划分若干个子信道，子信道之间互不干扰。 时分多路复用（TDM）：每一路信道只能在自己的时隙内独占信道传输。 波分多路复用（WDM）：与频分多路复用类似，他传输的是光信号，并按照光的波长区分信号。 码分多路复用（CDM）：每个用户使用经过特殊挑选的不同的码型通信，该技术有很强的抗干扰能力和安全性，广泛应">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T08:11:21.450Z">
+<meta property="og:updated_time" content="2017-12-28T10:54:29.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="物理层和数据链路层">
 <meta name="twitter:description" content="物理层多路复用（Multiplexing）技术分类  频分多路复用（FDM）：通过不同的载波频率来划分若干个子信道，子信道之间互不干扰。 时分多路复用（TDM）：每一路信道只能在自己的时隙内独占信道传输。 波分多路复用（WDM）：与频分多路复用类似，他传输的是光信号，并按照光的波长区分信号。 码分多路复用（CDM）：每个用户使用经过特殊挑选的不同的码型通信，该技术有很强的抗干扰能力和安全性，广泛应">
@@ -220,7 +220,7 @@
 <h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><p><strong>组帧技术分类、特点,掌握组帧的具体应用方法</strong></p>
 <ul>
 <li>字节统计法：帧头部有一个域指定该帧中字节数。</li>
-<li>字符填充法：使用标志字节FLAG来标志帧的开头与结尾。</li>
+<li>字符填充法：使用标志字节FLAG来标志帧的开头与结尾，并且使用ESC来转义特殊字符。</li>
 <li>零比特填充发：用一组特定的比特（<code>0111110</code>）赖标志帧的开始和结束。</li>
 </ul>
 <p><strong>奇偶校验码的方法和特点</strong><br><a href="https://sunlanchang.github.io/2017/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E9%83%A8%E4%BB%B6/#%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E7%A0%81">参见计算机组成原理的奇偶校验</a></p>
@@ -249,7 +249,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-12-28T08:11:21.450Z" itemprop="dateUpdated">2017-12-28 16:11:21</time>
+    Last updated: <time datetime="2017-12-28T10:54:29.793Z" itemprop="dateUpdated">2017-12-28 18:54:29</time>
 </span><br>
 
 
