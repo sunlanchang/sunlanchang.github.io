@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2018-01-21T05:23:08.275Z</updated>
+  <updated>2017-12-28T13:49:30.551Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://sunlanchang.github.io/2018/01/21/test/"/>
-    <id>http://sunlanchang.github.io/2018/01/21/test/</id>
-    <published>2018-01-21T05:23:08.000Z</published>
-    <updated>2018-01-21T05:23:08.275Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>传输层和应用层</title>
@@ -519,6 +505,32 @@
       
         &lt;h1 id=&quot;相对寻址&quot;&gt;&lt;a href=&quot;#相对寻址&quot; class=&quot;headerlink&quot; title=&quot;相对寻址&quot;&gt;&lt;/a&gt;相对寻址&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;与基址变址寻址方式相类似，相对寻址以程序计数器PC的当前值（R15中的值）为基地址，指令中的地址标号作为偏移量，
+      
+    
+    </summary>
+    
+      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>寻址方式之——基址寻址、变址寻址</title>
+    <link href="http://sunlanchang.github.io/2017/11/17/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B9%8B%E2%80%94%E2%80%94%E5%9F%BA%E5%9D%80%E5%AF%BB%E5%9D%80%E3%80%81%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80/"/>
+    <id>http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/</id>
+    <published>2017-11-17T15:17:59.000Z</published>
+    <updated>2017-11-22T02:37:12.496Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="基址寻址"><a href="#基址寻址" class="headerlink" title="基址寻址"></a>基址寻址</h1><ol><li>在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令的地址码A相加得到，这种情况下地址码A常被成为位移量（disp）。</li><li>当存储器容量比较大，有指令的地址码部分直接给出的地址不能直接访问到存储器的单元时，通常将存储器分成若干段，段的首地址存放在基址寄存器中，段内的位移量由指令给出。存储器的实际地址就等于基址寄存器和段内位移量相加。</li><li>基址寻址主要用来解决程序在存储器中的定位和扩大寻址空间等问题。通常基址寄存器只能由系统程序设定，由特权指令执行，一般用户不能够修改，保证了系统的安全性。<br><img src="/images/jizhixunzhi.jpg" alt="基址寻址"><h1 id="变址寻址"><a href="#变址寻址" class="headerlink" title="变址寻址"></a>变址寻址</h1>指令地址码给出地址A和指定的变址寄存器R,将A和R的内容相加就是操作数的地址。常利用变址操作与循环执行程序的方法对数组进行运算。<br><img src="/images/bianzhixunzhi.jpg" alt="变址寻址"><h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1></li></ol><ul><li>基址寻址主要用于为程序或数据分配存储空间，故基址寄存器的内容通常由操作系统或管理程序确定，在程序运行过程中，值是不可变的，而指令字中的地址码是可变的。</li><li>变址寻址中，变址寄存器的内容是用户自己设定的，在程序运行过程中是可变的，而指令字中的地址码是不可变的。编制寻址主要用于处理数组等问题，并且特别适合编制循环程序。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;基址寻址&quot;&gt;&lt;a href=&quot;#基址寻址&quot; class=&quot;headerlink&quot; title=&quot;基址寻址&quot;&gt;&lt;/a&gt;基址寻址&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令
       
     
     </summary>
