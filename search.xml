@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ACM八大输入输出格式之Python版]]></title>
+    <url>%2F2018%2F01%2F21%2FACM%E5%85%AB%E5%A4%A7%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%E4%B9%8BPython%E7%89%88%2F</url>
+    <content type="text"><![CDATA[ACM八大输入输出格式之Python版12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697# encoding: utf-8#Python的输入是野生字符串，所以要自己转类型#strip去掉左右两端的空白符，返回str#slipt把字符串按空白符拆开，返回[str]#map把list里面的值映射到指定类型，返回[type]#EOF用抓异常#print后面加逗号就不会换行，否则反之，当然3.x君自行传参#题目细节没看太细，可能有的地方不对，不要在意这些细节啦# 有多组输入数据，但没有具体的告诉你有多少组，只是让你对应每组输入，应该怎样输出。while True: try: a, b = map(int, raw_input().strip().split()) print a + b, except EOFError: break # 输入一个整数，告诉我们接下来有多少组数据，然后在输入每组数据的具体值。tcase = int(raw_input().strip())for case in range(tcase): a, b = map(int, raw_input().strip().split()) print a + b, # 有多组输入数据，没有具体的告诉你有多少组,但是题目却告诉你遇见什么结束while True: a, b = map(int, raw_input().strip().split()) if a == 0 and b == 0: break print a + b, # 输入有多组，并却题目告诉你每组输入遇见什么结束，与第三种不同之处在于，每组输入都有相应的细化。 tcase = int(raw_input().strip())for case in range(tcase): a, b = map(int, raw_input().strip().split()) if a == 0 and b == 0: break print a + b, # 这次的输入实现输入一个整数，告诉我们有多少行，在输入每一行。对于每一行的输入，有划分为第一个数和其他的数，第一个数代表那一组数据一共有多少输入。tcase = int(raw_input().strip())for case in range(tcase): data = map(int, raw_input().strip().split()) n, array = data[0], data[1:] sum = 0 for i in range(n): sum += array[i] print sum, # 有多种输入数据，对于每组输入数据的第一个数代表该组数据接下来要输入数据量while True: try: data = map(int, raw_input().strip().split()) n, array = data[0], data[1:] sum = 0 for i in range(n): sum += array[i] print sum, except EOFError: raise # 这道题的输出只是简单的在每组输出后边多加一个换行而已！while True: try: a, b = map(int, raw_input().strip().split()) print a + b except EOFError: break # 这种类型的输出注意的就是换行，这类题目说在输出样例中，每组样例之间有什么什么，所以我们在对应输出的同时要判断一下是否是最后一组输出，如果不是，就 将题目所说的东西输出（一般是换行或空格），如果是，就直接结束。while True: data = raw_input().strip() if data.isspace(): break else: data = map(int, data) n, array = data[0], data[1:] sum = 0 for i in range(n): sum += array[i] print sum,]]></content>
+      <categories>
+        <category>Other</category>
+      </categories>
+      <tags>
+        <tag>Other</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[传输层和应用层]]></title>
     <url>%2F2017%2F12%2F28%2F%E4%BC%A0%E8%BE%93%E5%B1%82%E5%92%8C%E5%BA%94%E7%94%A8%E5%B1%82%2F</url>
     <content type="text"><![CDATA[传输层端口号分配方法 占16位，地址范围0~65535，划分为3类： 熟知的端口号或系统端口号（0~1023）。 注册端口（1024~49151） 动态端口（49152~65535） UDP协议与TCP协议 UDP协议特点： 无连接的。发送数据前不需要建立连接，因此具有实时性。DNS、RIP等协议基于UDP协议。 面向报文的。不会对应用层产生的报文进行合并或分段处理，使得接收到的报文与发送的报文完全一致。 除了支持PPP（点对点通信）、还支持广播通信和多播通信。 报文格式：| 源端口 | 目的端口 | 总长度 | 校验和 | UDP数据部分 | TCP协议特点： 面向连接。通信前建立连接，通信完成后释放连接。 提供可靠服务。UDP协议是不可靠的。 只支持点对点的通信，而UDP支持点对点，多对多，例如按组实现的多人通话就是使用UDP协议。 全双工通信。双方可以同时收发数据。 面向字节流，将应用层下来的数据看成一连串的字节流。 报文格式有源端口、目的端口、序号、确认号、数据便宜标志位等 TCP协议的流量控制（与链路层类似）： TCP传输单位是报文，链路层传输单位是帧。 TCP采用滑动窗口机制，链路层流量控制的窗口大小固定。 TCP根据接收方的接收能力，通过接收窗口来实现端到端的流量控制，PPP链路层协议不使用确认机制和窗口机制。 TCP协议的拥塞控制4中算法 慢启动：指数增长 拥塞避免：线性方式增加。 快速重传和快速恢复：拥塞窗口重新设置为1，阈值减半。 应用层常见的应用层协议及其端口|服务进程|端口号|传输层协议|| – | – | – ||域名服务器|53|UDP||FTP数据|20|TCP||FTP控制|21|TCP||Telnet|23|TCP||SMTP|25|TCP||HTTP|80|TCP||POP|110|TCP| PPP与P2P区别：PPP(Point to Point Protocol),点对点协议它是一种协议。P2P（peer-to-peer),点对点，对等技术，他是一种技术。]]></content>

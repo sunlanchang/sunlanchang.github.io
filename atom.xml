@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2017-12-28T13:49:30.551Z</updated>
+  <updated>2018-01-21T08:15:58.511Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACM八大输入输出格式之Python版</title>
+    <link href="http://sunlanchang.github.io/2018/01/21/ACM%E5%85%AB%E5%A4%A7%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%E4%B9%8BPython%E7%89%88/"/>
+    <id>http://sunlanchang.github.io/2018/01/21/ACM八大输入输出格式之Python版/</id>
+    <published>2018-01-21T08:13:19.000Z</published>
+    <updated>2018-01-21T08:15:58.511Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ACM八大输入输出格式之Python版"><a href="#ACM八大输入输出格式之Python版" class="headerlink" title="ACM八大输入输出格式之Python版"></a>ACM八大输入输出格式之Python版</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># encoding: utf-8</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#Python的输入是野生字符串，所以要自己转类型</span></div><div class="line"><span class="comment">#strip去掉左右两端的空白符，返回str</span></div><div class="line"><span class="comment">#slipt把字符串按空白符拆开，返回[str]</span></div><div class="line"><span class="comment">#map把list里面的值映射到指定类型，返回[type]</span></div><div class="line"></div><div class="line"><span class="comment">#EOF用抓异常</span></div><div class="line"></div><div class="line"><span class="comment">#print后面加逗号就不会换行，否则反之，当然3.x君自行传参</span></div><div class="line"></div><div class="line"><span class="comment">#题目细节没看太细，可能有的地方不对，不要在意这些细节啦</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 有多组输入数据，但没有具体的告诉你有多少组，只是让你对应每组输入，应该怎样输出。</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        a, b = map(int, raw_input().strip().split())</div><div class="line">        <span class="keyword">print</span> a + b,</div><div class="line">    <span class="keyword">except</span> EOFError:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    </div><div class="line"><span class="comment"># 输入一个整数，告诉我们接下来有多少组数据，然后在输入每组数据的具体值。</span></div><div class="line"></div><div class="line">tcase = int(raw_input().strip())</div><div class="line"><span class="keyword">for</span> case <span class="keyword">in</span> range(tcase):</div><div class="line">    a, b = map(int, raw_input().strip().split())</div><div class="line">    <span class="keyword">print</span> a + b,</div><div class="line">    </div><div class="line"><span class="comment"># 有多组输入数据，没有具体的告诉你有多少组,但是题目却告诉你遇见什么结束</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    a, b = map(int, raw_input().strip().split())</div><div class="line">    <span class="keyword">if</span> a == <span class="number">0</span> <span class="keyword">and</span> b == <span class="number">0</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    <span class="keyword">print</span> a + b,</div><div class="line">    </div><div class="line"><span class="comment"># 输入有多组，并却题目告诉你每组输入遇见什么结束，与第三种不同之处在于，每组输入都有相应的细化。</span></div><div class="line">    </div><div class="line">tcase = int(raw_input().strip())</div><div class="line"><span class="keyword">for</span> case <span class="keyword">in</span> range(tcase):</div><div class="line">    a, b = map(int, raw_input().strip().split())</div><div class="line">    <span class="keyword">if</span> a == <span class="number">0</span> <span class="keyword">and</span> b == <span class="number">0</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    <span class="keyword">print</span> a + b,</div><div class="line">    </div><div class="line"><span class="comment"># 这次的输入实现输入一个整数，告诉我们有多少行，在输入每一行。对于每一行的输入，有划分为第一个数和其他的数，第一个数代表那一组数据一共有多少输入。</span></div><div class="line"></div><div class="line">tcase = int(raw_input().strip())</div><div class="line"><span class="keyword">for</span> case <span class="keyword">in</span> range(tcase):</div><div class="line">    data = map(int, raw_input().strip().split())</div><div class="line">    n, array = data[<span class="number">0</span>], data[<span class="number">1</span>:]</div><div class="line">    </div><div class="line">    sum = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</div><div class="line">        sum += array[i]</div><div class="line">    <span class="keyword">print</span> sum,</div><div class="line">    </div><div class="line"><span class="comment"># 有多种输入数据，对于每组输入数据的第一个数代表该组数据接下来要输入数据量</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        data = map(int, raw_input().strip().split())</div><div class="line">        n, array = data[<span class="number">0</span>], data[<span class="number">1</span>:]</div><div class="line">            </div><div class="line">        sum = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</div><div class="line">            sum += array[i]</div><div class="line">        <span class="keyword">print</span> sum,</div><div class="line">    <span class="keyword">except</span> EOFError:</div><div class="line">        <span class="keyword">raise</span></div><div class="line">    </div><div class="line"><span class="comment"># 这道题的输出只是简单的在每组输出后边多加一个换行而已！</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        a, b = map(int, raw_input().strip().split())</div><div class="line">        <span class="keyword">print</span> a + b</div><div class="line">    <span class="keyword">except</span> EOFError:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    </div><div class="line"><span class="comment"># 这种类型的输出注意的就是换行，这类题目说在输出样例中，每组样例之间有什么什么，所以我们在对应输出的同时要判断一下是否是最后一组输出，如果不是，就 将题目所说的东西输出（一般是换行或空格），如果是，就直接结束。</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    data = raw_input().strip()</div><div class="line">    <span class="keyword">if</span> data.isspace():</div><div class="line">        <span class="keyword">break</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        data = map(int, data)</div><div class="line">        n, array = data[<span class="number">0</span>], data[<span class="number">1</span>:]</div><div class="line">                </div><div class="line">        sum = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</div><div class="line">            sum += array[i]</div><div class="line">        <span class="keyword">print</span> sum,</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;ACM八大输入输出格式之Python版&quot;&gt;&lt;a href=&quot;#ACM八大输入输出格式之Python版&quot; class=&quot;headerlink&quot; title=&quot;ACM八大输入输出格式之Python版&quot;&gt;&lt;/a&gt;ACM八大输入输出格式之Python版&lt;/h1&gt;&lt;figu
+      
+    
+    </summary>
+    
+      <category term="Other" scheme="http://sunlanchang.github.io/categories/Other/"/>
+    
+    
+      <category term="Other" scheme="http://sunlanchang.github.io/tags/Other/"/>
+    
+  </entry>
   
   <entry>
     <title>传输层和应用层</title>
@@ -505,32 +530,6 @@
       
         &lt;h1 id=&quot;相对寻址&quot;&gt;&lt;a href=&quot;#相对寻址&quot; class=&quot;headerlink&quot; title=&quot;相对寻址&quot;&gt;&lt;/a&gt;相对寻址&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;与基址变址寻址方式相类似，相对寻址以程序计数器PC的当前值（R15中的值）为基地址，指令中的地址标号作为偏移量，
-      
-    
-    </summary>
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>寻址方式之——基址寻址、变址寻址</title>
-    <link href="http://sunlanchang.github.io/2017/11/17/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B9%8B%E2%80%94%E2%80%94%E5%9F%BA%E5%9D%80%E5%AF%BB%E5%9D%80%E3%80%81%E5%8F%98%E5%9D%80%E5%AF%BB%E5%9D%80/"/>
-    <id>http://sunlanchang.github.io/2017/11/17/寻址方式之——基址寻址、变址寻址/</id>
-    <published>2017-11-17T15:17:59.000Z</published>
-    <updated>2017-11-22T02:37:12.496Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="基址寻址"><a href="#基址寻址" class="headerlink" title="基址寻址"></a>基址寻址</h1><ol><li>在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令的地址码A相加得到，这种情况下地址码A常被成为位移量（disp）。</li><li>当存储器容量比较大，有指令的地址码部分直接给出的地址不能直接访问到存储器的单元时，通常将存储器分成若干段，段的首地址存放在基址寄存器中，段内的位移量由指令给出。存储器的实际地址就等于基址寄存器和段内位移量相加。</li><li>基址寻址主要用来解决程序在存储器中的定位和扩大寻址空间等问题。通常基址寄存器只能由系统程序设定，由特权指令执行，一般用户不能够修改，保证了系统的安全性。<br><img src="/images/jizhixunzhi.jpg" alt="基址寻址"><h1 id="变址寻址"><a href="#变址寻址" class="headerlink" title="变址寻址"></a>变址寻址</h1>指令地址码给出地址A和指定的变址寄存器R,将A和R的内容相加就是操作数的地址。常利用变址操作与循环执行程序的方法对数组进行运算。<br><img src="/images/bianzhixunzhi.jpg" alt="变址寻址"><h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1></li></ol><ul><li>基址寻址主要用于为程序或数据分配存储空间，故基址寄存器的内容通常由操作系统或管理程序确定，在程序运行过程中，值是不可变的，而指令字中的地址码是可变的。</li><li>变址寻址中，变址寄存器的内容是用户自己设定的，在程序运行过程中是可变的，而指令字中的地址码是不可变的。编制寻址主要用于处理数组等问题，并且特别适合编制循环程序。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;基址寻址&quot;&gt;&lt;a href=&quot;#基址寻址&quot; class=&quot;headerlink&quot; title=&quot;基址寻址&quot;&gt;&lt;/a&gt;基址寻址&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;在计算机设置一个专用的基址寄存器，或者由指令指定一个通用寄存器为基址寄存器。操作数的地址由基址寄存器的内容和指令
       
     
     </summary>
