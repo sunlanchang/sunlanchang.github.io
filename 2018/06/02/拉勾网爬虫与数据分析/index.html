@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?086a5af0b6f644650f444fc827e297f8"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>拉勾网爬虫与数据分析 | Jason&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="拉勾网爬虫与数据挖掘描述爬取拉勾网50万条职位信息，进行数据清洗，简单的数据分析。流程图如下：                                                                                                           一个demo展示外观：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拉勾网爬虫与数据分析">
+<meta property="og:url" content="http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="拉勾网爬虫与数据挖掘描述爬取拉勾网50万条职位信息，进行数据清洗，简单的数据分析。流程图如下：                                                                                                           一个demo展示外观：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://sunlanchang.github.io/images/Lagou.png">
+<meta property="og:image" content="http://sunlanchang.github.io/images/index.jpg">
+<meta property="og:image" content="http://sunlanchang.github.io/images/ajax.png">
+<meta property="og:image" content="http://sunlanchang.github.io/images/json.png">
+<meta property="og:image" content="http://sunlanchang.github.io/images/json_tree.png">
+<meta property="og:image" content="http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/analysis_picture/position_order.jpg">
+<meta property="og:image" content="http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/analysis_picture/company_staff.jpg">
+<meta property="og:image" content="http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/analysis_picture/position_salary.png">
+<meta property="og:image" content="http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/analysis_picture/degree_salary.png">
+<meta property="og:image" content="http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/analysis_picture/salary_for_company.jpg">
+<meta property="og:updated_time" content="2018-06-02T05:01:43.925Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="拉勾网爬虫与数据分析">
+<meta name="twitter:description" content="拉勾网爬虫与数据挖掘描述爬取拉勾网50万条职位信息，进行数据清洗，简单的数据分析。流程图如下：                                                                                                           一个demo展示外观：">
+<meta name="twitter:image" content="http://sunlanchang.github.io/images/Lagou.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/tou.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jason Sun</h5>
+          <a href="mailto:sunlanchang@outlook.com" title="sunlanchang@outlook.com" class="mail">sunlanchang@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/sunlanchang" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.csdn.net/sunlanchang"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">拉勾网爬虫与数据分析</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">拉勾网爬虫与数据分析</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-02T05:00:45.000Z" itemprop="datePublished" class="page-time">
+  2018-06-02
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#拉勾网爬虫与数据挖掘"><span class="post-toc-number">1.</span> <span class="post-toc-text">拉勾网爬虫与数据挖掘</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Python模块"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Python模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件描述"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">文件描述</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据获取"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">数据获取</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据清洗"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">数据清洗</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#去重-SQL"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">去重(SQL)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">其他</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据分析"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">数据分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#利用MySQL进行简单的统计分析"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">利用MySQL进行简单的统计分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#利用SKlearn进行数据分析"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">利用SKlearn进行数据分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据预处理（中文分词、去除标点符号）"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">数据预处理（中文分词、去除标点符号）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特征选择"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">特征选择</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#词袋模型（-Bag-of-Words-Model-）"><span class="post-toc-number">1.8.1.</span> <span class="post-toc-text">词袋模型（ Bag-of-Words Model ）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用-CountVectorizer-计算词频"><span class="post-toc-number">1.8.2.</span> <span class="post-toc-text">使用 CountVectorizer 计算词频</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特征提取"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">特征提取</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何使用-TfidfVectorizer-将文本转换为词频向量。"><span class="post-toc-number">1.9.1.</span> <span class="post-toc-text">如何使用 TfidfVectorizer 将文本转换为词频向量。</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据维度太大的解决思路"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">数据维度太大的解决思路</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用-HashingVectorizer-执行外核缩放"><span class="post-toc-number">1.10.1.</span> <span class="post-toc-text">使用 HashingVectorizer 执行外核缩放</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#推荐职位"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">推荐职位</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#训练模型"><span class="post-toc-number">1.11.1.</span> <span class="post-toc-text">训练模型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#评测准确率"><span class="post-toc-number">1.11.2.</span> <span class="post-toc-text">评测准确率</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据库"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查询"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">查询</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建数据库"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">创建数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导入导出数据库"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">导入导出数据库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导出数据库"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">导出数据库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导入数据库"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">导入数据库</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他常用命令和脚本"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">其他常用命令和脚本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">参考</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-拉勾网爬虫与数据分析"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">拉勾网爬虫与数据分析</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-02 13:00:45" datetime="2018-06-02T05:00:45.000Z"  itemprop="datePublished">2018-06-02</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="拉勾网爬虫与数据挖掘"><a href="#拉勾网爬虫与数据挖掘" class="headerlink" title="拉勾网爬虫与数据挖掘"></a>拉勾网爬虫与数据挖掘</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>爬取拉勾网50万条职位信息，进行数据清洗，简单的数据分析。流程图如下：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/Lagou.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p><strong>一个demo展示外观：</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/index.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p><strong>操作系统</strong>  </p>
+<ul>
+<li>Ubuntu 16.04</li>
+<li>mac OS 10.13.3 </li>
+</ul>
+<p><strong>数据获取</strong>  </p>
+<ul>
+<li>Chrome</li>
+<li>Python3</li>
+</ul>
+<p><strong>数据清洗</strong>  </p>
+<ul>
+<li>Excel</li>
+<li>DataGrip</li>
+<li>MySQL</li>
+<li>phpMyAdmin</li>
+<li>VScode</li>
+<li>Anaconda Jupyter Notebook</li>
+</ul>
+<p><strong>数据分析</strong>  </p>
+<ul>
+<li>Excel</li>
+<li>DataGrip</li>
+<li>MySQL</li>
+<li>phpMyAdmin</li>
+<li>Anaconda Jupyter Notebook</li>
+</ul>
+<p><strong>数据可视化</strong></p>
+<ul>
+<li>HTML</li>
+<li>Bootstrap</li>
+<li>JavaScript</li>
+<li>PHP</li>
+<li>Echarts</li>
+</ul>
+<h3 id="Python模块"><a href="#Python模块" class="headerlink" title="Python模块"></a>Python模块</h3><ul>
+<li>request</li>
+<li>BeautifulSoup</li>
+<li>Json</li>
+<li>numpy</li>
+<li>pandas</li>
+<li>matplotlib</li>
+<li>sklearn</li>
+<li>pymysql<h3 id="文件描述"><a href="#文件描述" class="headerlink" title="文件描述"></a>文件描述</h3></li>
+<li><code>get_position.py</code>爬取拉勾网的爬虫程序</li>
+<li><code>position_name.txt</code>保存拉勾所有职位<h2 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a>数据获取</h2></li>
+<li>使用Chrom分析拉勾源码，发现拉勾网使用Ajax请求数据如下图所示：<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/ajax.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></li>
+<li>返回的数据是Json格式，处理起来非常方便，如下图所示：<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/json.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></li>
+<li>需要的职位信息在<code>object -&gt; content -&gt; positionResult -&gt; result</code><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/json_tree.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></li>
+<li><p>使用多线程策略在mac中，校园网环境下进行职位详情页的爬取，并采用BeautifulSoup4提取出网页中需要的文字信息，以便后期大数据分析。处理速度达到了每秒20个职位。</p>
+</li>
+<li><p>拉勾的反爬虫策略<br>header不加session直接请求拉勾服务器，在请求数次之后就会被拒绝。手动注册账号登录拉勾网，利用Chrome开发工具将header的session后的字符串复制下载，加到程序的header中。这样再请求拉勾服务器就不会被拒绝了。注意超过一天之后session就失效了，登录账号更换一个新的session即可。</p>
+</li>
+</ul>
+<h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><h3 id="去重-SQL"><a href="#去重-SQL" class="headerlink" title="去重(SQL)"></a>去重(SQL)</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tmp2 <span class="keyword">as</span> <span class="keyword">select</span> <span class="keyword">min</span>(<span class="keyword">id</span>) <span class="keyword">as</span> <span class="keyword">mid</span> <span class="keyword">from</span> tab3 <span class="keyword">group</span> <span class="keyword">by</span> 职位<span class="keyword">ID</span></div><div class="line"></div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> lagou2 <span class="keyword">as</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> lagou <span class="keyword">WHERE</span> <span class="keyword">id</span> <span class="keyword">in</span> (<span class="keyword">SELECT</span> <span class="keyword">mid</span> <span class="keyword">from</span> tmp2)</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line"><span class="string">### 去重(Pandas)</span></div><div class="line"><span class="string">- 经过手工的查看有大量的重复值，使用`</span>pandas<span class="string">`的`</span>drop_duplicates(subset=[<span class="string">'positionId'</span>])<span class="string">`将重复的`</span>positionId<span class="string">`去掉，只保留一行重复记录。</span></div><div class="line"><span class="string">- 用`</span>pandas<span class="string">`的`</span>pandas.DataFrame.to_csv()<span class="string">`将去重的文件保存为csv文件</span></div><div class="line"><span class="string">- Excel 2016打开去重的csv文件，利用快速填充提取字段的`</span><span class="number">4</span>k<span class="number">-8</span>k<span class="string">`等工资字段，取平均值。工作年限使用同样的操作提取</span></div><div class="line"><span class="string">- 创建MySQL数据库以导入csv文件，创建数据库如下,这里用的是`</span>phpMyAdmin<span class="string">`手动创建数据库字段，自动生成创建语句：</span></div><div class="line"><span class="string">`</span><span class="string">``</span><span class="keyword">sql</span></div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`LAGOU`</span>.<span class="string">`position`</span> ( <span class="string">`ID`</span> <span class="built_in">INT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT , <span class="string">`positionId`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`positionLables`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`positionName`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`positionAdvantage`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`firstType`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`secondType`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`workYear`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`education`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`salary`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`isSchoolJob`</span> <span class="built_in">VARCHAR</span>(<span class="number">5</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`companyId`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`companyShortName`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`companyFullName`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`companySize`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`financeStage`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`industryField`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`industryLables`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`createTime`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`formatCreateTime`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`city`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`district`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`businessZones`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`linestaion`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`stationname`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , PRIMARY <span class="keyword">KEY</span> (<span class="string">`ID`</span>)) <span class="keyword">ENGINE</span> = <span class="keyword">InnoDB</span></div></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li>对文本数据进行数字编码，工作年限和工资等信息做统一的编码。 </li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> L拉勾 <span class="keyword">ADD</span> 工作年限 <span class="built_in">INT</span> <span class="literal">NULL</span>;</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> L拉勾</div><div class="line">  <span class="keyword">MODIFY</span> <span class="keyword">COLUMN</span> 工作年限 <span class="built_in">INT</span> <span class="keyword">AFTER</span> 工龄;</div><div class="line"><span class="keyword">UPDATE</span> L拉勾 <span class="keyword">SET</span> 工作年限 = <span class="number">4</span> <span class="keyword">WHERE</span> 工龄 = <span class="string">'3-5年'</span>;</div><div class="line"><span class="keyword">UPDATE</span> L拉勾 <span class="keyword">SET</span> 工作年限 = <span class="number">2</span> <span class="keyword">WHERE</span> 工龄 = <span class="string">'1-3年'</span>;</div><div class="line"><span class="keyword">UPDATE</span> L拉勾 <span class="keyword">SET</span> 工作年限 = <span class="number">8</span> <span class="keyword">WHERE</span> 工龄 = <span class="string">'5-10年'</span>;</div><div class="line"><span class="keyword">UPDATE</span> L拉勾 <span class="keyword">SET</span> 工作年限 = <span class="number">10</span> <span class="keyword">WHERE</span> 工龄 = <span class="string">'十年以上'</span>;</div><div class="line"><span class="keyword">UPDATE</span> L拉勾 <span class="keyword">SET</span> 工作年限 = <span class="number">1</span> <span class="keyword">WHERE</span> 工龄 = <span class="string">'一年以下'</span>;</div><div class="line"><span class="keyword">UPDATE</span> L拉勾 <span class="keyword">SET</span> 工作年限 = <span class="number">0</span> <span class="keyword">WHERE</span> 工龄 = <span class="string">'应届毕业生'</span>;</div></pre></td></tr></table></figure>
+<h2 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h2><h3 id="利用MySQL进行简单的统计分析"><a href="#利用MySQL进行简单的统计分析" class="headerlink" title="利用MySQL进行简单的统计分析"></a>利用MySQL进行简单的统计分析</h3><ul>
+<li>招收人数最多的几个职位<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> 企业简称, <span class="keyword">COUNT</span>(企业简称) <span class="keyword">as</span> cnt <span class="keyword">FROM</span> L拉勾 <span class="keyword">GROUP</span> <span class="keyword">BY</span> 企业简称</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="./analysis_picture/position_order.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>前100公司的招收人数<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> 企业简称,<span class="keyword">COUNT</span>(企业简称) <span class="keyword">as</span> cnt <span class="keyword">FROM</span> L拉勾 <span class="keyword">GROUP</span> <span class="keyword">BY</span> 企业简称 <span class="keyword">ORDER</span> <span class="keyword">BY</span> cnt <span class="keyword">DESC</span> <span class="keyword">LIMIT</span> <span class="number">100</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="./analysis_picture/company_staff.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>月薪最高的100个职位<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> 职位名称,<span class="keyword">avg</span>(工资) <span class="keyword">as</span> money <span class="keyword">FROM</span> L拉勾 <span class="keyword">GROUP</span> <span class="keyword">BY</span> 职位名称 <span class="keyword">ORDER</span> <span class="keyword">BY</span> money <span class="keyword">DESC</span> <span class="keyword">LIMIT</span> <span class="number">100</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="./analysis_picture/position_salary.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>学历水平工资<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> 学历,<span class="keyword">avg</span>(工资) <span class="keyword">as</span> money <span class="keyword">FROM</span> L拉勾 <span class="keyword">GROUP</span> <span class="keyword">BY</span> 学历 <span class="keyword">ORDER</span> <span class="keyword">BY</span> money <span class="keyword">DESC</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="./analysis_picture/degree_salary.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>各个公司招收人的工薪水平<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> 企业简称,<span class="keyword">COUNT</span>(企业简称) <span class="keyword">as</span> cnt ,<span class="keyword">avg</span>(工资) <span class="keyword">as</span> money <span class="keyword">FROM</span> L拉勾 <span class="keyword">GROUP</span> <span class="keyword">BY</span> 企业简称 <span class="keyword">ORDER</span> <span class="keyword">BY</span> cnt <span class="keyword">DESC</span>,money <span class="keyword">DESC</span> <span class="keyword">LIMIT</span> <span class="number">100</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="./analysis_picture/salary_for_company.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="利用SKlearn进行数据分析"><a href="#利用SKlearn进行数据分析" class="headerlink" title="利用SKlearn进行数据分析"></a>利用SKlearn进行数据分析</h2><h2 id="数据预处理（中文分词、去除标点符号）"><a href="#数据预处理（中文分词、去除标点符号）" class="headerlink" title="数据预处理（中文分词、去除标点符号）"></a>数据预处理（中文分词、去除标点符号）</h2><p>先构建一个字典过滤标点符号，通过Python的<code>jieba</code>模块进行精确匹配模式进行分词后用空格分隔。示例如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># encoding=utf-8</span></div><div class="line">chrs = [<span class="string">'，'</span>,<span class="string">'。'</span>,<span class="string">'！'</span>,<span class="string">'、'</span>,<span class="string">'；'</span>,<span class="string">'：'</span>,<span class="string">'？'</span>,<span class="string">'~'</span>,<span class="string">'('</span>,<span class="string">')'</span>,<span class="string">'；'</span>,<span class="string">';'</span>,<span class="string">','</span>,<span class="string">'\n'</span>,<span class="string">'\t'</span>,<span class="string">'/'</span>,<span class="string">'-'</span>,<span class="string">'.'</span>,<span class="string">'\''</span>]</div><div class="line">corpus = []</div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> corpus_raw:</div><div class="line">    <span class="keyword">for</span> ch <span class="keyword">in</span> chrs:</div><div class="line">        line = line.replace(ch,<span class="string">''</span>)</div><div class="line">    Word_spilt_jieba = jieba.cut(line,cut_all = <span class="keyword">False</span>)</div><div class="line">    line = <span class="string">' '</span>.join(Word_spilt_jieba)</div><div class="line">    corpus.append(line)</div><div class="line">print(corpus[<span class="number">0</span>:<span class="number">3</span>])</div></pre></td></tr></table></figure></p>
+<p><strong>对于职位的描述分词之后的（一个职位描述样本）如下所示，包含一些明确的关键词，同样也包含一些无关紧要的数字，在这里先不处理数字英文单词之类的（后续的预测准确率表明数字对结果影响不大）：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">职位 要求 1 有 互联网 和 移动 互联网 行业 3 年 以上 产品 经理 从业 经验 2 独立 承担 项目 丰富 的 ERP 产品设计 经验 2 懂 app 基本 设计 流程 熟悉 微信 公众 号 的 后台 框架 及 运营 3 具备 项目 方案 起草 需求 整理 开发计划 及 相关 业务 对接 的 能力 4 有 很 强 的 产品 逻辑 与 项目 执行 能力 协调 沟通 部门 内外部 的 资源 5 具备 决策 和 项目 团队 管理 经验</div></pre></td></tr></table></figure></p>
+<h2 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h2><h3 id="词袋模型（-Bag-of-Words-Model-）"><a href="#词袋模型（-Bag-of-Words-Model-）" class="headerlink" title="词袋模型（ Bag-of-Words Model ）"></a>词袋模型（ Bag-of-Words Model ）</h3><ol>
+<li>使用机器学习算法时，我们不能直接使用文本。相反，我们需要将文本转换为数字。  </li>
+<li>对文档进行分类，每一类文档都是“输入”，而类别标签是我们预测算法的“输出”。算法将数字向量作为输入，因此我们需要将文档转换为固定长度的数字向量。  </li>
+<li>上面这一步可以通过为每个单词分配一个唯一的编码来完成。我们所看到的任何文档都可以被编码为一个固定长度的矢量，其长度为文档中全部已知单词的词汇量。矢量中每个位置的值可以用编码文档中每个单词的出现个数或频率填充。  </li>
+<li>在词袋模型中，我们只关心编码方案，而编码方案描述了文档中出现了什么单词，以及这些单词在编码文档中出现的频率，而没有任何关于顺序的信息。  </li>
+</ol>
+<p><strong>对所有职位信息通过Python拉取数据库数据进行遍历，构建一个非常大的词袋，拉去50条职位描述信息时，构成的词袋长度就有2000条左右，这里局限于个人电脑和服务器的内存太小只用了小样本进行了构建词袋</strong></p>
+<h3 id="使用-CountVectorizer-计算词频"><a href="#使用-CountVectorizer-计算词频" class="headerlink" title="使用 CountVectorizer 计算词频"></a>使用 CountVectorizer 计算词频</h3><p>CountVectorizer 提供了一个简单的方法，既可以标记文本文档的集合, 也可以生成每个已知单词的索引, 还可以使用这一套索引对新文档进行编码。  </p>
+<p>下面是一种使用方法：</p>
+<ul>
+<li>实例化一个 CountVectorizer 类。</li>
+<li>调用 fit() 函数以从一个或多个文档中建立索引。</li>
+<li>根据需要在一个或多个文档中调用 transform() 函数，将每个文档编码为一个向量。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#该类会将文本中的词语转换为词频矩阵，矩阵元素a[i][j] 表示j词在i类文本下的词频  </div><div class="line">vectorizer=CountVectorizer()    </div><div class="line">X = vectorizer.fit_transform(corpus)</div></pre></td></tr></table></figure>
+<p>转换后的结果可以看到<code>X.shape</code>为<code>n*m</code>，其中n为样本个数，m为特征个数，这里小样本词频测试输出如下（90%以上的都是0概率，可见是一个非常稀疏的矩阵）：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.116133204036</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0924905834836</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0801139896408</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.230164048616</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0930653754409</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.106744931403</span> <span class="number">0.106744931403</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0922569939759</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.184513987952</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0563738344688</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.117308212104</span> <span class="number">0.117308212104</span> <span class="number">0.117308212104</span> <span class="number">0.0</span> <span class="number">0.103965978559</span> <span class="number">0.0</span> <span class="number">0.117308212104</span> <span class="number">0.117308212104</span> <span class="number">0.0</span> <span class="number">0.117308212104</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.076084797887</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line">  ......</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>稀疏矩阵<br>由于大多数文本文档通常只使用文本词向量全集中的一个小子集，所以得到的矩阵将具有许多特征值为零（通常大于99％）。<br>例如，10,000 个短文本文档（如电子邮件）的集合将使用总共100,000个独特词的大小的词汇，而每个文档将单独使用100到1000个独特的单词。<br>为了能够将这样的矩阵存储在存储器中，并且还可以加速代数的矩阵/向量运算，实现通常将使用诸如 scipy.sparse 包中的稀疏实现。<br>构造稀疏矩阵，对每一条记录分词之后</p>
+<h2 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h2><p>在一个大的文本语料库中，一些单词将出现很多次（例如 “the”, “a”, “is” 是英文），因此对文档的实际内容没有什么有意义的信息。 如果我们将直接计数数据直接提供给分类器，那么这些频繁词组会掩盖住那些我们关注但很少出现的词。<br>为了为了重新计算特征权重，并将其转化为适合分类器使用的浮点值，因此使用 tf-idf 变换是非常常见的。  </p>
+</blockquote>
+<h3 id="如何使用-TfidfVectorizer-将文本转换为词频向量。"><a href="#如何使用-TfidfVectorizer-将文本转换为词频向量。" class="headerlink" title="如何使用 TfidfVectorizer 将文本转换为词频向量。"></a>如何使用 TfidfVectorizer 将文本转换为词频向量。</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#该类会统计每个词语的tf-idf权值  </span></div><div class="line">transformer=TfidfTransformer()</div><div class="line">tfidf=transformer.fit_transform(X)</div></pre></td></tr></table></figure>
+<p>这里降低不具有特征的词语例如’的‘，’是‘等。转换的矩阵仍然是一个非常稀疏的矩阵，例如这里的前20,职位描述和前20个特征词语概率如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.116133204036</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0924905834836</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0801139896408</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.230164048616</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0930653754409</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.106744931403</span> <span class="number">0.106744931403</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0922569939759</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.184513987952</span> <span class="number">0.0</span> <span class="number">0.0</span> </div><div class="line"><span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0563738344688</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span> <span class="number">0.0</span></div></pre></td></tr></table></figure></p>
+<h2 id="数据维度太大的解决思路"><a href="#数据维度太大的解决思路" class="headerlink" title="数据维度太大的解决思路"></a>数据维度太大的解决思路</h2><h3 id="使用-HashingVectorizer-执行外核缩放"><a href="#使用-HashingVectorizer-执行外核缩放" class="headerlink" title="使用 HashingVectorizer 执行外核缩放"></a>使用 HashingVectorizer 执行外核缩放</h3><ul>
+<li>使用 HashingVectorizer 的一个有趣的开发是执行外核 out-of-core 缩放的能力。 这意味着我们可以从无法放入电脑主内存的数据中进行学习。</li>
+<li>项目等待完成的部分，也是可以优化计算的地方，在小样本测试算法成功后，可以使用此算法进行优化计算，以便在个人PC进行计算。</li>
+</ul>
+<p><strong>每批的向量化都是用HashingVectorizer这样来保证评估器的输入空间的维度是相等的。因此任何时间使用的内存数都限定在小频次的大小。 尽管用这种方法可以处理的数据没有限制，但是从实用角度学习时间受到想要在这个任务上花费的CPU时间的限制。</strong></p>
+<h2 id="推荐职位"><a href="#推荐职位" class="headerlink" title="推荐职位"></a>推荐职位</h2><ul>
+<li>这里将推荐看做一个监督学习的分类问题，用户提供个人信息，利用训练完成的分类器对用户进行分类，将用户分类到某一个适合他的职位。具体实现思路是将用户的详情用训练的tf-idf转换器转换为一个稀疏矩阵，将稀疏矩阵输入分类器，分类器对其分类到某一个职位。</li>
+</ul>
+<h3 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h3><ol>
+<li>利用<code>Python</code>动态拉取数据库的某一职位数据，对职位进行统一的编码，例如：<code>[&#39;产品经理&#39;,&#39;前端开发工程师&#39;,&#39;测试工程师&#39;,&#39;平面设计师&#39;,&#39;UI设计师&#39;]</code>将其编码为<code>[1,2,3,4,5]</code>，另一个实现是用One-Hot编码，两种实现均可，在这里发现第一种编码效果还是非常的不错。利用整个数据集训练时可以考虑使用One-Hot编码。</li>
+<li>利用构造好的数据矩阵和标签矩阵进行训练，使用SVM模型（默认参数）<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm </div><div class="line"><span class="comment"># 使用SVM模型</span></div><div class="line">clf = svm.SVC()</div><div class="line">clf.fit(weight,y)</div><div class="line"><span class="comment"># SVM模型的参数</span></div><div class="line">SVC(C=<span class="number">1.0</span>, cache_size=<span class="number">200</span>, class_weight=<span class="keyword">None</span>, coef0=<span class="number">0.0</span>,</div><div class="line">  decision_function_shape=<span class="string">'ovr'</span>, degree=<span class="number">3</span>, gamma=<span class="string">'auto'</span>, kernel=<span class="string">'rbf'</span>,</div><div class="line">  max_iter=<span class="number">-1</span>, probability=<span class="keyword">False</span>, random_state=<span class="keyword">None</span>, shrinking=<span class="keyword">True</span>,</div><div class="line">  tol=<span class="number">0.001</span>, verbose=<span class="keyword">False</span>)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="评测准确率"><a href="#评测准确率" class="headerlink" title="评测准确率"></a>评测准确率</h3><ul>
+<li>利用Python动态拉取MySQL数据的描述信息进行分词、构建稀疏矩阵、构造tf-idf稀疏矩阵、构造编码后标签矩阵输入模型对数据进行预测，并对照数据库的标签，对结果集进行验证准确率在90%以上，如下图对产品经理分类：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test_data为测试数据的稀疏矩阵</span></div><div class="line">clf.predict(test_data)</div></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 对20个产品经理小样本的预测分类准确率在100%</span></div><div class="line">array([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>])</div></pre></td></tr></table></figure></p>
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><ul>
+<li><p>去重查询</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> positionId,<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> positionId) <span class="keyword">FROM</span> <span class="keyword">position</span> <span class="keyword">GROUP</span> <span class="keyword">by</span> positionId</div></pre></td></tr></table></figure>
+</li>
+<li><p>查询各个职位招收人数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> 职位名称,<span class="keyword">COUNT</span>(职位名称) <span class="keyword">FROM</span> L拉勾职位表 <span class="keyword">GROUP</span> <span class="keyword">BY</span> 职位名称 <span class="keyword">order</span> <span class="keyword">BY</span> <span class="keyword">COUNT</span>(职位名称) <span class="keyword">desc</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`LAGOU`</span>.<span class="string">`position`</span> ( <span class="string">`ID`</span> <span class="built_in">INT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT , <span class="string">`positionId`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`positionLables`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`positionName`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`positionAdvantage`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`firstType`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`secondType`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`workYear`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`education`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`salary`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`isSchoolJob`</span> <span class="built_in">VARCHAR</span>(<span class="number">5</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`companyId`</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`companyShortName`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`companyFullName`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`companySize`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`financeStage`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`industryField`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`industryLables`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`createTime`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`formatCreateTime`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`city`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`district`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`businessZones`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`linestaion`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , <span class="string">`stationname`</span> <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> , PRIMARY <span class="keyword">KEY</span> (<span class="string">`ID`</span>)) <span class="keyword">ENGINE</span> = <span class="keyword">InnoDB</span></div></pre></td></tr></table></figure>
+<h2 id="导入导出数据库"><a href="#导入导出数据库" class="headerlink" title="导入导出数据库"></a>导入导出数据库</h2><h3 id="导出数据库"><a href="#导出数据库" class="headerlink" title="导出数据库"></a>导出数据库</h3><ul>
+<li><p>导出数据库为sql文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysqldump -u root -p database_name table_name &gt; dump.txt</div><div class="line">password *****</div></pre></td></tr></table></figure>
+</li>
+<li><p>导出数据库为csv文件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> passwd <span class="keyword">INTO</span> <span class="keyword">OUTFILE</span> <span class="string">'/tmp/tutorials.txt'</span> <span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span> <span class="keyword">ENCLOSED</span> <span class="keyword">BY</span> <span class="string">'"'</span></div><div class="line"><span class="keyword">LINES</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\r\n'</span>;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h3><ul>
+<li>csv文件导入数据库  </li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">load</span> <span class="keyword">data</span> <span class="keyword">local</span> <span class="keyword">infile</span> <span class="string">'/home/ubuntu//workspace/Lagou_Spider/lagou.txt'</span></div><div class="line"><span class="keyword">into</span> <span class="keyword">table</span> position_2</div><div class="line"><span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">','</span>  <span class="keyword">optionally</span> <span class="keyword">enclosed</span> <span class="keyword">by</span> <span class="string">'"'</span> <span class="keyword">escaped</span> <span class="keyword">by</span> <span class="string">'"'</span></div><div class="line"><span class="keyword">lines</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">'\n'</span>;</div></pre></td></tr></table></figure>
+<ul>
+<li>导入数据库sql文件<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p database_name &lt; dump.txt password *****</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="其他常用命令和脚本"><a href="#其他常用命令和脚本" class="headerlink" title="其他常用命令和脚本"></a>其他常用命令和脚本</h2><ul>
+<li><p>统计文件行数</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wc -l file</div></pre></td></tr></table></figure>
+</li>
+<li><p>tmux</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tmux new -s session</div><div class="line">tmux new -s session -d #在后台建立会话</div><div class="line">tmux ls #列出会话</div><div class="line">tmux attach -t session #进入某个会话</div></pre></td></tr></table></figure>
+</li>
+<li><p>合并文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">filenames = os.listdir(<span class="string">"./position_id_files/"</span>)</div><div class="line"><span class="keyword">with</span> open(<span class="string">'all_describe_to_one.txt'</span>,<span class="string">'a'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f_write:</div><div class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</div><div class="line">        <span class="keyword">with</span> open(<span class="string">'./position_id_files/'</span>+filename,<span class="string">'r'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f_read:</div><div class="line">            <span class="keyword">for</span> line <span class="keyword">in</span> f_read.readlines():</div><div class="line">                f_write.write(line)</div></pre></td></tr></table></figure>
+</li>
+<li><p>去重</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line">df = pd.read_csv(ready_to_read_file)</div><div class="line">df2=df.drop_duplicates(subset=[<span class="string">'positionId'</span>])</div><div class="line">df2.to_csv(ready_to_write_file)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="https://www.jianshu.com/p/16cd37a5355f&gt;" target="_blank" rel="external">https://www.jianshu.com/p/16cd37a5355f&gt;</a><br><a href="https://www.zhihu.com/search?type=content&amp;q=%E6%8B%89%E5%8B%BE%20%E7%88%AC%E8%99%AB&gt;" target="_blank" rel="external">https://www.zhihu.com/search?type=content&amp;q=%E6%8B%89%E5%8B%BE%20%E7%88%AC%E8%99%AB&gt;</a><br><a href="https://www.w3cschool.cn/mysql/mysql-database-export.html" target="_blank" rel="external">https://www.w3cschool.cn/mysql/mysql-database-export.html</a><br><a href="http://blog.csdn.net/liuxuejiang158blog/article/details/31360765" target="_blank" rel="external">http://blog.csdn.net/liuxuejiang158blog/article/details/31360765</a><br><a href="http://blog.csdn.net/tiffany_li2015/article/details/50236833" target="_blank" rel="external">http://blog.csdn.net/tiffany_li2015/article/details/50236833</a><br><a href="http://sklearn.apachecn.org/cn/0.19.0/modules/feature_extraction.html" target="_blank" rel="external">http://sklearn.apachecn.org/cn/0.19.0/modules/feature_extraction.html</a><br><a href="http://www.cnblogs.com/qcloud1001/p/8444576.html" target="_blank" rel="external">http://www.cnblogs.com/qcloud1001/p/8444576.html</a>  </p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-06-02T05:01:43.925Z" itemprop="dateUpdated">2018-06-02 13:01:43</time>
+</span><br>
+
+
+        
+        这里可以给我留言。
+        
+    </div>
+    <footer>
+        <a href="http://sunlanchang.github.io">
+            <img src="/img/tou.jpg" alt="Jason Sun">
+            Jason Sun
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/&title=《拉勾网爬虫与数据分析》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/&title=《拉勾网爬虫与数据分析》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《拉勾网爬虫与数据分析》 — Jason's Blog&url=http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/06/02/北京邮电大学-数据挖掘竞赛-2018/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">北京邮电大学-数据挖掘竞赛-2018</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'sunlanchang',
+            repo: 'myGitment',
+            oauth: {
+                client_id: '6013556da1745c4a2fa8',
+                client_secret: '4394e96a00fdb11529f27a88acff6ff091aaaeaa',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jason Sun &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17053348号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/&title=《拉勾网爬虫与数据分析》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/&title=《拉勾网爬虫与数据分析》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《拉勾网爬虫与数据分析》 — Jason's Blog&url=http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2018/06/02/拉勾网爬虫与数据分析/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3aQY7bMAwF0Nz/0tNtgTbO/6RUpMDzKkg8sp4XIofk6xVfP79dz9+8+/XPe57/6nn9wxceHh7eYuvPS+fXu6e8W+3sfvDw8PD+DS/ZUH5AJ0EiubPdAx4eHt7/xWtJeTjJ02s8PDy87+Rt0t/kxSUkPDw8vG/gzUqos6CSvIK8iHys1oKHh4fXVVmjLtL3fL7S38PDw8Nbd9VnqW3b0MqfUq+Dh4eHd4HXNrQ2sNk4V5su4+Hh4d3m5WWCJNWeZbb5U3IqHh4e3m1e+7C8WTVrYiWhJaLi4eHhXeAlI1MtIG+Atd+0jTc8PDy8e7z8gG4/5+x9OeM1/BkPDw9vvP8ieW0P/STwtGl6XaTAw8PDO8TLyxBtAt0myvvC8YfJCDw8PLxDvLwksR8jmI0FzEJIXczFw8PDi3ltgyoPCbOkfPOC6kkxPDw8vPmE0oFD/FR5YtOKeyvCw8PDu8BbDTPF16wMMRsIKybF8PDw8A7x9od+3vjPX+tsPAsPDw/vHi9/wGzEKl+tbYlFLxQPDw/vEC8fosqHrjZbnw1dDScj8PDw8Ba82eE7Kx/km04GuT7sCg8PD+8ar02Uk0fOjvtNHWU4dIWHh4c34m2KC7NNz0q37Zp4eHh4N3h5AGhbZVc2Wq6Mh4eHd5t3KsE9lSLnJeBiGgIPDw/vKO85jW63khcj8uDRFkrw8PDwbvPOjljN7mnT9OgePDw8vKO8n/JqA0lbwJ2tXEQ8PDw8vDUvv5LtbhLrPJDkpRA8PDy8e7xTralhsSAYSpiNeeHh4eHd5uXFiFmam7y4Vex6Dgx4eHh4X8CbtanyADMLA3+x4OHh4X0Bb1YgSI7+zUjBhzYYHh4e3gXepsx6amArT82LMQI8PDy8C7z8n/y2nFoXDkbXgXXw8PDw0nV+AXa1AyfU3oTuAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'false';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Jason's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
