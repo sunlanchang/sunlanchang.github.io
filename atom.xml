@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2018-06-02T05:01:43.925Z</updated>
+  <updated>2018-06-24T07:16:49.917Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2018全国高校大数据应用创新大赛</title>
+    <link href="http://sunlanchang.github.io/2018/06/24/2018%E5%85%A8%E5%9B%BD%E9%AB%98%E6%A0%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%A4%A7%E8%B5%9B/"/>
+    <id>http://sunlanchang.github.io/2018/06/24/2018全国高校大数据应用创新大赛/</id>
+    <published>2018-06-24T05:26:26.000Z</published>
+    <updated>2018-06-24T07:16:49.917Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><ul><li>训练阶段：组委会提供25000条数据作为训练数据，参赛队伍报名后可从大赛官网下载训练数据集，并进行算法设计、训练和优化。</li><li>预赛阶段：组委会提供10万条数据作为预赛数据集。参赛队伍使用自己的算法，对这10万条数据进行“优化等级”标注。本竞赛将以优化等级标注的准确率作为选手预赛的得分。</li><li>分赛区决赛和全国总决赛阶段。组委会提供100万条正式比赛数据，参赛队伍使用自己的算法，对这100万条数据进行“优化等级”标注。本竞赛将以优化等级标注的准确率作为选手决赛的技术得分，结合决赛答辩评出最终名次。</li><li>详情见 <a href="http://117.50.29.62/pc/competition_topic.jsp" target="_blank" rel="external">http://117.50.29.62/pc/competition_topic.jsp</a></li></ul><h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><table><thead><tr><th>环境</th><th>版本</th><th>Python模块</th><th>版本</th></tr></thead><tbody><tr><td>Ubuntu</td><td>16.04</td><td>tensorflow</td><td>1.8</td></tr><tr><td>Anaconda</td><td>5.1</td><td>numpy</td></tr><tr><td>Python</td><td>3.6</td><td>pandas</td></tr><tr><td>Jupyter lab</td><td>0.31.5</td><td>matplotlib</td></tr></tbody></table><h1 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h1><ul><li>标签列为数字特征，不做处理。</li><li>数据中特征列有花色，牌面等信息为字母标注，将其替换成数字特征，模型相对比较容易处理。比如C替换成1，D替换成2等。如下列代码所示：</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">NAMES = [<span class="string">'col'</span>+str(e) <span class="keyword">for</span> e <span class="keyword">in</span> range(<span class="number">11</span>)]</div><div class="line">df_train = pd.read_csv(<span class="string">'data/train.csv'</span>,names=NAMES,index_col=<span class="keyword">False</span>)</div><div class="line">huase_to_num = &#123;<span class="string">'C'</span>:<span class="number">1</span>,<span class="string">'D'</span>:<span class="number">2</span>,<span class="string">'H'</span>:<span class="number">3</span>,<span class="string">'S'</span>:<span class="number">4</span>&#125;</div><div class="line">paimian_to_num = &#123;<span class="string">'J'</span>:<span class="number">11</span>,<span class="string">'Q'</span>:<span class="number">12</span>,<span class="string">'K'</span>:<span class="number">13</span>&#125;</div><div class="line">df_train=df_train.replace(huase_to_num).replace(paimian_to_num)</div></pre></td></tr></table></figure><h1 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h1><ul><li>前10列特阵列的数字特征</li><li>可以考虑使用交叉列输入神经网络</li></ul><p>代码示例如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">feature_columns = []</div><div class="line"><span class="keyword">for</span> col <span class="keyword">in</span> NAMES[:<span class="number">-1</span>]:</div><div class="line">    feature_columns.append(tf.feature_column.numeric_column(key=col))</div><div class="line">feature_columns</div></pre></td></tr></table></figure><h1 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h1><ul><li>神经网络采用三层隐藏层，神经元个数分别是1536,768,384</li><li>优化函数采用<code>ProximalAdagradOptimizer</code></li><li>学习率0.005</li><li>L1正则化率0.001</li><li>L2正则化率0.001</li></ul><p>具体代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">cls = tf.estimator.DNNClassifier(</div><div class="line">    feature_columns=feature_columns,</div><div class="line">    hidden_units=[<span class="number">1536</span>,<span class="number">768</span>,<span class="number">384</span>],</div><div class="line">    n_classes=numClasses,</div><div class="line">    optimizer=tf.train.ProximalAdagradOptimizer(</div><div class="line">    learning_rate=<span class="number">0.005</span>,</div><div class="line">    l1_regularization_strength=<span class="number">0.001</span>,</div><div class="line">    l2_regularization_strength=<span class="number">0.001</span></div><div class="line">        </div><div class="line">    ))</div></pre></td></tr></table></figure></p><h1 id="模型训练与预测"><a href="#模型训练与预测" class="headerlink" title="模型训练与预测"></a>模型训练与预测</h1><p>对已有的数据进行2000次训练，准确率如下图，20分钟训练模型2000次准确率99.5%</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/accuracy.png" alt="准确率" title="">                </div>                <div class="image-caption">准确率</div>            </figure><h1 id="查看训练数据和预测数据分布"><a href="#查看训练数据和预测数据分布" class="headerlink" title="查看训练数据和预测数据分布"></a>查看训练数据和预测数据分布</h1><ul><li>对数据进行预测并画出柱形图对比分布，如下图</li></ul><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/train分布.png" alt="训练数据分布" title="">                </div>                <div class="image-caption">训练数据分布</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/predict分布.png" alt="预测数据分布" title="">                </div>                <div class="image-caption">预测数据分布</div>            </figure><ul><li>大体可以看出分布是相同的</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;训练阶段：组委会提供25000条数据作为训练数据，参赛队伍报名后可从大赛官网下载训练数据集，并进行算法设计、训练和优化。&lt;/li
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>拉勾网爬虫与数据分析</title>
@@ -493,32 +515,6 @@
       
         &lt;h1 id=&quot;冯•诺依曼结构计算机的特点&quot;&gt;&lt;a href=&quot;#冯•诺依曼结构计算机的特点&quot; class=&quot;headerlink&quot; title=&quot;冯•诺依曼结构计算机的特点&quot;&gt;&lt;/a&gt;冯•诺依曼结构计算机的特点&lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;计算机由运算器、控制器、存储器、输入设备
-      
-    
-    </summary>
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图解寻址方式</title>
-    <link href="http://sunlanchang.github.io/2017/11/21/%E5%9B%BE%E8%A7%A3%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/"/>
-    <id>http://sunlanchang.github.io/2017/11/21/图解寻址方式/</id>
-    <published>2017-11-21T14:56:44.000Z</published>
-    <updated>2017-11-22T02:38:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/zhijiexunzhi.gif" alt="直接寻址" title="">                </div>                <div class="image-caption">直接寻址</div>            </figure>  <h1 id="间接寻址"><a href="#间接寻址" class="headerlink" title="间接寻址"></a>间接寻址</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/jianjiexunzhi.png" alt="存储器间接寻址" title="">                </div>                <div class="image-caption">存储器间接寻址</div>            </figure>  <figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/jicunqijianjiexunzhi.jpg" alt="寄存器间接寻址" title="">                </div>                <div class="image-caption">寄存器间接寻址</div>            </figure><h1 id="基址寻址"><a href="#基址寻址" class="headerlink" title="基址寻址"></a>基址寻址</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/jizhixunzhi.jpg" alt="基址寻址" title="">                </div>                <div class="image-caption">基址寻址</div>            </figure><h1 id="变址寻址"><a href="#变址寻址" class="headerlink" title="变址寻址"></a>变址寻址</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/bianzhixunzhi.jpg" alt="变址寻址" title="">                </div>                <div class="image-caption">变址寻址</div>            </figure><h1 id="立即数寻址"><a href="#立即数寻址" class="headerlink" title="立即数寻址"></a>立即数寻址</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/lijixunzhi.jpg" alt="立即数寻址" title="">                </div>                <div class="image-caption">立即数寻址</div>            </figure><h1 id="寄存器寻址"><a href="#寄存器寻址" class="headerlink" title="寄存器寻址"></a>寄存器寻址</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/jicunqixunzhi.jpg" alt="寄存器寻址" title="">                </div>                <div class="image-caption">寄存器寻址</div>            </figure><h1 id="相对寻址"><a href="#相对寻址" class="headerlink" title="相对寻址"></a>相对寻址</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/xiangduixunzhi.png" alt="相对寻址" title="">                </div>                <div class="image-caption">相对寻址</div>            </figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;直接寻址&quot;&gt;&lt;a href=&quot;#直接寻址&quot; class=&quot;headerlink&quot; title=&quot;直接寻址&quot;&gt;&lt;/a&gt;直接寻址&lt;/h1&gt;&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lig
       
     
     </summary>
