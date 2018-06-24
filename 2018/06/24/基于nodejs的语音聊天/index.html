@@ -25,20 +25,20 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="JavaScript实现语音聊天描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tut">
+    <meta name="description" content="描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tutoril） socket.io">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于nodejs的语音聊天">
 <meta property="og:url" content="http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="JavaScript实现语音聊天描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tut">
+<meta property="og:description" content="描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tutoril） socket.io">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://sunlanchang.github.io/images/语音聊天.png">
 <meta property="og:image" content="http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/images/架构.svg">
 <meta property="og:image" content="http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/images/流程图.svg">
-<meta property="og:updated_time" content="2018-06-24T07:35:10.525Z">
+<meta property="og:updated_time" content="2018-06-24T07:35:45.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于nodejs的语音聊天">
-<meta name="twitter:description" content="JavaScript实现语音聊天描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tut">
+<meta name="twitter:description" content="描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tutoril） socket.io">
 <meta name="twitter:image" content="http://sunlanchang.github.io/images/语音聊天.png">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
@@ -172,7 +172,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript实现语音聊天"><span class="post-toc-number">1.</span> <span class="post-toc-text">JavaScript实现语音聊天</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结构图和流程图"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">结构图和流程图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文本通信"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文本通信</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语音通信"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">语音通信</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#服务器转发数据"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">服务器转发数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建https证书"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">创建https证书</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结构图和流程图"><span class="post-toc-number">2.</span> <span class="post-toc-text">结构图和流程图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文本通信"><span class="post-toc-number">3.</span> <span class="post-toc-text">文本通信</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语音通信"><span class="post-toc-number">4.</span> <span class="post-toc-text">语音通信</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#服务器转发数据"><span class="post-toc-number">5.</span> <span class="post-toc-text">服务器转发数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建https证书"><span class="post-toc-number">6.</span> <span class="post-toc-text">创建https证书</span></a></li></ol>
         </nav>
     </aside>
     
@@ -197,7 +197,8 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <div align="center"><br>  <img src="/images/语音聊天.png"><br></div>
 
-<h1 id="JavaScript实现语音聊天"><a href="#JavaScript实现语音聊天" class="headerlink" title="JavaScript实现语音聊天"></a>JavaScript实现语音聊天</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>程序在 <a href="https://github.com/iamshaunjp/websockets-playlist/tree/lesson-5" target="_blank" rel="external">iamshaunjp</a> 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：<a href="https://biptedu.cn:4000/" target="_blank" rel="external">https://biptedu.cn:4000/</a></p>
+
+<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>程序在 <a href="https://github.com/iamshaunjp/websockets-playlist/tree/lesson-5" target="_blank" rel="external">iamshaunjp</a> 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：<a href="https://biptedu.cn:4000/" target="_blank" rel="external">https://biptedu.cn:4000/</a></p>
 <p><strong>使用的nodejs模块</strong></p>
 <ul>
 <li><code>express</code>：创建一个web服务器</li>
@@ -259,7 +260,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-06-24T07:35:10.525Z" itemprop="dateUpdated">2018-06-24 15:35:10</time>
+    Last updated: <time datetime="2018-06-24T07:35:45.141Z" itemprop="dateUpdated">2018-06-24 15:35:45</time>
 </span><br>
 
 
