@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2018-06-24T07:27:00.652Z</updated>
+  <updated>2018-06-24T07:33:16.165Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>基于nodejs的语音聊天</title>
+    <link href="http://sunlanchang.github.io/2018/06/24/%E5%9F%BA%E4%BA%8Enodejs%E7%9A%84%E8%AF%AD%E9%9F%B3%E8%81%8A%E5%A4%A9/"/>
+    <id>http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/</id>
+    <published>2018-06-24T07:30:44.000Z</published>
+    <updated>2018-06-24T07:33:16.165Z</updated>
+    
+    <content type="html"><![CDATA[<div align="center"><br>  <img src="/images/语音聊天.png"><br></div><h1 id="JavaScript实现语音聊天"><a href="#JavaScript实现语音聊天" class="headerlink" title="JavaScript实现语音聊天"></a>JavaScript实现语音聊天</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>程序在 <a href="https://github.com/iamshaunjp/websockets-playlist/tree/lesson-5" target="_blank" rel="external">iamshaunjp</a> 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：<a href="https://biptedu.cn:4000/" target="_blank" rel="external">https://biptedu.cn:4000/</a></p><p><strong>使用的nodejs模块</strong></p><ul><li><code>express</code>：创建一个web服务器</li><li><code>https</code>：创建https连接（局域网或者外网webRTC需要https连接，具体见<a href="https://www.html5rocks.com/en/tutorials/webrtc/basics/" target="_blank" rel="external">tutoril</a>）</li><li><code>socket.io</code>：客户端与服务端实时通信</li></ul><p><strong>js文件</strong></p><ul><li><code>chat.js</code>：实现按钮事件的注册、文本数据的发送等</li><li><code>record.js</code>：实现语音消息的录取、播放、发送等</li></ul><h2 id="结构图和流程图"><a href="#结构图和流程图" class="headerlink" title="结构图和流程图"></a>结构图和流程图</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="images/架构.svg" alt="架构图" title="">                </div>                <div class="image-caption">架构图</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="images/流程图.svg" alt="流程图" title="">                </div>                <div class="image-caption">流程图</div>            </figure><h2 id="文本通信"><a href="#文本通信" class="headerlink" title="文本通信"></a>文本通信</h2><p><strong>详情见<code>public/js/chat.js</code>注释</strong></p><p><strong>发送数据</strong></p><ul><li>进入页面进行与服务器的<code>socket</code>连接</li><li>客户端输入文本数据</li><li>客户点击<code>sent</code>按钮，触发<code>click</code>事件，并产生<code>chat</code>事件准备想服务器<code>emit</code></li><li><code>soket</code>连接发送给服务器chat事件和客户端产生的数据</li></ul><p><strong>接收数据</strong></p><ul><li><code>socket</code>接受到服务器发送来的data和服务器发送来的chat事件</li><li>提取data文本</li><li>js在<code>index.html</code>添加文本数据，完成接收数据并显示</li></ul><h2 id="语音通信"><a href="#语音通信" class="headerlink" title="语音通信"></a>语音通信</h2><p><strong>详情见<code>public/js/record.js</code>注释</strong></p><ul><li>接受和发送语音数据类似与文本数据的通信</li><li>利用<code>webRTC</code>获取到用户的视频或者音频转换为<code>blob</code>格式数据，并发送给服务器数据。</li><li>接受消息时，数据类型是<code>blob</code>格式，对<code>blob</code>数据解析，利用html5的audio标签进行播放</li></ul><h2 id="服务器转发数据"><a href="#服务器转发数据" class="headerlink" title="服务器转发数据"></a>服务器转发数据</h2><p>客户端发送给服务器数据，服务器触发<code>chat</code>事件，将客户端发送来的数据以广播的形式发送到每一个客户端，完成群聊的功能。</p><h2 id="创建https证书"><a href="#创建https证书" class="headerlink" title="创建https证书"></a>创建https证书</h2><p>在localhost中使用webRTC不需要使用https，但是在局域网或者外网使用webRTC，必须强制使用webRTC，这里采用自己生成证书供测试使用，具体生成方法和设置https方法<a href="http://blog.mgechev.com/2014/02/19/create-https-tls-ssl-application-with-express-nodejs/" target="_blank" rel="external">参考博客</a>：</p><ul><li><p>生成自己签名的证书（有效期365天）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365</div></pre></td></tr></table></figure></li><li><p>使用https连接的express，例子如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>),</div><div class="line">  https = <span class="built_in">require</span>(<span class="string">'https'</span>),</div><div class="line">  express = <span class="built_in">require</span>(<span class="string">'express'</span>),</div><div class="line">  app = express();</div><div class="line"></div><div class="line">  https.createServer(&#123;</div><div class="line">    key: fs.readFileSync(<span class="string">'key.pem'</span>),</div><div class="line">    cert: fs.readFileSync(<span class="string">'cert.pem'</span>)</div><div class="line">  &#125;, app).listen(<span class="number">55555</span>);</div><div class="line"></div><div class="line">  app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">    res.header(<span class="string">'Content-type'</span>, <span class="string">'text/html'</span>);</div><div class="line">    <span class="keyword">return</span> res.end(<span class="string">'&lt;h1&gt;Hello, Secure World!&lt;/h1&gt;'</span>);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div align=&quot;center&quot;&gt;&lt;br&gt;  &lt;img src=&quot;/images/语音聊天.png&quot;&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;JavaScript实现语音聊天&quot;&gt;&lt;a href=&quot;#JavaScript实现语音聊天&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>2018全国高校大数据应用创新大赛</title>
     <link href="http://sunlanchang.github.io/2018/06/24/2018%E5%85%A8%E5%9B%BD%E9%AB%98%E6%A0%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%88%9B%E6%96%B0%E5%A4%A7%E8%B5%9B/"/>
     <id>http://sunlanchang.github.io/2018/06/24/2018全国高校大数据应用创新大赛/</id>
     <published>2018-06-24T05:26:26.000Z</published>
-    <updated>2018-06-24T07:27:00.652Z</updated>
+    <updated>2018-06-24T07:33:21.773Z</updated>
     
     <content type="html"><![CDATA[<div align="center"><br>  <img src="/images/高校大数据应用创新大赛.png"><br><br><br></div><h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><ul><li>训练阶段：组委会提供25000条数据作为训练数据，参赛队伍报名后可从大赛官网下载训练数据集，并进行算法设计、训练和优化。</li><li>预赛阶段：组委会提供10万条数据作为预赛数据集。参赛队伍使用自己的算法，对这10万条数据进行“优化等级”标注。本竞赛将以优化等级标注的准确率作为选手预赛的得分。</li><li>分赛区决赛和全国总决赛阶段。组委会提供100万条正式比赛数据，参赛队伍使用自己的算法，对这100万条数据进行“优化等级”标注。本竞赛将以优化等级标注的准确率作为选手决赛的技术得分，结合决赛答辩评出最终名次。</li><li>详情见 <a href="http://117.50.29.62/pc/competition_topic.jsp" target="_blank" rel="external">http://117.50.29.62/pc/competition_topic.jsp</a></li></ul><h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><table><thead><tr><th>环境</th><th>版本</th><th>Python模块</th><th>版本</th></tr></thead><tbody><tr><td>Ubuntu</td><td>16.04</td><td>tensorflow</td><td>1.8</td></tr><tr><td>Anaconda</td><td>5.1</td><td>numpy</td></tr><tr><td>Python</td><td>3.6</td><td>pandas</td></tr><tr><td>Jupyter lab</td><td>0.31.5</td><td>matplotlib</td></tr></tbody></table><h1 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h1><ul><li>标签列为数字特征，不做处理。</li><li>数据中特征列有花色，牌面等信息为字母标注，将其替换成数字特征，模型相对比较容易处理。比如C替换成1，D替换成2等。如下列代码所示：</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">NAMES = [<span class="string">'col'</span>+str(e) <span class="keyword">for</span> e <span class="keyword">in</span> range(<span class="number">11</span>)]</div><div class="line">df_train = pd.read_csv(<span class="string">'data/train.csv'</span>,names=NAMES,index_col=<span class="keyword">False</span>)</div><div class="line">huase_to_num = &#123;<span class="string">'C'</span>:<span class="number">1</span>,<span class="string">'D'</span>:<span class="number">2</span>,<span class="string">'H'</span>:<span class="number">3</span>,<span class="string">'S'</span>:<span class="number">4</span>&#125;</div><div class="line">paimian_to_num = &#123;<span class="string">'J'</span>:<span class="number">11</span>,<span class="string">'Q'</span>:<span class="number">12</span>,<span class="string">'K'</span>:<span class="number">13</span>&#125;</div><div class="line">df_train=df_train.replace(huase_to_num).replace(paimian_to_num)</div></pre></td></tr></table></figure><h1 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h1><ul><li>前10列特阵列的数字特征</li><li>可以考虑使用交叉列输入神经网络</li></ul><p>代码示例如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">feature_columns = []</div><div class="line"><span class="keyword">for</span> col <span class="keyword">in</span> NAMES[:<span class="number">-1</span>]:</div><div class="line">    feature_columns.append(tf.feature_column.numeric_column(key=col))</div><div class="line">feature_columns</div></pre></td></tr></table></figure><h1 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h1><ul><li>神经网络采用三层隐藏层，神经元个数分别是1536,768,384</li><li>优化函数采用<code>ProximalAdagradOptimizer</code></li><li>学习率0.005</li><li>L1正则化率0.001</li><li>L2正则化率0.001</li></ul><p>具体代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">cls = tf.estimator.DNNClassifier(</div><div class="line">    feature_columns=feature_columns,</div><div class="line">    hidden_units=[<span class="number">1536</span>,<span class="number">768</span>,<span class="number">384</span>],</div><div class="line">    n_classes=numClasses,</div><div class="line">    optimizer=tf.train.ProximalAdagradOptimizer(</div><div class="line">    learning_rate=<span class="number">0.005</span>,</div><div class="line">    l1_regularization_strength=<span class="number">0.001</span>,</div><div class="line">    l2_regularization_strength=<span class="number">0.001</span></div><div class="line">        </div><div class="line">    ))</div></pre></td></tr></table></figure></p><h1 id="模型训练与预测"><a href="#模型训练与预测" class="headerlink" title="模型训练与预测"></a>模型训练与预测</h1><p>对已有的数据进行2000次训练，准确率如下图，20分钟训练模型2000次准确率99.5%</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/accuracy.png" alt="准确率" title="">                </div>                <div class="image-caption">准确率</div>            </figure><h1 id="查看训练数据和预测数据分布"><a href="#查看训练数据和预测数据分布" class="headerlink" title="查看训练数据和预测数据分布"></a>查看训练数据和预测数据分布</h1><ul><li>对数据进行预测并画出柱形图对比分布，如下图</li><li>大体可以看出分布是相同的</li></ul><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/train分布.png" alt="训练数据分布" title="">                </div>                <div class="image-caption">训练数据分布</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/predict分布.png" alt="预测数据分布" title="">                </div>                <div class="image-caption">预测数据分布</div>            </figure><h1 id="提高"><a href="#提高" class="headerlink" title="提高"></a>提高</h1><ul><li>训练的数据有一定的规律，下一步考虑使用一定的规则来优化模型</li></ul>]]></content>
     
@@ -490,32 +513,6 @@
       
       
         &lt;h1 id=&quot;十进制数、二进制数、十六进制数的相互转换&quot;&gt;&lt;a href=&quot;#十进制数、二进制数、十六进制数的相互转换&quot; class=&quot;headerlink&quot; title=&quot;十进制数、二进制数、十六进制数的相互转换&quot;&gt;&lt;/a&gt;十进制数、二进制数、十六进制数的相互转换&lt;/h1&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机组成原理系统概论</title>
-    <link href="http://sunlanchang.github.io/2017/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/"/>
-    <id>http://sunlanchang.github.io/2017/12/14/计算机组成原理系统概论/</id>
-    <published>2017-12-14T10:30:28.000Z</published>
-    <updated>2017-12-22T14:58:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="冯•诺依曼结构计算机的特点"><a href="#冯•诺依曼结构计算机的特点" class="headerlink" title="冯•诺依曼结构计算机的特点"></a>冯•诺依曼结构计算机的特点</h1><ol><li>计算机由运算器、控制器、存储器、输入设备、输出设备组成。</li><li>采用存储程序的方式，程序和数据放在同一个存储器中，并以二进制表示。</li><li>指令由操作码和地址码组成。</li><li>指令在存储器中按执行顺序排放，由指令计数器（即程序计数器PC）指明要执行的指令所在存储单元地址。</li><li>机器以运算器为中心，输入输出设备与存储器之间的数据传送都通过运算器。</li></ol><h1 id="计算机硬件系统的组成"><a href="#计算机硬件系统的组成" class="headerlink" title="计算机硬件系统的组成"></a>计算机硬件系统的组成</h1><p>计算机由运算器、控制器、存储器、输入设备、输出设备组成。  </p><ol><li>运算器是对数据进行处理的运算部件，一般进行算数运算和逻辑运算。</li><li>控制器实现程序的自动执行。</li><li>存储器用来存放程序和数据。</li><li>输入设备用来输入原始数据和处理这些数据的程序。</li><li>输出设备用来输出计算机的处理结果。</li></ol><h1 id="计算机语言：机器语言、汇编语言、高级语言，三种语言的特点"><a href="#计算机语言：机器语言、汇编语言、高级语言，三种语言的特点" class="headerlink" title="计算机语言：机器语言、汇编语言、高级语言，三种语言的特点"></a>计算机语言：机器语言、汇编语言、高级语言，三种语言的特点</h1><ol><li>机器语言是用二进制代码表示的计算机能直接识别和执行的一种机器指令的集合。</li><li>汇编语言是一种用助记符表示的仍然面向机器的计算机语言。</li><li>高级语言是与自然语言相近并为计算机所接受和执行的计算机语言。</li></ol><h1 id="计算机系统的构成：硬件系统和软件系统"><a href="#计算机系统的构成：硬件系统和软件系统" class="headerlink" title="计算机系统的构成：硬件系统和软件系统"></a>计算机系统的构成：硬件系统和软件系统</h1><p><strong>Note</strong></p><ol><li>常用三级时序系统：指令周期-机器周期-时钟周期</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;冯•诺依曼结构计算机的特点&quot;&gt;&lt;a href=&quot;#冯•诺依曼结构计算机的特点&quot; class=&quot;headerlink&quot; title=&quot;冯•诺依曼结构计算机的特点&quot;&gt;&lt;/a&gt;冯•诺依曼结构计算机的特点&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;计算机由运算器、控制器、存储器、输入设备
       
     
     </summary>

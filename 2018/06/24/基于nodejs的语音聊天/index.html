@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?086a5af0b6f644650f444fc827e297f8"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>基于nodejs的语音聊天 | Jason&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="JavaScript实现语音聊天描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tut">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于nodejs的语音聊天">
+<meta property="og:url" content="http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="JavaScript实现语音聊天描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tut">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://sunlanchang.github.io/images/语音聊天.png">
+<meta property="og:image" content="http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/images/架构.svg">
+<meta property="og:image" content="http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/images/流程图.svg">
+<meta property="og:updated_time" content="2018-06-24T07:33:16.165Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于nodejs的语音聊天">
+<meta name="twitter:description" content="JavaScript实现语音聊天描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tut">
+<meta name="twitter:image" content="http://sunlanchang.github.io/images/语音聊天.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/tou.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jason Sun</h5>
+          <a href="mailto:sunlanchang@outlook.com" title="sunlanchang@outlook.com" class="mail">sunlanchang@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/sunlanchang" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.csdn.net/sunlanchang"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">基于nodejs的语音聊天</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">基于nodejs的语音聊天</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-24T07:30:44.000Z" itemprop="datePublished" class="page-time">
+  2018-06-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript实现语音聊天"><span class="post-toc-number">1.</span> <span class="post-toc-text">JavaScript实现语音聊天</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结构图和流程图"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">结构图和流程图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文本通信"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文本通信</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语音通信"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">语音通信</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#服务器转发数据"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">服务器转发数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建https证书"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">创建https证书</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-基于nodejs的语音聊天"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">基于nodejs的语音聊天</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-24 15:30:44" datetime="2018-06-24T07:30:44.000Z"  itemprop="datePublished">2018-06-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <div align="center"><br>  <img src="/images/语音聊天.png"><br></div>
+
+<h1 id="JavaScript实现语音聊天"><a href="#JavaScript实现语音聊天" class="headerlink" title="JavaScript实现语音聊天"></a>JavaScript实现语音聊天</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>程序在 <a href="https://github.com/iamshaunjp/websockets-playlist/tree/lesson-5" target="_blank" rel="external">iamshaunjp</a> 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：<a href="https://biptedu.cn:4000/" target="_blank" rel="external">https://biptedu.cn:4000/</a></p>
+<p><strong>使用的nodejs模块</strong></p>
+<ul>
+<li><code>express</code>：创建一个web服务器</li>
+<li><code>https</code>：创建https连接（局域网或者外网webRTC需要https连接，具体见<a href="https://www.html5rocks.com/en/tutorials/webrtc/basics/" target="_blank" rel="external">tutoril</a>）</li>
+<li><code>socket.io</code>：客户端与服务端实时通信</li>
+</ul>
+<p><strong>js文件</strong></p>
+<ul>
+<li><code>chat.js</code>：实现按钮事件的注册、文本数据的发送等</li>
+<li><code>record.js</code>：实现语音消息的录取、播放、发送等</li>
+</ul>
+<h2 id="结构图和流程图"><a href="#结构图和流程图" class="headerlink" title="结构图和流程图"></a>结构图和流程图</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="images/架构.svg" alt="架构图" title="">
+                </div>
+                <div class="image-caption">架构图</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="images/流程图.svg" alt="流程图" title="">
+                </div>
+                <div class="image-caption">流程图</div>
+            </figure>
+<h2 id="文本通信"><a href="#文本通信" class="headerlink" title="文本通信"></a>文本通信</h2><p><strong>详情见<code>public/js/chat.js</code>注释</strong></p>
+<p><strong>发送数据</strong></p>
+<ul>
+<li>进入页面进行与服务器的<code>socket</code>连接</li>
+<li>客户端输入文本数据</li>
+<li>客户点击<code>sent</code>按钮，触发<code>click</code>事件，并产生<code>chat</code>事件准备想服务器<code>emit</code></li>
+<li><code>soket</code>连接发送给服务器chat事件和客户端产生的数据</li>
+</ul>
+<p><strong>接收数据</strong></p>
+<ul>
+<li><code>socket</code>接受到服务器发送来的data和服务器发送来的chat事件</li>
+<li>提取data文本</li>
+<li>js在<code>index.html</code>添加文本数据，完成接收数据并显示</li>
+</ul>
+<h2 id="语音通信"><a href="#语音通信" class="headerlink" title="语音通信"></a>语音通信</h2><p><strong>详情见<code>public/js/record.js</code>注释</strong></p>
+<ul>
+<li>接受和发送语音数据类似与文本数据的通信</li>
+<li>利用<code>webRTC</code>获取到用户的视频或者音频转换为<code>blob</code>格式数据，并发送给服务器数据。</li>
+<li>接受消息时，数据类型是<code>blob</code>格式，对<code>blob</code>数据解析，利用html5的audio标签进行播放</li>
+</ul>
+<h2 id="服务器转发数据"><a href="#服务器转发数据" class="headerlink" title="服务器转发数据"></a>服务器转发数据</h2><p>客户端发送给服务器数据，服务器触发<code>chat</code>事件，将客户端发送来的数据以广播的形式发送到每一个客户端，完成群聊的功能。</p>
+<h2 id="创建https证书"><a href="#创建https证书" class="headerlink" title="创建https证书"></a>创建https证书</h2><p>在localhost中使用webRTC不需要使用https，但是在局域网或者外网使用webRTC，必须强制使用webRTC，这里采用自己生成证书供测试使用，具体生成方法和设置https方法<a href="http://blog.mgechev.com/2014/02/19/create-https-tls-ssl-application-with-express-nodejs/" target="_blank" rel="external">参考博客</a>：</p>
+<ul>
+<li><p>生成自己签名的证书（有效期365天）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用https连接的express，例子如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>),</div><div class="line">  https = <span class="built_in">require</span>(<span class="string">'https'</span>),</div><div class="line">  express = <span class="built_in">require</span>(<span class="string">'express'</span>),</div><div class="line">  app = express();</div><div class="line"></div><div class="line">  https.createServer(&#123;</div><div class="line">    key: fs.readFileSync(<span class="string">'key.pem'</span>),</div><div class="line">    cert: fs.readFileSync(<span class="string">'cert.pem'</span>)</div><div class="line">  &#125;, app).listen(<span class="number">55555</span>);</div><div class="line"></div><div class="line">  app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">    res.header(<span class="string">'Content-type'</span>, <span class="string">'text/html'</span>);</div><div class="line">    <span class="keyword">return</span> res.end(<span class="string">'&lt;h1&gt;Hello, Secure World!&lt;/h1&gt;'</span>);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-06-24T07:33:16.165Z" itemprop="dateUpdated">2018-06-24 15:33:16</time>
+</span><br>
+
+
+        
+        这里可以给我留言。
+        
+    </div>
+    <footer>
+        <a href="http://sunlanchang.github.io">
+            <img src="/img/tou.jpg" alt="Jason Sun">
+            Jason Sun
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/&title=《基于nodejs的语音聊天》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/&title=《基于nodejs的语音聊天》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于nodejs的语音聊天》 — Jason's Blog&url=http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/06/24/2018全国高校大数据应用创新大赛/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">2018全国高校大数据应用创新大赛</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'sunlanchang',
+            repo: 'myGitment',
+            oauth: {
+                client_id: '6013556da1745c4a2fa8',
+                client_secret: '4394e96a00fdb11529f27a88acff6ff091aaaeaa',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jason Sun &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17053348号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/&title=《基于nodejs的语音聊天》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/&title=《基于nodejs的语音聊天》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于nodejs的语音聊天》 — Jason's Blog&url=http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACv0lEQVR42u3awW4iMRAEUP7/p1kpp12RgSrbDaz05oQmkfGbSNOdct9u8XX/uR7v/H3//nBd/Way/vM1D194eHh4S1u/uh6/Pt96u0L+CJI94+Hh4U3z8s3lr/vnJSTZQ77C5X08PDy8j/LaTeStc97E4+Hh4f1fvDXY1U+ThjhpyvHw8PA+xUvCiLXYYv/335S14OHh4cW8tsH9hs+D53t4eHh4G6fqeTHYDybuAxceHh7eBK89yloDtKFDHmFEBQMPDw9vgHe1lbbZ3R/SasPlAoyHh4d3iHf2mL8tMO1QV/KYfmmm8fDw8AZ4bbObjwu0r/7k+K0oNnh4eHjDvPx+zshHEHZGB6LCgIeHhzfAa2PTpGC0hadd+UWDjoeHhzfAywPTtkVO4omkALSHXpejA3h4eHhv5CVNbTs+lQcTB0IQPDw8vKO8NrpNykb7im9DjTywwMPDw/sUL2+skyOrOkooH+s/6+Ph4eGN8do4dW2gKi8YebNexBB4eHh4w7w8Zt0f22qHDPDw8PC+k5dHpW1cmz++tdj3QEuNh4eHl84sbTW1O+FsHvJujW3h4eHhHeW1B/xta7vWcLfHZpffgoeHh3eUlxeAtsFtI4Z8neQB4eHh4U3zkldwHhPkh15tSJHXOjw8PLw5XhuMbh1HLRWSPMiIshY8PDy8o7ydQLYdvWpf/clPox3i4eHhHeLlo1ftwf9+sLs2joCHh4f3Ht5axJC8rNtm/VQpwsPDw5vgrcUNa1tpy8/ayNeL0QE8PDy8bd5OrNAGrGuHZHn0sFVU8PDw8Epe2+Cufc6PytrBhRcr4OHh4Y3x8mKQ43cKSVu78PDw8L6f93wr+aDAWr+flAc8PDy8b+C1pWLt/tmyhIeHhzfHO3XolR90tYMIWwk0Hh4e3lFe+69++4CS6DYPdvM/AB4eHt4A7w9d+A0BDO276QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'false';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Jason's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
