@@ -25,20 +25,20 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tutoril） socket.io">
+    <meta name="description" content="描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。  demo：https://biptedu.cn:4000/ source code: https://github.com/sunlanchang/voice_chat  使用的nodejs模块  express：创建一个web服务器 ht">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于nodejs的语音聊天">
 <meta property="og:url" content="http://sunlanchang.github.io/2018/06/24/基于nodejs的语音聊天/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tutoril） socket.io">
+<meta property="og:description" content="描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。  demo：https://biptedu.cn:4000/ source code: https://github.com/sunlanchang/voice_chat  使用的nodejs模块  express：创建一个web服务器 ht">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://sunlanchang.github.io/images/语音聊天.png">
 <meta property="og:image" content="http://sunlanchang.github.io/images/架构.png">
 <meta property="og:image" content="http://sunlanchang.github.io/images/语音聊天流程图.png">
-<meta property="og:updated_time" content="2018-06-24T07:54:15.535Z">
+<meta property="og:updated_time" content="2018-06-24T07:57:17.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于nodejs的语音聊天">
-<meta name="twitter:description" content="描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：https://biptedu.cn:4000/ 使用的nodejs模块  express：创建一个web服务器 https：创建https连接（局域网或者外网webRTC需要https连接，具体见tutoril） socket.io">
+<meta name="twitter:description" content="描述程序在 iamshaunjp 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。  demo：https://biptedu.cn:4000/ source code: https://github.com/sunlanchang/voice_chat  使用的nodejs模块  express：创建一个web服务器 ht">
 <meta name="twitter:image" content="http://sunlanchang.github.io/images/语音聊天.png">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
@@ -133,7 +133,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -198,7 +198,11 @@
             <div align="center"><br>  <img src="/images/语音聊天.png"><br></div>
 
 
-<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>程序在 <a href="https://github.com/iamshaunjp/websockets-playlist/tree/lesson-5" target="_blank" rel="external">iamshaunjp</a> 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。demo：<a href="https://biptedu.cn:4000/" target="_blank" rel="external">https://biptedu.cn:4000/</a></p>
+<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>程序在 <a href="https://github.com/iamshaunjp/websockets-playlist/tree/lesson-5" target="_blank" rel="external">iamshaunjp</a> 的群聊功能基础上利用webRTC技术，添加了语音群聊功能，在其他人键盘输入时，会出现类似微信的对方正在输入字样。</p>
+<ul>
+<li>demo：<a href="https://biptedu.cn:4000/" target="_blank" rel="external">https://biptedu.cn:4000/</a></li>
+<li>source code: <a href="https://github.com/sunlanchang/voice_chat" target="_blank" rel="external">https://github.com/sunlanchang/voice_chat</a></li>
+</ul>
 <p><strong>使用的nodejs模块</strong></p>
 <ul>
 <li><code>express</code>：创建一个web服务器</li>
@@ -260,7 +264,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-06-24T07:54:15.535Z" itemprop="dateUpdated">2018-06-24 15:54:15</time>
+    最後更新時間：<time datetime="2018-06-24T07:57:17.266Z" itemprop="dateUpdated">2018-06-24 15:57:17</time>
 </span><br>
 
 
@@ -401,7 +405,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
         </p>
     </div>
     <div class="bottom">
