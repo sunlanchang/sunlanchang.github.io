@@ -25,19 +25,19 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="Git              常用命令基本命令 设置用户名git config --global user.name &amp;quot;Your Name&amp;quot; 设置邮箱git config --global">
+    <meta name="description" content="Git              基本命令 设置用户名git config --global user.name &amp;quot;Your Name&amp;quot; 设置邮箱git config --global user">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git总结">
 <meta property="og:url" content="http://sunlanchang.github.io/2018/07/02/Git总结/index.html">
 <meta property="og:site_name" content="Jason&#39;s Blog">
-<meta property="og:description" content="Git              常用命令基本命令 设置用户名git config --global user.name &amp;quot;Your Name&amp;quot; 设置邮箱git config --global">
+<meta property="og:description" content="Git              基本命令 设置用户名git config --global user.name &amp;quot;Your Name&amp;quot; 设置邮箱git config --global user">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://sunlanchang.github.io/images/2018_07_02_git_stage.jpeg">
 <meta property="og:image" content="http://sunlanchang.github.io/images/2018_07_02_git_branch.png">
-<meta property="og:updated_time" content="2018-07-02T03:36:18.968Z">
+<meta property="og:updated_time" content="2018-07-02T03:36:58.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git总结">
-<meta name="twitter:description" content="Git              常用命令基本命令 设置用户名git config --global user.name &amp;quot;Your Name&amp;quot; 设置邮箱git config --global">
+<meta name="twitter:description" content="Git              基本命令 设置用户名git config --global user.name &amp;quot;Your Name&amp;quot; 设置邮箱git config --global user">
 <meta name="twitter:image" content="http://sunlanchang.github.io/images/2018_07_02_git_stage.jpeg">
     
         <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
@@ -171,7 +171,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">常用命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">基本命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#版本回退"><span class="post-toc-number">3.</span> <span class="post-toc-text">版本回退</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#撤销修改"><span class="post-toc-number">4.</span> <span class="post-toc-text">撤销修改</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分支管理"><span class="post-toc-number">5.</span> <span class="post-toc-text">分支管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建与合并分支"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">创建与合并分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决冲突"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">解决冲突</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多人协作"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">多人协作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">其他</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#版本回退"><span class="post-toc-number">2.</span> <span class="post-toc-text">版本回退</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#撤销修改"><span class="post-toc-number">3.</span> <span class="post-toc-text">撤销修改</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分支管理"><span class="post-toc-number">4.</span> <span class="post-toc-text">分支管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建与合并分支"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">创建与合并分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决冲突"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">解决冲突</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多人协作"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">多人协作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">其他</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -201,7 +201,7 @@
                 </div>
                 <div class="image-caption">Git</div>
             </figure>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ul>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ul>
 <li>设置用户名<code>git config --global user.name &quot;Your Name&quot;</code></li>
 <li>设置邮箱<code>git config --global user.email &quot;email@example.com&quot;</code></li>
 <li>创建仓库 <code>git init</code></li>
@@ -261,7 +261,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-07-02T03:36:18.968Z" itemprop="dateUpdated">2018-07-02 11:36:18</time>
+    最后更新时间：<time datetime="2018-07-02T03:36:58.884Z" itemprop="dateUpdated">2018-07-02 11:36:58</time>
 </span><br>
 
 
