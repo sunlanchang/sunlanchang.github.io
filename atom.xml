@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2018-06-24T07:57:17.266Z</updated>
+  <updated>2018-07-02T03:29:50.637Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git总结</title>
+    <link href="http://sunlanchang.github.io/2018/07/02/Git%E6%80%BB%E7%BB%93/"/>
+    <id>http://sunlanchang.github.io/2018/07/02/Git总结/</id>
+    <published>2018-07-02T02:01:38.000Z</published>
+    <updated>2018-07-02T03:29:50.637Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/2018_07_02_git_stage.jpeg" alt="Git" title="">                </div>                <div class="image-caption">Git</div>            </figure><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ul><li>创建仓库 <code>git init</code></li><li>添加文件到暂存区 <code>git add $file_name</code></li><li>提交暂存区文件到仓库 <code>git commit -m $some_words</code></li><li>查看commit记录 <code>git log --pretty=oneline</code></li><li>查看Git状态 <code>git status</code></li></ul><h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><ul><li>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard $commit_id</code>。</li><li>要重返未来，用 <code>git reflog</code> 查看命令历史，以便确定要回到未来的哪个版本。</li><li>穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。</li><li>要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</li></ul><h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><ul><li>当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。</li><li>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>，就回到了场景1，第二步按场景1操作。</li></ul><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/2018_07_02_git_branch.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h3 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h3><ul><li>查看分支：<code>git branch</code></li><li>创建分支：<code>git branch &lt;name&gt;</code></li><li>切换分支：<code>git checkout &lt;name&gt;</code></li><li>创建+切换分支：<code>git checkout -b &lt;name&gt;</code></li><li>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></li><li>删除分支：<code>git branch -d &lt;name&gt;</code></li></ul><h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><p>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。<br>解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。</p><p>用git log –graph命令可以看到分支合并图。</p><ul><li>合并分支 <code>git merge &lt;brach_name&gt;</code></li><li>查看冲突文件 <code>git status</code></li><li>编辑文件手工解决冲突</li></ul><h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h3><p>当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin。</p><ul><li>查看远程库信息，使用git remote -v；</li><li>本地新建的分支如果不推送到远程，对其他人就是不可见的；</li><li>从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；</li><li>在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；</li><li>建立本地分支和远程分支的关联，使用git branch –set-upstream branch-name origin/branch-name；</li><li>从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                   
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>基于nodejs的语音聊天</title>
@@ -489,31 +513,6 @@
       
         &lt;h1 id=&quot;RAM和ROM的特性&quot;&gt;&lt;a href=&quot;#RAM和ROM的特性&quot; class=&quot;headerlink&quot; title=&quot;RAM和ROM的特性&quot;&gt;&lt;/a&gt;RAM和ROM的特性&lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;RAM：通过指令可以随机的个别的对各个存储但愿进行访问读写的存储
-      
-    
-    </summary>
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机运算方法和运算部件</title>
-    <link href="http://sunlanchang.github.io/2017/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E9%83%A8%E4%BB%B6/"/>
-    <id>http://sunlanchang.github.io/2017/12/14/计算机运算方法和运算部件/</id>
-    <published>2017-12-14T10:56:44.000Z</published>
-    <updated>2017-12-22T14:58:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="十进制数、二进制数、十六进制数的相互转换"><a href="#十进制数、二进制数、十六进制数的相互转换" class="headerlink" title="十进制数、二进制数、十六进制数的相互转换"></a>十进制数、二进制数、十六进制数的相互转换</h1><ol><li>整数十进制转二进制有模2取余法。</li><li>小数转二进制有乘2取整法。</li><li>二进制转十六进制：二进制从低位到高位四个为一组（高位不够补0），转换为十六进制。反之为十六进制转换二进制。</li><li>十进制转十六进制：第一种先把十六进制转换为二进制，再把二进制转换为十六进制。第二种模16取余法，十六进制即为倒序的余数。</li></ol><h1 id="机器数的表示方法：原码、补码、反码、移码"><a href="#机器数的表示方法：原码、补码、反码、移码" class="headerlink" title="机器数的表示方法：原码、补码、反码、移码"></a>机器数的表示方法：原码、补码、反码、移码</h1><ol><li>原码：用0、1取代符号位。0表示正数，1表示负数。与真值最接近的表示形式。</li><li>补码：机器数的最高位为符号位。0表示正数，1表示负数。正数的补码是本身，负数的补码是取反再加1，0的补码是0。</li><li>反码：符号位不变各位取反。</li><li>移码：符号位取反的补码。用来表示浮点数的阶码。</li></ol><p><strong>Note</strong>  </p><ol><li>0表示形式唯一的是补码和移码</li><li>补码左移补0，右移补1</li></ol><h1 id="补码加减法运算时"><a href="#补码加减法运算时" class="headerlink" title="补码加减法运算时"></a>补码加减法运算时</h1><p>采用双符号位运算，若双符号位为00或者11则不溢出，反之溢出。</p><h1 id="浮点数表示方法"><a href="#浮点数表示方法" class="headerlink" title="浮点数表示方法"></a>浮点数表示方法</h1><p>$$N=MR^E$$<br>| 尾数符号位（Ms） | 阶码（E） | 尾数（M） |<br>| :————–: | :——-: | :——-: |</p><ol><li>Ms为尾数的符号位，设置在最高位。</li><li>E为阶码，一般为整数，其中有一位符号位，设置在E的最高位，用来表示正阶或负阶。</li><li>M为尾数，为了保证数据精度，尾数通常用规格化（尾数最高位不能为0）表示：当R=2且尾数值不为0时，其绝对值应大于或等于$(0.5)_{10}$。对于非规格化的浮点数通过将尾数左移或右移并修改阶码值使之满足规格化要求。</li></ol><h1 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h1><p>奇校验：将机器数凑成奇数个1<br>偶校验：将机器数凑成偶数个</p><p>数据：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span> </div><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> </div><div class="line"><span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></div></pre></td></tr></table></figure></p><p>奇校验<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span> </div><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> </div><div class="line"><span class="number">1</span>  <span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></div></pre></td></tr></table></figure></p><p>偶校验<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">0</span> </div><div class="line"><span class="number">1</span>  <span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> </div><div class="line"><span class="number">0</span>  <span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></div></pre></td></tr></table></figure></p><h1 id="补码一位乘：布斯公式法"><a href="#补码一位乘：布斯公式法" class="headerlink" title="补码一位乘：布斯公式法"></a>补码一位乘：布斯公式法</h1><p><strong>Note：</strong> 乘数最后一位补0。</p><ol><li>$Y_{i+1}-Y<em>i=0(Y</em>{i+1}Y_i=00$或$11)$，部分积加1,右移一位。</li><li>$Y_{i+1}-Y<em>i=1(Y</em>{i+1}Y_i=10)$，部分积加[X]的补码，右移一位。</li><li>$Y_{i+1}-Y<em>i=1(Y</em>{i+1}Y_i=01)$，部分积加[-X]的补码，右移一位。</li><li>最后一步$(i=n+1)$不移位。  </li></ol><p>累加n+1次（n为X和Y的小数位数），右移n次。</p><h1 id="原码一位除：加减交替法"><a href="#原码一位除：加减交替法" class="headerlink" title="原码一位除：加减交替法"></a>原码一位除：加减交替法</h1><p>定点除法运算有 <strong>恢复余数法</strong> 和 <strong>加减交替法</strong> ，在计算机中最常使用的是加减交替法，因为它的操作步数少，而且也不复杂。</p><ol><li>当求得的余数为负时，加上除数。</li><li>当求得的余数为正时，减去除数。</li><li>对定点小数除法要保证除数和被除数的绝对值小于1。</li><li>商的符号为两数字符号的异或。</li></ol><h1 id="浮点数的加减运算（分五个步骤）"><a href="#浮点数的加减运算（分五个步骤）" class="headerlink" title="浮点数的加减运算（分五个步骤）"></a>浮点数的加减运算（分五个步骤）</h1><ol><li>对阶</li><li>尾数加减</li><li>规格化</li><li>舍入</li><li>判溢出</li><li>得到结果</li></ol><h1 id="定点原码数、定点补码数的表示范围"><a href="#定点原码数、定点补码数的表示范围" class="headerlink" title="定点原码数、定点补码数的表示范围"></a>定点原码数、定点补码数的表示范围</h1><p>机器字长8位包含一位符号位<br>定点原码表示范围为$[-2^{7}+1, 2^7-1]$<br>定点补码表示范围为$[]$</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;十进制数、二进制数、十六进制数的相互转换&quot;&gt;&lt;a href=&quot;#十进制数、二进制数、十六进制数的相互转换&quot; class=&quot;headerlink&quot; title=&quot;十进制数、二进制数、十六进制数的相互转换&quot;&gt;&lt;/a&gt;十进制数、二进制数、十六进制数的相互转换&lt;/h1&gt;&lt;
       
     
     </summary>
