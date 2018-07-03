@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2018-07-02T08:39:00.294Z</updated>
+  <updated>2018-07-03T02:24:18.069Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>北京邮电大学--数据结构考试大纲</title>
+    <link href="http://sunlanchang.github.io/2018/07/03/%E5%8C%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/"/>
+    <id>http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/</id>
+    <published>2018-07-03T02:15:33.000Z</published>
+    <updated>2018-07-03T02:24:18.069Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>考查目标</strong></p><ol><li>掌握数据结构的基本概念、基本原理和基本方法。</li><li>掌握数据的逻辑结构、存储结构及基本操作的实现，能够对算法进行基本的时间复杂度与空间复杂度的分析。</li><li>能够运用数据结构基本原理和方法进行问题的分析与求解，具备采用C或C++语言设计与实现算法的能力。</li></ol><h1 id="一、线性表"><a href="#一、线性表" class="headerlink" title="一、线性表"></a>一、线性表</h1><h2 id="（一）线性表的定义和基本操作"><a href="#（一）线性表的定义和基本操作" class="headerlink" title="（一）线性表的定义和基本操作"></a>（一）线性表的定义和基本操作</h2><h2 id="（二）线性表的实现"><a href="#（二）线性表的实现" class="headerlink" title="（二）线性表的实现"></a>（二）线性表的实现</h2><ol><li>顺序存储　　</li><li>链式存储　　</li><li>线性表的应用</li></ol><h1 id="二、栈、队列和数组"><a href="#二、栈、队列和数组" class="headerlink" title="二、栈、队列和数组"></a>二、栈、队列和数组</h1><h2 id="（一）栈和队列的基本概念"><a href="#（一）栈和队列的基本概念" class="headerlink" title="（一）栈和队列的基本概念　　"></a>（一）栈和队列的基本概念　　</h2><h2 id="（二）栈和队列的顺序存储结构"><a href="#（二）栈和队列的顺序存储结构" class="headerlink" title="（二）栈和队列的顺序存储结构　　"></a>（二）栈和队列的顺序存储结构　　</h2><h2 id="（三）栈和队列的链式存储结构"><a href="#（三）栈和队列的链式存储结构" class="headerlink" title="（三）栈和队列的链式存储结构"></a>（三）栈和队列的链式存储结构</h2><h2 id="（四）栈和队列的应用"><a href="#（四）栈和队列的应用" class="headerlink" title="（四）栈和队列的应用"></a>（四）栈和队列的应用</h2><h2 id="（五）特殊矩阵的压缩存储"><a href="#（五）特殊矩阵的压缩存储" class="headerlink" title="（五）特殊矩阵的压缩存储"></a>（五）特殊矩阵的压缩存储</h2><h1 id="三、树与二叉树"><a href="#三、树与二叉树" class="headerlink" title="三、树与二叉树"></a>三、树与二叉树</h1><h2 id="（一）树的基本概念"><a href="#（一）树的基本概念" class="headerlink" title="（一）树的基本概念"></a>（一）树的基本概念</h2><h2 id="（二）二叉树"><a href="#（二）二叉树" class="headerlink" title="（二）二叉树"></a>（二）二叉树</h2><ol><li>二叉树的定义及其主要特征　　</li><li>二叉树的顺序存储结构和链式存储结构　　</li><li>二叉树的遍历</li><li>线索二叉树的基本概念和构造</li></ol><h2 id="（三）树、森林"><a href="#（三）树、森林" class="headerlink" title="（三）树、森林"></a>（三）树、森林</h2><ol><li>树的存储结构　　</li><li>森林与二叉树的转换　　</li><li>树和森林的遍历</li></ol><h2 id="（四）树与二叉树的应用"><a href="#（四）树与二叉树的应用" class="headerlink" title="（四）树与二叉树的应用"></a>（四）树与二叉树的应用</h2><ol><li>二叉排序树</li><li>平衡二叉树</li><li>哈夫曼(Huffman)树和哈夫曼编码</li></ol><p>#　四、图</p><h2 id="（一）图的基本概念"><a href="#（一）图的基本概念" class="headerlink" title="（一）图的基本概念"></a>（一）图的基本概念</h2><h2 id="（二）图的存储及基本操作"><a href="#（二）图的存储及基本操作" class="headerlink" title="（二）图的存储及基本操作"></a>（二）图的存储及基本操作</h2><ol><li>邻接矩阵法</li><li>邻接表法　　</li><li>邻接多重表、十字链表</li></ol><h2 id="（三）图的遍历"><a href="#（三）图的遍历" class="headerlink" title="（三）图的遍历"></a>（三）图的遍历</h2><ol><li>深度优先搜索</li><li>广度优先搜索</li></ol><h2 id="（四）图的基本应用"><a href="#（四）图的基本应用" class="headerlink" title="（四）图的基本应用"></a>（四）图的基本应用</h2><ol><li>最小（代价）生成树　　</li><li>最短路径　　</li><li>拓扑排序　　</li><li>关键路径</li></ol><h1 id="五、查找"><a href="#五、查找" class="headerlink" title="五、查找"></a>五、查找</h1><h2 id="（一）查找的基本概念"><a href="#（一）查找的基本概念" class="headerlink" title="（一）查找的基本概念　　"></a>（一）查找的基本概念　　</h2><h2 id="（二）顺序查找法"><a href="#（二）顺序查找法" class="headerlink" title="（二）顺序查找法　　"></a>（二）顺序查找法　　</h2><h2 id="（三）分块查找法"><a href="#（三）分块查找法" class="headerlink" title="（三）分块查找法"></a>（三）分块查找法</h2><h2 id="（四）折半查找法"><a href="#（四）折半查找法" class="headerlink" title="（四）折半查找法　　"></a>（四）折半查找法　　</h2><h2 id="（五）B树及其基本操作、B-树的基本概念"><a href="#（五）B树及其基本操作、B-树的基本概念" class="headerlink" title="（五）B树及其基本操作、B+树的基本概念"></a>（五）B树及其基本操作、B+树的基本概念</h2><h2 id="（六）散列-Hash-表"><a href="#（六）散列-Hash-表" class="headerlink" title="（六）散列(Hash)表　　"></a>（六）散列(Hash)表　　</h2><h2 id="（七）字符串模式匹配"><a href="#（七）字符串模式匹配" class="headerlink" title="（七）字符串模式匹配　　"></a>（七）字符串模式匹配　　</h2><h2 id="（八）查找算法的分析及应用"><a href="#（八）查找算法的分析及应用" class="headerlink" title="（八）查找算法的分析及应用"></a>（八）查找算法的分析及应用</h2><h1 id="六、排序"><a href="#六、排序" class="headerlink" title="六、排序"></a>六、排序</h1><h2 id="（一）排序的基本概念"><a href="#（一）排序的基本概念" class="headerlink" title="（一）排序的基本概念"></a>（一）排序的基本概念</h2><h2 id="（二）插入排序"><a href="#（二）插入排序" class="headerlink" title="（二）插入排序"></a>（二）插入排序</h2><ol><li>直接插入排序　　</li><li>折半插入排序</li></ol><h2 id="（三）气泡排序-bubble-sort"><a href="#（三）气泡排序-bubble-sort" class="headerlink" title="（三）气泡排序(bubble sort)　　"></a>（三）气泡排序(bubble sort)　　</h2><h2 id="（四）简单选择排序"><a href="#（四）简单选择排序" class="headerlink" title="（四）简单选择排序"></a>（四）简单选择排序</h2><h2 id="（五）希尔排序-shell-sort"><a href="#（五）希尔排序-shell-sort" class="headerlink" title="（五）希尔排序(shell sort)　　"></a>（五）希尔排序(shell sort)　　</h2><h2 id="（六）快速排序"><a href="#（六）快速排序" class="headerlink" title="（六）快速排序"></a>（六）快速排序</h2><h2 id="（七）堆排序"><a href="#（七）堆排序" class="headerlink" title="（七）堆排序　　"></a>（七）堆排序　　</h2><h2 id="（八）二路归并排序-merge-sort"><a href="#（八）二路归并排序-merge-sort" class="headerlink" title="（八）二路归并排序(merge sort)"></a>（八）二路归并排序(merge sort)</h2><h2 id="（九）基数排序"><a href="#（九）基数排序" class="headerlink" title="（九）基数排序　　"></a>（九）基数排序　　</h2><h2 id="（十）外部排序"><a href="#（十）外部排序" class="headerlink" title="（十）外部排序"></a>（十）外部排序</h2><h2 id="（十一）各种内部排序算法的比较"><a href="#（十一）各种内部排序算法的比较" class="headerlink" title="（十一）各种内部排序算法的比较　　"></a>（十一）各种内部排序算法的比较　　</h2><h2 id="（十二）排序算法的应用"><a href="#（十二）排序算法的应用" class="headerlink" title="（十二）排序算法的应用"></a>（十二）排序算法的应用</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;考查目标&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;掌握数据结构的基本概念、基本原理和基本方法。&lt;/li&gt;
+&lt;li&gt;掌握数据的逻辑结构、存储结构及基本操作的实现，能够对算法进行基本的时间复杂度与空间复杂度的分析。&lt;/li&gt;
+&lt;li&gt;能够运用数据结构基本原理
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>pandas常用代码</title>
     <link href="http://sunlanchang.github.io/2018/07/02/pandas%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81/"/>
     <id>http://sunlanchang.github.io/2018/07/02/pandas常用代码/</id>
     <published>2018-07-02T08:18:32.000Z</published>
-    <updated>2018-07-02T08:39:00.294Z</updated>
+    <updated>2018-07-03T02:14:45.625Z</updated>
     
     <content type="html"><![CDATA[<h1 id="dataframe-选取某几列"><a href="#dataframe-选取某几列" class="headerlink" title="dataframe 选取某几列"></a>dataframe 选取某几列</h1><p>import pandas as pd<br>df = pd.DataFrame({‘a’:[3,2,4,5,6],’b’:range(5,10)})<br>df[[‘a’]]</p><h1 id="取df的feature和label"><a href="#取df的feature和label" class="headerlink" title="取df的feature和label"></a>取df的feature和label</h1><p>df[df.columns[:-1]]</p><h1 id="注意取一列默认为series"><a href="#注意取一列默认为series" class="headerlink" title="注意取一列默认为series"></a>注意取一列默认为series</h1><p>df[df.columns[-1]]</p><h1 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h1><p>df_user.sexes.value_counts()</p><h1 id="dataframe-to-excel"><a href="#dataframe-to-excel" class="headerlink" title="dataframe to excel"></a>dataframe to excel</h1><p>df_user.to_excel(‘user.xls’,columns=[‘names’,’sexes’,’cities’,’signatures’,’remark_names’], index=False)<br>df_user = pd.DataFrame.from_dict(user_data)</p>]]></content>
     
@@ -482,32 +507,6 @@
       
       
         &lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;程序计数器PC&lt;/strong&gt;&lt;br&gt;即指令地址寄存器。用来存放当前正在执行的指令地址，或将要执行的下一条
-      
-    
-    </summary>
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>指令系统</title>
-    <link href="http://sunlanchang.github.io/2017/12/14/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://sunlanchang.github.io/2017/12/14/指令系统/</id>
-    <published>2017-12-14T12:03:39.000Z</published>
-    <updated>2017-12-27T04:40:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="指令操作码、地址码的设计方法"><a href="#指令操作码、地址码的设计方法" class="headerlink" title="指令操作码、地址码的设计方法"></a>指令操作码、地址码的设计方法</h1><p>略</p><h1 id="常用的寻址方式及其特点"><a href="#常用的寻址方式及其特点" class="headerlink" title="常用的寻址方式及其特点"></a>常用的寻址方式及其特点</h1><p>直接寻址、寄存器寻址、基址寻址、变址寻址、间接寻址（寄存器间址、存储器间址）、相对寻址、立即数寻址。<br>参考：<a href="https://sunlanchang.github.io/2017/11/21/%E5%9B%BE%E8%A7%A3%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/">图解寻址方式</a></p><h1 id="基本概念：堆栈、标志位、指令字长"><a href="#基本概念：堆栈、标志位、指令字长" class="headerlink" title="基本概念：堆栈、标志位、指令字长"></a>基本概念：堆栈、标志位、指令字长</h1><ol><li>标志位：C（产生进位或借位）、V（结果溢出）、Z（结果为0）、N（结果为负）</li><li>指令字长分为单字长指令和双字长指令。 </li></ol><h1 id="执行一条指令的过程"><a href="#执行一条指令的过程" class="headerlink" title="执行一条指令的过程"></a>执行一条指令的过程</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/shujutonglu.png" alt="CPU与主存连接示意图" title="">                </div>                <div class="image-caption">CPU与主存连接示意图</div>            </figure><ol><li><strong>取指令</strong> ：PC -&gt; MAR -&gt; M -&gt; IR -&gt; 微操作信号发生器</li><li><strong>执行指令</strong> ：IR -&gt; MAR -&gt; M -&gt; MDR ….（后续执行过程依照不同指令而不同）</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;指令操作码、地址码的设计方法&quot;&gt;&lt;a href=&quot;#指令操作码、地址码的设计方法&quot; class=&quot;headerlink&quot; title=&quot;指令操作码、地址码的设计方法&quot;&gt;&lt;/a&gt;指令操作码、地址码的设计方法&lt;/h1&gt;&lt;p&gt;略&lt;/p&gt;
-&lt;h1 id=&quot;常用的寻址方式及
       
     
     </summary>

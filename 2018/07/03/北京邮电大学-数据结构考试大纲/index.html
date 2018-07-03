@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?086a5af0b6f644650f444fc827e297f8"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>北京邮电大学--数据结构考试大纲 | Jason&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="考查目标  掌握数据结构的基本概念、基本原理和基本方法。 掌握数据的逻辑结构、存储结构及基本操作的实现，能够对算法进行基本的时间复杂度与空间复杂度的分析。 能够运用数据结构基本原理和方法进行问题的分析与求解，具备采用C或C++语言设计与实现算法的能力。  一、线性表（一）线性表的定义和基本操作（二）线性表的实现 顺序存储　　 链式存储　　 线性表的应用  二、栈、队列和数组（一）栈和队列的基本概念">
+<meta property="og:type" content="article">
+<meta property="og:title" content="北京邮电大学--数据结构考试大纲">
+<meta property="og:url" content="http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="考查目标  掌握数据结构的基本概念、基本原理和基本方法。 掌握数据的逻辑结构、存储结构及基本操作的实现，能够对算法进行基本的时间复杂度与空间复杂度的分析。 能够运用数据结构基本原理和方法进行问题的分析与求解，具备采用C或C++语言设计与实现算法的能力。  一、线性表（一）线性表的定义和基本操作（二）线性表的实现 顺序存储　　 链式存储　　 线性表的应用  二、栈、队列和数组（一）栈和队列的基本概念">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-03T02:24:18.069Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="北京邮电大学--数据结构考试大纲">
+<meta name="twitter:description" content="考查目标  掌握数据结构的基本概念、基本原理和基本方法。 掌握数据的逻辑结构、存储结构及基本操作的实现，能够对算法进行基本的时间复杂度与空间复杂度的分析。 能够运用数据结构基本原理和方法进行问题的分析与求解，具备采用C或C++语言设计与实现算法的能力。  一、线性表（一）线性表的定义和基本操作（二）线性表的实现 顺序存储　　 链式存储　　 线性表的应用  二、栈、队列和数组（一）栈和队列的基本概念">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/tou.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jason Sun</h5>
+          <a href="mailto:sunlanchang@outlook.com" title="sunlanchang@outlook.com" class="mail">sunlanchang@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/sunlanchang" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.csdn.net/sunlanchang"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">北京邮电大学--数据结构考试大纲</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">北京邮电大学--数据结构考试大纲</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-03T02:15:33.000Z" itemprop="datePublished" class="page-time">
+  2018-07-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、线性表"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、线性表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（一）线性表的定义和基本操作"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">（一）线性表的定义和基本操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（二）线性表的实现"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">（二）线性表的实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、栈、队列和数组"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、栈、队列和数组</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（一）栈和队列的基本概念"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">（一）栈和队列的基本概念　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（二）栈和队列的顺序存储结构"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">（二）栈和队列的顺序存储结构　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（三）栈和队列的链式存储结构"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">（三）栈和队列的链式存储结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（四）栈和队列的应用"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">（四）栈和队列的应用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（五）特殊矩阵的压缩存储"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">（五）特殊矩阵的压缩存储</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、树与二叉树"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、树与二叉树</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（一）树的基本概念"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">（一）树的基本概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（二）二叉树"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">（二）二叉树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（三）树、森林"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">（三）树、森林</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（四）树与二叉树的应用"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">（四）树与二叉树的应用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（一）图的基本概念"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">（一）图的基本概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（二）图的存储及基本操作"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">（二）图的存储及基本操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（三）图的遍历"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">（三）图的遍历</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（四）图的基本应用"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">（四）图的基本应用</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#五、查找"><span class="post-toc-number">4.</span> <span class="post-toc-text">五、查找</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（一）查找的基本概念"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">（一）查找的基本概念　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（二）顺序查找法"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">（二）顺序查找法　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（三）分块查找法"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">（三）分块查找法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（四）折半查找法"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">（四）折半查找法　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（五）B树及其基本操作、B-树的基本概念"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">（五）B树及其基本操作、B+树的基本概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（六）散列-Hash-表"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">（六）散列(Hash)表　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（七）字符串模式匹配"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">（七）字符串模式匹配　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（八）查找算法的分析及应用"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">（八）查找算法的分析及应用</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#六、排序"><span class="post-toc-number">5.</span> <span class="post-toc-text">六、排序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（一）排序的基本概念"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">（一）排序的基本概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（二）插入排序"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">（二）插入排序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（三）气泡排序-bubble-sort"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">（三）气泡排序(bubble sort)　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（四）简单选择排序"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">（四）简单选择排序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（五）希尔排序-shell-sort"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">（五）希尔排序(shell sort)　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（六）快速排序"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">（六）快速排序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（七）堆排序"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">（七）堆排序　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（八）二路归并排序-merge-sort"><span class="post-toc-number">5.8.</span> <span class="post-toc-text">（八）二路归并排序(merge sort)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（九）基数排序"><span class="post-toc-number">5.9.</span> <span class="post-toc-text">（九）基数排序　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（十）外部排序"><span class="post-toc-number">5.10.</span> <span class="post-toc-text">（十）外部排序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（十一）各种内部排序算法的比较"><span class="post-toc-number">5.11.</span> <span class="post-toc-text">（十一）各种内部排序算法的比较　　</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#（十二）排序算法的应用"><span class="post-toc-number">5.12.</span> <span class="post-toc-text">（十二）排序算法的应用</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-北京邮电大学-数据结构考试大纲"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">北京邮电大学--数据结构考试大纲</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-07-03 10:15:33" datetime="2018-07-03T02:15:33.000Z"  itemprop="datePublished">2018-07-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>考查目标</strong></p>
+<ol>
+<li>掌握数据结构的基本概念、基本原理和基本方法。</li>
+<li>掌握数据的逻辑结构、存储结构及基本操作的实现，能够对算法进行基本的时间复杂度与空间复杂度的分析。</li>
+<li>能够运用数据结构基本原理和方法进行问题的分析与求解，具备采用C或C++语言设计与实现算法的能力。</li>
+</ol>
+<h1 id="一、线性表"><a href="#一、线性表" class="headerlink" title="一、线性表"></a>一、线性表</h1><h2 id="（一）线性表的定义和基本操作"><a href="#（一）线性表的定义和基本操作" class="headerlink" title="（一）线性表的定义和基本操作"></a>（一）线性表的定义和基本操作</h2><h2 id="（二）线性表的实现"><a href="#（二）线性表的实现" class="headerlink" title="（二）线性表的实现"></a>（二）线性表的实现</h2><ol>
+<li>顺序存储　　</li>
+<li>链式存储　　</li>
+<li>线性表的应用</li>
+</ol>
+<h1 id="二、栈、队列和数组"><a href="#二、栈、队列和数组" class="headerlink" title="二、栈、队列和数组"></a>二、栈、队列和数组</h1><h2 id="（一）栈和队列的基本概念"><a href="#（一）栈和队列的基本概念" class="headerlink" title="（一）栈和队列的基本概念　　"></a>（一）栈和队列的基本概念　　</h2><h2 id="（二）栈和队列的顺序存储结构"><a href="#（二）栈和队列的顺序存储结构" class="headerlink" title="（二）栈和队列的顺序存储结构　　"></a>（二）栈和队列的顺序存储结构　　</h2><h2 id="（三）栈和队列的链式存储结构"><a href="#（三）栈和队列的链式存储结构" class="headerlink" title="（三）栈和队列的链式存储结构"></a>（三）栈和队列的链式存储结构</h2><h2 id="（四）栈和队列的应用"><a href="#（四）栈和队列的应用" class="headerlink" title="（四）栈和队列的应用"></a>（四）栈和队列的应用</h2><h2 id="（五）特殊矩阵的压缩存储"><a href="#（五）特殊矩阵的压缩存储" class="headerlink" title="（五）特殊矩阵的压缩存储"></a>（五）特殊矩阵的压缩存储</h2><h1 id="三、树与二叉树"><a href="#三、树与二叉树" class="headerlink" title="三、树与二叉树"></a>三、树与二叉树</h1><h2 id="（一）树的基本概念"><a href="#（一）树的基本概念" class="headerlink" title="（一）树的基本概念"></a>（一）树的基本概念</h2><h2 id="（二）二叉树"><a href="#（二）二叉树" class="headerlink" title="（二）二叉树"></a>（二）二叉树</h2><ol>
+<li>二叉树的定义及其主要特征　　</li>
+<li>二叉树的顺序存储结构和链式存储结构　　</li>
+<li>二叉树的遍历</li>
+<li>线索二叉树的基本概念和构造</li>
+</ol>
+<h2 id="（三）树、森林"><a href="#（三）树、森林" class="headerlink" title="（三）树、森林"></a>（三）树、森林</h2><ol>
+<li>树的存储结构　　</li>
+<li>森林与二叉树的转换　　</li>
+<li>树和森林的遍历</li>
+</ol>
+<h2 id="（四）树与二叉树的应用"><a href="#（四）树与二叉树的应用" class="headerlink" title="（四）树与二叉树的应用"></a>（四）树与二叉树的应用</h2><ol>
+<li>二叉排序树</li>
+<li>平衡二叉树</li>
+<li>哈夫曼(Huffman)树和哈夫曼编码</li>
+</ol>
+<p>#　四、图</p>
+<h2 id="（一）图的基本概念"><a href="#（一）图的基本概念" class="headerlink" title="（一）图的基本概念"></a>（一）图的基本概念</h2><h2 id="（二）图的存储及基本操作"><a href="#（二）图的存储及基本操作" class="headerlink" title="（二）图的存储及基本操作"></a>（二）图的存储及基本操作</h2><ol>
+<li>邻接矩阵法</li>
+<li>邻接表法　　</li>
+<li>邻接多重表、十字链表</li>
+</ol>
+<h2 id="（三）图的遍历"><a href="#（三）图的遍历" class="headerlink" title="（三）图的遍历"></a>（三）图的遍历</h2><ol>
+<li>深度优先搜索</li>
+<li>广度优先搜索</li>
+</ol>
+<h2 id="（四）图的基本应用"><a href="#（四）图的基本应用" class="headerlink" title="（四）图的基本应用"></a>（四）图的基本应用</h2><ol>
+<li>最小（代价）生成树　　</li>
+<li>最短路径　　</li>
+<li>拓扑排序　　</li>
+<li>关键路径</li>
+</ol>
+<h1 id="五、查找"><a href="#五、查找" class="headerlink" title="五、查找"></a>五、查找</h1><h2 id="（一）查找的基本概念"><a href="#（一）查找的基本概念" class="headerlink" title="（一）查找的基本概念　　"></a>（一）查找的基本概念　　</h2><h2 id="（二）顺序查找法"><a href="#（二）顺序查找法" class="headerlink" title="（二）顺序查找法　　"></a>（二）顺序查找法　　</h2><h2 id="（三）分块查找法"><a href="#（三）分块查找法" class="headerlink" title="（三）分块查找法"></a>（三）分块查找法</h2><h2 id="（四）折半查找法"><a href="#（四）折半查找法" class="headerlink" title="（四）折半查找法　　"></a>（四）折半查找法　　</h2><h2 id="（五）B树及其基本操作、B-树的基本概念"><a href="#（五）B树及其基本操作、B-树的基本概念" class="headerlink" title="（五）B树及其基本操作、B+树的基本概念"></a>（五）B树及其基本操作、B+树的基本概念</h2><h2 id="（六）散列-Hash-表"><a href="#（六）散列-Hash-表" class="headerlink" title="（六）散列(Hash)表　　"></a>（六）散列(Hash)表　　</h2><h2 id="（七）字符串模式匹配"><a href="#（七）字符串模式匹配" class="headerlink" title="（七）字符串模式匹配　　"></a>（七）字符串模式匹配　　</h2><h2 id="（八）查找算法的分析及应用"><a href="#（八）查找算法的分析及应用" class="headerlink" title="（八）查找算法的分析及应用"></a>（八）查找算法的分析及应用</h2><h1 id="六、排序"><a href="#六、排序" class="headerlink" title="六、排序"></a>六、排序</h1><h2 id="（一）排序的基本概念"><a href="#（一）排序的基本概念" class="headerlink" title="（一）排序的基本概念"></a>（一）排序的基本概念</h2><h2 id="（二）插入排序"><a href="#（二）插入排序" class="headerlink" title="（二）插入排序"></a>（二）插入排序</h2><ol>
+<li>直接插入排序　　</li>
+<li>折半插入排序</li>
+</ol>
+<h2 id="（三）气泡排序-bubble-sort"><a href="#（三）气泡排序-bubble-sort" class="headerlink" title="（三）气泡排序(bubble sort)　　"></a>（三）气泡排序(bubble sort)　　</h2><h2 id="（四）简单选择排序"><a href="#（四）简单选择排序" class="headerlink" title="（四）简单选择排序"></a>（四）简单选择排序</h2><h2 id="（五）希尔排序-shell-sort"><a href="#（五）希尔排序-shell-sort" class="headerlink" title="（五）希尔排序(shell sort)　　"></a>（五）希尔排序(shell sort)　　</h2><h2 id="（六）快速排序"><a href="#（六）快速排序" class="headerlink" title="（六）快速排序"></a>（六）快速排序</h2><h2 id="（七）堆排序"><a href="#（七）堆排序" class="headerlink" title="（七）堆排序　　"></a>（七）堆排序　　</h2><h2 id="（八）二路归并排序-merge-sort"><a href="#（八）二路归并排序-merge-sort" class="headerlink" title="（八）二路归并排序(merge sort)"></a>（八）二路归并排序(merge sort)</h2><h2 id="（九）基数排序"><a href="#（九）基数排序" class="headerlink" title="（九）基数排序　　"></a>（九）基数排序　　</h2><h2 id="（十）外部排序"><a href="#（十）外部排序" class="headerlink" title="（十）外部排序"></a>（十）外部排序</h2><h2 id="（十一）各种内部排序算法的比较"><a href="#（十一）各种内部排序算法的比较" class="headerlink" title="（十一）各种内部排序算法的比较　　"></a>（十一）各种内部排序算法的比较　　</h2><h2 id="（十二）排序算法的应用"><a href="#（十二）排序算法的应用" class="headerlink" title="（十二）排序算法的应用"></a>（十二）排序算法的应用</h2>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-03T02:24:18.069Z" itemprop="dateUpdated">2018-07-03 10:24:18</time>
+</span><br>
+
+
+        
+        这里可以给我留言。
+        
+    </div>
+    <footer>
+        <a href="http://sunlanchang.github.io">
+            <img src="/img/tou.jpg" alt="Jason Sun">
+            Jason Sun
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/&title=《北京邮电大学--数据结构考试大纲》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/&title=《北京邮电大学--数据结构考试大纲》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《北京邮电大学--数据结构考试大纲》 — Jason's Blog&url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/02/pandas常用代码/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">pandas常用代码</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'sunlanchang',
+            repo: 'myGitment',
+            oauth: {
+                client_id: '6013556da1745c4a2fa8',
+                client_secret: '4394e96a00fdb11529f27a88acff6ff091aaaeaa',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jason Sun &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17053348号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/&title=《北京邮电大学--数据结构考试大纲》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/&title=《北京邮电大学--数据结构考试大纲》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《北京邮电大学--数据结构考试大纲》 — Jason's Blog&url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-数据结构考试大纲/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3aQW4bMRAEQP3/08rVQCKmm0NuFKD2ZFgribUGyHHPvF7x9f5xffr9z1fzO3+//728XjcuPDw8vMHS18tdL2v9ONbg5GFtPgI8PDy8a7xPS1zfs74z2daTQyJfDx4eHt538vItO69y24IeDw8P7//lJQXuenHtg8PDw8P7Hl67oHkgmwcKD2UteHh4eBe6SN/z85X+Hh4eHt64q743FtBu5UmEsXm04OHh4V3g5RtuTm0bY3tDXcVwGB4eHt4FXj5W1Qapk0XvHSFRmIuHh4c35rXN/pyRl+DJAFZ0AOzdioeHhxfz8g26fTSTgYC2gI6OBDw8PLxDvPZteUndFr750MDhbh4eHh7eIUzexNoLHfKDoW2qfTz98PDw8I7y9ordyat5KNzu/0UDDA8PD+8CL/+Hf6/UXi+offUvxTceHh7eIV67Hbex6V6osVeCFzEEHh4e3gVeOxS1dxblsKRk/8Mn4+Hh4T3IO3VI5KX2/Cj6GEDg4eHhHeUli5g0rooGVVAi5y0xPDw8vCd5bWQwiYDbkay2DYaHh4d3j5ff2g5aJY9vPnSVByh4eHh493iJvi2+8yK7bbPVBwkeHh7eUd48is0DhXz0qo2V8fDw8O7x2mhgMtKaR7Htg9hsfeHh4eFt8SZfnxwM+aLbT96McfHw8PAO8fLAdDIEMG+Ybf4B8PDw8K7xJi2uNrptC+hJuIyHh4f3PK+uyrceQR0r5E07PDw8vKO8d3nlscLeoED7jUVoi4eHh3eI1267k8L3bEk9ObTw8PDw5rzD7fkyxs0jj/Z+PDw8vNu8eUjRHgyHy+JPa8DDw8P7Al4eyOYhxd6xUafUeHh4eP+Ul8DWS8kPhjxcxsPDw3uSl2/WyRLbQa5RxjwZIMDDw8Pb4rVvS8rrve3+ytLx8PDwTvJ+AR/f9925QttUAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'false';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Jason's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
