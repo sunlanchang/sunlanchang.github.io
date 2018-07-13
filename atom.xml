@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sunlanchang.github.io/"/>
-  <updated>2018-07-12T15:31:02.693Z</updated>
+  <updated>2018-07-13T02:17:35.655Z</updated>
   <id>http://sunlanchang.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://sunlanchang.github.io/2018/07/13/%E5%8C%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%A4%A7%E7%BA%B2/"/>
+    <id>http://sunlanchang.github.io/2018/07/13/北京邮电大学-操作系统大纲/</id>
+    <published>2018-07-13T02:18:19.645Z</published>
+    <updated>2018-07-13T02:17:35.655Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>【考查目标】</strong></p><ul><li><p>掌握操作系统的基本概念、基本原理和基本功能，理解操作系统的整体运行过程。</p></li><li><p>掌握操作系统进程、内存、文件和I/O管理的策略、算法、机制以及相互关系。</p></li><li><p>能够运用所学的操作系统原理、方法与技术分析问题和解决问题，并能利用C语言描述相关算法。</p></li></ul><h1 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h1><ul><li>操作系统的概念、特征、功能和提供的服务</li><li>操作系统的发展与分类</li><li><p>操作系统的运行环境</p><ul><li>内核态与用户态　</li><li>中断、异常　　</li><li>系统调用</li></ul></li><li><p>操作系统体系结构</p></li></ul><h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><ul><li><p>进程与线程</p><ul><li>进程概念　　</li><li>进程的状态与转换</li><li>进程控制　　</li><li>进程组织</li><li>进程通信：共享存储系统<ul><li>消息传递系统</li><li>管道通信</li></ul></li><li>线程概念与多线程模型</li></ul></li><li><p>处理机调度</p><ul><li>调度的基本概念　　</li><li>调度时机、切换与过程</li><li>调度的基本准则　　</li><li>调度方式</li></ul></li><li><p>典型调度算法</p><ul><li>先来先服务调度算法</li><li>短作业(短进程、短线程)优先调度算法</li><li>时间片轮转</li><li>调度算法</li><li>优先级调度算法</li><li>高响应比优先调度算法</li><li>多级反馈队列调度算法</li></ul></li><li><p>同步与互斥</p><ul><li>进程同步的基本概念</li><li><p>实现临界区互斥的基本方法</p><ul><li>软件实现方法</li><li>硬件实现方法。</li></ul></li></ul></li><li><p>信号量　</p></li><li><p>管程</p></li><li><p>经典同步问题</p><ul><li>生产者-消费者问题</li><li>读者-写者问题</li><li>哲学家进餐问题</li></ul></li><li><p>死锁</p><ul><li>死锁的概念　</li><li>死锁处理策略　　</li><li>死锁预防</li><li><p>死锁避免</p><ul><li>系统安全状态</li><li>银行家算法。</li></ul></li><li><p>死锁检测和解除</p></li></ul></li></ul><h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><ul><li><p>内存管理基础</p><ul><li>内存管理概念<ul><li>程序装入与链接</li><li>逻辑地址与物理地址空间</li><li>内存保护。</li></ul></li><li>交换与覆盖</li><li>连续分配管理方式</li><li><p>非连续分配管理方式</p><ul><li>分页管理方式</li><li>分段管理方式</li><li>段页式管理方式</li></ul></li></ul></li><li><p>虚拟内存管理</p><ul><li>虚拟内存基本概念　　</li><li>请求分页管理方式</li><li><p>页面置换算法</p></li><li><p>最佳置换算法(OPT)</p></li><li>先进先出置换算法(FIFO)</li><li>最近最少使用置换算法(LRU)</li><li>时钟置换算法（CLOCK）</li></ul></li><li><p>页面分配策略　　</p></li><li><p>工作集　　</p></li><li><p>抖动</p></li></ul><h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><ul><li><p>文件系统基础</p><ul><li>文件概念</li><li><p>文件的逻辑结构</p><ul><li>顺序文件</li><li>索引文件</li><li>索引顺序文件</li></ul></li><li><p>目录结构</p><ul><li>文件控制块和索引节点</li><li>单级目录结构和两级目录结构</li><li>树形目录结构</li><li>图形目录结构</li></ul></li><li><p>文件共享</p></li><li><p>文件保护</p><ul><li>访问类型</li><li>访问控制。</li></ul></li></ul></li><li><p>文件系统实现</p><ul><li>文件系统层次结构　　</li><li>目录实现　　</li><li>文件实现</li></ul></li><li><p>磁盘组织与管理</p><ul><li>磁盘的结构　　</li><li>磁盘调度算法　　</li><li>磁盘的管理</li></ul></li></ul><h1 id="输入输出（I-O）管理"><a href="#输入输出（I-O）管理" class="headerlink" title="输入输出（I/O）管理"></a>输入输出（I/O）管理</h1><ul><li><p>I/O管理概述</p><ul><li>I/O控制方式</li><li>I/O软件层次结构</li></ul></li><li><p>I/O核心子系统</p><ul><li>I/O调度概念　　</li><li>高速缓存与缓冲区</li><li>设备分配与回收　　</li><li>假脱机技术(SPOOLing)</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;【考查目标】&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;掌握操作系统的基本概念、基本原理和基本功能，理解操作系统的整体运行过程。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;掌握操作系统进程、内存、文件和I/O管理的策略、算法、机制以及相互关系。&lt;/p&gt;
+&lt;/
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>北京邮电大学--数据结构考试大纲</title>
@@ -482,31 +508,6 @@
         &lt;h1 id=&quot;三层体系结构的特点&quot;&gt;&lt;a href=&quot;#三层体系结构的特点&quot; class=&quot;headerlink&quot; title=&quot;三层体系结构的特点&quot;&gt;&lt;/a&gt;三层体系结构的特点&lt;/h1&gt;&lt;p&gt;三层体系结构依次是：Cache、主存、辅存。  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;cach
-      
-    
-    </summary>
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="计算机组成原理" scheme="http://sunlanchang.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中央处理器</title>
-    <link href="http://sunlanchang.github.io/2017/12/14/%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8/"/>
-    <id>http://sunlanchang.github.io/2017/12/14/中央处理器/</id>
-    <published>2017-12-14T12:18:28.000Z</published>
-    <updated>2018-07-12T15:30:58.989Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><strong>程序计数器PC</strong><br>即指令地址寄存器。用来存放当前正在执行的指令地址，或将要执行的下一条指令地址。<br><strong>指令寄存器IR</strong><br>用来存放当前正在执行的指令，以便在指令执行过程中控制完成一条指令的全部功能。<br><strong>指令译码器</strong><br>对指令寄存器IR中的操作码进行分析解释，产生相应的控制信号。<br><strong>MAR、MDR、标志寄存器</strong><br>地址寄存器，数据寄存器。标志寄存器包含CNVZ四个标志位。<br><strong>时钟周期、指令周期、机器周期</strong>  </p><ol><li>时钟周期：是计算机中最基本的、最小的时间单位。在一个时钟周期内,CPU仅完成一个最基本的动作。  </li><li>机器周期：在计算机中,为了便于管理,常把一条指令的执行过程划分为若干个阶段,每一阶段完成一项工作。例如,取指令、存储器读、存储器写等,这每一项工作称为一个基本操作。完成一个基本操作所需要的时间称为机器周期。  </li><li>指令周期：执行一条指令所需要的时间,一般由若干个机器周期组成。指令不同,所需的机器周期也不同。       对于一些简单的的单字节指令,在取指令周期中,指令取出到指令寄存器后,立即译码执行,不再需要其它的机器周期。对于一些比较复杂的指令,例如转移指令、乘法指令,则需要两个或者两个以上的机器周期。    通常含一个机器周期的指令称为单周期指令,包含两个机器周期的指令称为双周期指令。  </li></ol><p><strong>控制存储器</strong><br>为程序一般存放在专用的存储器中，该存储器主要存放控制命令（信号）和下一条执行的微指令地址（下址）。执行一条微指令就是执行一段存放在控制存储器中的微程序。</p><h1 id="控制器产生控制信号有两种方法：微程序控制、硬布线控制（组合逻辑控制）"><a href="#控制器产生控制信号有两种方法：微程序控制、硬布线控制（组合逻辑控制）" class="headerlink" title="控制器产生控制信号有两种方法：微程序控制、硬布线控制（组合逻辑控制）"></a>控制器产生控制信号有两种方法：微程序控制、硬布线控制（组合逻辑控制）</h1><p>略</p><h1 id="计算机取指和取操作数的过程及数据通路"><a href="#计算机取指和取操作数的过程及数据通路" class="headerlink" title="计算机取指和取操作数的过程及数据通路"></a>计算机取指和取操作数的过程及数据通路</h1><p>略</p><h1 id="用微程序设计方案设计微指令"><a href="#用微程序设计方案设计微指令" class="headerlink" title="用微程序设计方案设计微指令"></a>用微程序设计方案设计微指令</h1><p>微指令控制字段的方法：</p><ol><li>直接控制法</li><li>字段直接编译法</li><li>字段间接编译法<h1 id="指令流水的概念、影响流水线性能的因素及解决方法"><a href="#指令流水的概念、影响流水线性能的因素及解决方法" class="headerlink" title="指令流水的概念、影响流水线性能的因素及解决方法"></a>指令流水的概念、影响流水线性能的因素及解决方法</h1></li><li>为提高CPU利用率，加快执行速度，将指令分为若干个阶段，可并行执行不同指令的不同阶段，从而多个指令可以同时执行。在有效地控制了流水线阻塞的情况下，流水线可大大提高指令执行速度。经典的五级流水线：取址、译码/读寄存器、执行/计算有效地址、访问内存（读或写）、结果写回寄存器。</li><li>流水线阻塞的情况有三种：<br>　　1. 结构相关：指令重叠执行的过程中，硬件资源满足不了指令重叠执行的要求，发生资源冲突，这时将产生结构相关。解决的办法是增加硬件资源。<br>　　2. 数据相关：当一条指令需要前面某条指令的执行结果，而两者正在并行执行的情况下，将产生数据相关。解决方式：数据重定向，或称为旁路技术。<br>　　3. 控制相关：有跳转语句、分支指令，或其他改变IP值的指令，将产生控制相关。解决方法：分支预测技术，投机执行，延迟分支。</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;程序计数器PC&lt;/strong&gt;&lt;br&gt;即指令地址寄存器。用来存放当前正在执行的指令地址，或将要执行的下一条
       
     
     </summary>
