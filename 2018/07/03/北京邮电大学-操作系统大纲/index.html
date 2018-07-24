@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?086a5af0b6f644650f444fc827e297f8"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>北京邮电大学--操作系统考试大纲 | Jason&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="【考查目标】  掌握操作系统的基本概念、基本原理和基本功能，理解操作系统的整体运行过程。  掌握操作系统进程、内存、文件和I/O管理的策略、算法、机制以及相互关系。  能够运用所学的操作系统原理、方法与技术分析问题和解决问题，并能利用C语言描述相关算法。   操作系统概述 操作系统的概念、特征、功能和提供的服务 操作系统的发展与分类 操作系统的运行环境  内核态与用户态　 中断、异常　　 系统调用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="北京邮电大学--操作系统考试大纲">
+<meta property="og:url" content="http://sunlanchang.github.io/2018/07/03/北京邮电大学-操作系统大纲/index.html">
+<meta property="og:site_name" content="Jason&#39;s Blog">
+<meta property="og:description" content="【考查目标】  掌握操作系统的基本概念、基本原理和基本功能，理解操作系统的整体运行过程。  掌握操作系统进程、内存、文件和I/O管理的策略、算法、机制以及相互关系。  能够运用所学的操作系统原理、方法与技术分析问题和解决问题，并能利用C语言描述相关算法。   操作系统概述 操作系统的概念、特征、功能和提供的服务 操作系统的发展与分类 操作系统的运行环境  内核态与用户态　 中断、异常　　 系统调用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-24T15:46:03.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="北京邮电大学--操作系统考试大纲">
+<meta name="twitter:description" content="【考查目标】  掌握操作系统的基本概念、基本原理和基本功能，理解操作系统的整体运行过程。  掌握操作系统进程、内存、文件和I/O管理的策略、算法、机制以及相互关系。  能够运用所学的操作系统原理、方法与技术分析问题和解决问题，并能利用C语言描述相关算法。   操作系统概述 操作系统的概念、特征、功能和提供的服务 操作系统的发展与分类 操作系统的运行环境  内核态与用户态　 中断、异常　　 系统调用">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jason&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/tou.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jason Sun</h5>
+          <a href="mailto:sunlanchang@outlook.com" title="sunlanchang@outlook.com" class="mail">sunlanchang@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/sunlanchang" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.csdn.net/sunlanchang"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">北京邮电大学--操作系统考试大纲</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">北京邮电大学--操作系统考试大纲</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-03T02:15:33.000Z" itemprop="datePublished" class="page-time">
+  2018-07-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#操作系统概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">操作系统概述</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进程管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">进程管理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内存管理"><span class="post-toc-number">3.</span> <span class="post-toc-text">内存管理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文件管理"><span class="post-toc-number">4.</span> <span class="post-toc-text">文件管理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#输入输出（I-O）管理"><span class="post-toc-number">5.</span> <span class="post-toc-text">输入输出（I/O）管理</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-北京邮电大学-操作系统大纲"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">北京邮电大学--操作系统考试大纲</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-07-03 10:15:33" datetime="2018-07-03T02:15:33.000Z"  itemprop="datePublished">2018-07-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>【考查目标】</strong></p>
+<ul>
+<li><p>掌握操作系统的基本概念、基本原理和基本功能，理解操作系统的整体运行过程。</p>
+</li>
+<li><p>掌握操作系统进程、内存、文件和I/O管理的策略、算法、机制以及相互关系。</p>
+</li>
+<li><p>能够运用所学的操作系统原理、方法与技术分析问题和解决问题，并能利用C语言描述相关算法。</p>
+</li>
+</ul>
+<h1 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h1><ul>
+<li>操作系统的概念、特征、功能和提供的服务</li>
+<li>操作系统的发展与分类</li>
+<li><p>操作系统的运行环境</p>
+<ul>
+<li>内核态与用户态　</li>
+<li>中断、异常　　</li>
+<li>系统调用</li>
+</ul>
+</li>
+<li><p>操作系统体系结构</p>
+</li>
+</ul>
+<h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><ul>
+<li><p>进程与线程</p>
+<ul>
+<li>进程概念　　</li>
+<li>进程的状态与转换</li>
+<li>进程控制　　</li>
+<li>进程组织</li>
+<li>进程通信：共享存储系统<ul>
+<li>消息传递系统</li>
+<li>管道通信</li>
+</ul>
+</li>
+<li>线程概念与多线程模型</li>
+</ul>
+</li>
+<li><p>处理机调度</p>
+<ul>
+<li>调度的基本概念　　</li>
+<li>调度时机、切换与过程</li>
+<li>调度的基本准则　　</li>
+<li>调度方式</li>
+</ul>
+</li>
+<li><p>典型调度算法</p>
+<ul>
+<li>先来先服务调度算法</li>
+<li>短作业(短进程、短线程)优先调度算法</li>
+<li>时间片轮转</li>
+<li>调度算法</li>
+<li>优先级调度算法</li>
+<li>高响应比优先调度算法</li>
+<li>多级反馈队列调度算法</li>
+</ul>
+</li>
+<li><p>同步与互斥</p>
+<ul>
+<li>进程同步的基本概念</li>
+<li><p>实现临界区互斥的基本方法</p>
+<ul>
+<li>软件实现方法</li>
+<li>硬件实现方法。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>信号量　</p>
+</li>
+<li><p>管程</p>
+</li>
+<li><p>经典同步问题</p>
+<ul>
+<li>生产者-消费者问题</li>
+<li>读者-写者问题</li>
+<li>哲学家进餐问题</li>
+</ul>
+</li>
+<li><p>死锁</p>
+<ul>
+<li>死锁的概念　</li>
+<li>死锁处理策略　　</li>
+<li>死锁预防</li>
+<li><p>死锁避免</p>
+<ul>
+<li>系统安全状态</li>
+<li>银行家算法。</li>
+</ul>
+</li>
+<li><p>死锁检测和解除</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><ul>
+<li><p>内存管理基础</p>
+<ul>
+<li>内存管理概念<ul>
+<li>程序装入与链接</li>
+<li>逻辑地址与物理地址空间</li>
+<li>内存保护。</li>
+</ul>
+</li>
+<li>交换与覆盖</li>
+<li>连续分配管理方式</li>
+<li><p>非连续分配管理方式</p>
+<ul>
+<li>分页管理方式</li>
+<li>分段管理方式</li>
+<li>段页式管理方式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>虚拟内存管理</p>
+<ul>
+<li>虚拟内存基本概念　　</li>
+<li>请求分页管理方式</li>
+<li><p>页面置换算法</p>
+</li>
+<li><p>最佳置换算法(OPT)</p>
+</li>
+<li>先进先出置换算法(FIFO)</li>
+<li>最近最少使用置换算法(LRU)</li>
+<li>时钟置换算法（CLOCK）</li>
+</ul>
+</li>
+<li><p>页面分配策略　　</p>
+</li>
+<li><p>工作集　　</p>
+</li>
+<li><p>抖动</p>
+</li>
+</ul>
+<h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><ul>
+<li><p>文件系统基础</p>
+<ul>
+<li>文件概念</li>
+<li><p>文件的逻辑结构</p>
+<ul>
+<li>顺序文件</li>
+<li>索引文件</li>
+<li>索引顺序文件</li>
+</ul>
+</li>
+<li><p>目录结构</p>
+<ul>
+<li>文件控制块和索引节点</li>
+<li>单级目录结构和两级目录结构</li>
+<li>树形目录结构</li>
+<li>图形目录结构</li>
+</ul>
+</li>
+<li><p>文件共享</p>
+</li>
+<li><p>文件保护</p>
+<ul>
+<li>访问类型</li>
+<li>访问控制。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文件系统实现</p>
+<ul>
+<li>文件系统层次结构　　</li>
+<li>目录实现　　</li>
+<li>文件实现</li>
+</ul>
+</li>
+<li><p>磁盘组织与管理</p>
+<ul>
+<li>磁盘的结构　　</li>
+<li>磁盘调度算法　　</li>
+<li>磁盘的管理</li>
+</ul>
+</li>
+</ul>
+<h1 id="输入输出（I-O）管理"><a href="#输入输出（I-O）管理" class="headerlink" title="输入输出（I/O）管理"></a>输入输出（I/O）管理</h1><ul>
+<li><p>I/O管理概述</p>
+<ul>
+<li>I/O控制方式</li>
+<li>I/O软件层次结构</li>
+</ul>
+</li>
+<li><p>I/O核心子系统</p>
+<ul>
+<li>I/O调度概念　　</li>
+<li>高速缓存与缓冲区</li>
+<li>设备分配与回收　　</li>
+<li>假脱机技术(SPOOLing)</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-24T15:46:03.708Z" itemprop="dateUpdated">2018-07-24 23:46:03</time>
+</span><br>
+
+
+        
+        这里可以给我留言。
+        
+    </div>
+    <footer>
+        <a href="http://sunlanchang.github.io">
+            <img src="/img/tou.jpg" alt="Jason Sun">
+            Jason Sun
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-操作系统大纲/&title=《北京邮电大学--操作系统考试大纲》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-操作系统大纲/&title=《北京邮电大学--操作系统考试大纲》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2018/07/03/北京邮电大学-操作系统大纲/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《北京邮电大学--操作系统考试大纲》 — Jason's Blog&url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-操作系统大纲/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-操作系统大纲/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/07/03/北京邮电大学-数据结构考试大纲/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">北京邮电大学--数据结构考试大纲</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/02/pandas常用代码/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">pandas常用代码</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'sunlanchang',
+            repo: 'myGitment',
+            oauth: {
+                client_id: '6013556da1745c4a2fa8',
+                client_secret: '4394e96a00fdb11529f27a88acff6ff091aaaeaa',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jason Sun &copy; 2017 - 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备17053348号</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-操作系统大纲/&title=《北京邮电大学--操作系统考试大纲》 — Jason's Blog&pic=http://sunlanchang.github.io/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-操作系统大纲/&title=《北京邮电大学--操作系统考试大纲》 — Jason's Blog&source=自律给我自由" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sunlanchang.github.io/2018/07/03/北京邮电大学-操作系统大纲/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《北京邮电大学--操作系统考试大纲》 — Jason's Blog&url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-操作系统大纲/&via=http://sunlanchang.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sunlanchang.github.io/2018/07/03/北京邮电大学-操作系统大纲/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtElEQVR42u3awarjMAwF0P7/T3dgVgMleffKdl4HTlalFEfHC1uV9HrFz/vv8+/nzyf//ecvP7+/Wud14sHDw8MbhX4f9P3rrzAJ4/4t9/EkG42Hh4d3jjc7lPOt+SGI+FTPY8bDw8P7Bt7s4G5T9vsrBw8PD+//4rUHfZsu5wk3Hh4e3jfw8rQ4OdDbC6a9DI7UWvDw8PBi3qwB9rufj/f38PDw8EZd9fWWWH5Yvw88eHh4eCd4KyXXlQLEyshCvtF4eHh4J3hJ0SHHDHd3lNxHm4KHh4d3gNcWAnYFOtvWDf09PDw8vGVeEnTS4ro6stvScFFiSN6Ih4eHd4w3K0y0hd0krDxRjlJ/PDw8vEd4yevbI36WNLcXz2WtBQ8PD28rL0mU8yO7Db1terVpPR4eHt6TvLwQ0DaoVpL4/O3DygceHh5e3CGakdZLwLNBqyKZxsPDwzvAW1lu13GfrJasfLkCHh4e3gFeWz5IALuunFmCPuzX4eHh4QW8lfGplrqrEJxHhYeHh3eClxcIZpdBO7a1Xub44R8DHh4e3jJv75//dohqV6Hh8jrBw8PDO8xrW1BXv89T4Vmpt8iW8fDw8B7hteXXFpBsTc6rLwY8PDy8rbzZETxjzIa06tYaHh4e3gHerG3fDgokkwvt9VCk6Xh4eHgHeG37apYi7x0giObI8PDw8I7xZg2nPLV9j55dTTg8PDy8J3kr5dR2I/aOHeDh4eGd480O67z0kKfsbXodxYCHh4d3gNceu21zKwEnG5dv0OxSwcPDw2t5s8ug3YhZC60d7bpsfeHh4eEd4OVJcJvOzgJdz4rx8PDwvoe3PhqVB9rWpDdcDHh4eHhbebMRq7YMsb4yHh4e3jO8fHAqmkeIg541vfKBBjw8PLwTvPU0d8ZevzZ2FTLw8PDwYt4f70siFuDFex0AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'false';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Jason's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
